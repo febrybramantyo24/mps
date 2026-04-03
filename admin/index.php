@@ -2060,6 +2060,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $contactCardCallTitle = trim((string) ($_POST['contact_card_call_title'] ?? ''));
             $contactCardOfficeTitle = trim((string) ($_POST['contact_card_office_title'] ?? ''));
             $companyProfilePdfUrl = trim((string) ($_POST['company_profile_pdf_url'] ?? ''));
+            $removeCompanyProfilePdf = ((string) ($_POST['remove_company_profile_pdf'] ?? '0')) === '1';
             $mapEmbedUrl = normalize_map_embed_input((string) ($_POST['map_embed_url'] ?? ''));
             $mapLat = trim((string) ($_POST['map_lat'] ?? ''));
             $mapLng = trim((string) ($_POST['map_lng'] ?? ''));
@@ -2090,6 +2091,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
                 }
                 $companyProfilePdfUrl = $uploadedCompanyProfilePdf;
+            } elseif ($removeCompanyProfilePdf) {
+                $oldCompanyProfilePdfUrl = get_site_setting($conn, 'company_profile_pdf_url', '');
+                if (str_starts_with($oldCompanyProfilePdfUrl, '/assets/files/uploads/settings/')) {
+                    $oldAbsPath = __DIR__ . '/..' . $oldCompanyProfilePdfUrl;
+                    if (is_file($oldAbsPath)) {
+                        @unlink($oldAbsPath);
+                    }
+                }
+                $companyProfilePdfUrl = '';
             }
 
             save_site_setting($conn, 'social_facebook', $socialFacebook);
@@ -3963,7 +3973,9 @@ $teamPager = paginate_rows($teamMembers, 8, 'team_pg');
                 <?php endif; ?>
 
                 <label>Deskripsi Singkat Produk</label>
-                <textarea name="short_description" spellcheck="false"><?= e((string) ($editProduct['short_description'] ?? '')) ?></textarea>
+                <div id="product-short-desc-surface" class="editor-surface" contenteditable="true" spellcheck="false" style="min-height:130px;"></div>
+                <textarea name="short_description" id="product-short-desc-hidden" style="display:none;"><?= e((string) ($editProduct['short_description'] ?? '')) ?></textarea>
+                <div class="field-help">Disimpan sebagai teks biasa (tanpa HTML). Cocok untuk ringkasan singkat di kartu/hero.</div>
 
                 <label>Deskripsi Detail Produk</label>
                 <div class="editor-toolbar" id="product-desc-toolbar">
@@ -4192,7 +4204,9 @@ $teamPager = paginate_rows($teamMembers, 8, 'team_pg');
                   </div>
                 <?php endif; ?>
                 <label>Deskripsi Singkat</label>
-                <textarea name="short_description" spellcheck="false" required minlength="10"><?= e((string) ($editService['short_description'] ?? '')) ?></textarea>
+                <div id="service-short-desc-surface" class="editor-surface" contenteditable="true" spellcheck="false" style="min-height:130px;"></div>
+                <textarea name="short_description" id="service-short-desc-hidden" style="display:none;" required minlength="10"><?= e((string) ($editService['short_description'] ?? '')) ?></textarea>
+                <div class="field-help">Disimpan sebagai teks biasa (tanpa HTML). Cocok untuk ringkasan layanan.</div>
                 <label>Deskripsi Detail Layanan</label>
                 <div class="editor-toolbar" id="service-desc-toolbar">
                   <div class="editor-group">
@@ -4420,7 +4434,25 @@ $teamPager = paginate_rows($teamMembers, 8, 'team_pg');
                   </div>
                 <?php endif; ?>
                 <label>Deskripsi Singkat</label>
-                <textarea name="short_description" spellcheck="false"><?= e((string) ($editProject['short_description'] ?? '')) ?></textarea>
+                <div class="editor-toolbar" id="project-short-desc-toolbar">
+                  <div class="editor-group">
+                    <button type="button" class="editor-btn label" data-block="p">Normal</button>
+                    <button type="button" class="editor-btn" data-block="h2">H2</button>
+                  </div>
+                  <div class="editor-group">
+                    <button type="button" class="editor-btn" data-cmd="bold"><b>B</b></button>
+                    <button type="button" class="editor-btn" data-cmd="italic"><i>I</i></button>
+                    <button type="button" class="editor-btn" data-cmd="underline"><u>U</u></button>
+                    <button type="button" class="editor-btn" data-cmd="insertUnorderedList">Bullets</button>
+                    <button type="button" class="editor-btn" data-cmd="insertOrderedList">Number</button>
+                  </div>
+                  <div class="editor-group">
+                    <button type="button" class="editor-btn" data-cmd="removeFormat">Clear</button>
+                  </div>
+                </div>
+                <div id="project-short-desc-surface" class="editor-surface" contenteditable="true" spellcheck="false" style="min-height:130px;"></div>
+                <textarea name="short_description" id="project-short-desc-hidden" style="display:none;"><?= e((string) ($editProject['short_description'] ?? '')) ?></textarea>
+                <div class="field-help">Disimpan sebagai teks biasa (tanpa HTML). Cocok untuk ringkasan yang rapi dan mudah dibaca.</div>
                 <label>Deskripsi Detail Proyek</label>
                 <div class="editor-toolbar" id="project-desc-toolbar">
                   <div class="editor-group">
@@ -4778,7 +4810,9 @@ $teamPager = paginate_rows($teamMembers, 8, 'team_pg');
                 </div>
 
                 <label>Isi Testimonial</label>
-                <textarea name="quote_text" required><?= e((string) ($editTestimonial['quote_text'] ?? '')) ?></textarea>
+                <div id="testimonial-quote-surface" class="editor-surface" contenteditable="true" spellcheck="false" style="min-height:130px;"></div>
+                <textarea name="quote_text" id="testimonial-quote-hidden" style="display:none;" required><?= e((string) ($editTestimonial['quote_text'] ?? '')) ?></textarea>
+                <div class="field-help">Disimpan sebagai teks biasa (tanpa HTML). Cocok untuk kutipan singkat dari klien.</div>
 
                 <div class="form-grid">
                   <div>
@@ -5255,6 +5289,11 @@ $teamPager = paginate_rows($teamMembers, 8, 'team_pg');
                           <a href="<?= e((string) $siteSettings['company_profile_pdf_url']) ?>" target="_blank" rel="noopener">Lihat PDF saat ini</a>
                         </div>
                       <?php endif; ?>
+                      <input type="hidden" name="remove_company_profile_pdf" id="remove-company-profile-pdf" value="0">
+                      <div class="upload-actions-row">
+                        <button class="btn danger" type="button" id="company-profile-delete-btn">Hapus PDF Aktif</button>
+                        <button class="btn light" type="button" id="company-profile-clear-btn">Reset Pilihan File</button>
+                      </div>
                       <div class="field-help">Upload file baru untuk mengganti company profile PDF di halaman Tentang.</div>
                     </div>
                     <?php if ((string) ($siteSettings['company_profile_pdf_url'] ?? '') !== ''): ?>
@@ -6052,6 +6091,26 @@ $teamPager = paginate_rows($teamMembers, 8, 'team_pg');
         companyProfilePdfName.textContent = file.name + ' (' + formatFileSizeKb(file.size) + ')';
       });
     }
+    var companyProfileClearBtn = document.getElementById('company-profile-clear-btn');
+    if (companyProfileClearBtn && companyProfilePdfInput && companyProfilePdfName) {
+      companyProfileClearBtn.addEventListener('click', function () {
+        companyProfilePdfInput.value = '';
+        companyProfilePdfName.textContent = 'Belum ada file PDF dipilih';
+      });
+    }
+    var companyProfileDeleteBtn = document.getElementById('company-profile-delete-btn');
+    var removeCompanyProfilePdfInput = document.getElementById('remove-company-profile-pdf');
+    if (companyProfileDeleteBtn && removeCompanyProfilePdfInput) {
+      companyProfileDeleteBtn.addEventListener('click', function () {
+        var confirmed = window.confirm('Hapus PDF aktif? File akan dihapus dari server.');
+        if (!confirmed) return;
+        removeCompanyProfilePdfInput.value = '1';
+        if (companyProfilePdfInput) companyProfilePdfInput.value = '';
+        if (companyProfilePdfName) companyProfilePdfName.textContent = 'Belum ada file PDF dipilih';
+        var form = companyProfileDeleteBtn.closest('form');
+        if (form) form.submit();
+      });
+    }
 
     var insertHtmlAtCursor = function (html) {
       if (!html) return;
@@ -6141,6 +6200,11 @@ $teamPager = paginate_rows($teamMembers, 8, 'team_pg');
       if (!surfaceEl || !hiddenEl) return;
       hiddenEl.value = String(surfaceEl.innerHTML || '').trim();
     };
+    var syncHiddenFromSurfacePlain = function (surfaceEl, hiddenEl) {
+      if (!surfaceEl || !hiddenEl) return;
+      var text = String(surfaceEl.innerText || surfaceEl.textContent || '').replace(/\r\n/g, '\n');
+      hiddenEl.value = text.trim();
+    };
 
     var setupDescriptionEditor = function (toolbarId, surfaceId, hiddenId, fontSelectId) {
       var toolbar = document.getElementById(toolbarId);
@@ -6197,6 +6261,47 @@ $teamPager = paginate_rows($teamMembers, 8, 'team_pg');
           syncHiddenFromSurface(surface, hidden);
         }
       });
+    };
+    var setupPlainTextEditor = function (toolbarId, surfaceId, hiddenId) {
+      var toolbar = toolbarId ? document.getElementById(toolbarId) : null;
+      var surface = document.getElementById(surfaceId);
+      var hidden = document.getElementById(hiddenId);
+      if (!surface || !hidden) return;
+
+      surface.innerHTML = legacyTextToHtml(hidden.value || '');
+      if (String(surface.innerHTML || '').trim() === '') surface.innerHTML = '<p></p>';
+
+      surface.addEventListener('input', function () {
+        syncHiddenFromSurfacePlain(surface, hidden);
+      });
+
+      var form = surface.closest('form');
+      if (form) {
+        form.addEventListener('submit', function () {
+          syncHiddenFromSurfacePlain(surface, hidden);
+        });
+      }
+
+      if (toolbar) {
+        toolbar.addEventListener('click', function (event) {
+          var button = event.target.closest('button');
+          if (!button) return;
+          surface.focus();
+
+          if (button.hasAttribute('data-cmd')) {
+            var cmd = button.getAttribute('data-cmd') || '';
+            if (cmd) document.execCommand(cmd, false, null);
+            syncHiddenFromSurfacePlain(surface, hidden);
+            return;
+          }
+          if (button.hasAttribute('data-block')) {
+            var block = button.getAttribute('data-block') || 'p';
+            document.execCommand('formatBlock', false, block.toUpperCase());
+            syncHiddenFromSurfacePlain(surface, hidden);
+            return;
+          }
+        });
+      }
     };
 
     if (articleEditorSurface && articleContentHtml) {
@@ -6368,6 +6473,10 @@ $teamPager = paginate_rows($teamMembers, 8, 'team_pg');
     setupDescriptionEditor('product-desc-toolbar', 'product-desc-surface', 'product-desc-hidden', 'product-desc-font-size');
     setupDescriptionEditor('service-desc-toolbar', 'service-desc-surface', 'service-desc-hidden', 'service-desc-font-size');
     setupDescriptionEditor('project-desc-toolbar', 'project-desc-surface', 'project-desc-hidden', 'project-desc-font-size');
+    setupPlainTextEditor(null, 'project-short-desc-surface', 'project-short-desc-hidden');
+    setupPlainTextEditor(null, 'product-short-desc-surface', 'product-short-desc-hidden');
+    setupPlainTextEditor(null, 'service-short-desc-surface', 'service-short-desc-hidden');
+    setupPlainTextEditor(null, 'testimonial-quote-surface', 'testimonial-quote-hidden');
 
     if (articleEditorToolbar && articleEditorSurface) {
       articleEditorToolbar.addEventListener('click', function (event) {

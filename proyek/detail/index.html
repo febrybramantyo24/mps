@@ -233,9 +233,62 @@
       padding-top: 58px;
       padding-bottom: 58px;
       margin-top: 0;
+      background:
+        radial-gradient(circle at 15% -20%, rgba(255, 94, 20, 0.24), transparent 55%),
+        radial-gradient(circle at 95% 0%, rgba(14, 165, 233, 0.16), transparent 45%),
+        #0b1220;
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
     }
-    .related-projects .title-center-style-one .pre { color: #ff5e14; font-weight: 800; }
-    .related-projects .title-center-style-one .title { color: #ffffff; }
+    .related-projects .related-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .related-projects .related-head .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: #ffb18b;
+      margin-bottom: 10px;
+    }
+    .related-projects .related-head h2 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 3.5vw, 40px);
+      line-height: 1.1;
+      color: #ffffff;
+      font-weight: 900;
+    }
+    .related-projects .related-head p {
+      margin: 0;
+      color: #cbd5e1;
+      max-width: 620px;
+    }
+    .related-projects .related-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .related-projects .related-cta:hover {
+      transform: translateY(-2px);
+      border-color: #ff5e14;
+      background: rgba(255, 94, 20, 0.25);
+      color: #ffffff;
+    }
     .related-projects .swiper-wrapper-project { padding: 0 12px; }
     .related-projects .mySwiper-project-1 { overflow: hidden; }
     .related-projects .swiper-slide { height: auto; }
@@ -422,6 +475,7 @@
       .meta-row { grid-template-columns: 1fr 1fr; }
       .thumb-grid { gap: 7px; }
       .portfolio-team-area-bg.related-projects { padding-top: 50px; padding-bottom: 50px; }
+      .related-projects .related-head { align-items: flex-start; }
       .related-projects .project-area-start-1 { height: 500px; }
       .related-projects .project-area-start-1 .inner-content-project {
         inset: 8px;
@@ -595,12 +649,16 @@
   </section>
 
   <section id="related-projects-section" class="portfolio-team-area-bg rts-section-gap bg_image bg-dark related-projects hidden">
-    <div class="container">
-      <div class="title-center-style-one">
-        <span class="pre">Recent Projects</span>
-        <h2 class="title">Our Completed Projects</h2>
+      <div class="container">
+        <div class="related-head">
+          <div class="copy">
+            <span class="eyebrow">OUR WORKS</span>
+            <h2>Proyek Terkait</h2>
+            <p>Inspirasi proyek modern yang kami kerjakan untuk berbagai kebutuhan industri dan komersial.</p>
+          </div>
+          <a class="related-cta" href="/proyek/">Lihat Semua Proyek</a>
+        </div>
       </div>
-    </div>
     <div class="row mt--40">
       <div class="col-lg-12">
         <div class="swiper-wrapper-project">

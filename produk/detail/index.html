@@ -1448,6 +1448,9 @@
           .replace(/"/g, '&quot;')
           .replace(/'/g, '&#39;');
       };
+      var escapeHtmlWithBreaks = function (value) {
+        return escapeHtml(String(value || '')).replace(/\r?\n/g, '<br>');
+      };
 
       var renderDescriptionBlocks = function (rawText) {
         var raw = String(rawText || '').replace(/\r/g, '').trim();
@@ -1724,7 +1727,7 @@
       applyMenuVisibility();
       if (pageTitleEl) pageTitleEl.textContent = selectedProduct.name;
       if (breadcrumbCurrentEl) breadcrumbCurrentEl.textContent = selectedProduct.name;
-      if (heroSubEl) heroSubEl.textContent = selectedProduct.shortDescription || 'Lihat spesifikasi dan detail produk di halaman ini.';
+      if (heroSubEl) heroSubEl.innerHTML = escapeHtmlWithBreaks(selectedProduct.shortDescription || 'Lihat spesifikasi dan detail produk di halaman ini.');
       var galleryImages = [];
       var currentImageIndex = 0;
 
@@ -1868,7 +1871,7 @@
       if (nameEl) nameEl.textContent = selectedProduct.name;
       applyFooterSettings();
       if (priceEl) priceEl.textContent = formatter.format(selectedProduct.price);
-      if (shortDescriptionEl) shortDescriptionEl.textContent = selectedProduct.shortDescription;
+      if (shortDescriptionEl) shortDescriptionEl.innerHTML = escapeHtmlWithBreaks(selectedProduct.shortDescription);
       if (descriptionEl) {
         var rawDesc = String(selectedProduct.description || '').trim();
         descriptionEl.innerHTML = /<[a-z][\s\S]*>/i.test(rawDesc) ? rawDesc : renderDescriptionBlocks(rawDesc);

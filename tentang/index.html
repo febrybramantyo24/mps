@@ -1246,8 +1246,15 @@
         if (!data || !data.ok || !data.settings) return;
         var pdfUrl = normalizeUrl(data.settings.companyProfilePdfUrl || '');
         if (!pdfUrl || !isPdfUrl(pdfUrl)) return;
-        profileBtn.href = pdfUrl;
-        profileBtn.hidden = false;
+        fetch(pdfUrl, { method: 'HEAD', cache: 'no-store' })
+          .then(function (r) {
+            if (!r || !r.ok) return;
+            profileBtn.href = pdfUrl;
+            profileBtn.hidden = false;
+          })
+          .catch(function () {
+            // keep hidden if file missing
+          });
       })
       .catch(function () {
         // Keep hidden when settings API unavailable.
@@ -1258,7 +1265,6 @@
 </body>
 
 </html>
-
 
 
 

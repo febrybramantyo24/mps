@@ -2410,12 +2410,16 @@
           return text.slice(0, maxLen - 1) + '...';
         };
 
+        var formatReview = function (value) {
+          return escapeHtml(String(value || '')).replace(/\r?\n/g, '<br>');
+        };
+
         var buildSlideHtml = function (item) {
           return '' +
             '<div class="swiper-slide">' +
               '<div class="testimonials-area-single-wrapper-5">' +
                 '<div class="thumbnail-wrapper-left">' +
-                  '<img src="' + escapeHtml(item.avatar) + '" alt="' + escapeHtml(item.name) + '">' +
+                  '<img src="' + escapeHtml(item.avatar) + '" alt="' + escapeHtml(item.name) + '" onerror="this.onerror=null;this.src=\'/assets/images/testimonials/author/01.webp\';">' +
                   '<div class="inner-thumbnail-right">' +
                     '<h4 class="title">' + escapeHtml(item.name) + '</h4>' +
                     '<span>' + escapeHtml(item.company || 'CLIENT') + '</span>' +
@@ -2424,9 +2428,9 @@
                 '<div class="quote">' +
                   '<img src="/assets/images/testimonials/brand/03.webp" alt="quote">' +
                 '</div>' +
-                '<p class="disc">"' + escapeHtml(shortText(item.review, 260)) + '"</p>' +
+                '<p class="disc">"' + formatReview(item.review) + '"</p>' +
                 '<div class="brand">' +
-                  '<img src="' + escapeHtml(item.brandLogo || '/assets/images/testimonials/brand/01.webp') + '" alt="brand">' +
+                  '<img src="' + escapeHtml(item.brandLogo || '/assets/images/testimonials/brand/01.webp') + '" alt="brand" onerror="this.onerror=null;this.src=\'/assets/images/testimonials/brand/01.webp\';">' +
                 '</div>' +
               '</div>' +
             '</div>';

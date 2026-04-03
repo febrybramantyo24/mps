@@ -1293,6 +1293,9 @@
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#039;');
     };
+    var escWithBreaks = function (value) {
+      return esc(String(value || '')).replace(/\r?\n/g, '<br>');
+    };
     var safeText = function (v, fallback) {
       var text = String(v || '').trim();
       return text ? text : fallback;
@@ -1409,7 +1412,7 @@
             '<div class="innr">' +
               (metaLabel ? ('<div class="service-meta"><i class="dot"></i><span>' + esc(metaLabel) + '</span></div>') : '') +
               '<a href="' + esc(link) + '"><h5 class="title">' + esc(name) + '</h5></a>' +
-              '<p class="disc">' + esc(desc) + '</p>' +
+              '<p class="disc">' + escWithBreaks(desc) + '</p>' +
               '<a class="btn" href="' + esc(link) + '">Lihat Detail <i class="fa-light fa-arrow-right"></i></a>' +
             '</div>' +
           '</div>' +
@@ -1631,7 +1634,6 @@
 </body>
 
 </html>
-
 
 
 

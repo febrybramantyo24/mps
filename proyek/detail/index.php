@@ -222,7 +222,8 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
     .hero-breadcrumb .sep { opacity: .65; padding: 0 6px; }
     .hero-breadcrumb .current { color:#ffb290; font-weight: 800; }
     .hero-title { margin:0 0 12px; color:#fff; font-size: clamp(34px, 4.5vw, 54px); line-height:1.08; max-width: 760px; font-weight: 900; }
-    .hero-sub { margin:0; color:#dbe7ff; max-width: 860px; font-size: clamp(15px, 1.1vw, 18px); line-height: 1.82; }
+    .hero-sub { margin:0; color:#dbe7ff; max-width: 860px; font-size: clamp(15px, 1.1vw, 18px); line-height: 1.65; }
+    .hero-sub br { display:block; content:""; margin-bottom: 6px; }
     .wrap { padding-bottom: 56px; }
     .card-shell { background: var(--card); border:1px solid var(--line); border-radius: 18px; box-shadow: 0 18px 40px rgba(15,23,42,.06); overflow:hidden; }
     .gallery-left { padding: 20px; border-right: 1px solid var(--line); background: linear-gradient(180deg,#f8fafc,#fff); height:100%; }
@@ -234,7 +235,8 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
     .thumb-item.active { outline: 2px solid #ff5e14; border-color:#ff5e14; }
     .content { padding: 24px 24px 28px; }
     .content .title { margin:0 0 8px; font-size: 35px; line-height:1.15; color:#0f172a !important; font-weight: 900; }
-    .short { color:#475569; margin-bottom: 10px; }
+    .short { color:#475569; margin-bottom: 10px; line-height: 1.65; }
+    .short br { display:block; content:""; margin-bottom: 6px; }
     .meta-row { display:grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap:8px; margin: 12px 0; }
     .meta-box { border:1px solid var(--line); border-radius:10px; padding:10px; background:#fbfdff; }
     .meta-box .k { font-size: 11px; text-transform: uppercase; letter-spacing: .4px; color:#64748b; margin-bottom:2px; font-weight:800; }
@@ -259,6 +261,294 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
     .btn-solid { background: var(--brand); color:#fff; text-decoration:none; border-radius:10px; padding:10px 15px; font-weight: 900; }
     .btn-soft { background:#fff; border:1px solid #cbd5e1; color:#0f172a; text-decoration:none; border-radius:10px; padding:10px 15px; font-weight: 800; }
     .error { color:#b91c1c; }
+    .related-projects-modern {
+      padding-top: 58px !important;
+      padding-bottom: 58px !important;
+      background:
+        radial-gradient(circle at 15% -20%, rgba(255, 94, 20, 0.24), transparent 55%),
+        radial-gradient(circle at 95% 0%, rgba(14, 165, 233, 0.16), transparent 45%),
+        #0b1220;
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+    .related-projects-modern .related-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .related-projects-modern .related-head .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: #ffb18b;
+      margin-bottom: 10px;
+    }
+    .related-projects-modern .related-head h2 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 3.5vw, 40px);
+      line-height: 1.1;
+      color: #ffffff;
+      font-weight: 900;
+    }
+    .related-projects-modern .related-head p {
+      margin: 0;
+      color: #cbd5e1;
+      max-width: 620px;
+    }
+    .related-projects-modern .related-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .related-projects-modern .related-cta:hover {
+      transform: translateY(-2px);
+      border-color: #ff5e14;
+      background: rgba(255, 94, 20, 0.25);
+      color: #ffffff;
+    }
+    .related-projects-modern .related-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .related-projects-modern .related-controls .swiper-button-next,
+    .related-projects-modern .related-controls .swiper-button-prev {
+      position: static;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(15, 23, 42, 0.6);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: .2s ease;
+    }
+    .related-projects-modern .related-controls .swiper-button-next,
+    .related-projects-modern .related-controls .swiper-button-prev {
+      inset: auto !important;
+      margin: 0 !important;
+      transform: none !important;
+    }
+    .related-projects-modern .related-controls .swiper-button-next::after,
+    .related-projects-modern .related-controls .swiper-button-prev::after {
+      content: none !important;
+    }
+    .related-projects-modern .swiper-recent-project-5-wrapper {
+      margin-top: 18px;
+    }
+    .related-projects-modern .swiper {
+      overflow: visible;
+    }
+    .related-projects-modern .swiper-slide {
+      height: auto;
+    }
+    .related-projects-modern .rp-card {
+      border-radius: 18px;
+      overflow: hidden;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .related-projects-modern .rp-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 94, 20, 0.55);
+      box-shadow: 0 22px 44px rgba(2, 6, 23, 0.45);
+    }
+    .related-projects-modern .rp-thumb {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #0f172a;
+      border-radius: 18px;
+    }
+    .related-projects-modern .rp-thumb::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(2,6,23,0.22) 0%, rgba(2,6,23,0.78) 55%, rgba(2,6,23,0.98) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .related-projects-modern .rp-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform .35s ease;
+      position: relative;
+      z-index: 0;
+    }
+    .related-projects-modern .rp-card:hover .rp-thumb img {
+      transform: scale(1.04);
+    }
+    .related-projects-modern .rp-badge {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(6px);
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .related-projects-modern .rp-badge i {
+      font-size: 11px;
+      color: #ffb18b;
+    }
+    .related-projects-modern .rp-body {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      background: rgba(255, 255, 255, 0.88);
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: 0 14px 28px rgba(2, 6, 23, 0.35);
+      display: grid;
+      gap: 10px;
+      max-width: 64%;
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity .2s ease, transform .2s ease;
+      z-index: 2;
+    }
+    .related-projects-modern .rp-card:hover .rp-body {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .related-projects-modern .rp-title {
+      margin: 0;
+      color: #0b1220;
+      font-size: 17px;
+      font-weight: 900;
+      line-height: 1.3;
+    }
+    .related-projects-modern .rp-desc {
+      margin: 0;
+      color: #334155;
+      font-size: 12.5px;
+      line-height: 1.6;
+      min-height: 36px;
+    }
+    .related-projects-modern .rp-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .related-projects-modern .rp-meta .item {
+      border: 1px solid #e5edf7;
+      border-radius: 10px;
+      padding: 6px 8px;
+      background: #f8fbff;
+    }
+    .related-projects-modern .rp-meta span {
+      display: block;
+      font-size: 10px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      font-weight: 700;
+      margin-bottom: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .related-projects-modern .rp-meta span i {
+      color: #ff5e14;
+      font-size: 11px;
+    }
+    .related-projects-modern .rp-meta strong {
+      display: block;
+      color: #0b1220;
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1.3;
+      word-break: break-word;
+    }
+    .related-projects-modern .rp-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 11px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #ff6a21, #ff4f0f);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 12.5px;
+      width: fit-content;
+      transition: transform .2s ease, box-shadow .2s ease;
+      box-shadow: 0 10px 20px rgba(255, 94, 20, 0.3);
+    }
+    .related-projects-modern .rp-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 22px rgba(255, 94, 20, 0.4);
+    }
+    @media (max-width: 991px) {
+      .related-projects-modern .rp-body {
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+        max-width: 100%;
+      }
+      .related-projects-modern .rp-body {
+        position: static;
+        margin-top: -10px;
+        border-radius: 0 0 14px 14px;
+      }
+      .related-projects-modern .rp-thumb {
+        border-radius: 18px 18px 0 0;
+      }
+      .related-projects-modern .related-controls {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-top: 10px;
+      }
+    }
+    .related-projects-modern .related-controls .swiper-button-next:hover,
+    .related-projects-modern .related-controls .swiper-button-prev:hover {
+      border-color: #ff5e14;
+      background: #ff5e14;
+      color: #fff;
+    }
+    @media (max-width: 991px) {
+      .related-projects-modern .related-head { align-items: flex-start; }
+    }
     @media (max-width: 991px) { .hero { padding-top: 34px; } .meta-row { grid-template-columns: 1fr 1fr; } .gallery-left { border-right:0; border-bottom: 1px solid var(--line); } .content .title { font-size: 28px; } }
   </style>
 </head>
@@ -330,7 +620,7 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
         </div>
       </div>
       <h1 class="hero-title"><?= esc($title) ?></h1>
-      <p class="hero-sub"><?= esc($short !== '' ? $short : '-') ?></p>
+      <p class="hero-sub"><?= nl2br(esc($short !== '' ? $short : '-'), false) ?></p>
     </div>
   </section>
 
@@ -374,7 +664,7 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
                 <div style="font-weight:900;color:#ff5e14;text-transform:uppercase;letter-spacing:.08em;font-size:11px;"><?= esc($category) ?></div>
               <?php endif; ?>
               <h2 class="title"><?= esc($title) ?></h2>
-              <p class="short"><?= esc($short !== '' ? $short : '-') ?></p>
+              <p class="short"><?= nl2br(esc($short !== '' ? $short : '-'), false) ?></p>
 
               <div class="meta-row">
                 <div class="meta-box"><div class="k">Client</div><div class="v"><?= esc($client !== '' ? $client : '-') ?></div></div>
@@ -415,20 +705,18 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
   </section>
 
   <?php if ($project && $relatedProjects): ?>
-  <section id="related-projects-slider" class="rts-portfolio-area-case rts-section-gap" style="padding-top:56px;">
+  <section id="related-projects-slider" class="rts-portfolio-area-case rts-section-gap related-projects-modern">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="title-between-style-five mb--35">
-            <div class="title-left-align-five">
-              <span class="pre">Our Works</span>
-              <h2 class="title">Proyek Terkait</h2>
-            </div>
-            <div class="button-net-prev-area">
-              <div class="swiper-button-prev"><i class="fa-sharp-duotone fa-light fa-arrow-left"></i></div>
-              <div class="swiper-button-next"><i class="fa-sharp-duotone fa-light fa-arrow-right"></i></div>
-            </div>
-          </div>
+      <div class="related-head">
+        <div class="copy">
+          <span class="eyebrow">OUR WORKS</span>
+          <h2>Proyek Terkait</h2>
+          <p>Inspirasi proyek modern yang kami kerjakan untuk berbagai kebutuhan industri dan komersial.</p>
+        </div>
+        <div class="related-controls">
+          <a class="related-cta" href="/proyek/">Lihat Semua Proyek</a>
+          <div class="swiper-button-prev"><i class="fa-sharp-duotone fa-light fa-arrow-left"></i></div>
+          <div class="swiper-button-next"><i class="fa-sharp-duotone fa-light fa-arrow-right"></i></div>
         </div>
       </div>
     </div>
@@ -440,37 +728,35 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
               <div class="swiper-wrapper">
                 <?php foreach ($relatedProjects as $rp): ?>
                   <div class="swiper-slide">
-                    <div class="single-case-studies-5">
-                      <a href="<?= esc($rp['url']) ?>">
+                    <article class="rp-card">
+                      <a class="rp-thumb" href="<?= esc($rp['url']) ?>">
                         <img src="<?= esc($rp['image'] !== '' ? $rp['image'] : '/assets/images/portfolio/16.webp') ?>" alt="<?= esc($rp['title']) ?>" loading="lazy">
+                        <span class="rp-badge"><i class="fa-regular fa-pen-ruler"></i><?= esc($rp['category'] !== '' ? $rp['category'] : 'Project') ?></span>
                       </a>
-                      <svg width="698" height="505" viewBox="0 0 698 505" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="698" height="505" rx="10" fill="black" fill-opacity="0.61" />
-                        <g style="mix-blend-mode:overlay">
-                          <rect width="698" height="505" rx="10" fill="url(#paint0_linear_mps_rel_<?= esc($rp['slug']) ?>)" />
-                        </g>
-                        <defs>
-                          <linearGradient id="paint0_linear_mps_rel_<?= esc($rp['slug']) ?>" x1="563" y1="0" x2="63" y2="505" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#F84E1D" />
-                            <stop offset="1" stop-color="#922E11" stop-opacity="0" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
-                      <div class="inner">
-                        <div class="active-text-area">
-                          <h1 class="title"><?= esc($rp['title']) ?></h1>
-                          <p class="disc"><?= esc(snippet($rp['shortDescription'] !== '' ? $rp['shortDescription'] : 'Lihat detail proyek untuk informasi lengkap.')) ?></p>
-                          <ul class="feature">
-                            <?php if (trim($rp['client']) !== ''): ?><li><p>Client:</p> <?= esc($rp['client']) ?></li><?php endif; ?>
-                            <?php if (trim($rp['location']) !== ''): ?><li><p>Location:</p> <?= esc($rp['location']) ?></li><?php endif; ?>
-                            <?php if (trim($rp['duration']) !== ''): ?><li><p>Project Duration:</p> <?= esc($rp['duration']) ?></li><?php endif; ?>
-                            <?php if (trim($rp['price']) !== ''): ?><li><p>Project Cost:</p> <?= esc($rp['price']) ?></li><?php endif; ?>
-                            <?php if (trim($rp['projectYear']) !== ''): ?><li><p>Project Year:</p> <?= esc($rp['projectYear']) ?></li><?php endif; ?>
-                          </ul>
-                          <a href="<?= esc($rp['url']) ?>" class="rts-btn btn-primary">View Details<img src="/assets/images/icons/arrow-up-right.svg" alt="arrow"></a>
+                      <div class="rp-body">
+                        <h3 class="rp-title"><?= esc($rp['title']) ?></h3>
+                        <p class="rp-desc"><?= esc(snippet($rp['shortDescription'] !== '' ? $rp['shortDescription'] : 'Lihat detail proyek untuk informasi lengkap.', 110)) ?></p>
+                        <div class="rp-meta">
+                          <div class="item">
+                            <span><i class="fa-regular fa-user"></i>Client</span>
+                            <strong><?= esc($rp['client'] !== '' ? $rp['client'] : '-') ?></strong>
+                          </div>
+                          <div class="item">
+                            <span><i class="fa-regular fa-calendar"></i>Year</span>
+                            <strong><?= esc($rp['projectYear'] !== '' ? $rp['projectYear'] : '-') ?></strong>
+                          </div>
+                          <div class="item">
+                            <span><i class="fa-regular fa-location-dot"></i>Location</span>
+                            <strong><?= esc($rp['location'] !== '' ? $rp['location'] : '-') ?></strong>
+                          </div>
+                          <div class="item">
+                            <span><i class="fa-regular fa-clock"></i>Duration</span>
+                            <strong><?= esc($rp['duration'] !== '' ? $rp['duration'] : '-') ?></strong>
+                          </div>
                         </div>
+                        <a class="rp-cta" href="<?= esc($rp['url']) ?>"><i class="fa-regular fa-eye"></i> Lihat Detail</a>
                       </div>
-                    </div>
+                    </article>
                   </div>
                 <?php endforeach; ?>
               </div>
@@ -717,21 +1003,21 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
       var prevEl = root.querySelector('.swiper-button-prev');
       try {
         new Swiper(node, {
-          spaceBetween: 24,
-          slidesPerView: 4,
+          spaceBetween: 18,
+          slidesPerView: 3,
           loop: true,
-          speed: 1000,
-          centeredSlides: true,
+          speed: 900,
+          centeredSlides: false,
           navigation: {
             nextEl: nextEl,
             prevEl: prevEl,
           },
           breakpoints: {
-            1500: { slidesPerView: 2.6 },
-            1199: { slidesPerView: 1.2 },
-            991: { slidesPerView: 1.1 },
-            767: { slidesPerView: 1.1 },
-            575: { slidesPerView: 1 },
+            1400: { slidesPerView: 3 },
+            1200: { slidesPerView: 2.5 },
+            992: { slidesPerView: 2 },
+            768: { slidesPerView: 1.3 },
+            576: { slidesPerView: 1.1 },
             0: { slidesPerView: 1 }
           }
         });

@@ -1552,6 +1552,9 @@
           .replace(/"/g, '&quot;')
           .replace(/'/g, '&#039;');
       };
+      var escWithBreaks = function (value) {
+        return esc(String(value || '')).replace(/\r?\n/g, '<br>');
+      };
       var formatPlainTextToHtml = function (text) {
         var raw = String(text || '').replace(/\r/g, '').trim();
         if (!raw) return '';
@@ -2173,12 +2176,12 @@
           imageEl.alt = svc.name || 'Layanan';
 
           titleEl.textContent = svc.name || '-';
-          shortEl.textContent = svc.shortDescription || '';
+          if (shortEl) shortEl.innerHTML = escWithBreaks(svc.shortDescription || '');
           var rawDesc = String(svc.description || '').trim();
           var descHtml = /<[a-z][\s\S]*>/i.test(rawDesc) ? rawDesc : formatPlainTextToHtml(rawDesc);
           descEl.innerHTML = descHtml;
           heroTitle.textContent = svc.name || 'Detail Layanan';
-          heroSub.textContent = svc.shortDescription || 'Informasi layanan tersedia di halaman ini.';
+          if (heroSub) heroSub.innerHTML = escWithBreaks(svc.shortDescription || 'Informasi layanan tersedia di halaman ini.');
           crumbService.textContent = svc.name || 'Detail';
           applyWhatsappButtons();
 
