@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/MPS.png">
+    <title>MPS - PT. Maulana Prima Sejahtera</title>
+    <!-- fontawesome css -->
+    <link rel="stylesheet" preload href="/assets/css/plugins/fontawesome.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/aos.css">
+    <!-- swiper css-->
+    <link rel="stylesheet" preload href="/assets/css/plugins/odometer.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/swiper.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/metismenu.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/magnifying-popup.css">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" preload href="/assets/css/vendor/bootstrap.min.css">
+    <!-- custom css here -->
+    <link rel="stylesheet" preload href="/assets/css/style.css">
+<style>
+.submenu.menu-home,
+.submenu.menu-pages,
+.submenu.menu-shop,
+.submenu.menu-project,
+.submenu.menu-blog,
+.rts-mega-menu, .rts-blog-grid-area, .rts-blog-area, .blog-area, .blog-post-area, .blog-sidebar, .blog-main-wrapper { display: none !important; }
+
+.rts-ervice-area.rts-section-gap {
+  padding-top: 28px !important;
+  padding-bottom: 72px !important;
+}
+
+.services-modern-shell {
+  position: relative;
+  border-radius: 28px;
+  padding: clamp(22px, 3.2vw, 44px);
+  border: 1px solid #dbe3ee;
+  background:
+    radial-gradient(1200px 300px at 105% -20%, rgba(255, 94, 20, 0.16), rgba(255, 94, 20, 0) 55%),
+    radial-gradient(900px 260px at -10% 120%, rgba(15, 23, 42, 0.08), rgba(15, 23, 42, 0) 60%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  overflow: hidden;
+}
+.services-modern-shell::before {
+  content: "";
+  position: absolute;
+  right: -120px;
+  top: -120px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1px dashed rgba(15, 23, 42, 0.1);
+}
+.services-head-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr);
+  gap: clamp(16px, 2.4vw, 34px);
+  align-items: center;
+}
+.services-showcase-head {
+  margin-bottom: clamp(18px, 2.4vw, 34px);
+}
+.services-showcase-head .pre {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #ff5e14;
+  text-transform: uppercase;
+}
+.services-showcase-head .pre::before {
+  content: "";
+  width: 26px;
+  height: 2px;
+  background: #ff5e14;
+}
+.services-showcase-head .title {
+  margin: 14px 0 18px;
+  max-width: 760px;
+  font-size: clamp(32px, 4.2vw, 56px);
+  line-height: 1.1;
+  color: #0f172a;
+}
+.services-showcase-head .disc {
+  margin: 0;
+  max-width: 760px;
+  color: #475569;
+  font-size: clamp(15px, 1.1vw, 18px);
+  line-height: 1.85;
+}
+.services-head-side {
+  margin-bottom: clamp(18px, 2.2vw, 30px);
+  padding: clamp(16px, 2.1vw, 24px);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.92);
+  color: #e2e8f0;
+  min-height: 172px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.services-head-side .mini-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  color: #93c5fd;
+  margin-bottom: 8px;
+}
+.services-head-side p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.services-head-side .quick-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: #fff;
+  margin-top: auto;
+}
+.services-head-side .quick-cta i {
+  color: #ff5e14;
+}
+.services-proof-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 12px;
+}
+.services-proof-strip .proof-chip {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #dbe4ef;
+  background: #f8fafc;
+  min-height: 52px;
+}
+.services-proof-strip .proof-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff3ee;
+  color: #ff5e14;
+  font-size: 12px;
+}
+.services-proof-strip .proof-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.services-proof-strip .proof-text strong {
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 800;
+}
+.services-proof-strip .proof-text span {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+}
+.services-tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.services-search {
+  position: relative;
+  flex: 1 1 340px;
+  min-width: 240px;
+}
+.services-search .icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: 14px;
+  pointer-events: none;
+}
+.services-search input {
+  width: 100%;
+  height: 46px;
+  border-radius: 14px;
+  border: 1px solid #dbe4ef;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 0 44px 0 42px;
+  font-weight: 700;
+  color: #0f172a;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.services-search input::placeholder { color: #94a3b8; font-weight: 700; }
+.services-search input:focus {
+  border-color: rgba(255, 94, 20, 0.65);
+  box-shadow: 0 0 0 4px rgba(255, 94, 20, 0.12);
+}
+.services-search .clear-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #475569;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: .2s ease;
+}
+.services-search .clear-btn:hover { border-color: #ff5e14; color: #ff5e14; }
+.services-search.has-value .clear-btn { display: inline-flex; }
+.services-sort {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.services-sort select {
+  height: 46px;
+  border-radius: 14px;
+  border: 1px solid #dbe4ef;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 0 14px;
+  font-weight: 800;
+  color: #0f172a;
+  cursor: pointer;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.services-sort select:focus {
+  border-color: rgba(255, 94, 20, 0.65);
+  box-shadow: 0 0 0 4px rgba(255, 94, 20, 0.12);
+}
+.services-count {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #64748b;
+}
+.services-count .pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid #dbe4ef;
+  background: #ffffff;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 800;
+}
+.services-count .pill i {
+  color: #ff5e14;
+}
+.single-service-area-inner .service-badge {
+  position: absolute;
+  left: 10px;
+  top: 46px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(15, 23, 42, 0.52);
+  color: #fff;
+  backdrop-filter: blur(3px);
+}
+.single-service-area-inner .service-badge i { color: #ffb703; }
+.single-service-area-inner .service-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+.single-service-area-inner .service-meta .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff5e14;
+  display: inline-block;
+}
+.services-grid {
+  position: relative;
+  margin-top: clamp(6px, 1vw, 14px);
+  padding-top: clamp(14px, 2vw, 22px);
+  border-top: 1px solid rgba(255, 94, 20, 0.4);
+}
+.services-grid > [class*="col-"] {
+  display: flex;
+}
+.services-pagination {
+  margin-top: 24px;
+}
+.services-pagination.hidden { display: none; }
+.services-pagination ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.services-pagination ul li {
+  margin: 0;
+}
+.services-pagination button {
+  border: 1px solid #d6dfeb;
+  background: #fff;
+  color: #0f172a;
+  min-width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s ease;
+  cursor: pointer;
+}
+.services-pagination button:hover {
+  border-color: #ff5e14;
+  color: #ff5e14;
+}
+.services-pagination button.active {
+  background: #ff5e14;
+  border-color: #ff5e14;
+  color: #fff;
+}
+.services-pagination button[disabled] {
+  opacity: .45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.services-pagination .pagination-dots {
+  min-width: 28px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-weight: 700;
+}
+.services-faq-wrap {
+  margin-top: 30px;
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid #dbe4ef;
+  background:
+    radial-gradient(700px 180px at 100% -10%, rgba(255, 94, 20, 0.1), rgba(255, 94, 20, 0) 60%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.06);
+}
+.services-faq-head {
+  margin-bottom: 16px;
+}
+.services-faq-head h3 {
+  margin: 0 0 8px;
+  color: #0f172a;
+  font-size: clamp(24px, 2.2vw, 34px);
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.services-faq-head h3::before {
+  content: "";
+  width: 28px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff5e14, #ff9c73);
+}
+.services-faq-head p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.7;
+  font-size: 14px;
+}
+.services-faq-list {
+  display: grid;
+  gap: 12px;
+  counter-reset: faqItem;
+}
+.services-faq-item {
+  border: 1px solid #d7e1ee;
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.services-faq-item:hover {
+  border-color: #b9cbe0;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+.services-faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  font-size: 16px;
+  line-height: 1.45;
+}
+.services-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.services-faq-item summary::before {
+  counter-increment: faqItem;
+  content: counter(faqItem, decimal-leading-zero);
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid #dbe4ef;
+  background: #f8fafc;
+  color: #ff5e14;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.services-faq-item summary::after {
+  content: "+";
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid #cfddee;
+  color: #ff5e14;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-left: auto;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+.services-faq-item[open] summary {
+  background: #fff6f2;
+}
+.services-faq-item[open] summary::after {
+  content: "-";
+  background: #fff;
+  border-color: #ffcab5;
+}
+.services-faq-item[open] summary::before {
+  background: #fff3ee;
+  border-color: #ffd4c4;
+}
+.services-faq-item .answer {
+  padding: 2px 16px 16px 60px;
+  color: #475569;
+  line-height: 1.78;
+  font-size: 14px;
+  animation: faqReveal .2s ease;
+}
+@keyframes faqReveal {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.single-service-area-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: 1px solid #dbe4ef;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.single-service-area-inner:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 94, 20, 0.35);
+  box-shadow: 0 26px 46px rgba(15, 23, 42, 0.18);
+}
+.single-service-area-inner::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff5e14 0%, #ff8755 60%, #ffd2be 100%);
+}
+.single-service-area-inner .thumbnail {
+  position: relative;
+  display: block;
+  background: #e2e8f0;
+  overflow: hidden;
+}
+.single-service-area-inner .thumbnail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.04) 35%, rgba(15, 23, 42, 0.58) 100%);
+  pointer-events: none;
+}
+.single-service-area-inner .thumbnail img {
+  width: 100%;
+  height: clamp(190px, 18vw, 250px);
+  object-fit: cover;
+  display: block;
+  transition: transform .45s ease;
+}
+.single-service-area-inner:hover .thumbnail img {
+  transform: scale(1.06);
+}
+.single-service-area-inner .service-chip {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  z-index: 2;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.78);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+.single-service-area-inner .service-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.single-service-area-inner .service-meta .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5e14;
+}
+.single-service-area-inner .service-meta span {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+.single-service-area-inner .innr {
+  padding: 18px 20px 22px;
+  display: flex;
+  flex-direction: column;
+}
+.single-service-area-inner .innr .title {
+  margin: 0 0 10px;
+  line-height: 1.3;
+  min-height: 64px;
+  font-size: clamp(22px, 1.9vw, 30px);
+  color: #0f172a;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.single-service-area-inner .innr .disc {
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.78;
+  min-height: 94px;
+  margin-bottom: 18px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.single-service-area-inner .innr .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  color: #0f172a;
+  transition: color .2s ease;
+  margin-top: auto;
+}
+.single-service-area-inner .innr .btn i {
+  color: #ff5e14;
+  transition: transform .2s ease;
+}
+.single-service-area-inner .innr .btn:hover {
+  color: #ff5e14;
+}
+.single-service-area-inner .innr .btn:hover i {
+  transform: translateX(3px);
+}
+.services-state {
+  border: 1px dashed #d6dfeb;
+  border-radius: 14px;
+  background: #f8fafc;
+  padding: 20px;
+  text-align: center;
+}
+.services-state h5 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #0f172a;
+}
+.services-state p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.7;
+}
+.services-state.error {
+  border-color: #fecaca;
+  background: #fef2f2;
+}
+.services-state.error h5 { color: #991b1b; }
+.services-state.error p { color: #b91c1c; }
+.services-state .retry-btn {
+  margin-top: 14px;
+  border: 1px solid #ff8755;
+  background: #fff;
+  color: #ff5e14;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-weight: 700;
+  transition: .2s ease;
+}
+.services-state .retry-btn:hover {
+  background: #ff5e14;
+  color: #fff;
+}
+.service-skeleton {
+  width: 100%;
+  border: 1px solid #dbe4ef;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+.service-skeleton .sk-thumb,
+.service-skeleton .sk-line {
+  position: relative;
+  overflow: hidden;
+  background: #e2e8f0;
+}
+.service-skeleton .sk-thumb {
+  height: 220px;
+}
+.service-skeleton .sk-body {
+  padding: 18px 20px 22px;
+}
+.service-skeleton .sk-line {
+  height: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.service-skeleton .sk-line.big {
+  height: 18px;
+  width: 82%;
+}
+.service-skeleton .sk-line.md {
+  width: 64%;
+}
+.service-skeleton .sk-line.sm {
+  width: 38%;
+  margin-bottom: 0;
+}
+.service-skeleton .sk-thumb::after,
+.service-skeleton .sk-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+  animation: servicesShimmer 1.4s infinite;
+}
+@keyframes servicesShimmer {
+  100% { transform: translateX(100%); }
+}
+@media (max-width: 991px) {
+  .rts-banner-area.rts-breadcrumb-area .breadcrumb-area-inner {
+    padding-top: 18px;
+    padding-bottom: 4px;
+  }
+  .rts-ervice-area.rts-section-gap {
+    padding-top: 20px !important;
+    padding-bottom: 54px !important;
+  }
+  .services-modern-shell { padding: 22px; border-radius: 22px; }
+  .services-head-grid { grid-template-columns: 1fr; }
+  .services-head-side { min-height: unset; }
+  .services-proof-strip { grid-template-columns: 1fr; }
+  .single-service-area-inner .thumbnail img { height: 220px; }
+  .single-service-area-inner .innr .title { min-height: 58px; }
+  .single-service-area-inner .innr .disc { min-height: 86px; }
+  .service-skeleton .sk-thumb { height: 220px; }
+}
+@media (max-width: 767px) {
+  .services-pagination ul {
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding-bottom: 2px;
+  }
+  .services-pagination button {
+    min-width: 38px;
+    height: 38px;
+    font-size: 12px;
+    padding: 0 9px;
+  }
+  .services-pagination .pagination-dots {
+    min-width: 22px;
+    height: 38px;
+  }
+  .services-modern-shell { border-radius: 18px; padding: 16px; }
+  .services-showcase-head { margin-bottom: 16px; }
+  .services-showcase-head .title { font-size: 30px; }
+  .services-showcase-head .disc { font-size: 15px; }
+  .services-head-side { border-radius: 14px; }
+  .single-service-area-inner .thumbnail img { height: 200px; }
+  .single-service-area-inner .innr { padding: 16px 16px 18px; }
+  .single-service-area-inner .innr .title { font-size: 24px; min-height: auto; }
+  .single-service-area-inner .innr .disc { min-height: auto; }
+  .service-skeleton .sk-thumb { height: 200px; }
+  .service-skeleton .sk-body { padding: 16px 16px 18px; }
+  .services-faq-item summary { padding: 13px 14px; }
+  .services-faq-item summary::before {
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    font-size: 10px;
+  }
+  .services-faq-item .answer { padding: 0 14px 13px 50px; }
+}
+@media (max-width: 575px) {
+  .rts-banner-area.rts-breadcrumb-area .breadcrumb-area-inner {
+    padding-top: 24px;
+  }
+}
+@media (max-width: 767px) {
+  #services-list {
+    justify-content: center;
+  }
+  #services-list > [class*="col-"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .single-service-area-inner {
+    width: 100%;
+    max-width: 430px;
+  }
+  .single-service-area-inner .thumbnail img {
+    height: 198px;
+  }
+  .single-service-area-inner .service-chip {
+    font-size: 11px;
+    padding: 6px 12px;
+    left: 10px;
+    top: 10px;
+  }
+  .single-service-area-inner .service-badge {
+    left: 10px;
+    top: 44px;
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+  .single-service-area-inner .service-meta span {
+    font-size: 12px;
+  }
+  .single-service-area-inner .innr {
+    padding: 14px 14px 14px;
+  }
+  .single-service-area-inner .innr .title {
+    font-size: 22px;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    min-height: 60px;
+  }
+  .single-service-area-inner .innr .disc {
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 46px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .single-service-area-inner .innr .btn {
+    min-height: 36px;
+    font-size: 12px;
+    padding: 0 12px;
+  }
+}
+</style>
+
+
+    <link rel="stylesheet" href="/assets/css/site-fixes.css">
+</head>
+
+<body class="inner"><header class="header-two header--sticky">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-top-wrapper">
+                            <div class="left">
+                                <div class="call">
+                                    <i class="fa-light fa-mobile"></i>
+                                    <a href="#"></a>
+                                    <a href="#"></a>
+                                </div>
+                                <div class="call">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <a href="#"></a>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="social-header">
+                                    <span>Follow Us On:</span>
+                                    <ul>
+                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-two-main-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-two-wrapper">
+                            <a href="/" class="logo-area">
+                                <span class="brand-lockup" aria-label="PT Maulana Prima Sejahtera">
+                                    <img class="brand-mark" src="/assets/images/MPS.png" alt="MPS">
+                                    <span class="brand-text">
+                                        <span class="brand-name">Maulana Prima</span>
+                                        <span class="brand-sub">Sejahtera</span>
+                                    </span>
+                                </span>
+                            </a>
+                            <div class="nav-area">
+    <ul class="" id="main-menu"></ul>
+</div>
+<div class="header-end">
+                                <a href="#" class="rts-btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Konsultasi WhatsApp</a>
+                                <div class="nav-btn menu-btn">
+                                    <img src="/assets/images/logo/bar.svg" alt="nav-iamge">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header area start -->
+    
+
+<div id="side-bar" class="side-bar header-two">
+    <button class="close-icon-menu"><i class="far fa-times"></i></button>
+    <!-- inner menu area desktop start -->
+    <div class="inner-main-wrapper-desk">
+        <div class="thumbnail">
+            <img src="/assets/images/banner/04.jpg" alt="elevate">
+        </div>
+        <div class="inner-content">
+            <h4 class="title">We Build Building and Great Constructive Homes.</h4>
+            <p class="disc">
+                We successfully cope with tasks of varying complexity, provide long-term guarantees and regularly
+                master new technologies.
+            </p>
+            <div class="footer">
+                <h4 class="title">Got a project in mind?</h4>
+                <a href="#" class="rts-btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Konsultasi via WhatsApp</a>
+            </div>
+        </div>
+    </div>
+    <!-- mobile menu area start -->
+        <div class="mobile-menu d-block d-xl-none">
+        <nav class="nav-main mainmenu-nav mt--30">
+            <ul class="mainmenu metismenu" id="mobile-menu-active">
+            </ul>
+        </nav>
+
+        <div class="social-wrapper-one">
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- mobile menu area end -->
+</div>
+    <!-- header area end -->
+
+    <!-- rts banner area strart -->
+    <div class="rts-banner-area rts-section-gap rts-breadcrumb-area service-bread position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-area-inner">
+                        <span class="water-text">Service</span>
+                        <h1 class="title">
+                            Layanan Kami
+                        </h1>
+                        <div class="nav-area-navigation">
+                            <a href="/">Home</a>
+                            <a class="current" href="#">Layanan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts banner area end -->
+
+
+    <!-- Layanan area start -->
+    <div class="rts-ervice-area rts-section-gap">
+        <div class="container">
+            <div class="services-modern-shell">
+              <div class="services-head-grid">
+                <div class="services-showcase-head">
+                    <span class="pre">Layanan Profesional</span>
+                    <h2 class="title">Solusi Teknik yang Siap Menjadi Keunggulan Bisnis Anda</h2>
+                    <p class="disc">Tim kami menghadirkan layanan instalasi dan maintenance dengan standar kerja tinggi, eksekusi rapi, dan dukungan after-sales yang jelas. Dirancang untuk memberi rasa aman sekaligus hasil yang terlihat profesional.</p>
+                </div>
+                <div class="services-head-side">
+                  <div class="mini-title">Butuh Respon Cepat?</div>
+                  <p>Kami siap bantu konsultasi kebutuhan proyek Anda dan merekomendasikan layanan yang paling tepat untuk target waktu dan budget.</p>
+                  <a href="/kontak/" class="quick-cta">Konsultasi Kebutuhan Sistem <i class="fa-light fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="services-proof-strip">
+                <div class="proof-chip">
+                  <i class="fa-solid fa-gauge-high proof-icon"></i>
+                  <div class="proof-text"><strong>Respon Cepat</strong><span>Follow up maksimal 15 menit</span></div>
+                </div>
+                <div class="proof-chip">
+                  <i class="fa-solid fa-user-check proof-icon"></i>
+                  <div class="proof-text"><strong>Tim Tersertifikasi</strong><span>Eksekusi sesuai standar teknis</span></div>
+                </div>
+                <div class="proof-chip">
+                  <i class="fa-solid fa-shield-check proof-icon"></i>
+                  <div class="proof-text"><strong>Dukungan After-Sales</strong><span>Pendampingan setelah instalasi</span></div>
+                </div>
+              </div>
+              <div class="services-tools">
+                <div class="services-search" id="services-search-wrap">
+                  <i class="fa-light fa-magnifying-glass icon"></i>
+                  <input id="services-find-input" type="search" placeholder="Cari layanan (nama, label, deskripsi)..." autocomplete="off" />
+                  <button type="button" class="clear-btn" id="services-find-clear" aria-label="Hapus pencarian">
+                    <i class="fa-light fa-xmark"></i>
+                  </button>
+                </div>
+                <div class="services-sort">
+                  <select id="services-sort-select" aria-label="Urutkan layanan">
+                    <option value="admin" selected>Rekomendasi</option>
+                    <option value="newest">Terbaru</option>
+                    <option value="name">A-Z</option>
+                  </select>
+                </div>
+                <div id="services-count" class="services-count">
+                  <span class="pill"><i class="fa-solid fa-layer-group"></i> <span id="services-count-text">Memuat...</span></span>
+                </div>
+              </div>
+              <div class="row g-24 services-grid" id="services-list">
+                  <div class="col-12">
+                      <p style="color:#64748b;">Memuat layanan...</p>
+                  </div>
+              </div>
+              <div id="services-pagination" class="services-pagination hidden"></div>
+              <div class="services-faq-wrap">
+                <div class="services-faq-head">
+                  <h3>Pertanyaan yang Sering Ditanyakan</h3>
+                  <p>Beberapa informasi penting sebelum Anda memulai konsultasi layanan.</p>
+                </div>
+                <div class="services-faq-list">
+                  <details class="services-faq-item" open>
+                    <summary>Apakah bisa konsultasi sebelum survei lokasi?</summary>
+                    <div class="answer">Bisa. Tim kami dapat membantu konsultasi awal untuk memahami kebutuhan teknis, estimasi waktu pengerjaan, dan ruang lingkup layanan sebelum jadwal survei ditentukan.</div>
+                  </details>
+                  <details class="services-faq-item">
+                    <summary>Berapa lama respon awal setelah menghubungi tim?</summary>
+                    <div class="answer">Pada jam operasional, respon awal umumnya kurang dari 15 menit. Untuk kebutuhan mendesak, Anda bisa menyertakan prioritas agar tim segera menindaklanjuti.</div>
+                  </details>
+                  <details class="services-faq-item">
+                    <summary>Apakah layanan tersedia untuk proyek skala kecil dan besar?</summary>
+                    <div class="answer">Ya. Kami menangani proyek skala kecil hingga besar dengan pendekatan yang menyesuaikan kompleksitas, target waktu, dan standar teknis di lapangan.</div>
+                  </details>
+                  <details class="services-faq-item">
+                    <summary>Apakah ada dukungan after-sales setelah instalasi?</summary>
+                    <div class="answer">Ada. Kami menyediakan dukungan pasca-instalasi untuk evaluasi awal, tindak lanjut teknis, dan rekomendasi perawatan agar sistem tetap optimal.</div>
+                  </details>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- Layanan area end -->
+
+
+
+
+
+    <!-- rts footer area start -->
+<div class="rts-footer-area rts-section-gapTop bg_footer-1 bg_image">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact-area-footer-top">
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h6 class="title">Call Us Now</h6>
+                        <a id="svc-footer-phone-1" href="#">-</a>
+                        <a id="svc-footer-phone-2" href="#">-</a>
+                    </div>
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <h6 class="title">Office Time</h6>
+                        <a id="svc-footer-hours-1" href="#">-</a>
+                    </div>
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h6 class="title">Need Support</h6>
+                        <a id="svc-footer-email-1" href="#">-</a>
+                        <a id="svc-footer-email-2" href="#">-</a>
+                    </div>
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fa-sharp fa-solid fa-location-dot"></i>
+                        </div>
+                        <h6 class="title">Our Address</h6>
+                        <a id="svc-footer-address-1" href="#">-</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-full">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="nav-footer-wrapper-one">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul class="footer-float-nav">
+                                    <li><a href="/tentang/">Tentang Kami</a></li>
+                                    <li><a href="/proyek/">Projects</a></li>
+                                    <li><a href="/proyek/">Updates</a></li>
+                                    <li><a href="/tentang/">Mission</a></li>
+                                    <li><a href="/tentang/">Inside</a></li>
+                                    <li><a href="/kontak/">Contact</a></li>
+                                    <li><a href="/tentang/">History</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-4">
+                <div class="footer-wrapper-left-one">
+                    <a href="/" class="logo">
+                        <span class="brand-lockup" aria-label="PT Maulana Prima Sejahtera">
+                            <img class="brand-mark" src="/assets/images/MPS.png" alt="MPS">
+                            <span class="brand-text">
+                                <span class="brand-name">Maulana Prima</span>
+                                <span class="brand-sub">Sejahtera</span>
+                            </span>
+                        </span>
+                    </a>
+                    <p class="disc">
+                        Kami berkomitmen untuk memberikan solusi konstruksi berkualitas tinggi yang disesuaikan dengan kebutuhan klien kami. Dengan fokus yang kuat pada inovasi, ketelitian, dan keahlian, kami membangun ruang yang tahan lama.
+                    </p>
+                    <div class="social-area-wrapper-one">
+                        <ul>
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="footer-wrapper-right">
+                    <div class="single-nav-area-footer use-link">
+                        <h4 class="title">Useful Links</h4>
+                        <ul>
+                            <li><a href="/tentang/"><i class="fa-regular fa-arrow-right-long"></i>Tentang Kami</a></li>
+                            <li><a href="/tentang/"><i class="fa-regular fa-arrow-right-long"></i>Our Gallery</a></li>
+                            <li><a href="/layanan/"><i class="fa-regular fa-arrow-right-long"></i>Layanan Kami</a>
+                            </li>
+                            <li><a href="/tentang/#about-team-section"><i class="fa-regular fa-arrow-right-long"></i>Our Team</a></li>
+                            <li><a href="/kontak/"><i class="fa-regular fa-arrow-right-long"></i>Hubungi Kami</a></li>
+                        </ul>
+                    </div>
+                    <div class="single-nav-area-footer use-link">
+                        <h4 class="title">Quick Services</h4>
+                        <ul>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>General
+                                    Contracting</a>
+                            </li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Project
+                                    Management</a>
+                            </li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>New
+                                    Construction</a></li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Renovations
+                                    &
+                                    Remodeling</a></li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Interior
+                                    Finishing</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="single-nav-area-footer news-letter">
+                        <h4 class="title">Newsletter</h4>
+                        <p>Aplications prodize before front end ortals visualize front end</p>
+                        <form action="#">
+                            <input type="email" placeholder="Email Address" required>
+                            <button class="btn-subscribe mt--15">Subscribe Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-full copyright-area-one">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="copyright-wrapper">
+                                <p class="mb-0">Copyright &copy;
+                                    <script>
+                                        document.write(
+                                            new Date().getFullYear()
+                                        )
+                                    </script>
+                                    Elever. All Rights Reserved.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- rts footer area end -->
+
+    <!-- progress area start -->
+<!-- <div id="elevate-load">
+    <div class="loader-wrapper">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div> -->
+<!-- progress area end -->
+
+<!-- progress area start -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+            style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+        </path>
+    </svg>
+</div>
+<!-- progress area end -->
+
+
+<!-- offcanvase search -->
+<div class="search-input-area">
+    <div class="container">
+        <div class="search-input-inner">
+            <div class="input-div">
+                <input class="search-input autocomplete" type="text" placeholder="Search by keyword or #">
+                <button><i class="far fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+    <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+</div>
+<div id="anywhere-home" class="">
+</div>
+
+<!-- scripts -->
+<script src="/assets/js/plugins/jquery.js"></script>
+<script src="/assets/js/vendor/bootstrap.min.js"></script>
+
+<script src="/assets/js/plugins/odometer.js"></script>
+<script src="/assets/js/plugins/jquery-appear.js"></script>
+
+<script src="/assets/js/plugins/metismenu.js"></script>
+<script src="/assets/js/plugins/swiper.js"></script>
+<script src="/assets/js/plugins/aos.js"></script>
+<script src="/assets/js/plugins/nice-select.js"></script>
+<script src="/assets/js/plugins/smooth-scroll.js"></script>
+<script src="/assets/js/vendor/waw.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuSiPhoDaOJ7aqtJVtQhYhLzwwJ7rQlmA"></script>
+<script src="/assets/js/vendor/marker.js"></script>
+<script src="/assets/js/vendor/map-content.js"></script>
+<script src="/assets/js/vendor/info-box.js"></script>
+<script src="https://html.themewant.com/golfy/assets/js/plugins/magnific-popup.js"></script>
+
+<script src="/assets/js/plugins/contact.form.js"></script>
+
+<script>
+  (function () {
+    var list = document.getElementById('services-list');
+    var pagination = document.getElementById('services-pagination');
+    var searchWrap = document.getElementById('services-search-wrap');
+    var findInput = document.getElementById('services-find-input');
+    var findClear = document.getElementById('services-find-clear');
+    var sortSelect = document.getElementById('services-sort-select');
+    var countText = document.getElementById('services-count-text');
+    var footerPhone1 = document.getElementById('svc-footer-phone-1');
+    var footerPhone2 = document.getElementById('svc-footer-phone-2');
+    var footerHours1 = document.getElementById('svc-footer-hours-1');
+    var footerEmail1 = document.getElementById('svc-footer-email-1');
+    var footerEmail2 = document.getElementById('svc-footer-email-2');
+    var footerAddress1 = document.getElementById('svc-footer-address-1');
+    if (!list) return;
+
+    var esc = function (v) {
+      return String(v || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    };
+    var safeText = function (v, fallback) {
+      var text = String(v || '').trim();
+      return text ? text : fallback;
+    };
+    var cut = function (v, limit) {
+      var text = String(v || '').trim();
+      if (text.length <= limit) return text;
+      return text.slice(0, limit - 1) + '...';
+    };
+    var PAGE_SIZE = 6;
+    var currentPage = 1;
+    var allServices = [];
+    var servicesData = [];
+    var newestIds = new Set();
+    var currentQuery = '';
+    var currentSort = 'admin';
+    var loadServices = null;
+    var setAnchorText = function (anchor, value, href) {
+      if (!anchor) return;
+      var text = String(value || '').trim();
+      if (!text) {
+        anchor.textContent = 'Belum diatur';
+        anchor.removeAttribute('href');
+        anchor.style.opacity = '.7';
+        return;
+      }
+      anchor.style.opacity = '';
+      anchor.textContent = text;
+      if (href) {
+        anchor.href = href;
+      } else {
+        anchor.href = '#';
+      }
+    };
+    var applyFooterSettings = function (settings) {
+      var p1 = String(settings.footerPhonePrimary || '').trim();
+      var p2 = String(settings.footerPhoneSecondary || '').trim();
+      var e1 = String(settings.footerSupportEmailPrimary || '').trim();
+      var e2 = String(settings.footerSupportEmailSecondary || '').trim();
+      setAnchorText(footerPhone1, p1, p1 ? ('tel:' + p1.replace(/\s+/g, '')) : '');
+      setAnchorText(footerPhone2, p2, p2 ? ('tel:' + p2.replace(/\s+/g, '')) : '');
+      setAnchorText(footerHours1, String(settings.footerOfficeHours1 || '').trim(), '');
+      setAnchorText(footerEmail1, e1, e1 ? ('mailto:' + e1) : '');
+      setAnchorText(footerEmail2, e2, e2 ? ('mailto:' + e2) : '');
+      setAnchorText(footerAddress1, String(settings.footerAddress1 || '').trim(), '');
+    };
+
+    var newestScore = function (item) {
+      var ts = Date.parse(String(item && item.createdAt ? item.createdAt : ''));
+      if (!isNaN(ts)) return ts;
+      var id = parseInt(String(item && item.id ? item.id : '0'), 10);
+      return isNaN(id) ? 0 : id;
+    };
+    var computeNewestIds = function (items) {
+      newestIds = new Set();
+      var ranked = (Array.isArray(items) ? items.slice() : []).sort(function (a, b) {
+        return newestScore(b) - newestScore(a);
+      });
+      for (var i = 0; i < Math.min(3, ranked.length); i += 1) {
+        if (ranked[i] && ranked[i].id != null) newestIds.add(ranked[i].id);
+      }
+    };
+    var setCountText = function () {
+      if (!countText) return;
+      var q = String(currentQuery || '').trim();
+      if (!q) {
+        countText.textContent = servicesData.length + ' layanan tersedia';
+        return;
+      }
+      countText.textContent = servicesData.length + ' hasil untuk "' + q + '"';
+    };
+    var applyFilters = function () {
+      var q = String(currentQuery || '').trim().toLowerCase();
+      var filtered = (Array.isArray(allServices) ? allServices : []).filter(function (item) {
+        if (!q) return true;
+        var name = String(item && item.name ? item.name : '').toLowerCase();
+        var label = String(item && item.cardHighlight ? item.cardHighlight : '').toLowerCase();
+        var desc = String(item && item.shortDescription ? item.shortDescription : '').toLowerCase();
+        return name.includes(q) || label.includes(q) || desc.includes(q);
+      });
+      if (currentSort === 'newest') {
+        filtered.sort(function (a, b) { return newestScore(b) - newestScore(a); });
+      } else if (currentSort === 'name') {
+        filtered.sort(function (a, b) {
+          return String(a && a.name ? a.name : '').localeCompare(String(b && b.name ? b.name : ''), 'id-ID', { sensitivity: 'base' });
+        });
+      }
+      servicesData = filtered;
+      setCountText();
+    };
+
+    var buildServiceCardHtml = function (item, idx) {
+      var link = item.detailUrl || ('/layanan/detail/?slug=' + encodeURIComponent(item.slug || ''));
+      if (typeof link !== 'string' || !link.trim() || link === '#') {
+        link = '/layanan/detail/?slug=' + encodeURIComponent(item.slug || '');
+      }
+      if (link.charAt(0) !== '/') {
+        link = '/' + link.replace(/^\/+/, '');
+      }
+      var name = safeText(item.name, 'Layanan');
+      var desc = cut(safeText(item.shortDescription, 'Lihat detail layanan untuk informasi lengkap.'), 120);
+      var image = safeText(item.image, '/assets/images/service/11.webp');
+      var serviceNo = String(idx + 1).padStart(2, '0');
+      var metaLabel = String(item && item.cardHighlight ? item.cardHighlight : '').trim();
+      var isNew = newestIds && typeof newestIds.has === 'function' ? newestIds.has(item && item.id) : false;
+      return '' +
+        '<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">' +
+          '<div class="single-service-area-inner">' +
+            '<a href="' + esc(link) + '" class="thumbnail">' +
+              '<span class="service-chip">Layanan ' + esc(serviceNo) + '</span>' +
+              (isNew ? '<span class="service-badge"><i class="fa-solid fa-bolt"></i> Terbaru</span>' : '') +
+              '<img src="' + esc(image) + '" alt="' + esc(name) + '">' +
+            '</a>' +
+            '<div class="innr">' +
+              (metaLabel ? ('<div class="service-meta"><i class="dot"></i><span>' + esc(metaLabel) + '</span></div>') : '') +
+              '<a href="' + esc(link) + '"><h5 class="title">' + esc(name) + '</h5></a>' +
+              '<p class="disc">' + esc(desc) + '</p>' +
+              '<a class="btn" href="' + esc(link) + '">Lihat Detail <i class="fa-light fa-arrow-right"></i></a>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+    };
+
+    var renderPagination = function (totalPages) {
+      if (!pagination) return;
+      if (totalPages <= 1) {
+        pagination.classList.add('hidden');
+        pagination.innerHTML = '';
+        return;
+      }
+      var isCompact = window.matchMedia('(max-width: 767px)').matches;
+      var pageItems = [];
+      if (isCompact && totalPages > 5) {
+        if (currentPage <= 2) {
+          pageItems = [1, 2, 'dots-right', totalPages];
+        } else if (currentPage >= totalPages - 1) {
+          pageItems = [1, 'dots-left', totalPages - 1, totalPages];
+        } else {
+          pageItems = [1, 'dots-left', currentPage, 'dots-right', totalPages];
+        }
+      } else if (totalPages <= 7) {
+        for (var p = 1; p <= totalPages; p += 1) pageItems.push(p);
+      } else {
+        pageItems.push(1);
+        var start = Math.max(2, currentPage - 1);
+        var end = Math.min(totalPages - 1, currentPage + 1);
+        if (currentPage <= 3) {
+          start = 2;
+          end = 4;
+        } else if (currentPage >= totalPages - 2) {
+          start = totalPages - 3;
+          end = totalPages - 1;
+        }
+        if (start > 2) pageItems.push('dots-left');
+        for (var mid = start; mid <= end; mid += 1) pageItems.push(mid);
+        if (end < totalPages - 1) pageItems.push('dots-right');
+        pageItems.push(totalPages);
+      }
+      pagination.classList.remove('hidden');
+      var html = '<ul>';
+      html += '<li><button data-page="' + (currentPage - 1) + '" ' + (currentPage === 1 ? 'disabled' : '') + '>Prev</button></li>';
+      for (var i = 0; i < pageItems.length; i += 1) {
+        var item = pageItems[i];
+        if (typeof item === 'number') {
+          html += '<li><button class="' + (item === currentPage ? 'active' : '') + '" data-page="' + item + '">' + String(item).padStart(2, '0') + '</button></li>';
+        } else {
+          html += '<li><span class="pagination-dots">...</span></li>';
+        }
+      }
+      html += '<li><button data-page="' + (currentPage + 1) + '" ' + (currentPage === totalPages ? 'disabled' : '') + '>Next</button></li>';
+      html += '</ul>';
+      pagination.innerHTML = html;
+    };
+
+    var renderPage = function (page, shouldScroll) {
+      if (!servicesData.length) return;
+      var totalPages = Math.ceil(servicesData.length / PAGE_SIZE);
+      currentPage = Math.min(Math.max(page, 1), totalPages);
+      var start = (currentPage - 1) * PAGE_SIZE;
+      var pageItems = servicesData.slice(start, start + PAGE_SIZE);
+      list.innerHTML = pageItems.map(function (item, idx) {
+        return buildServiceCardHtml(item, start + idx);
+      }).join('');
+      renderPagination(totalPages);
+      if (shouldScroll) {
+        list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+    var renderSkeleton = function (count) {
+      var total = count || 3;
+      var html = '';
+      for (var i = 0; i < total; i += 1) {
+        html += '' +
+          '<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">' +
+            '<div class="service-skeleton" aria-hidden="true">' +
+              '<div class="sk-thumb"></div>' +
+              '<div class="sk-body">' +
+                '<div class="sk-line md"></div>' +
+                '<div class="sk-line big"></div>' +
+                '<div class="sk-line"></div>' +
+                '<div class="sk-line"></div>' +
+                '<div class="sk-line sm"></div>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+      }
+      list.innerHTML = html;
+      if (pagination) {
+        pagination.classList.add('hidden');
+        pagination.innerHTML = '';
+      }
+    };
+    var renderState = function (kind) {
+      var isError = kind === 'error';
+      var isSearch = kind === 'search';
+      var html = '' +
+        '<div class="col-12">' +
+          '<div class="services-state ' + (isError ? 'error' : '') + '">' +
+            '<h5>' + (isError ? 'Tidak dapat memuat layanan' : (isSearch ? 'Tidak ada layanan yang cocok' : 'Belum ada layanan aktif')) + '</h5>' +
+            '<p>' + (isError
+              ? 'Terjadi kendala saat mengambil data dari server. Silakan coba lagi.'
+              : (isSearch
+                ? 'Coba kata kunci lain atau kosongkan pencarian untuk melihat semua layanan.'
+                : 'Data layanan belum tersedia. Silakan tambahkan layanan dari admin panel.')) + '</p>' +
+            (isError ? '<button type="button" class="retry-btn" id="retry-services-btn">Coba Lagi</button>' : '') +
+          '</div>' +
+        '</div>';
+      list.innerHTML = html;
+      if (pagination) {
+        pagination.classList.add('hidden');
+        pagination.innerHTML = '';
+      }
+    };
+
+    if (pagination) {
+      pagination.addEventListener('click', function (event) {
+        var btn = event.target.closest('button[data-page]');
+        if (!btn || btn.hasAttribute('disabled')) return;
+        var page = parseInt(btn.getAttribute('data-page') || '1', 10);
+        if (!isNaN(page)) renderPage(page, true);
+      });
+    }
+
+    loadServices = function () {
+      renderSkeleton(3);
+      fetch('/api/services.php', { cache: 'no-store' })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (!data || !data.ok || !Array.isArray(data.services) || !data.services.length) {
+            allServices = [];
+            servicesData = [];
+            newestIds = new Set();
+            setCountText();
+            renderState('empty');
+            return;
+          }
+          allServices = data.services.slice();
+          computeNewestIds(allServices);
+          applyFilters();
+          if (!servicesData.length) {
+            renderState(currentQuery ? 'search' : 'empty');
+            return;
+          }
+          renderPage(1, false);
+        })
+        .catch(function () {
+          allServices = [];
+          servicesData = [];
+          newestIds = new Set();
+          setCountText();
+          renderState('error');
+          var retryBtn = document.getElementById('retry-services-btn');
+          if (retryBtn) {
+            retryBtn.addEventListener('click', function () {
+              loadServices();
+            }, { once: true });
+          }
+        });
+    };
+
+    var applyAndRender = function () {
+      applyFilters();
+      if (!servicesData.length) {
+        renderState(currentQuery ? 'search' : 'empty');
+        return;
+      }
+      renderPage(1, false);
+    };
+    if (findInput) {
+      var searchTimer = null;
+      var syncSearchWrap = function () {
+        if (!searchWrap) return;
+        var val = String(findInput.value || '').trim();
+        if (val) searchWrap.classList.add('has-value');
+        else searchWrap.classList.remove('has-value');
+      };
+      syncSearchWrap();
+      findInput.addEventListener('input', function () {
+        syncSearchWrap();
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(function () {
+          currentQuery = String(findInput.value || '').trim();
+          applyAndRender();
+        }, 160);
+      });
+    }
+    if (findClear && findInput) {
+      findClear.addEventListener('click', function () {
+        findInput.value = '';
+        currentQuery = '';
+        if (searchWrap) searchWrap.classList.remove('has-value');
+        applyAndRender();
+        findInput.focus();
+      });
+    }
+    if (sortSelect) {
+      sortSelect.addEventListener('change', function () {
+        currentSort = String(sortSelect.value || 'admin');
+        applyAndRender();
+      });
+    }
+    loadServices();
+    fetch('/api/site-settings.php', { cache: 'no-store' })
+      .then(function (response) { return response.json(); })
+      .then(function (payload) {
+        if (!payload || !payload.ok || !payload.settings) return;
+        applyFooterSettings(payload.settings);
+      })
+      .catch(function () {
+        applyFooterSettings({});
+      });
+  })();
+</script>
+
+<script src="/assets/js/main.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

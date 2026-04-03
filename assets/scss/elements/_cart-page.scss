@@ -1,0 +1,138 @@
+.cart-page {
+    background: #fff;
+
+    .ms-single-product__content .shop_table tr,
+    .ms-woocommerce-cart-form-wrapper .shop_table tr {
+        text-align: left;
+    }
+
+    .ms-single-product__content .shop_table th,
+    .ms-single-product__content .shop_table td,
+    .ms-woocommerce-cart-form-wrapper .shop_table th,
+    .ms-woocommerce-cart-form-wrapper .shop_table td {
+        border-left: none;
+        border-right: none;
+    }
+
+    .ms-single-product__content .shop_table td,
+    .ms-woocommerce-cart-form-wrapper .shop_table td {
+        padding: 2rem 0;
+        text-align: center;
+        border-left: none;
+        border-right: none;
+        border-color: #f1f1f1;
+    }
+
+    .ms-single-product__content .product-remove,
+    .ms-woocommerce-cart-form-wrapper .product-remove {
+        width: 3rem;
+        padding-left: 0;
+    }
+
+    .ms-single-product__content .product-thumbnail,
+    .ms-woocommerce-cart-form-wrapper .product-thumbnail {
+        width: 10rem;
+    }
+
+    .ms-single-product__content .product-name,
+    .ms-woocommerce-cart-form-wrapper .product-name {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .ms-single-product__content .ms-actions-inner,
+    .ms-woocommerce-cart-form-wrapper .ms-actions-inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .ms-single-product__content .coupon,
+    .ms-woocommerce-cart-form-wrapper .coupon {
+        display: inline-flex;
+        overflow: hidden;
+        background-color: var(--color-contrast-lower);
+    }
+
+    .ms-single-product__content #coupon_code,
+    .ms-woocommerce-cart-form-wrapper #coupon_code {
+        border: none;
+        background-color: #f7f7f7;
+        padding: 0.5em 1em 0.5em 1em;
+        height: 45px;
+        border-radius: 0;
+        margin-left: 30px;
+    }
+
+    .ms-single-product__content .ms-cart-totals,
+    .ms-woocommerce-cart-form-wrapper .ms-cart-totals {
+        margin-top: 6rem;
+        margin-bottom: 0;
+        background-color: #f7f7f7;
+        padding: 2rem;
+    }
+
+    .ms-single-product__content .ms-cart-totals h3,
+    .ms-woocommerce-cart-form-wrapper .ms-cart-totals h3 {
+        margin-bottom: 2rem;
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--color-title);
+    }
+
+    .ms-single-product__content .ms-cart-totals tr,
+    .ms-woocommerce-cart-form-wrapper .ms-cart-totals tr {
+        border-bottom: 1px solid #e2e2e2;
+    }
+
+    .ms-single-product__content .ms-cart-totals th,
+    .ms-single-product__content .ms-cart-totals td,
+    .ms-woocommerce-cart-form-wrapper .ms-cart-totals th,
+    .ms-woocommerce-cart-form-wrapper .ms-cart-totals td {
+        border: none;
+        padding: 0 0 1rem;
+        text-align: start;
+    }
+
+    .ms-single-product__content .shop_table th,
+    .ms-woocommerce-cart-form-wrapper .shop_table th {
+        padding: 15px 0;
+    }
+
+    .ms-single-product__content .shop_table th,
+    .ms-woocommerce-cart-form-wrapper .shop_table th {
+        border-top: none;
+        font-size: 16px;
+        font-weight: 800;
+        color: #000000;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .ms-single-product__content .ms-cart-totals .shop_table td,
+    .ms-woocommerce-cart-form-wrapper .ms-cart-totals .shop_table td {
+        text-align: right;
+    }
+
+    .ms-single-product__content .ms-cart-totals .order-total th,
+    .ms-single-product__content .ms-cart-totals .order-total td,
+    .ms-woocommerce-cart-form-wrapper .ms-cart-totals .order-total th,
+    .ms-woocommerce-cart-form-wrapper .ms-cart-totals .order-total td {
+        padding: 1rem 0 1rem;
+    }
+
+    .ms-single-product__content .ms-cart-totals th,
+    .ms-single-product__content .ms-cart-totals td,
+    .ms-woocommerce-cart-form-wrapper .ms-cart-totals th,
+    .ms-woocommerce-cart-form-wrapper .ms-cart-totals td {
+        border: none;
+        padding: 0 0 1rem;
+        text-align: start;
+    }
+
+    .ms-single-product__content .ms-cart-totals .ms-proceed-to-checkout,
+    .ms-woocommerce-cart-form-wrapper .ms-cart-totals .ms-proceed-to-checkout {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+}

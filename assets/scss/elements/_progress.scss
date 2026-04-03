@@ -1,0 +1,40 @@
+// progress
+.progress-wrapper-main {
+    .single-progress-area-h {
+        margin-top: 20px;
+
+        .progress-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .name {
+                color: #141416;
+                margin-bottom: 5px;
+                font-size: 15px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            .parcent {
+                color: #141416;
+                font-size: 15px;
+                font-weight: 700;
+            }
+        }
+
+        .progress {
+            height: 15px;
+            border-radius: 10px;
+
+            .progress-bar {
+                background: linear-gradient(270deg, #F84E1D 0%, #1D1D1D 55%);
+                border-radius: 100px;
+            }
+        }
+    }
+}
+
+.bg-3 {
+    background-color: #151618;
+}

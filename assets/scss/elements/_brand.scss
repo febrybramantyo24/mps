@@ -1,0 +1,134 @@
+// brand area start
+
+.title-brand {
+    color: #141416;
+    font-size: 44px;
+
+    @media #{$sm-layout} {
+        font-size: 32px;
+    }
+
+    @media #{$large-mobile} {
+        font-size: 28px;
+    }
+
+    span {
+        color: var(--color-primary);
+    }
+}
+
+.single-brand-area-style {
+    padding: 37px 30px;
+    border-radius: 10px;
+    background: #fff;
+    height: 100%;
+
+    @media #{$smlg-device} {
+        padding: 15px;
+    }
+
+    .icon {
+        margin-bottom: 30px;
+        padding-bottom: 33px;
+        position: relative;
+        display: block;
+
+        &::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            width: 100%;
+            bottom: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #F84E1D 0%, rgba(248, 78, 29, 0.1) 100%);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background: var(--color-primary);
+        }
+    }
+
+    .title {
+        color: #141416;
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    p.disc {
+        font-size: 15px;
+        color: #7C7C84;
+    }
+}
+
+.single-branding-area-wrapper-one {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+
+    .thumbnail {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 10px 10px 0 0;
+        position: relative;
+
+        img {
+            transition: .3s;
+        }
+
+        p {
+            position: absolute;
+            padding: 55px 30px;
+            background: var(--color-primary);
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            left: 0;
+            top: 100%;
+            color: #fff;
+            transition: .3s;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .inner {
+        padding: 25px 30px;
+
+        a {
+            .title {
+                font-size: 24px;
+                margin-bottom: 0;
+                color: var(--color-title);
+                transition: .3s;
+            }
+        }
+    }
+
+    &:hover {
+        .thumbnail {
+            img {
+                transform: scale(1.05);
+            }
+
+            p {
+                top: 0;
+            }
+        }
+
+        .inner {
+            a {
+                .title {
+                    color: var(--color-primary);
+                }
+            }
+        }
+    }
+}

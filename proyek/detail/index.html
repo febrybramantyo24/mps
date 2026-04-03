@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MPS - PT. Maulana Prima Sejahtera</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/MPS.png">
+  <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/plugins/fontawesome.css">
+  <link rel="stylesheet" href="/assets/css/plugins/swiper.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/site-fixes.css">
+  <style>
+    :root {
+      --bg: #f4f6fb;
+      --card: #fff;
+      --line: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #ff5e14;
+    }
+    body { background: radial-gradient(circle at 0 0, #fff4ed 0%, var(--bg) 35%); color: var(--text); }
+    .hero {
+      position: relative;
+      padding: 68px 0 26px;
+      margin-bottom: 24px;
+      background-image:
+        linear-gradient(130deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.9)),
+        url('/assets/images/banner/breadcrumb.webp');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+    .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 75% -20%, rgba(255,94,20,.28), transparent 55%); }
+    .hero-inner { position: relative; z-index: 2; }
+    .hero-top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
+    .chip-back {
+      display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px;
+      text-decoration: none; color: #fff; border: 1px solid rgba(255,255,255,.25); font-weight: 700;
+    }
+    .chip-back:hover { color: #fff; background: rgba(255,255,255,.08); }
+    .crumb { font-size: 13px; color: #cbd5e1; }
+    .crumb a { color: #fff; text-decoration: none; }
+    .hero h1 { margin: 0 0 8px; color: #fff; font-size: 40px; line-height: 1.15; max-width: 840px; }
+    .hero p { margin: 0; color: #d8e2f8; max-width: 860px; }
+    .hero .water-text {
+      color: rgba(255, 255, 255, 0.22) !important;
+      text-shadow: none;
+    }
+    .hero .nav-area-navigation a {
+      color: #e2e8f0 !important;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hero .nav-area-navigation a.current,
+    .hero .nav-area-navigation a:hover {
+      color: #ffb290 !important;
+    }
+    .hero .nav-area-navigation i {
+      color: rgba(226, 232, 240, 0.72) !important;
+      font-size: 11px;
+    }
+
+    .wrap { padding-bottom: 56px; }
+    .card-shell { background: var(--card); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 18px 40px rgba(15,23,42,.06); overflow: hidden; }
+    .gallery-left { padding: 20px; border-right: 1px solid var(--line); background: linear-gradient(180deg,#f8fafc,#fff); height: 100%; }
+    .main-media { position: relative; border: 1px solid #dbe3ed; border-radius: 14px; overflow: hidden; min-height: 290px; background: #eef2f7; margin-bottom: 10px; }
+    .main-media img, .main-media iframe, .main-media video { width: 100%; min-height: 290px; height: 100%; object-fit: cover; border: 0; display: block; }
+    #box-photo img { cursor: zoom-in; }
+    .media-stage-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 0;
+      background: rgba(15, 23, 42, 0.76);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 3;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .media-stage-nav:hover {
+      background: var(--brand);
+      transform: translateY(-50%) scale(1.05);
+    }
+    .media-stage-nav.prev { left: 10px; }
+    .media-stage-nav.next { right: 10px; }
+    .media-full-btn {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      width: 34px;
+      height: 34px;
+      border: 0;
+      border-radius: 10px;
+      color: #fff;
+      background: rgba(15, 23, 42, .78);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background .2s ease;
+      z-index: 2;
+    }
+    .media-full-btn:hover { background: var(--brand); }
+    .thumb-grid {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 2px 2px 4px;
+      scrollbar-width: thin;
+      scrollbar-color: #cbd5e1 transparent;
+    }
+    .thumb-grid::-webkit-scrollbar { height: 7px; }
+    .thumb-grid::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 999px;
+    }
+    .thumb-item {
+      border: 1px solid #dbe3ed;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #fff;
+      flex: 0 0 92px;
+      width: 92px;
+    }
+    .thumb-item img { width: 100%; height: 78px; object-fit: cover; display: block; }
+    .thumb-item.active { outline: 2px solid #ff5e14; border-color: #ff5e14; }
+    .switcher { display: inline-flex; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    .switcher button { border: 0; background: #fff; padding: 8px 13px; font-weight: 700; font-size: 13px; color: #334155; }
+    .switcher button.active { background: var(--brand); color: #fff; }
+
+    .content { padding: 24px 24px 28px; }
+    .status { color: var(--muted); margin-bottom: 8px; }
+    .content .title {
+      margin: 0 0 8px;
+      font-size: 35px;
+      line-height: 1.15;
+      color: #0f172a !important;
+      font-weight: 800;
+    }
+    .hero h1.title {
+      color: #ffffff !important;
+      font-weight: 800;
+    }
+    .short { color: #475569; margin-bottom: 10px; }
+    .meta-row { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 8px; margin: 12px 0; }
+    .meta-box { border: 1px solid var(--line); border-radius: 10px; padding: 10px; background: #fbfdff; }
+    .meta-box .k { font-size: 11px; text-transform: uppercase; letter-spacing: .4px; color: #64748b; margin-bottom: 2px; }
+    .meta-box .v { font-size: 13px; font-weight: 700; color: #0f172a; word-break: break-word; }
+    .desc { color: #334155; line-height: 1.8; white-space: normal; margin: 10px 0 10px; overflow-wrap: anywhere; word-break: break-word; }
+    .desc > :first-child { margin-top: 0 !important; }
+    .desc :where(p,div,ul,ol,table) { margin: 0 0 14px; }
+    .desc :where(p,div,ul,ol,table):last-child { margin-bottom: 0; }
+    .desc h2 {
+      margin: 18px 0 10px;
+      font-size: clamp(20px, 2.2vw, 28px);
+      line-height: 1.2;
+      font-weight: 900;
+      color: #0f172a !important;
+    }
+    .desc h3, .desc h4 {
+      margin: 14px 0 8px;
+      font-size: 18px;
+      line-height: 1.25;
+      font-weight: 900;
+      color: #0f172a !important;
+    }
+    .desc .t-sm { font-size: 14px; line-height: 1.7; }
+    .desc .t-lg { font-size: 18px; line-height: 1.7; }
+    .desc .t-sz-12 { font-size: 12px; line-height: 1.7; }
+    .desc .t-sz-14 { font-size: 14px; line-height: 1.7; }
+    .desc .t-sz-16 { font-size: 16px; line-height: 1.7; }
+    .desc .t-sz-18 { font-size: 18px; line-height: 1.7; }
+    .desc .t-sz-20 { font-size: 20px; line-height: 1.6; }
+    .desc .t-sz-24 { font-size: 24px; line-height: 1.35; }
+    .desc .t-sz-28 { font-size: 28px; line-height: 1.25; }
+    .desc .t-sz-32 { font-size: 32px; line-height: 1.2; }
+    .desc .t-sz-36 { font-size: 36px; line-height: 1.15; }
+    .desc .desc-list {
+      list-style: none;
+      margin: 0 0 14px;
+      padding: 0;
+      display: grid;
+      gap: 4px;
+    }
+    .desc .desc-list li {
+      position: relative;
+      padding-left: 18px;
+      color: #0f2447;
+      line-height: 1.7;
+    }
+    .desc .desc-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #ff5e14;
+      box-shadow: 0 0 0 2px rgba(255, 94, 20, 0.12);
+    }
+    .feature {
+      border: 1px solid #e5ecf6;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #ffffff, #f7fbff);
+      padding: 14px;
+      margin-top: 2px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    }
+    .feature h3 { margin: 0 0 3px; font-size: 20px; font-weight: 800; color: #0b1b38; }
+    .feature p { margin: 0 0 11px; font-size: 13px; color: #1f3a64; font-weight: 600; }
+    .feature ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+    .feature li { display: flex; gap: 7px; padding: 7px 2px 8px; border-bottom: 1px dashed #dbe3ed; color: #0f2447; }
+    .feature li:last-child { border-bottom: 0; }
+    .feature i { color: var(--brand); margin-top: 2px; }
+    .actions { margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-solid { background: var(--brand); color: #fff; text-decoration: none; border-radius: 10px; padding: 10px 15px; font-weight: 800; }
+    .btn-soft { background: #fff; border: 1px solid #cbd5e1; color: #0f172a; text-decoration: none; border-radius: 10px; padding: 10px 15px; font-weight: 700; }
+    .hidden { display: none !important; }
+    .error { color: #b91c1c; }
+    .portfolio-team-area-bg.related-projects {
+      padding-top: 58px;
+      padding-bottom: 58px;
+      margin-top: 0;
+    }
+    .related-projects .title-center-style-one .pre { color: #ff5e14; font-weight: 800; }
+    .related-projects .title-center-style-one .title { color: #ffffff; }
+    .related-projects .swiper-wrapper-project { padding: 0 12px; }
+    .related-projects .mySwiper-project-1 { overflow: hidden; }
+    .related-projects .swiper-slide { height: auto; }
+    .related-projects .project-area-start-1 {
+      height: 540px;
+      padding: 8px;
+      overflow: hidden;
+      border-color: rgba(148, 163, 184, 0.45);
+      background: #0b1220;
+      position: relative;
+    }
+    .related-projects .project-area-start-1 .thumbnail {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+    .related-projects .project-area-start-1 .badge-new {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      z-index: 6;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      background: rgba(15, 23, 42, 0.55);
+      color: #fff;
+      backdrop-filter: blur(3px);
+    }
+    .related-projects .project-area-start-1 .badge-new i { color: #ffb703; }
+    .related-projects .project-area-start-1 .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .related-projects .project-area-start-1 .inner-content-project {
+      inset: 8px;
+      max-width: none;
+      width: auto;
+      padding: 22px;
+      opacity: 1;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(2, 6, 23, 0.08) 0%, rgba(2, 6, 23, 0.86) 54%, rgba(2, 6, 23, 0.94) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transform: translateY(0);
+      transition: opacity .25s ease, transform .25s ease;
+      transition-delay: 0s;
+    }
+    .related-projects .project-area-start-1 .inner-content-project .title {
+      font-size: clamp(24px, 2vw, 34px);
+      margin-bottom: 8px;
+      line-height: 1.1;
+      color: #ffffff;
+    }
+    .related-projects .project-area-start-1 .inner-content-project .location {
+      margin-bottom: 12px;
+      display: block;
+      color: #cbd5e1;
+    }
+    .related-projects .project-area-start-1 .inner-content-project a.location {
+      margin-bottom: 0;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      max-width: none;
+      width: fit-content;
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.42);
+      color: #ffffff;
+    }
+    .related-projects .project-area-start-1 .inner-content-project .thumb-wrapper {
+      margin-top: 12px;
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .related-projects .project-area-start-1 .inner-content-project .thumb-wrapper .single {
+      width: auto;
+      padding: 10px;
+      background: rgba(15, 23, 42, 0.64);
+      border-color: rgba(148, 163, 184, 0.42);
+    }
+    .related-projects .project-area-start-1 .inner-content-project .thumb-wrapper .single span {
+      font-size: 11px;
+      color: #cbd5e1;
+    }
+    .related-projects .project-area-start-1 .inner-content-project .thumb-wrapper .single p {
+      word-break: break-word;
+      font-size: 14px;
+      line-height: 1.3;
+      color: #ffffff;
+    }
+    .related-projects .project-area-start-1 .inner-content-project a.location {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .related-projects .swiper-slide .inner-content-project {
+        opacity: 0 !important;
+        transform: translateY(14px);
+        pointer-events: none;
+      }
+      .related-projects .project-area-start-1:hover .inner-content-project,
+      .related-projects .swiper-slide:hover .inner-content-project {
+        opacity: 1 !important;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+    }
+    .related-projects .related-empty {
+      color: #cbd5e1;
+      text-align: center;
+      margin: 0;
+      padding: 16px;
+      border: 1px dashed rgba(203, 213, 225, 0.45);
+      border-radius: 12px;
+    }
+    .project-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 11000;
+      background: rgba(2, 6, 23, .86);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+    }
+    .project-lightbox.open { display: flex; }
+    .project-lightbox-frame {
+      position: relative;
+      width: min(1200px, 100%);
+      max-height: calc(100vh - 56px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .project-lightbox-image {
+      max-width: 100%;
+      max-height: calc(100vh - 84px);
+      border-radius: 12px;
+      object-fit: contain;
+      box-shadow: 0 20px 44px rgba(2, 6, 23, .44);
+      background: #0b1220;
+    }
+    .project-lightbox-close,
+    .project-lightbox-nav {
+      position: absolute;
+      border: 0;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(15, 23, 42, 0.82);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background .2s ease;
+    }
+    .project-lightbox-close:hover,
+    .project-lightbox-nav:hover { background: var(--brand); }
+    .project-lightbox-close { right: 10px; top: 10px; }
+    .project-lightbox-nav.prev { left: 14px; top: 50%; transform: translateY(-50%); }
+    .project-lightbox-nav.next { right: 14px; top: 50%; transform: translateY(-50%); }
+    @media (max-width: 991px) {
+      .hero { padding-top: 34px; }
+      .hero .baread-crumb-main-wrapper.pt--100 { padding-top: 6px !important; }
+      .hero h1 { font-size: 30px; }
+      .gallery-left { border-right: 0; border-bottom: 1px solid var(--line); }
+      .content .title { font-size: 28px; }
+      .meta-row { grid-template-columns: 1fr 1fr; }
+      .thumb-grid { gap: 7px; }
+      .portfolio-team-area-bg.related-projects { padding-top: 50px; padding-bottom: 50px; }
+      .related-projects .project-area-start-1 { height: 500px; }
+      .related-projects .project-area-start-1 .inner-content-project {
+        inset: 8px;
+        max-width: none;
+        padding: 18px;
+      }
+    }
+    @media (max-width: 767px) {
+      .portfolio-team-area-bg.related-projects { padding-top: 44px; padding-bottom: 44px; }
+      .related-projects .swiper-wrapper-project { padding: 0 8px; }
+      .related-projects .project-area-start-1 { height: 420px; }
+      .related-projects .project-area-start-1 .inner-content-project {
+        inset: 8px;
+        max-width: none;
+        padding: 14px;
+      }
+      .related-projects .project-area-start-1 .inner-content-project .thumb-wrapper .single p {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body class="project-detail">
+  <header class="header-two header--sticky">
+    <div class="header-two-main-wrapper">
+      <div class="container">
+        <div class="header-two-wrapper">
+          <a href="/" class="logo-area" aria-label="PT Maulana Prima Sejahtera"><span class="brand-lockup"><img class="brand-mark" src="/assets/images/MPS.png" alt="MPS"><span class="brand-text"><span class="brand-name">Maulana Prima</span><span class="brand-sub">Sejahtera</span></span></span></a>
+          <div class="nav-area">
+            <ul>
+              <li class="main-nav"><a href="/">Home</a></li>
+              <li class="main-nav"><a href="/layanan/">Layanan</a></li>
+              <li class="main-nav"><a href="/produk/">Produk</a></li>
+              <li class="main-nav"><a href="/proyek/">Proyek</a></li>
+              <li class="main-nav"><a href="/artikel/">Artikel</a></li>
+              <li class="main-nav"><a href="/kontak/">Kontak</a></li>
+              <li class="main-nav"><a href="/tentang/">Tentang</a></li>
+            </ul>
+          </div>
+          <div class="header-end">
+            <a href="#" class="rts-btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Konsultasi WhatsApp</a>
+            <div class="nav-btn menu-btn">
+              <img src="/assets/images/logo/bar.svg" alt="menu">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="side-bar" class="side-bar header-two">
+    <button class="close-icon-menu"><i class="far fa-times"></i></button>
+    <div class="inner-main-wrapper-desk">
+      <div class="thumbnail">
+        <img src="/assets/images/banner/04.jpg" alt="elevate">
+      </div>
+      <div class="inner-content">
+        <h4 class="title">We Build Building and Great Constructive Homes.</h4>
+        <p class="disc">
+          We successfully cope with tasks of varying complexity, provide long-term guarantees and regularly
+          master new technologies.
+        </p>
+        <div class="footer">
+          <h4 class="title">Got a project in mind?</h4>
+          <a href="#" class="rts-btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Konsultasi via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-menu d-block d-xl-none">
+      <nav class="nav-main mainmenu-nav mt--30">
+        <ul class="mainmenu metismenu" id="mobile-menu-active">
+          <li><a href="/" class="main">Home</a></li>
+          <li><a href="/layanan/" class="main">Layanan</a></li>
+          <li><a href="/produk/" class="main">Produk</a></li>
+          <li><a href="/proyek/" class="main">Proyek</a></li>
+          <li><a href="/artikel/" class="main">Artikel</a></li>
+          <li><a href="/kontak/" class="main">Kontak</a></li>
+          <li><a href="/tentang/" class="main">Tentang</a></li>
+        </ul>
+      </nav>
+      <div class="social-wrapper-one">
+        <ul>
+          <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="rts-breadcrumb-area bg_image hero" style="background-image:url('/assets/images/banner/breadcrumb.webp')">
+    <div class="container hero-inner">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="baread-crumb-main-wrapper pt--100">
+            <div class="inner">
+              <span class="water-text">Proyek</span>
+              <h1 id="hero-title" class="title">Detail Proyek</h1>
+              <p id="hero-sub">Memuat data proyek...</p>
+              <div class="nav-area-navigation">
+                <a href="/">Home</a>
+                <i class="fa-sharp fa-solid fa-slash-forward"></i>
+                <a href="/proyek/">Proyek</a>
+                <i class="fa-sharp fa-solid fa-slash-forward"></i>
+                <a class="current" href="#" id="crumb-project">Detail</a>
+              </div>
+              <div class="mt--20">
+                <a href="/proyek/" class="chip-back"><i class="fa-regular fa-arrow-left"></i> Kembali ke Proyek</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="wrap">
+    <div class="container">
+      <div class="card-shell">
+        <div class="row g-0">
+          <div class="col-lg-5">
+            <div class="gallery-left">
+              <div class="switcher">
+                <button id="tab-photo" class="active" type="button">Foto</button>
+                <button id="tab-video" class="hidden" type="button">Video</button>
+              </div>
+              <div id="box-photo" class="main-media">
+                <button id="project-stage-prev" class="media-stage-nav prev" type="button" aria-label="Gambar sebelumnya">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="project-stage-next" class="media-stage-nav next" type="button" aria-label="Gambar berikutnya">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <button id="project-open-fullscreen" class="media-full-btn" type="button" aria-label="Buka gambar fullscreen">
+                  <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                </button>
+                <img id="main-image" src="" alt="Proyek" loading="lazy">
+              </div>
+              <div id="box-video" class="main-media hidden"></div>
+              <div id="thumb-grid" class="thumb-grid"></div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="content">
+              <p id="status" class="status">Memuat detail proyek...</p>
+              <h2 id="title" class="title hidden"></h2>
+              <p id="short" class="short hidden"></p>
+              <div id="desc" class="desc hidden"></div>
+              <div id="feature-wrap" class="feature hidden">
+                <h3>Keunggulan Proyek</h3>
+                <p>Dirancang untuk hasil rapi, minim risiko, dan memberi dampak bisnis yang terasa sejak awal operasional.</p>
+                <ul id="feature-list"></ul>
+              </div>
+              <div class="meta-row hidden" id="meta-row">
+                <div class="meta-box"><div class="k">Client</div><div id="meta-client" class="v">-</div></div>
+                <div class="meta-box"><div class="k">Location</div><div id="meta-location" class="v">-</div></div>
+                <div class="meta-box"><div class="k">Project Year</div><div id="meta-project-year" class="v">-</div></div>
+                <div class="meta-box"><div class="k">Duration</div><div id="meta-duration" class="v">-</div></div>
+                <div class="meta-box"><div class="k">Price</div><div id="meta-price" class="v">-</div></div>
+              </div>
+              <div class="actions">
+            <a href="/kontak/" class="btn-solid"><i class="fa-regular fa-envelope"></i> Konsultasi Proyek</a>
+            <a href="/proyek/" class="btn-soft">Lihat Semua Proyek</a>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="related-projects-section" class="portfolio-team-area-bg rts-section-gap bg_image bg-dark related-projects hidden">
+    <div class="container">
+      <div class="title-center-style-one">
+        <span class="pre">Recent Projects</span>
+        <h2 class="title">Our Completed Projects</h2>
+      </div>
+    </div>
+    <div class="row mt--40">
+      <div class="col-lg-12">
+        <div class="swiper-wrapper-project">
+          <div class="swiper mySwiper-project-1">
+            <div id="related-projects-grid" class="swiper-wrapper">
+              <div class="swiper-slide">
+                <p class="related-empty">Memuat proyek terkait...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="project-lightbox" class="project-lightbox" aria-hidden="true">
+    <div class="project-lightbox-frame">
+      <button type="button" id="project-lightbox-prev" class="project-lightbox-nav prev" aria-label="Gambar sebelumnya">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <img id="project-lightbox-image" class="project-lightbox-image" src="" alt="Preview proyek" loading="lazy">
+      <button type="button" id="project-lightbox-next" class="project-lightbox-nav next" aria-label="Gambar berikutnya">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+      <button type="button" id="project-lightbox-close" class="project-lightbox-close" aria-label="Tutup fullscreen">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- rts footer area start -->
+  <div class="rts-footer-area three rts-section-gapTop bg_footer-1 bg_image">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="contact-area-footer-top">
+            <div class="single-contact-area-box">
+              <div class="icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <h6 class="title">Call Us Now</h6>
+              <a id="footer-phone-1" href="#">-</a>
+              <a id="footer-phone-2" href="#">-</a>
+            </div>
+            <div class="single-contact-area-box">
+              <div class="icon">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <h6 class="title">Office Time</h6>
+              <a id="footer-hours-1" href="#">-</a>
+            </div>
+            <div class="single-contact-area-box">
+              <div class="icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <h6 class="title">Need Support</h6>
+              <a id="footer-email-1" href="#">-</a>
+              <a id="footer-email-2" href="#">-</a>
+            </div>
+            <div class="single-contact-area-box">
+              <div class="icon">
+                <i class="fa-sharp fa-solid fa-location-dot"></i>
+              </div>
+              <h6 class="title">Our Address</h6>
+              <a id="footer-address-1" href="#">-</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-full">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="nav-footer-wrapper-one">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12">
+                  <ul class="footer-float-nav">
+                    <li><a href="/tentang/">Tentang Kami</a></li>
+                    <li><a href="/proyek/">Projects</a></li>
+                    <li><a href="/proyek/">Updates</a></li>
+                    <li><a href="/tentang/">Mission</a></li>
+                    <li><a href="/tentang/">Inside</a></li>
+                    <li><a href="/kontak/">Contact</a></li>
+                    <li><a href="/tentang/">History</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div class="footer-wrapper-left-one">
+            <a href="/" class="logo">
+              <span class="brand-lockup" aria-label="PT Maulana Prima Sejahtera">
+                <img class="brand-mark" src="/assets/images/MPS.png" alt="MPS">
+                <span class="brand-text">
+                  <span class="brand-name">Maulana Prima</span>
+                  <span class="brand-sub">Sejahtera</span>
+                </span>
+              </span>
+            </a>
+            <p class="disc">
+              Kami berkomitmen untuk memberikan solusi konstruksi berkualitas tinggi yang disesuaikan dengan kebutuhan klien kami. Dengan fokus yang kuat pada inovasi, ketelitian, dan keahlian, kami membangun ruang yang tahan lama.
+            </p>
+            <div class="social-area-wrapper-one">
+              <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="footer-wrapper-right">
+            <div class="single-nav-area-footer use-link">
+              <h4 class="title">Useful Links</h4>
+              <ul>
+                <li><a href="/tentang/"><i class="fa-regular fa-arrow-right-long"></i>Tentang Kami</a></li>
+                <li><a href="/tentang/"><i class="fa-regular fa-arrow-right-long"></i>Our Gallery</a></li>
+                <li><a href="/layanan/"><i class="fa-regular fa-arrow-right-long"></i>Layanan Kami</a></li>
+                <li><a href="/tentang/#about-team-section"><i class="fa-regular fa-arrow-right-long"></i>Our Team</a></li>
+                <li><a href="/kontak/"><i class="fa-regular fa-arrow-right-long"></i>Hubungi Kami</a></li>
+              </ul>
+            </div>
+            <div class="single-nav-area-footer use-link">
+              <h4 class="title">Quick Services</h4>
+              <ul>
+                <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>General Contracting</a></li>
+                <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Project Management</a></li>
+                <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>New Construction</a></li>
+                <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Renovations &amp; Remodeling</a></li>
+                <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Interior Finishing</a></li>
+              </ul>
+            </div>
+            <div class="single-nav-area-footer news-letter">
+              <h4 class="title">Newsletter</h4>
+              <p>Update seputar proyek, tips teknis, dan insight lapangan dari tim kami.</p>
+              <form action="#">
+                <input type="email" placeholder="Email Address" required>
+                <button class="btn-subscribe mt--15">Subscribe Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-full copyright-area-one">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="copyright-wrapper">
+                  <p class="mb-0">Copyright &copy;
+                    <script>document.write(new Date().getFullYear())</script>
+                    Maulana Prima Sejahtera
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- rts footer area end -->
+
+  <div id="anywhere-home" class=""></div>
+
+  <script src="/assets/js/plugins/swiper.js"></script>
+  <script>
+    (function () {
+      var openBtn = document.querySelector('.menu-btn');
+      var closeBtn = document.querySelector('.close-icon-menu');
+      var sideBar = document.getElementById('side-bar');
+      var overlay = document.getElementById('anywhere-home');
+      if (!sideBar || !overlay) return;
+
+      var normalizePath = function (path) {
+        var raw = String(path || '').trim();
+        if (!raw) return '/';
+        var pure = raw.split('?')[0].split('#')[0];
+        if (!pure.startsWith('/')) pure = '/' + pure;
+        if (pure.length > 1) pure = pure.replace(/\/+$/, '');
+        return pure || '/';
+      };
+      var currentPath = normalizePath(window.location.pathname);
+      var isActive = function (linkPath) {
+        if (linkPath === '/') return currentPath === '/';
+        return currentPath === linkPath || currentPath.indexOf(linkPath + '/') === 0;
+      };
+      var links = document.querySelectorAll('.nav-area a, #mobile-menu-active a.main');
+      links.forEach(function (link) {
+        var href = link.getAttribute('href') || '';
+        if (!href || href.indexOf('http') === 0 || href.indexOf('mailto:') === 0 || href.indexOf('tel:') === 0) return;
+        if (isActive(normalizePath(href))) {
+          link.classList.add('is-active');
+          link.setAttribute('aria-current', 'page');
+        }
+      });
+
+      var openMenu = function () {
+        sideBar.classList.add('show');
+        overlay.classList.add('bgshow');
+      };
+      var closeMenu = function () {
+        sideBar.classList.remove('show');
+        overlay.classList.remove('bgshow');
+      };
+
+      if (openBtn) openBtn.addEventListener('click', openMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var slug = new URLSearchParams(window.location.search).get('slug') || '';
+      var siteSettings = {};
+      var EMPTY_IMAGE_DATA_URI = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+      var selectedProjectTitle = '';
+      var statusEl = document.getElementById('status');
+      var titleEl = document.getElementById('title');
+      var shortEl = document.getElementById('short');
+      var descEl = document.getElementById('desc');
+      var featureWrap = document.getElementById('feature-wrap');
+      var featureList = document.getElementById('feature-list');
+      var heroTitle = document.getElementById('hero-title');
+      var heroSub = document.getElementById('hero-sub');
+      var crumbProject = document.getElementById('crumb-project');
+      var mainImage = document.getElementById('main-image');
+      var thumbGrid = document.getElementById('thumb-grid');
+      var metaRow = document.getElementById('meta-row');
+      var metaClient = document.getElementById('meta-client');
+      var metaLocation = document.getElementById('meta-location');
+      var metaProjectYear = document.getElementById('meta-project-year');
+      var metaDuration = document.getElementById('meta-duration');
+      var metaPrice = document.getElementById('meta-price');
+      var tabPhoto = document.getElementById('tab-photo');
+      var tabVideo = document.getElementById('tab-video');
+      var boxPhoto = document.getElementById('box-photo');
+      var boxVideo = document.getElementById('box-video');
+      var stagePrevBtn = document.getElementById('project-stage-prev');
+      var stageNextBtn = document.getElementById('project-stage-next');
+      var openFullscreenBtn = document.getElementById('project-open-fullscreen');
+      var lightboxEl = document.getElementById('project-lightbox');
+      var lightboxImageEl = document.getElementById('project-lightbox-image');
+      var lightboxPrevBtn = document.getElementById('project-lightbox-prev');
+      var lightboxNextBtn = document.getElementById('project-lightbox-next');
+      var lightboxCloseBtn = document.getElementById('project-lightbox-close');
+      var relatedProjectsSection = document.getElementById('related-projects-section');
+      var relatedProjectsGrid = document.getElementById('related-projects-grid');
+      var footerPhone1 = document.getElementById('footer-phone-1');
+      var footerPhone2 = document.getElementById('footer-phone-2');
+      var footerHours1 = document.getElementById('footer-hours-1');
+      var footerEmail1 = document.getElementById('footer-email-1');
+      var footerEmail2 = document.getElementById('footer-email-2');
+      var footerAddress1 = document.getElementById('footer-address-1');
+      var waButtons = document.querySelectorAll('a');
+      var galleryImages = [];
+      var currentImageIndex = 0;
+
+      var esc = function (v) {
+        return String(v || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+      };
+      var formatPlainTextToHtml = function (text) {
+        var raw = String(text || '').replace(/\r/g, '').trim();
+        if (!raw) return '';
+        var lines = raw.split('\n');
+        var blocks = [];
+        var current = [];
+        var pushBlock = function () {
+          if (!current.length) return;
+          blocks.push(current.slice());
+          current = [];
+        };
+        lines.forEach(function (line) {
+          if (!String(line || '').trim()) {
+            pushBlock();
+            return;
+          }
+          current.push(String(line || ''));
+        });
+        pushBlock();
+
+        var isBullet = function (line) {
+          return /^\s*[-*•]\s+/.test(String(line || ''));
+        };
+        var stripBullet = function (line) {
+          return String(line || '').replace(/^\s*[-*•]\s+/, '').trim();
+        };
+        var applyInline = function (escaped) {
+          var t = String(escaped || '');
+          t = t.replace(/\*\*([^\n*][\s\S]*?)\*\*/g, '<strong>$1</strong>');
+          t = t.replace(/_([^\n_][\s\S]*?)_/g, '<em>$1</em>');
+          t = t.replace(/\[\[small\]\]([\s\S]*?)\[\[\/small\]\]/g, '<span class="t-sm">$1</span>');
+          t = t.replace(/\[\[large\]\]([\s\S]*?)\[\[\/large\]\]/g, '<span class="t-lg">$1</span>');
+          t = t.replace(/\[\[size=(\d{2})\]\]([\s\S]*?)\[\[\/size\]\]/g, function (_m, size, inner) {
+            var allowed = { '12': true, '14': true, '16': true, '18': true, '20': true, '24': true, '28': true, '32': true, '36': true };
+            var key = String(size || '');
+            if (!allowed[key]) return inner;
+            return '<span class="t-sz-' + key + '">' + inner + '</span>';
+          });
+          return t;
+        };
+        var joinTextWithBr = function (arr) {
+          return arr
+            .map(function (l) { return String(l || '').trim(); })
+            .filter(Boolean)
+            .map(function (s) { return applyInline(esc(s)); })
+            .join('<br>');
+        };
+        var parseHeading = function (line) {
+          var m = String(line || '').match(/^\s*(#{2,3})\s+(.+)\s*$/);
+          if (!m) return null;
+          var lvl = 'h2';
+          var title = applyInline(esc(m[2]));
+          return { tag: lvl, html: title };
+        };
+
+        var html = blocks.map(function (block) {
+          var heading = parseHeading(block[0]);
+          var rest = heading ? block.slice(1) : block.slice();
+          var firstBulletIdx = -1;
+          for (var i = 0; i < rest.length; i += 1) {
+            if (isBullet(rest[i])) { firstBulletIdx = i; break; }
+          }
+          var out = '';
+          if (heading) {
+            out += '<' + heading.tag + '>' + heading.html + '</' + heading.tag + '>';
+          }
+          if (!rest.length) {
+            return out;
+          }
+
+          var bulletCount = rest.filter(isBullet).length;
+          if (firstBulletIdx > 0 && rest.slice(firstBulletIdx).every(isBullet)) {
+            var head = joinTextWithBr(rest.slice(0, firstBulletIdx));
+            var listItems = rest.slice(firstBulletIdx).map(function (l) { return '<li>' + applyInline(esc(stripBullet(l))) + '</li>'; }).join('');
+            return out + '<p>' + head + '</p><ul class="desc-list">' + listItems + '</ul>';
+          }
+          if (bulletCount && bulletCount >= Math.max(2, Math.ceil(rest.length * 0.6))) {
+            return out + '<ul class="desc-list">' + rest.map(function (l) { return '<li>' + applyInline(esc(stripBullet(l))) + '</li>'; }).join('') + '</ul>';
+          }
+          return out + '<p>' + joinTextWithBr(rest) + '</p>';
+        }).join('');
+
+        return html;
+      };
+      var toYoutubeEmbed = function (url) {
+        try {
+          var u = new URL(url, window.location.origin);
+          var host = u.hostname.toLowerCase();
+          if (host.includes('youtu.be')) {
+            var id = u.pathname.replace(/\//g, '');
+            return id ? 'https://www.youtube.com/embed/' + id : '';
+          }
+          if (host.includes('youtube.com')) {
+            var id = u.searchParams.get('v');
+            if (!id && u.pathname.includes('/shorts/')) id = u.pathname.split('/shorts/')[1];
+            if (!id && u.pathname.includes('/embed/')) id = u.pathname.split('/embed/')[1];
+            if (id) return 'https://www.youtube.com/embed/' + id;
+          }
+          return '';
+        } catch (e) { return ''; }
+      };
+      var toGoogleDriveEmbed = function (url) {
+        try {
+          var u = new URL(url, window.location.origin);
+          if (!u.hostname.toLowerCase().includes('drive.google.com')) return '';
+          var m = u.pathname.match(/\/file\/d\/([^/]+)/);
+          var id = (m && m[1]) ? m[1] : (u.searchParams.get('id') || '');
+          return id ? ('https://drive.google.com/file/d/' + id + '/preview') : '';
+        } catch (e) { return ''; }
+      };
+      var setVideo = function (rawUrl) {
+        if (!rawUrl) return false;
+        var yt = toYoutubeEmbed(rawUrl);
+        if (yt) { boxVideo.innerHTML = '<iframe src="' + esc(yt) + '" allowfullscreen loading="lazy"></iframe>'; return true; }
+        var gd = toGoogleDriveEmbed(rawUrl);
+        if (gd) { boxVideo.innerHTML = '<iframe src="' + esc(gd) + '" allowfullscreen loading="lazy"></iframe>'; return true; }
+        var low = rawUrl.toLowerCase();
+        if (low.endsWith('.mp4') || low.endsWith('.webm') || low.endsWith('.ogg')) {
+          boxVideo.innerHTML = '<video controls preload="metadata"><source src="' + esc(rawUrl) + '"></video>';
+          return true;
+        }
+        return false;
+      };
+      var toggleTab = function (mode) {
+        if (mode === 'video') {
+          tabVideo.classList.add('active'); tabPhoto.classList.remove('active');
+          boxVideo.classList.remove('hidden'); boxPhoto.classList.add('hidden');
+        } else {
+          tabPhoto.classList.add('active'); tabVideo.classList.remove('active');
+          boxPhoto.classList.remove('hidden'); boxVideo.classList.add('hidden');
+        }
+      };
+      var syncLightboxNav = function () {
+        var hasMultiple = galleryImages.length > 1;
+        if (lightboxPrevBtn) lightboxPrevBtn.classList.toggle('hidden', !hasMultiple);
+        if (lightboxNextBtn) lightboxNextBtn.classList.toggle('hidden', !hasMultiple);
+        if (stagePrevBtn) stagePrevBtn.classList.toggle('hidden', !hasMultiple);
+        if (stageNextBtn) stageNextBtn.classList.toggle('hidden', !hasMultiple);
+      };
+      var setActiveImage = function (index) {
+        if (!galleryImages.length) return;
+        currentImageIndex = (index + galleryImages.length) % galleryImages.length;
+        var activeImage = galleryImages[currentImageIndex];
+        if (mainImage) mainImage.src = activeImage;
+        if (lightboxImageEl) {
+          lightboxImageEl.src = activeImage;
+          lightboxImageEl.alt = selectedProjectTitle || 'Preview proyek';
+        }
+        Array.prototype.forEach.call(thumbGrid.querySelectorAll('.thumb-item'), function (el, idx) {
+          el.classList.toggle('active', idx === currentImageIndex);
+        });
+      };
+      var openLightbox = function () {
+        if (!lightboxEl || !galleryImages.length) return;
+        toggleTab('photo');
+        setActiveImage(currentImageIndex);
+        lightboxEl.classList.add('open');
+        lightboxEl.setAttribute('aria-hidden', 'false');
+      };
+      var closeLightbox = function () {
+        if (!lightboxEl) return;
+        lightboxEl.classList.remove('open');
+        lightboxEl.setAttribute('aria-hidden', 'true');
+      };
+      tabPhoto.addEventListener('click', function () { toggleTab('photo'); });
+      tabVideo.addEventListener('click', function () { toggleTab('video'); });
+      if (mainImage) {
+        mainImage.addEventListener('click', openLightbox);
+      }
+      if (openFullscreenBtn) {
+        openFullscreenBtn.addEventListener('click', openLightbox);
+      }
+      if (stagePrevBtn) {
+        stagePrevBtn.addEventListener('click', function () {
+          setActiveImage(currentImageIndex - 1);
+          toggleTab('photo');
+        });
+      }
+      if (stageNextBtn) {
+        stageNextBtn.addEventListener('click', function () {
+          setActiveImage(currentImageIndex + 1);
+          toggleTab('photo');
+        });
+      }
+      if (lightboxPrevBtn) {
+        lightboxPrevBtn.addEventListener('click', function () {
+          setActiveImage(currentImageIndex - 1);
+        });
+      }
+      if (lightboxNextBtn) {
+        lightboxNextBtn.addEventListener('click', function () {
+          setActiveImage(currentImageIndex + 1);
+        });
+      }
+      if (lightboxCloseBtn) {
+        lightboxCloseBtn.addEventListener('click', closeLightbox);
+      }
+      if (lightboxEl) {
+        lightboxEl.addEventListener('click', function (event) {
+          if (event.target === lightboxEl) {
+            closeLightbox();
+          }
+        });
+      }
+      document.addEventListener('keydown', function (event) {
+        if (!lightboxEl || !lightboxEl.classList.contains('open')) return;
+        if (event.key === 'Escape') closeLightbox();
+        if (event.key === 'ArrowLeft' && galleryImages.length > 1) setActiveImage(currentImageIndex - 1);
+        if (event.key === 'ArrowRight' && galleryImages.length > 1) setActiveImage(currentImageIndex + 1);
+      });
+
+      var normalizeUrl = function (value) {
+        var raw = String(value || '').trim();
+        if (!raw) return '';
+        if (/^https?:\/\//i.test(raw)) return raw;
+        if (/^\/\//.test(raw)) return 'https:' + raw;
+        return 'https://' + raw;
+      };
+      var buildProjectWhatsappMessage = function () {
+        var title = selectedProjectTitle || 'proyek ini';
+        return [
+          'Halo, saya ingin konsultasi proyek:',
+          title,
+          '',
+          'Mohon info estimasi biaya, timeline pengerjaan, dan jadwal survey.',
+          'Terima kasih.'
+        ].join('\n');
+      };
+      var withWhatsappMessage = function (waUrl, message) {
+        var base = normalizeUrl(waUrl);
+        if (!base || !message) return base;
+        try {
+          var parsed = new URL(base, window.location.origin);
+          parsed.searchParams.set('text', message);
+          return parsed.toString();
+        } catch (e) {
+          var separator = base.indexOf('?') === -1 ? '?' : '&';
+          return base + separator + 'text=' + encodeURIComponent(message);
+        }
+      };
+
+      var applyWhatsappButtons = function () {
+        var waUrl = normalizeUrl(siteSettings.whatsapp || '');
+        var projectMessage = buildProjectWhatsappMessage();
+        var waTargetUrl = withWhatsappMessage(waUrl, projectMessage);
+        waButtons.forEach(function (anchor) {
+          var text = String(anchor.textContent || '').toLowerCase();
+          if (text.indexOf('whatsapp') === -1 && !/\bwa\b/.test(text)) return;
+          if (!waTargetUrl) {
+            anchor.removeAttribute('href');
+            anchor.style.display = 'none';
+            return;
+          }
+          anchor.style.display = '';
+          anchor.href = waTargetUrl;
+          anchor.target = '_blank';
+          anchor.rel = 'noopener';
+        });
+      };
+      var setAnchorText = function (anchor, value, href) {
+        if (!anchor) return;
+        var text = String(value || '').trim();
+        if (!text) {
+          anchor.textContent = '-';
+          anchor.removeAttribute('href');
+          return;
+        }
+        anchor.textContent = text;
+        if (href) {
+          anchor.href = href;
+        } else {
+          anchor.href = '#';
+        }
+      };
+      var applyFooterSettings = function () {
+        var pick = function (camelKey, snakeKey) {
+          var camel = siteSettings && siteSettings[camelKey];
+          if (typeof camel === 'string' && camel.trim()) return camel;
+          var snake = siteSettings && siteSettings[snakeKey];
+          if (typeof snake === 'string' && snake.trim()) return snake;
+          return '';
+        };
+        var p1 = String(pick('footerPhonePrimary', 'footer_phone_primary')).trim();
+        var p2 = String(pick('footerPhoneSecondary', 'footer_phone_secondary')).trim();
+        var e1 = String(pick('footerSupportEmailPrimary', 'footer_support_email_primary')).trim();
+        var e2 = String(pick('footerSupportEmailSecondary', 'footer_support_email_secondary')).trim();
+        var officeHours1 = String(pick('footerOfficeHours1', 'footer_office_hours_1')).trim();
+        var address1 = String(pick('footerAddress1', 'footer_address_1')).trim();
+        setAnchorText(footerPhone1, p1, p1 ? ('tel:' + p1.replace(/\s+/g, '')) : '');
+        setAnchorText(footerPhone2, p2, p2 ? ('tel:' + p2.replace(/\s+/g, '')) : '');
+        setAnchorText(footerHours1, officeHours1, '');
+        setAnchorText(footerEmail1, e1, e1 ? ('mailto:' + e1) : '');
+        setAnchorText(footerEmail2, e2, e2 ? ('mailto:' + e2) : '');
+        setAnchorText(footerAddress1, address1, '');
+      };
+      var applyMenuVisibility = function () {
+        var pick = function (camelKey, snakeKey) {
+          if (!siteSettings) return undefined;
+          if (siteSettings[camelKey] !== undefined) return siteSettings[camelKey];
+          if (siteSettings[snakeKey] !== undefined) return siteSettings[snakeKey];
+          return undefined;
+        };
+        var toBoolShow = function (value, fallback) {
+          if (value === undefined || value === null || value === '') return fallback;
+          var str = String(value).trim();
+          if (str === '1') return true;
+          if (str === '0') return false;
+          return fallback;
+        };
+
+        var showLayanan = toBoolShow(pick('showMenuLayanan', 'show_menu_layanan'), true);
+        var showProduk = toBoolShow(pick('showMenuProduk', 'show_menu_produk'), true);
+        var showProyek = toBoolShow(pick('showMenuProyek', 'show_menu_proyek'), true);
+        var showArtikel = toBoolShow(pick('showMenuArtikel', 'show_menu_artikel'), true);
+        var showKontak = toBoolShow(pick('showMenuKontak', 'show_menu_kontak'), true);
+        var showTentang = toBoolShow(pick('showMenuTentang', 'show_menu_tentang'), true);
+        var toggleMenuItem = function (href, show) {
+          var selector = '.nav-area .main-nav > a[href="' + href + '"], #mobile-menu-active a.main[href="' + href + '"], .mobile-nav-links a[href="' + href + '"]';
+          document.querySelectorAll(selector).forEach(function (anchor) {
+            var item = anchor.closest('li');
+            if (item) {
+              item.style.display = show ? '' : 'none';
+            } else {
+              anchor.style.display = show ? '' : 'none';
+            }
+          });
+        };
+        toggleMenuItem('/layanan/', showLayanan);
+        toggleMenuItem('/produk/', showProduk);
+        toggleMenuItem('/proyek/', showProyek);
+        toggleMenuItem('/artikel/', showArtikel);
+        toggleMenuItem('/kontak/', showKontak);
+        toggleMenuItem('/tentang/', showTentang);
+      };
+      var safeText = function (value, fallback) {
+        var text = String(value || '').trim();
+        return text ? text : fallback;
+      };
+      var cutText = function (value, limit) {
+        var text = String(value || '').trim().replace(/\s+/g, ' ');
+        if (text.length <= limit) return text;
+        return text.slice(0, limit - 1) + '...';
+      };
+      var relatedNewestIds = new Set();
+      var newestScore = function (item) {
+        var ts = Date.parse(String(item && item.createdAt ? item.createdAt : ''));
+        if (!isNaN(ts)) return ts;
+        var id = parseInt(String(item && item.id ? item.id : '0'), 10);
+        return isNaN(id) ? 0 : id;
+      };
+      var computeRelatedNewestIds = function (items) {
+        relatedNewestIds = new Set();
+        var ranked = (Array.isArray(items) ? items.slice() : []).sort(function (a, b) {
+          return newestScore(b) - newestScore(a);
+        });
+        for (var i = 0; i < Math.min(3, ranked.length); i += 1) {
+          if (ranked[i] && ranked[i].id != null) relatedNewestIds.add(ranked[i].id);
+        }
+      };
+      var buildRelatedCard = function (item) {
+        var detailLink = item.detailUrl || ('/proyek/detail/?slug=' + encodeURIComponent(item.slug || ''));
+        var title = safeText(item.title, 'Project');
+        var subtitleRaw = String(item.shortDescription || '').trim() || String(item.category || '').trim() || 'Lihat detail proyek untuk informasi lengkap.';
+        var subtitle = cutText(subtitleRaw, 52);
+        var image = safeText(item.image, EMPTY_IMAGE_DATA_URI);
+        var price = safeText(item.price, '-');
+        var client = safeText(item.client, '-');
+        var year = safeText(item.projectYear, '-');
+        var duration = safeText(item.duration, '-');
+        var isNew = relatedNewestIds && typeof relatedNewestIds.has === 'function' ? relatedNewestIds.has(item && item.id) : false;
+        return '' +
+          '<div class="swiper-slide">' +
+            '<div class="project-area-start-1">' +
+              (isNew ? '<span class="badge-new"><i class="fa-solid fa-bolt"></i> Terbaru</span>' : '') +
+              '<div class="thumbnail">' +
+                '<img src="' + esc(image) + '" alt="' + esc(title) + '" loading="lazy">' +
+              '</div>' +
+              '<div class="inner-content-project">' +
+                '<h2 class="title">' + esc(title) + '</h2>' +
+                '<p class="location">' + esc(subtitle) + '</p>' +
+                '<a href="' + esc(detailLink) + '" class="location">View Project</a>' +
+                '<div class="thumb-wrapper">' +
+                  '<div class="single"><span>Price:</span><p>' + esc(price) + '</p></div>' +
+                  '<div class="single"><span>Client:</span><p>' + esc(client) + '</p></div>' +
+                  '<div class="single"><span>Project Year:</span><p>' + esc(year) + '</p></div>' +
+                  '<div class="single"><span>Duration:</span><p>' + esc(duration) + '</p></div>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+      };
+      var relatedProjectSwiper = null;
+      var initRelatedProjectsSwiper = function () {
+        if (typeof Swiper === 'undefined') return;
+        var swiperNode = document.querySelector('#related-projects-section .mySwiper-project-1');
+        if (!swiperNode) return;
+        if (relatedProjectSwiper && typeof relatedProjectSwiper.destroy === 'function') {
+          relatedProjectSwiper.destroy(true, true);
+        }
+        var totalSlides = (relatedProjectsGrid && relatedProjectsGrid.querySelectorAll('.swiper-slide')) ? relatedProjectsGrid.querySelectorAll('.swiper-slide').length : 0;
+        var shouldLoop = totalSlides > 3;
+        relatedProjectSwiper = new Swiper(swiperNode, {
+          slidesPerView: 2.25,
+          spaceBetween: 22,
+          loop: shouldLoop,
+          speed: 900,
+          centeredSlides: false,
+          autoplay: shouldLoop ? {
+            delay: 2600,
+            disableOnInteraction: false
+          } : false,
+          breakpoints: {
+            1400: { slidesPerView: 2.25 },
+            1200: { slidesPerView: 2 },
+            992: { slidesPerView: 1.5 },
+            0: { slidesPerView: 1 }
+          }
+        });
+      };
+      var loadRelatedProjects = function (currentProjectSlug) {
+        if (!relatedProjectsSection || !relatedProjectsGrid) return;
+        fetch('/api/projects.php', { cache: 'no-store' })
+          .then(function (r) { return r.json(); })
+          .then(function (payload) {
+            if (!payload || !payload.ok || !Array.isArray(payload.projects)) {
+              relatedProjectsGrid.innerHTML = '<div class="swiper-slide"><p class="related-empty">Proyek terkait belum tersedia.</p></div>';
+              relatedProjectsSection.classList.remove('hidden');
+              initRelatedProjectsSwiper();
+              return;
+            }
+            var pool = payload.projects.filter(function (item) {
+              return String(item.slug || '').trim() !== String(currentProjectSlug || '').trim();
+            });
+            computeRelatedNewestIds(pool);
+            var related = pool.slice(0, 8);
+            if (!related.length) {
+              relatedProjectsGrid.innerHTML = '<div class="swiper-slide"><p class="related-empty">Belum ada proyek terkait lainnya.</p></div>';
+              relatedProjectsSection.classList.remove('hidden');
+              initRelatedProjectsSwiper();
+              return;
+            }
+            relatedProjectsGrid.innerHTML = related.map(buildRelatedCard).join('');
+            relatedProjectsSection.classList.remove('hidden');
+            initRelatedProjectsSwiper();
+          })
+          .catch(function () {
+            relatedProjectsGrid.innerHTML = '<div class="swiper-slide"><p class="related-empty">Gagal memuat proyek terkait.</p></div>';
+            relatedProjectsSection.classList.remove('hidden');
+            initRelatedProjectsSwiper();
+          });
+      };
+
+      applyMenuVisibility();
+
+      fetch('/api/site-settings.php', { cache: 'no-store' })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (!d || !d.ok || !d.settings) return;
+          siteSettings = d.settings;
+          applyMenuVisibility();
+          applyWhatsappButtons();
+          applyFooterSettings();
+        })
+        .catch(function () {
+          applyMenuVisibility();
+          applyWhatsappButtons();
+          applyFooterSettings();
+        });
+
+      if (!slug) {
+        statusEl.classList.add('error');
+        statusEl.textContent = 'Slug proyek tidak ditemukan.';
+        return;
+      }
+
+      fetch('/api/project-detail.php?slug=' + encodeURIComponent(slug), { cache: 'no-store' })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (!data || !data.ok || !data.project) throw new Error((data && data.message) ? data.message : 'Proyek tidak ditemukan.');
+          var p = data.project;
+          selectedProjectTitle = String(p.title || '').trim();
+          applyWhatsappButtons();
+          document.title = p.title + ' | Detail Proyek';
+          heroTitle.textContent = p.title || 'Detail Proyek';
+          heroSub.textContent = p.shortDescription || 'Informasi proyek tersedia di halaman ini.';
+          crumbProject.textContent = p.title || 'Detail';
+          titleEl.textContent = p.title || '-';
+          shortEl.textContent = p.shortDescription || '';
+          var rawDesc = String(p.description || '').trim();
+          var descHtml = /<[a-z][\s\S]*>/i.test(rawDesc) ? rawDesc : formatPlainTextToHtml(rawDesc);
+          descEl.innerHTML = descHtml;
+
+          // Trim leading empty blocks from richtext (common from copy/paste).
+          (function () {
+            var isBlank = function (el) {
+              if (!el || el.nodeType !== 1) return false;
+              var tag = el.tagName;
+              if (tag !== 'P' && tag !== 'DIV') return false;
+              if (el.querySelector('img,iframe,video,table,ul,ol')) return false;
+              var text = (el.textContent || '').replace(/\u00a0/g, ' ').trim();
+              return text === '';
+            };
+            while (descEl.firstElementChild && isBlank(descEl.firstElementChild)) {
+              descEl.removeChild(descEl.firstElementChild);
+            }
+          })();
+          metaClient.textContent = p.client || '-';
+          metaLocation.textContent = p.location || '-';
+          metaProjectYear.textContent = p.projectYear || '-';
+          metaDuration.textContent = p.duration || '-';
+          metaPrice.textContent = p.price || '-';
+
+          var gallery = Array.isArray(p.galleryImages) ? p.galleryImages.slice() : [];
+          if (!gallery.length && p.image) gallery = [p.image];
+          if (gallery.length) {
+            galleryImages = gallery.slice(0, 6);
+            thumbGrid.innerHTML = galleryImages.map(function (img, idx) {
+              return '<div class="thumb-item ' + (idx === 0 ? 'active' : '') + '" data-img="' + esc(img) + '"><img src="' + esc(img) + '" alt="thumb"></div>';
+            }).join('');
+            syncLightboxNav();
+            setActiveImage(0);
+            thumbGrid.addEventListener('click', function (e) {
+              var item = e.target.closest('.thumb-item');
+              if (!item) return;
+              var clickedIndex = Array.prototype.indexOf.call(thumbGrid.querySelectorAll('.thumb-item'), item);
+              if (clickedIndex < 0) return;
+              setActiveImage(clickedIndex);
+              toggleTab('photo');
+            });
+          } else {
+            galleryImages = [];
+            mainImage.src = EMPTY_IMAGE_DATA_URI;
+            thumbGrid.innerHTML = '';
+            syncLightboxNav();
+          }
+
+          var hasVideo = setVideo((p.videoUrl || '').trim());
+          if (hasVideo) tabVideo.classList.remove('hidden');
+
+          var features = Array.isArray(p.features) ? p.features : [];
+          if (features.length) {
+            featureList.innerHTML = features.map(function (f) { return '<li><i class="fa-solid fa-circle-check"></i><span>' + esc(f) + '</span></li>'; }).join('');
+            featureWrap.classList.remove('hidden');
+          }
+
+          statusEl.classList.add('hidden');
+          titleEl.classList.remove('hidden');
+          if (shortEl.textContent.trim()) shortEl.classList.remove('hidden');
+          if (String(descEl.textContent || '').trim()) descEl.classList.remove('hidden');
+          metaRow.classList.remove('hidden');
+          loadRelatedProjects(p.slug || slug);
+        })
+        .catch(function (err) {
+          statusEl.classList.add('error');
+          statusEl.textContent = err && err.message ? err.message : 'Gagal memuat detail proyek.';
+        });
+    })();
+  </script>
+  <script src="/assets/js/plugins/jquery.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

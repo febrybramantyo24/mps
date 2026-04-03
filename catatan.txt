@@ -1,0 +1,20 @@
+1. `git add . && git commit -m "ready deploy" && git push origin main`
+2. Hostinger `Websites > Manage > Git` -> connect repo + branch `main`
+3. Klik `Deploy` (atau aktifkan Auto Deploy)
+4. hPanel `Databases` -> buat DB MySQL baru
+5. phpMyAdmin Hostinger -> `Import` file `.sql` (hasil Export SQL admin)
+6. Edit `backend/config.php`:
+   - `DB_HOST`, `DB_NAME`, `DB_USER`, `DB_PASS`
+   - `ADMIN_USER`, `ADMIN_PASS`
+7. Pastikan folder upload ada dan writable:
+   - `assets/images/uploads/`
+   - `assets/files/uploads/`
+8. Cek live:
+   - `/`
+   - `/layanan/`
+   - `/produk/`
+   - `/proyek/`
+   - `/artikel/`
+   - `/admin/`
+9. Tes tambah 1 data dari admin + upload 1 gambar
+10. Kalau ada bug: fix lokal -> commit -> push -> deploy ulang file/code.

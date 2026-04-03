@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/MPS.png">
+    <title>MPS - PT. Maulana Prima Sejahtera</title>
+    <!-- fontawesome css -->
+    <link rel="stylesheet" preload href="/assets/css/plugins/fontawesome.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/aos.css">
+    <!-- swiper css-->
+    <link rel="stylesheet" preload href="/assets/css/plugins/odometer.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/swiper.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/metismenu.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/magnifying-popup.css">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" preload href="/assets/css/vendor/bootstrap.min.css">
+    <!-- custom css here -->
+    <link rel="stylesheet" preload href="/assets/css/style.css">
+<style>
+.submenu.menu-home,
+.submenu.menu-pages,
+.submenu.menu-shop,
+.submenu.menu-project,
+.submenu.menu-blog,
+.rts-mega-menu, .rts-blog-grid-area, .rts-blog-area, .blog-area, .blog-post-area, .blog-sidebar, .blog-main-wrapper { display: none !important; }
+
+.rts-contact-area-page .row.align-items-center {
+    align-items: stretch !important;
+}
+.rts-contact-area-page .contact-main-wrapper-left .row.g-24 > [class*="col-"] {
+    display: flex;
+}
+.rts-contact-area-page .quick-contact-page-1 {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.rts-contact-area-page .quick-contact-page-1 p {
+    margin-top: auto;
+}
+.rts-contact-area-page .contact-form-area-wrapper .wa-note {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #64748b;
+}
+.rts-contact-area-page .contact-form-area-wrapper .wa-status {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.rts-map-main-wrapper .map-contact iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 460px;
+    border: 0;
+    border-radius: 8px;
+}
+.rts-map-main-wrapper .map-contact .map-fallback {
+    min-height: 460px;
+    border: 1px solid #dbe3ee;
+    border-radius: 8px;
+    background: #f8fafc;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    color: #334155;
+}
+.rts-map-main-wrapper .map-contact .map-fallback a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border-radius: 10px;
+    padding: 9px 12px;
+    text-decoration: none;
+    background: #ff5e14;
+    color: #fff;
+    font-weight: 700;
+}
+.rts-map-area .map-shell {
+    border: 1px solid #dbe3ee;
+    border-radius: 20px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+    padding: clamp(16px, 2.4vw, 26px);
+}
+.rts-map-area .map-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+.rts-map-area .map-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #ff5e14;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+.rts-map-area .map-kicker i { font-size: 12px; }
+.rts-map-area .map-title {
+    margin: 7px 0 8px;
+    color: #0f172a;
+    font-size: clamp(24px, 3vw, 36px);
+    line-height: 1.15;
+}
+.rts-map-area .map-sub {
+    margin: 0;
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.75;
+    max-width: 760px;
+}
+.rts-map-area .map-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-content: flex-start;
+}
+.rts-map-area .map-badges span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #d9e2ee;
+    background: #fff;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 7px 11px;
+}
+.rts-map-area .map-badges i { color: #ff5e14; }
+.rts-map-area .map-grid {
+    display: grid;
+    grid-template-columns: 1.65fr .75fr;
+    gap: 14px;
+}
+.rts-map-area .map-side {
+    border: 1px solid #dbe3ee;
+    border-radius: 14px;
+    background: #fff;
+    padding: 14px;
+    display: grid;
+    gap: 12px;
+    align-content: start;
+}
+.rts-map-area .map-side-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 11px 12px;
+    background: #f8fafc;
+}
+.rts-map-area .map-side-card h6 {
+    margin: 0 0 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #64748b;
+}
+.rts-map-area .map-side-card p {
+    margin: 0;
+    color: #0f172a;
+    line-height: 1.55;
+    font-weight: 600;
+}
+@media (max-width: 991px) {
+    .rts-map-area .map-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+
+    <link rel="stylesheet" href="/assets/css/site-fixes.css">
+</head>
+
+<body class="inner"><header class="header-two header--sticky">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-top-wrapper">
+                            <div class="left">
+                                <div class="call">
+                                    <i class="fa-light fa-mobile"></i>
+                                    <a href="#"></a>
+                                    <a href="#"></a>
+                                </div>
+                                <div class="call">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <a href="#"></a>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="social-header">
+                                    <span>Follow Us On:</span>
+                                    <ul>
+                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-two-main-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-two-wrapper">
+                            <a href="/" class="logo-area">
+                                <span class="brand-lockup" aria-label="PT Maulana Prima Sejahtera">
+                                    <img class="brand-mark" src="/assets/images/MPS.png" alt="MPS">
+                                    <span class="brand-text">
+                                        <span class="brand-name">Maulana Prima</span>
+                                        <span class="brand-sub">Sejahtera</span>
+                                    </span>
+                                </span>
+                            </a>
+                            <div class="nav-area">
+    <ul class="" id="main-menu"></ul>
+</div>
+<div class="header-end">
+                                <a href="#" class="rts-btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Konsultasi WhatsApp</a>
+                                <div class="nav-btn menu-btn">
+                                    <img src="/assets/images/logo/bar.svg" alt="nav-iamge">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header area start -->
+    
+
+<div id="side-bar" class="side-bar header-two">
+    <button class="close-icon-menu"><i class="far fa-times"></i></button>
+    <!-- inner menu area desktop start -->
+    <div class="inner-main-wrapper-desk">
+        <div class="thumbnail">
+            <img src="/assets/images/banner/04.jpg" alt="elevate">
+        </div>
+        <div class="inner-content">
+            <h4 class="title">We Build Building and Great Constructive Homes.</h4>
+            <p class="disc">
+                We successfully cope with tasks of varying complexity, provide long-term guarantees and regularly
+                master new technologies.
+            </p>
+            <div class="footer">
+                <h4 class="title">Got a project in mind?</h4>
+                <a href="#" class="rts-btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Konsultasi via WhatsApp</a>
+            </div>
+        </div>
+    </div>
+    <!-- mobile menu area start -->
+        <div class="mobile-menu d-block d-xl-none">
+        <nav class="nav-main mainmenu-nav mt--30">
+            <ul class="mainmenu metismenu" id="mobile-menu-active">
+            </ul>
+        </nav>
+
+        <div class="social-wrapper-one">
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- mobile menu area end -->
+</div>
+    <!-- header area end -->
+
+    <!-- rts banner area strart -->
+    <div class="rts-banner-area rts-section-gap rts-breadcrumb-area  position-relative contact-bd">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-area-inner">
+                        <span class="water-text">Contact</span>
+                        <h1 class="title">
+                            Hubungi Kami
+                        </h1>
+                        <div class="nav-area-navigation">
+                            <a href="/">Home</a>
+                            <a class="current" href="#">Hubungi Kami</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts banner area end -->
+
+
+    <!-- rta contact area stsart -->
+    <div class="rts-contact-area-page rts-section-gap">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 pr--60 pr_sm--0 mb_sm--30 pr_md--10 pb_md--25 pb_sm--25">
+                    <div class="contact-main-wrapper-left">
+                        <span></span>
+                        <h3 class="title-main">
+                            <!-- We are always ready to help you <br> and answer your questions -->
+                        </h3>
+                        <p class="disc">
+                            <!-- Pacific hake false trevally queen parrotfish black prickleback mosshead warbonnet sweeper!
+                            Greenling sleeper. -->
+                        </p>
+                        <div class="row g-24">
+                            <div class="col-lg-6">
+                                <div class="quick-contact-page-1">
+                                    <div class="icon">
+                                        <img src="/assets/images/contact/01.svg" alt="contact">
+                                    </div>
+                                    <h5 class="title"></h5>
+                                    <p>
+                                        <!-- 800 100 975 20 34 <br>1800-234-5678 -->
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="quick-contact-page-1">
+                                    <div class="icon">
+                                        <img src="/assets/images/contact/02.svg" alt="contact">
+                                    </div>
+                                    <h5 class="title">Kantor Kami</h5>
+                                    <p>
+                                        <!-- USA, New York ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ 1060 <br>Str. First Avenue 1 -->
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div id="form-messages"></div>
+                    <form id="contact-wa-form" class="contact-form-area-wrapper">
+                        <h4 class="title">Hubungi Kami Sekarang</h4>
+                        <div class="half-inpur-wrapper">
+                            <div class="single">
+                                <input type="text" name="name" id="wa-name" placeholder="Nama Anda" required>
+                            </div>
+                            <div class="single">
+                                <input type="text" name="phone" id="wa-phone" placeholder="Nomor WhatsApp" required>
+                            </div>
+                        </div>
+                        <div class="single">
+                            <input name="subject" id="wa-subject" type="text" placeholder="Subjek (opsional)">
+                        </div>
+                        <textarea name="message" id="wa-message" placeholder="Tulis kebutuhan Anda" required></textarea>
+                        <button type="submit" class="rts-btn btn-primary">Kirim ke WhatsApp</button>
+                        <p class="wa-note">Klik tombol di atas untuk langsung chat ke WhatsApp.</p>
+                        <p class="wa-status" id="wa-status"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rta contact area end -->
+
+    <div class="rts-map-area rts-section-gapBottom">
+        <div class="container">
+            <div class="map-shell">
+                <div class="map-head">
+                    <div>
+                        <span class="map-kicker"><i class="fa-solid fa-location-dot"></i> Lokasi Kami</span>
+                        <h3 class="map-title">Kunjungi Office Kami Untuk Diskusi Proyek</h3>
+                        <p class="map-sub">Lokasi kantor kami mudah dijangkau dan siap menerima konsultasi kebutuhan layanan maupun proyek teknis Anda.</p>
+                    </div>
+                    <div class="map-badges">
+                        <span><i class="fa-solid fa-shield-halved"></i> Terpercaya</span>
+                        <span><i class="fa-solid fa-clock"></i> Respon Cepat</span>
+                        <span><i class="fa-solid fa-users"></i> Tim Profesional</span>
+                    </div>
+                </div>
+                <div class="map-grid">
+                    <div class="rts-map-main-wrapper">
+                        <div id="map-contact" class="map-contact" data-map-zoom="16" data-map-scroll="true"></div>
+                    </div>
+                    <aside class="map-side">
+                        <div class="map-side-card">
+                            <h6>Alamat</h6>
+                            <p id="map-side-address">Alamat kantor akan tampil di sini.</p>
+                        </div>
+                        <div class="map-side-card">
+                            <h6>Kontak</h6>
+                            <p id="map-side-contact">Nomor telepon dan email aktif kami.</p>
+                        </div>
+                        <div class="map-side-card">
+                            <h6>Jam Operasional</h6>
+                            <p id="map-side-hours">Informasi jam operasional kantor.</p>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- rts footer area start -->
+<div class="rts-footer-area rts-section-gapTop bg_footer-1 bg_image">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact-area-footer-top">
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h6 class="title">Call Us Now</h6>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </div>
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <h6 class="title">Office Time</h6>
+                        <a href="#"></a>
+                    </div>
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h6 class="title">Need Support</h6>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </div>
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fa-sharp fa-solid fa-location-dot"></i>
+                        </div>
+                        <h6 class="title">Our Address</h6>
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-full">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="nav-footer-wrapper-one">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul class="footer-float-nav">
+                                    <li><a href="/tentang/">Tentang Kami</a></li>
+                                    <li><a href="/proyek/">Projects</a></li>
+                                    <li><a href="/proyek/">Updates</a></li>
+                                    <li><a href="/tentang/">Mission</a></li>
+                                    <li><a href="/tentang/">Inside</a></li>
+                                    <li><a href="/kontak/">Contact</a></li>
+                                    <li><a href="/tentang/">History</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-4">
+                <div class="footer-wrapper-left-one">
+                    <a href="/" class="logo">
+                        <span class="brand-lockup" aria-label="PT Maulana Prima Sejahtera">
+                            <img class="brand-mark" src="/assets/images/MPS.png" alt="MPS">
+                            <span class="brand-text">
+                                <span class="brand-name">Maulana Prima</span>
+                                <span class="brand-sub">Sejahtera</span>
+                            </span>
+                        </span>
+                    </a>
+                    <!-- <p class="disc">
+                        weÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢re committed to elevating the construction experience for our clients. With a passion for
+                        innovation and quality craftsmanship,
+                    </p> -->
+                    <p class="disc">
+                        Kami berkomitmen untuk memberikan solusi konstruksi berkualitas tinggi yang disesuaikan dengan kebutuhan klien kami. Dengan fokus pada inovasi, ketelitian, dan keahlian, kami membangun ruang yang tahan lama.
+                    </p>
+                    <div class="social-area-wrapper-one">
+                        <ul>
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="footer-wrapper-right">
+                    <div class="single-nav-area-footer use-link">
+                        <h4 class="title">Useful Links</h4>
+                        <ul>
+                            <li><a href="/tentang/"><i class="fa-regular fa-arrow-right-long"></i>Tentang Kami</a></li>
+                            <li><a href="/tentang/"><i class="fa-regular fa-arrow-right-long"></i>Our Gallery</a></li>
+                            <li><a href="/layanan/"><i class="fa-regular fa-arrow-right-long"></i>Layanan Kami</a>
+                            </li>
+                            <li><a href="/tentang/#about-team-section"><i class="fa-regular fa-arrow-right-long"></i>Our Team</a></li>
+                            <li><a href="/kontak/"><i class="fa-regular fa-arrow-right-long"></i>Hubungi Kami</a></li>
+                        </ul>
+                    </div>
+                    <div class="single-nav-area-footer use-link">
+                        <h4 class="title">Quick Services</h4>
+                        <ul>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>General
+                                    Contracting</a>
+                            </li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Project
+                                    Management</a>
+                            </li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>New
+                                    Construction</a></li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Renovations
+                                    &
+                                    Remodeling</a></li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Interior
+                                    Finishing</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="single-nav-area-footer news-letter">
+                        <h4 class="title">Newsletter</h4>
+                        <p>Aplications prodize before front end ortals visualize front end</p>
+                        <form action="#">
+                            <input type="email" placeholder="Email Address" required>
+                            <button class="btn-subscribe mt--15">Subscribe Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-full copyright-area-one">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="copyright-wrapper">
+                                <p class="mb-0">Copyright &copy;
+                                    <script>
+                                        document.write(
+                                            new Date().getFullYear()
+                                        )
+                                    </script>
+                                    Elever. All Rights Reserved.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- rts footer area end -->
+
+    <!-- progress area start -->
+<!-- <div id="elevate-load">
+    <div class="loader-wrapper">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div> -->
+<!-- progress area end -->
+
+<!-- progress area start -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+            style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+        </path>
+    </svg>
+</div>
+<!-- progress area end -->
+
+
+<!-- offcanvase search -->
+<div class="search-input-area">
+    <div class="container">
+        <div class="search-input-inner">
+            <div class="input-div">
+                <input class="search-input autocomplete" type="text" placeholder="Search by keyword or #">
+                <button><i class="far fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+    <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+</div>
+<div id="anywhere-home" class="">
+</div>
+
+<!-- scripts -->
+<script src="/assets/js/plugins/jquery.js"></script>
+<script src="/assets/js/vendor/bootstrap.min.js"></script>
+
+<script src="/assets/js/plugins/odometer.js"></script>
+<script src="/assets/js/plugins/jquery-appear.js"></script>
+
+<script src="/assets/js/plugins/metismenu.js"></script>
+<script src="/assets/js/plugins/swiper.js"></script>
+<script src="/assets/js/plugins/aos.js"></script>
+<script src="/assets/js/plugins/nice-select.js"></script>
+<script src="/assets/js/plugins/smooth-scroll.js"></script>
+<script src="/assets/js/vendor/waw.js"></script>
+
+<script src="https://html.themewant.com/golfy/assets/js/plugins/magnific-popup.js"></script>
+
+<script>
+  (function () {
+    var settings = {};
+
+    var normalizeUrl = function (value) {
+      var raw = String(value || '').trim();
+      if (!raw) return '';
+      if (/^https?:\/\//i.test(raw)) return raw;
+      if (/^\/\//.test(raw)) return 'https:' + raw;
+      return 'https://' + raw;
+    };
+    var normalizeMapEmbedUrl = function (value) {
+      var raw = String(value || '').trim();
+      if (!raw) return '';
+
+      var iframeSrcMatch = raw.match(/src\s*=\s*["']([^"']+)["']/i);
+      if (iframeSrcMatch && iframeSrcMatch[1]) {
+        return normalizeUrl(iframeSrcMatch[1]);
+      }
+
+      var cleaned = normalizeUrl(raw);
+      if (/google\.[^/]+\/maps\/embed/i.test(cleaned)) return cleaned;
+
+      var gmapShort = cleaned.match(/google\.[^/]+\/maps\/(?:place|search|@|\?q=)/i);
+      if (gmapShort) {
+        return '';
+      }
+      return cleaned;
+    };
+
+    var toFloat = function (value, fallback) {
+      var parsed = parseFloat(String(value || '').trim());
+      return Number.isFinite(parsed) ? parsed : fallback;
+    };
+
+    var toInt = function (value, fallback) {
+      var parsed = parseInt(String(value || '').trim(), 10);
+      return Number.isFinite(parsed) ? parsed : fallback;
+    };
+
+    var bindWhatsappForm = function () {
+      var form = document.getElementById('contact-wa-form');
+      var statusEl = document.getElementById('wa-status');
+      if (!form) return;
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var waUrl = normalizeUrl(settings.whatsapp || '');
+        if (!waUrl) {
+          if (statusEl) {
+            statusEl.textContent = 'Nomor WhatsApp belum diatur di Admin Settings.';
+            statusEl.style.color = '#b91c1c';
+          }
+          return;
+        }
+
+        var name = (document.getElementById('wa-name') || {}).value || '';
+        var phone = (document.getElementById('wa-phone') || {}).value || '';
+        var subject = (document.getElementById('wa-subject') || {}).value || '';
+        var message = (document.getElementById('wa-message') || {}).value || '';
+
+        var lines = [
+          'Halo, saya ingin konsultasi.',
+          'Nama: ' + name,
+          'No. WA: ' + phone
+        ];
+        if (subject.trim()) lines.push('Subjek: ' + subject);
+        lines.push('Pesan: ' + message);
+        var finalUrl = waUrl + (waUrl.indexOf('?') === -1 ? '?text=' : '&text=') + encodeURIComponent(lines.join('\n'));
+
+        window.open(finalUrl, '_blank', 'noopener');
+        if (statusEl) {
+          statusEl.textContent = 'Mengarahkan ke WhatsApp...';
+          statusEl.style.color = '#166534';
+        }
+      });
+    };
+
+    var initDynamicMap = function () {
+      var mapEl = document.getElementById('map-contact');
+      if (!mapEl) return;
+
+      var embedUrl = normalizeMapEmbedUrl(settings.mapEmbedUrl || '');
+      if (embedUrl) {
+        mapEl.innerHTML = '<iframe src="' + embedUrl + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>';
+        return;
+      }
+
+      var lat = toFloat(settings.mapLat, -6.2088);
+      var lng = toFloat(settings.mapLng, 106.8456);
+      var zoom = toInt(settings.mapZoom, 14);
+      var center = { lat: lat, lng: lng };
+
+      if (!window.google || !google.maps) {
+        var mapsQueryUrl = 'https://www.google.com/maps?q=' + encodeURIComponent(lat + ',' + lng) + '&z=' + encodeURIComponent(String(zoom));
+        mapEl.innerHTML = '' +
+          '<div class="map-fallback">' +
+            '<strong>Peta belum terhubung ke Google Maps API.</strong>' +
+            '<p style="margin:0;">Isi <b>Map Embed URL</b> di Admin Settings agar peta tampil tanpa API key.</p>' +
+            '<a href="' + mapsQueryUrl + '" target="_blank" rel="noopener"><i class="fa-solid fa-map-location-dot"></i>Buka di Google Maps</a>' +
+          '</div>';
+        return;
+      }
+
+      var map = new google.maps.Map(mapEl, {
+        center: center,
+        zoom: zoom,
+        mapTypeControl: false,
+        streetViewControl: false
+      });
+
+      var marker = new google.maps.Marker({
+        map: map,
+        position: center
+      });
+
+      var locationText = [settings.footerAddress1, settings.footerAddress2].filter(Boolean).join(', ');
+      var emailText = settings.footerSupportEmailPrimary || settings.headerEmailPrimary || '';
+      var phoneText = settings.footerPhonePrimary || settings.headerPhonePrimary || '';
+      var contentParts = [];
+      if (locationText) contentParts.push('<div><strong>Alamat:</strong> ' + locationText + '</div>');
+      if (emailText) contentParts.push('<div><strong>Email:</strong> ' + emailText + '</div>');
+      if (phoneText) contentParts.push('<div><strong>Tel:</strong> ' + phoneText + '</div>');
+      if (!contentParts.length) return;
+
+      var infoWindow = new google.maps.InfoWindow({
+        content: '<div style="font-size:13px;line-height:1.5;">' + contentParts.join('') + '</div>'
+      });
+      marker.addListener('click', function () {
+        infoWindow.open(map, marker);
+      });
+    };
+    var applyMapSideInfo = function () {
+      var addressEl = document.getElementById('map-side-address');
+      var contactEl = document.getElementById('map-side-contact');
+      var hoursEl = document.getElementById('map-side-hours');
+      if (!addressEl || !contactEl || !hoursEl) return;
+
+      var addressText = [settings.footerAddress1, settings.footerAddress2].filter(Boolean).join(', ');
+      var contactText = [settings.footerPhonePrimary || settings.headerPhonePrimary, settings.footerSupportEmailPrimary || settings.headerEmailPrimary].filter(Boolean).join(' | ');
+      var hoursText = [settings.footerOfficeHours1, settings.footerOfficeHours2].filter(Boolean).join(' | ');
+
+      if (addressText) addressEl.textContent = addressText;
+      if (contactText) contactEl.textContent = contactText;
+      if (hoursText) hoursEl.textContent = hoursText;
+    };
+
+    var boot = function () {
+      fetch('/api/site-settings.php', { cache: 'no-store' })
+        .then(function (response) { return response.json(); })
+        .then(function (data) {
+          if (data && data.ok && data.settings) {
+            settings = data.settings;
+          }
+        })
+        .catch(function () {})
+        .finally(function () {
+          bindWhatsappForm();
+          initDynamicMap();
+          applyMapSideInfo();
+        });
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', boot);
+    } else {
+      boot();
+    }
+  })();
+</script>
+
+<script src="/assets/js/main.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

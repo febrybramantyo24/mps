@@ -1,0 +1,70 @@
+.cta-main-wrapper-two {
+    height: 570px;
+    background-image: url(../images/cta/02.webp);
+}
+
+.container-smx {
+    max-width: 1800px;
+    margin: auto;
+}
+
+
+.cta-main-wrapper-two {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .inner-content-text {
+        text-align: center;
+
+        .pre {
+            font-size: 15px;
+            text-transform: uppercase;
+            color: #fff;
+            display: block;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .title {
+            font-size: 80px;
+            margin-bottom: 25px;
+            @media #{$large-mobile} {
+                font-size: 40px;
+            }
+        }
+
+        a.mail {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #fff;
+            display: block;
+        }
+
+        p {
+            color: #fff;
+            font-size: 24px;
+            @media #{$large-mobile} {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .button-wrapper {
+        margin: auto;
+        justify-content: center;
+        .rts-btn{
+            height: 50px;
+        }
+        .btn-white {
+            img {
+                filter: brightness(0) saturate(100%) invert(35%) sepia(56%) saturate(2161%) hue-rotate(349deg) brightness(98%) contrast(98%);
+            }
+            &:hover{
+                img{
+                    filter: brightness(0) saturate(100%) invert(100%) sepia(10%) saturate(7447%) hue-rotate(171deg) brightness(109%) contrast(112%);
+                }
+            }
+        }
+    }
+}

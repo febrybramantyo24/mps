@@ -1,0 +1,2345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MPS - PT. Maulana Prima Sejahtera</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/MPS.png">
+  <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/plugins/fontawesome.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/site-fixes.css">
+  <style>
+    :root {
+      --bg: #f4f6fb;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --brand: #ff5e14;
+    }
+    body {
+      background:
+        radial-gradient(circle at 0 0, #fff4ed 0%, var(--bg) 38%),
+        linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+      color: var(--text);
+    }
+    .service-hero {
+      position: relative;
+      width: 100%;
+      max-width: none;
+      height: auto;
+      margin: 0 0 24px;
+      border-radius: 0;
+      display: block;
+      overflow: hidden;
+      padding: 68px 0 26px;
+      background-image: linear-gradient(130deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.9)), url('/assets/images/banner/breadcrumb.webp');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .service-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 75% -20%, rgba(255, 94, 20, 0.28), transparent 55%);
+      pointer-events: none;
+    }
+    .service-hero .baread-crumb-main-wrapper.pt--100 { padding-top: 0 !important; }
+    .service-hero .baread-crumb-main-wrapper .inner { max-width: none; width: 100%; }
+    .hero-top {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .back-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+    .back-chip:hover { background: rgba(255, 255, 255, 0.08); color: #fff; }
+    .hero-breadcrumb { color: #cbd5e1; font-size: 13px; }
+    .hero-breadcrumb a { color: #fff; text-decoration: none; }
+    .hero-breadcrumb .sep { opacity: .65; padding: 0 6px; }
+    .hero-breadcrumb .current { color: #ffb290; font-weight: 800; }
+    .service-hero .water-text { display: none; }
+    .hero-title {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      font-size: clamp(34px, 4.5vw, 54px);
+      margin: 0 0 12px;
+      line-height: 1.08;
+      max-width: 760px;
+    }
+    .hero-sub {
+      position: relative;
+      z-index: 2;
+      color: #dbe7ff;
+      max-width: 860px;
+      margin: 0;
+      font-size: clamp(15px, 1.1vw, 18px);
+      line-height: 1.82;
+    }
+    .hero-tags {
+      position: relative;
+      z-index: 2;
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .hero-tags .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .hero-tags .tag i { color: #ffc9ad; }
+    .service-hero .nav-area-navigation {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+    .service-hero .nav-area-navigation a {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .service-hero .nav-area-navigation a.current,
+    .service-hero .nav-area-navigation a:hover {
+      color: #ffb290;
+    }
+    .service-hero .nav-area-navigation i {
+      color: rgba(226, 232, 240, 0.72);
+      font-size: 11px;
+    }
+
+    .service-wrap { padding-bottom: 58px; }
+    .service-card {
+      background: var(--card);
+      border: 1px solid #d9e3f0;
+      border-radius: 22px;
+      box-shadow: 0 24px 48px rgba(15, 23, 42, .1);
+      overflow: hidden;
+    }
+    .service-media {
+      padding: clamp(16px, 2vw, 22px);
+      border-right: 1px solid var(--line);
+      background: linear-gradient(180deg, #f8fafc, #fff);
+      height: 100%;
+    }
+    .media-switch {
+      display: inline-flex;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+    .media-switch button {
+      border: 0;
+      background: #fff;
+      color: #334155;
+      padding: 9px 14px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .media-switch button.active {
+      background: var(--brand);
+      color: #fff;
+    }
+    .media-box {
+      position: relative;
+      border: 1px solid #dbe3ed;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #f1f5f9;
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .media-stage-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 0;
+      background: rgba(15, 23, 42, 0.76);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 3;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .media-stage-nav:hover {
+      background: var(--brand);
+      transform: translateY(-50%) scale(1.05);
+    }
+    .media-stage-nav.prev { left: 10px; }
+    .media-stage-nav.next { right: 10px; }
+    .media-box img,
+    .media-box iframe,
+    .media-box video {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+      border: 0;
+      display: block;
+    }
+    #box-image img {
+      cursor: zoom-in;
+    }
+    .media-full-btn {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      width: 34px;
+      height: 34px;
+      border: 0;
+      border-radius: 10px;
+      color: #fff;
+      background: rgba(15, 23, 42, .78);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background .2s ease;
+      z-index: 2;
+    }
+    .media-full-btn:hover {
+      background: var(--brand);
+    }
+    .thumb-grid {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 2px 2px 4px;
+      scrollbar-width: thin;
+      scrollbar-color: #cbd5e1 transparent;
+    }
+    .thumb-grid::-webkit-scrollbar { height: 7px; }
+    .thumb-grid::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 999px;
+    }
+    .thumb-item {
+      border: 1px solid #dbe3ed;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #fff;
+      flex: 0 0 92px;
+      width: 92px;
+    }
+    .thumb-item img { width: 100%; height: 78px; object-fit: cover; display: block; }
+    .thumb-item.active { outline: 2px solid #ff5e14; border-color: #ff5e14; }
+    .service-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 11000;
+      background: rgba(2, 6, 23, 0.86);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+    }
+    .service-lightbox.open {
+      display: flex;
+    }
+    .service-lightbox-frame {
+      position: relative;
+      width: min(1200px, 100%);
+      max-height: calc(100vh - 56px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .service-lightbox-image {
+      max-width: 100%;
+      max-height: calc(100vh - 84px);
+      border-radius: 12px;
+      object-fit: contain;
+      box-shadow: 0 20px 44px rgba(2, 6, 23, .44);
+      background: #0b1220;
+    }
+    .service-lightbox-close,
+    .service-lightbox-nav {
+      position: absolute;
+      border: 0;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(15, 23, 42, 0.82);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background .2s ease;
+    }
+    .service-lightbox-close:hover,
+    .service-lightbox-nav:hover {
+      background: var(--brand);
+    }
+    .service-lightbox-close {
+      right: 10px;
+      top: 10px;
+    }
+    .service-lightbox-nav.prev {
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .service-lightbox-nav.next {
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .hidden { display: none !important; }
+
+    .service-content {
+      padding: clamp(18px, 2vw, 28px) clamp(18px, 2.4vw, 30px) 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .service-status { color: var(--muted); margin-bottom: 0; }
+    .service-error { color: #b91c1c; }
+    .content-title {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 3vw, 44px);
+      line-height: 1.12;
+      letter-spacing: -.2px;
+      color: #0f172a !important;
+      font-weight: 800;
+    }
+    .content-short,
+    .content-desc {
+      position: relative;
+      margin-bottom: 0;
+      border-radius: 16px;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      background:
+        radial-gradient(circle at 0 0, rgba(255, 94, 20, 0.10), transparent 55%),
+        linear-gradient(180deg, #ffffff, #f8fbff);
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+    }
+    .content-short::before,
+    .content-desc::before {
+      content: attr(data-label);
+      position: absolute;
+      top: 10px;
+      left: 16px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 900;
+      color: #ff5e14;
+      opacity: 0.95;
+      pointer-events: none;
+    }
+    .content-short::after,
+    .content-desc::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--brand), #ffb290);
+      opacity: 0.95;
+      pointer-events: none;
+    }
+    .content-short {
+      color: #334155;
+      font-size: 17px;
+      line-height: 1.78;
+      padding: 32px 16px 16px 18px;
+      font-weight: 650;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255, 94, 20, 0.14), transparent 55%),
+        linear-gradient(180deg, #ffffff, #fbfdff);
+    }
+    .content-desc {
+      color: #334155;
+      line-height: 1.82;
+      white-space: normal;
+      font-size: 16px;
+      padding: 34px 16px 16px 18px;
+      background:
+        radial-gradient(circle at 0 0, rgba(14, 165, 233, 0.10), transparent 55%),
+        radial-gradient(circle at 20% 0, rgba(255, 94, 20, 0.08), transparent 60%),
+        linear-gradient(180deg, #ffffff, #f8fbff);
+    }
+    .content-desc h2 {
+      margin: 18px 0 10px;
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 900;
+      color: #0f172a;
+    }
+    .content-desc h3 {
+      margin: 14px 0 8px;
+      font-size: 18px;
+      line-height: 1.25;
+      font-weight: 900;
+      color: #0f172a;
+    }
+    .content-desc .t-sm { font-size: 14px; line-height: 1.7; }
+    .content-desc .t-lg { font-size: 18px; line-height: 1.7; }
+    .content-desc .t-sz-12 { font-size: 12px; line-height: 1.7; }
+    .content-desc .t-sz-14 { font-size: 14px; line-height: 1.7; }
+    .content-desc .t-sz-16 { font-size: 16px; line-height: 1.7; }
+    .content-desc .t-sz-18 { font-size: 18px; line-height: 1.7; }
+    .content-desc .t-sz-20 { font-size: 20px; line-height: 1.6; }
+    .content-desc .t-sz-24 { font-size: 24px; line-height: 1.35; }
+    .content-desc .t-sz-28 { font-size: 28px; line-height: 1.25; }
+    .content-desc .t-sz-32 { font-size: 32px; line-height: 1.2; }
+    .content-desc .t-sz-36 { font-size: 36px; line-height: 1.15; }
+    .content-desc p {
+      margin: 0 0 12px;
+    }
+    .content-desc p:last-child {
+      margin-bottom: 0;
+    }
+    .content-desc div { margin: 0 0 12px; }
+    .content-desc div:last-child { margin-bottom: 0; }
+    .content-desc ul {
+      list-style: none;
+      margin: 0 0 12px;
+      padding: 0;
+      display: grid;
+      gap: 4px;
+    }
+    .content-desc li {
+      position: relative;
+      padding-left: 18px;
+      color: #334155;
+      line-height: 1.7;
+    }
+    .content-desc li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--brand);
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      box-shadow: 0 0 0 2px rgba(255, 94, 20, 0.12);
+    }
+    .facts-grid {
+      margin-top: 0;
+      margin-bottom: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .fact-item {
+      border: 1px solid #dbe5f0;
+      border-radius: 12px;
+      padding: 11px 12px;
+      background: #f8fbff;
+    }
+    .fact-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+    .fact-label i {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(255, 94, 20, 0.12);
+      color: var(--brand);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+    .fact-value {
+      color: #0f172a;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+    .feature-box {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: linear-gradient(180deg, #fbfdff, #f8fbff);
+      padding: 15px;
+      margin-top: 4px;
+    }
+    .feature-box h3 {
+      margin: 0 0 3px;
+      font-size: 18px;
+      font-weight: 800;
+      color: #1e293b;
+    }
+    .feature-sub {
+      margin: 0 0 12px;
+      font-size: 13px;
+      color: #64748b;
+    }
+    .feature-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      color: #1e293b;
+      border: 0;
+      border-bottom: 1px dashed #dbe3ed;
+      border-radius: 0;
+      padding: 6px 2px 7px;
+      background: transparent;
+    }
+    .feature-list li:last-child { border-bottom: 0; padding-bottom: 2px; }
+    .feature-list li span { flex: 1; line-height: 1.6; }
+    .feature-list i { color: var(--brand); margin-top: 2px; }
+    .service-note {
+      margin-top: 4px;
+      border-left: 3px solid var(--brand);
+      padding: 10px 12px;
+      border-radius: 0 10px 10px 0;
+      background: #fff7f2;
+      color: #7c2d12;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .service-actions { margin-top: 2px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn-solid {
+      background: var(--brand);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .service-actions .btn-solid,
+    .service-actions .btn-solid:visited,
+    .service-actions .btn-solid:focus,
+    .service-actions .btn-solid:active {
+      min-height: 48px;
+      border: 1px solid #ff5e14;
+      background: linear-gradient(135deg, #ff6a21, #ff4f0f);
+      color: #fff !important;
+      box-shadow: 0 10px 20px rgba(255, 94, 20, 0.2);
+    }
+    .service-actions .btn-solid i {
+      color: #fff !important;
+      opacity: 1;
+    }
+    .service-actions .btn-solid:hover {
+      border-color: #e84f0c;
+      background: linear-gradient(135deg, #ff5e14, #e84f0c);
+      color: #fff !important;
+      transform: translateY(-1px);
+    }
+    .btn-soft {
+      border: 1px solid #cbd5e1;
+      color: #0f172a;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-weight: 700;
+      background: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .trust-strip {
+      margin-top: 2px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .trust-strip span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 11px;
+      border: 1px solid #dbe5f0;
+      border-radius: 999px;
+      background: #fff;
+      color: #334155;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .trust-strip i { color: var(--brand); }
+    .service-reviews {
+      padding: 4px 0 20px;
+    }
+    .review-shell {
+      border: 1px solid #d8e3ef;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+    }
+    .review-content {
+      padding: clamp(14px, 2vw, 22px);
+    }
+    .review-content h3 {
+      margin: 0 0 12px;
+      color: #0f172a;
+      font-size: clamp(24px, 2vw, 34px);
+    }
+    .review-empty {
+      color: #64748b;
+      background: #fff;
+      border: 1px dashed #d0dae6;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 0;
+    }
+    .service-review-list {
+      display: grid;
+      gap: 10px;
+    }
+    .service-review-toggle-wrap {
+      margin-top: 4px;
+      display: flex;
+      justify-content: center;
+    }
+    .service-review-toggle-btn {
+      border: 1px solid #d6e0ec;
+      background: #fff;
+      color: #0f172a;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1;
+      transition: .2s ease;
+    }
+    .service-review-toggle-btn:hover {
+      border-color: #ff5e14;
+      color: #ff5e14;
+    }
+    .service-review-item {
+      border: 1px solid #d7e2ef;
+      border-radius: 12px;
+      background: #fff;
+      padding: 12px;
+    }
+    .service-review-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 3px;
+    }
+    .service-review-name {
+      color: #0f172a;
+      font-weight: 800;
+      font-size: 16px;
+      margin: 0;
+    }
+    .service-review-date {
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .service-review-stars {
+      display: inline-flex;
+      gap: 2px;
+      color: #f59e0b;
+      font-size: 14px;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .service-review-stars .off { color: #cbd5e1; }
+    .service-review-text {
+      margin: 0;
+      color: #334155;
+      line-height: 1.75;
+      font-size: 15px;
+    }
+    .service-review-form {
+      margin-top: 12px;
+      border: 1px solid #d8e3ef;
+      border-radius: 12px;
+      background: #f8fbff;
+      padding: 14px;
+    }
+    .service-review-form h4 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 2.2vw, 40px);
+      color: #0f172a;
+      line-height: 1.1;
+    }
+    .review-input,
+    .review-textarea {
+      width: 100%;
+      border: 1px solid #ccd8e6;
+      border-radius: 10px;
+      background: #fff;
+      padding: 10px 12px;
+      color: #0f172a;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .review-textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+    .service-rating-line {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: #334155;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .service-rating-stars {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid #ccd8e6;
+      border-radius: 10px;
+      padding: 4px 8px;
+      background: #fff;
+    }
+    .service-rating-stars button {
+      border: 0;
+      background: transparent;
+      color: #94a3b8;
+      font-size: 20px;
+      line-height: 1;
+      padding: 0;
+      cursor: pointer;
+    }
+    .service-rating-stars button.active { color: #f59e0b; }
+    .review-submit-btn {
+      margin-top: 12px;
+      border: 0;
+      background: var(--brand);
+      color: #fff;
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-weight: 800;
+      font-size: 14px;
+    }
+    .service-review-message {
+      margin: 10px 0 0;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .related-services {
+      position: relative;
+      padding: 14px 0 68px;
+    }
+    .related-services::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 40px;
+      bottom: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.88));
+      pointer-events: none;
+    }
+    .related-services .container {
+      position: relative;
+      z-index: 2;
+    }
+    .related-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .related-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      color: var(--brand);
+      font-size: 12px;
+      letter-spacing: .12em;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .related-kicker i {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(255, 94, 20, 0.14);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+    }
+    .related-head .title {
+      margin: 0;
+      font-size: clamp(24px, 2.4vw, 36px);
+      line-height: 1.16;
+      color: #0f172a;
+    }
+    .related-head .sub {
+      margin: 8px 0 0;
+      color: #64748b;
+      max-width: 720px;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .related-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: #fff;
+      border: 1px solid #d7e2ee;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+      transition: .25s ease;
+    }
+    .related-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 22px 44px rgba(15, 23, 42, 0.14);
+      border-color: rgba(255, 94, 20, 0.4);
+    }
+    .related-card .thumb {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      background: #e2e8f0;
+    }
+    .related-card .thumb::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.06), rgba(15, 23, 42, 0.42));
+      pointer-events: none;
+    }
+    .related-card .thumb img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+    .related-badge {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      background: rgba(15, 23, 42, 0.55);
+      color: #fff;
+      backdrop-filter: blur(3px);
+    }
+    .related-badge i { color: #ffb703; }
+    .related-card:hover .thumb img { transform: scale(1.06); }
+    .related-card .body {
+      padding: 15px 15px 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .related-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+      color: #475569;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.3;
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      width: fit-content;
+    }
+    .related-chip i { color: var(--brand); }
+    .related-title {
+      margin: 0 0 9px;
+      font-size: 26px;
+      line-height: 1.15;
+      color: #0f172a;
+      min-height: 68px;
+    }
+    .related-desc {
+      margin: 0 0 12px;
+      color: #475569;
+      line-height: 1.7;
+      min-height: 74px;
+      flex: 1;
+    }
+    .related-meta {
+      margin-bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #334155;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .related-meta i {
+      color: var(--brand);
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(255, 94, 20, .12);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+    }
+    .related-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #0f172a;
+      font-weight: 700;
+      text-decoration: none;
+      width: fit-content;
+      border: 1px solid #dbe5f0;
+      border-radius: 10px;
+      padding: 8px 12px;
+      transition: .2s ease;
+      background: #fff;
+    }
+    .related-link:hover {
+      border-color: #ff5e14;
+      color: #ff5e14;
+      transform: translateX(2px);
+    }
+    .related-link i { color: var(--brand); }
+    .related-empty {
+      color: #64748b;
+      background: #fff;
+      border: 1px dashed #cfd8e3;
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .related-pagination {
+      margin-top: 22px;
+    }
+    .related-pagination.hidden { display: none; }
+    .related-pagination ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .related-pagination ul li { margin: 0; }
+    .related-pagination .related-page-btn {
+      border: 1px solid #d4dfec;
+      background: #fff;
+      color: #0f172a;
+      min-width: 40px;
+      height: 40px;
+      padding: 0 12px;
+      border-radius: 11px;
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: .2s ease;
+      width: auto !important;
+      max-width: none !important;
+      cursor: pointer;
+    }
+    .related-pagination .related-page-btn:hover {
+      border-color: #ff5e14;
+      color: #ff5e14;
+    }
+    .related-pagination .related-page-btn.active {
+      border-color: #ff5e14;
+      background: #ff5e14;
+      color: #fff;
+    }
+    .related-pagination .related-page-btn[disabled] {
+      opacity: .4;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+    .related-pagination .pagination-dots {
+      min-width: 28px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748b;
+      font-weight: 700;
+      user-select: none;
+    }
+    @media (max-width: 991px) {
+      .service-hero { padding-top: 34px; }
+      .service-hero .baread-crumb-main-wrapper.pt--100 { padding-top: 6px !important; }
+      .hero-title { font-size: 30px; }
+      .service-media { border-right: 0; border-bottom: 1px solid var(--line); }
+      .content-title { font-size: 28px; }
+      .facts-grid { grid-template-columns: 1fr; }
+      .related-card .thumb img { height: 170px; }
+    }
+    @media (max-width: 767px) {
+      .related-pagination ul {
+        flex-wrap: nowrap;
+        justify-content: center;
+        padding-bottom: 2px;
+      }
+      .related-pagination .related-page-btn {
+        min-width: 38px;
+        height: 38px;
+        font-size: 12px;
+        padding: 0 9px;
+      }
+      .related-pagination .pagination-dots {
+        min-width: 22px;
+        height: 38px;
+      }
+      .service-content { gap: 12px; }
+      .btn-solid, .btn-soft { width: 100%; justify-content: center; }
+      .service-actions { gap: 8px; }
+      .service-review-form h4 { font-size: 30px; }
+      .related-head .sub { font-size: 14px; }
+      .related-title { min-height: auto; font-size: 24px; }
+      .related-desc { min-height: auto; }
+      .related-card .body { height: auto; }
+      #related-services-list {
+        justify-content: center;
+      }
+      #related-services-list > [class*="col-"] {
+        flex: 0 0 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .related-card {
+        width: 100%;
+        max-width: 430px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header-two header--sticky">
+    <div class="header-two-main-wrapper">
+      <div class="container">
+        <div class="header-two-wrapper">
+          <a href="/" class="logo-area" aria-label="PT Maulana Prima Sejahtera"><span class="brand-lockup"><img class="brand-mark" src="/assets/images/MPS.png" alt="MPS"><span class="brand-text"><span class="brand-name">Maulana Prima</span><span class="brand-sub">Sejahtera</span></span></span></a>
+          <div class="nav-area">
+            <ul>
+              <li class="main-nav"><a href="/">Home</a></li>
+              <li class="main-nav"><a href="/tentang/">Tentang</a></li>
+              <li class="main-nav"><a href="/layanan/">Layanan</a></li>
+              <li class="main-nav"><a href="/produk/">Produk</a></li>
+              <li class="main-nav"><a href="/proyek/">Proyek</a></li>
+              <li class="main-nav"><a href="/artikel/">Artikel</a></li>
+              <li class="main-nav"><a href="/kontak/">Kontak</a></li>
+            </ul>
+          </div>
+          <div class="header-end">
+            <a href="#" class="rts-btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Konsultasi WhatsApp</a>
+            <div class="nav-btn menu-btn">
+              <img src="/assets/images/logo/bar.svg" alt="menu">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="side-bar" class="side-bar header-two">
+    <button class="close-icon-menu"><i class="far fa-times"></i></button>
+    <div class="inner-main-wrapper-desk">
+      <div class="thumbnail">
+        <img src="/assets/images/banner/04.jpg" alt="elevate">
+      </div>
+      <div class="inner-content">
+        <h4 class="title">We Build Building and Great Constructive Homes.</h4>
+        <p class="disc">
+          We successfully cope with tasks of varying complexity, provide long-term guarantees and regularly
+          master new technologies.
+        </p>
+        <div class="footer">
+          <h4 class="title">Got a project in mind?</h4>
+          <a href="#" class="rts-btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Konsultasi via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-menu d-block d-xl-none">
+      <nav class="nav-main mainmenu-nav mt--30">
+        <ul class="mainmenu metismenu" id="mobile-menu-active">
+          <li><a href="/" class="main">Home</a></li>
+          <li><a href="/layanan/" class="main">Layanan</a></li>
+          <li><a href="/produk/" class="main">Produk</a></li>
+          <li><a href="/proyek/" class="main">Proyek</a></li>
+          <li><a href="/artikel/" class="main">Artikel</a></li>
+          <li><a href="/kontak/" class="main">Kontak</a></li>
+          <li><a href="/tentang/" class="main">Tentang</a></li>
+        </ul>
+      </nav>
+      <div class="social-wrapper-one">
+        <ul>
+          <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="rts-breadcrumb-area bg_image service-hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="baread-crumb-main-wrapper pt--100">
+            <div class="inner">
+              <div class="hero-top">
+                <a href="/layanan/" class="back-chip"><i class="fa-regular fa-arrow-left"></i> Kembali ke Layanan</a>
+                <div class="hero-breadcrumb" aria-label="Breadcrumb">
+                  <a href="/">Home</a><span class="sep">/</span><a href="/layanan/">Layanan</a><span class="sep">/</span><span class="current" id="crumb-service">Detail</span>
+                </div>
+              </div>
+              <span class="water-text">Layanan</span>
+              <h1 id="hero-title" class="title hero-title">Detail Layanan</h1>
+              <p id="hero-sub" class="hero-sub">Memuat informasi layanan...</p>
+              <div id="hero-tags" class="hero-tags hidden"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="service-wrap">
+    <div class="container">
+      <div class="service-card">
+        <div class="row g-0">
+          <div class="col-lg-5">
+            <div class="service-media">
+              <div class="media-switch">
+                <button id="tab-image" class="active" type="button">Foto</button>
+                <button id="tab-video" class="hidden" type="button">Video</button>
+              </div>
+              <div id="box-image" class="media-box">
+                <button id="service-stage-prev" class="media-stage-nav prev" type="button" aria-label="Gambar sebelumnya">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="service-stage-next" class="media-stage-nav next" type="button" aria-label="Gambar berikutnya">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <button id="service-open-fullscreen" class="media-full-btn" type="button" aria-label="Buka gambar fullscreen">
+                  <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                </button>
+                <img id="service-image" src="" alt="Layanan" loading="lazy">
+              </div>
+              <div id="box-video" class="media-box hidden"></div>
+              <div id="service-thumb-grid" class="thumb-grid"></div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="service-content">
+              <p id="service-status" class="service-status">Memuat detail layanan...</p>
+              <h2 id="service-title" class="content-title hidden"></h2>
+              <p id="service-short" class="content-short hidden" data-label="Ringkasan"></p>
+              <div id="service-desc" class="content-desc hidden" data-label="Detail"></div>
+              <div id="service-facts" class="facts-grid hidden"></div>
+              <div id="feature-wrapper" class="feature-box hidden">
+                <h3>Keunggulan Layanan</h3>
+                <p class="feature-sub">Dirancang untuk hasil kerja rapi, aman, dan sesuai kebutuhan operasional Anda.</p>
+                <ul id="service-features" class="feature-list"></ul>
+              </div>
+              <p class="service-note">Konsultasi awal tanpa biaya. Tim kami akan bantu rekomendasikan scope pekerjaan, timeline, dan estimasi kebutuhan teknis Anda.</p>
+              <div class="service-actions">
+                <a href="#" class="btn-solid"><i class="fa-brands fa-whatsapp"></i> Konsultasi WhatsApp</a>
+                <a href="/layanan/" class="btn-soft"><i class="fa-regular fa-grid-2"></i> Lihat Semua Layanan</a>
+              </div>
+              <div class="trust-strip">
+                <span><i class="fa-regular fa-shield-check"></i> Standar Kerja Aman</span>
+                <span><i class="fa-regular fa-clock"></i> Respon Cepat</span>
+                <span><i class="fa-regular fa-headset"></i> Support After-Sales</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="related-services-section" class="related-services hidden">
+    <div class="container">
+      <div class="related-head">
+        <div>
+          <span class="related-kicker"><i class="fa-solid fa-star"></i> Layanan Pelengkap</span>
+          <h2 class="title">Related Layanan</h2>
+          <p class="sub">Pilih layanan terkait untuk mempercepat implementasi, menjaga standar kualitas, dan memastikan hasil proyek lebih konsisten.</p>
+        </div>
+      </div>
+      <div class="row g-24" id="related-services-list">
+        <div class="col-12">
+          <p class="related-empty">Memuat layanan terkait...</p>
+        </div>
+      </div>
+      <div id="related-services-pagination" class="related-pagination hidden"></div>
+    </div>
+  </section>
+  <section id="service-reviews-section" class="service-reviews">
+    <div class="container">
+      <div class="review-shell">
+        <div class="review-content">
+          <h3 id="service-review-tab-btn">Review (0)</h3>
+          <div id="service-reviews-list" class="service-review-list">
+            <p class="review-empty">Memuat review pelanggan...</p>
+          </div>
+          <div class="service-review-form">
+            <h4 id="service-review-form-title">Write a review</h4>
+            <form id="service-review-form">
+              <div class="row g-3">
+                <div class="col-lg-6">
+                  <textarea id="service-review-text" class="review-textarea" placeholder="Your Review*" required></textarea>
+                </div>
+                <div class="col-lg-6">
+                  <input id="service-review-name" class="review-input" type="text" placeholder="Name*" required>
+                  <input id="service-review-email" class="review-input mt-2" type="email" placeholder="E-mail*" required>
+                  <div class="service-rating-line">
+                    <span>Your Rating :</span>
+                    <div id="service-rating-stars" class="service-rating-stars">
+                      <button type="button" data-rating="1">&#9734;</button>
+                      <button type="button" data-rating="2">&#9734;</button>
+                      <button type="button" data-rating="3">&#9734;</button>
+                      <button type="button" data-rating="4">&#9734;</button>
+                      <button type="button" data-rating="5">&#9734;</button>
+                    </div>
+                  </div>
+                  <input type="hidden" id="service-review-rating" value="">
+                  <button type="submit" class="review-submit-btn">Submit</button>
+                  <p id="service-review-message" class="service-review-message"></p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="service-lightbox" class="service-lightbox" aria-hidden="true">
+    <div class="service-lightbox-frame">
+      <button type="button" id="service-lightbox-prev" class="service-lightbox-nav prev" aria-label="Gambar sebelumnya">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <img id="service-lightbox-image" class="service-lightbox-image" src="" alt="Preview layanan" loading="lazy">
+      <button type="button" id="service-lightbox-next" class="service-lightbox-nav next" aria-label="Gambar berikutnya">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+      <button type="button" id="service-lightbox-close" class="service-lightbox-close" aria-label="Tutup fullscreen">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- rts footer area start -->
+  <div class="rts-footer-area rts-section-gapTop bg_footer-1 bg_image">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="contact-area-footer-top">
+            <div class="single-contact-area-box">
+              <div class="icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <h6 class="title">Call Us Now</h6>
+              <a id="footer-phone-1" href="#">-</a>
+              <a id="footer-phone-2" href="#">-</a>
+            </div>
+            <div class="single-contact-area-box">
+              <div class="icon">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <h6 class="title">Office Time</h6>
+              <a id="footer-hours-1" href="#">-</a>
+            </div>
+            <div class="single-contact-area-box">
+              <div class="icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <h6 class="title">Need Support</h6>
+              <a id="footer-email-1" href="#">-</a>
+              <a id="footer-email-2" href="#">-</a>
+            </div>
+            <div class="single-contact-area-box">
+              <div class="icon">
+                <i class="fa-sharp fa-solid fa-location-dot"></i>
+              </div>
+              <h6 class="title">Our Address</h6>
+              <a id="footer-address-1" href="#">-</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-full">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="nav-footer-wrapper-one">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12">
+                  <ul class="footer-float-nav">
+                    <li><a href="/tentang/">Tentang Kami</a></li>
+                    <li><a href="/proyek/">Projects</a></li>
+                    <li><a href="/proyek/">Updates</a></li>
+                    <li><a href="/tentang/">Mission</a></li>
+                    <li><a href="/tentang/">Inside</a></li>
+                    <li><a href="/kontak/">Contact</a></li>
+                    <li><a href="/tentang/">History</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div class="footer-wrapper-left-one">
+            <a href="/" class="logo">
+              <span class="brand-lockup" aria-label="PT Maulana Prima Sejahtera">
+                <img class="brand-mark" src="/assets/images/MPS.png" alt="MPS">
+                <span class="brand-text">
+                  <span class="brand-name">Maulana Prima</span>
+                  <span class="brand-sub">Sejahtera</span>
+                </span>
+              </span>
+            </a>
+            <p class="disc">
+              Kami berkomitmen untuk memberikan solusi konstruksi berkualitas tinggi yang disesuaikan dengan kebutuhan klien kami. Dengan fokus yang kuat pada inovasi, ketelitian, dan keahlian, kami membangun ruang yang tahan lama.
+            </p>
+            <div class="social-area-wrapper-one">
+              <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="footer-wrapper-right">
+            <div class="single-nav-area-footer use-link">
+              <h4 class="title">Useful Links</h4>
+              <ul>
+                <li><a href="/tentang/"><i class="fa-regular fa-arrow-right-long"></i>Tentang Kami</a></li>
+                <li><a href="/tentang/"><i class="fa-regular fa-arrow-right-long"></i>Our Gallery</a></li>
+                <li><a href="/layanan/"><i class="fa-regular fa-arrow-right-long"></i>Layanan Kami</a></li>
+                <li><a href="/tentang/#about-team-section"><i class="fa-regular fa-arrow-right-long"></i>Our Team</a></li>
+                <li><a href="/kontak/"><i class="fa-regular fa-arrow-right-long"></i>Hubungi Kami</a></li>
+              </ul>
+            </div>
+            <div class="single-nav-area-footer use-link">
+              <h4 class="title">Quick Services</h4>
+              <ul>
+                <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>General Contracting</a></li>
+                <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Project Management</a></li>
+                <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>New Construction</a></li>
+                <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Renovations &amp; Remodeling</a></li>
+                <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Interior Finishing</a></li>
+              </ul>
+            </div>
+            <div class="single-nav-area-footer news-letter">
+              <h4 class="title">Newsletter</h4>
+              <p>Update seputar proyek, tips teknis, dan insight lapangan dari tim kami.</p>
+              <form action="#">
+                <input type="email" placeholder="Email Address" required>
+                <button class="btn-subscribe mt--15">Subscribe Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-full copyright-area-one">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="copyright-wrapper">
+                  <p class="mb-0">Copyright &copy;
+                    <script>document.write(new Date().getFullYear())</script>
+                    Maulana Prima Sejahtera
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- rts footer area end -->
+
+  <div id="anywhere-home" class=""></div>
+
+  <script>
+    (function () {
+      var openBtn = document.querySelector('.menu-btn');
+      var closeBtn = document.querySelector('.close-icon-menu');
+      var sideBar = document.getElementById('side-bar');
+      var overlay = document.getElementById('anywhere-home');
+      if (!sideBar || !overlay) return;
+
+      var normalizePath = function (path) {
+        var raw = String(path || '').trim();
+        if (!raw) return '/';
+        var pure = raw.split('?')[0].split('#')[0];
+        if (!pure.startsWith('/')) pure = '/' + pure;
+        if (pure.length > 1) pure = pure.replace(/\/+$/, '');
+        return pure || '/';
+      };
+      var currentPath = normalizePath(window.location.pathname);
+      var isActive = function (linkPath) {
+        if (linkPath === '/') return currentPath === '/';
+        return currentPath === linkPath || currentPath.indexOf(linkPath + '/') === 0;
+      };
+      var links = document.querySelectorAll('.nav-area a, #mobile-menu-active a.main');
+      links.forEach(function (link) {
+        var href = link.getAttribute('href') || '';
+        if (!href || href.indexOf('http') === 0 || href.indexOf('mailto:') === 0 || href.indexOf('tel:') === 0) return;
+        if (isActive(normalizePath(href))) {
+          link.classList.add('is-active');
+          link.setAttribute('aria-current', 'page');
+        }
+      });
+
+      var openMenu = function () {
+        sideBar.classList.add('show');
+        overlay.classList.add('bgshow');
+      };
+      var closeMenu = function () {
+        sideBar.classList.remove('show');
+        overlay.classList.remove('bgshow');
+      };
+
+      if (openBtn) openBtn.addEventListener('click', openMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var slug = params.get('slug') || '';
+      var siteSettings = {};
+      var selectedServiceName = '';
+      var selectedServiceSlug = slug;
+      var EMPTY_IMAGE_DATA_URI = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+
+      var statusEl = document.getElementById('service-status');
+      var titleEl = document.getElementById('service-title');
+      var shortEl = document.getElementById('service-short');
+      var descEl = document.getElementById('service-desc');
+      var featuresEl = document.getElementById('service-features');
+      var featureWrap = document.getElementById('feature-wrapper');
+      var imageEl = document.getElementById('service-image');
+      var heroTitle = document.getElementById('hero-title');
+      var heroSub = document.getElementById('hero-sub');
+      var heroTags = document.getElementById('hero-tags');
+      var crumbService = document.getElementById('crumb-service');
+      var tabImage = document.getElementById('tab-image');
+      var tabVideo = document.getElementById('tab-video');
+      var boxImage = document.getElementById('box-image');
+      var boxVideo = document.getElementById('box-video');
+      var thumbGrid = document.getElementById('service-thumb-grid');
+      var stagePrevBtn = document.getElementById('service-stage-prev');
+      var stageNextBtn = document.getElementById('service-stage-next');
+      var openFullscreenBtn = document.getElementById('service-open-fullscreen');
+      var lightboxEl = document.getElementById('service-lightbox');
+      var lightboxImageEl = document.getElementById('service-lightbox-image');
+      var lightboxPrevBtn = document.getElementById('service-lightbox-prev');
+      var lightboxNextBtn = document.getElementById('service-lightbox-next');
+      var lightboxCloseBtn = document.getElementById('service-lightbox-close');
+      var factsEl = document.getElementById('service-facts');
+      var waButtons = document.querySelectorAll('a');
+      var relatedSection = document.getElementById('related-services-section');
+      var relatedList = document.getElementById('related-services-list');
+      var relatedPagination = document.getElementById('related-services-pagination');
+      var serviceReviewTabBtn = document.getElementById('service-review-tab-btn');
+      var serviceReviewsList = document.getElementById('service-reviews-list');
+      var serviceReviewFormTitle = document.getElementById('service-review-form-title');
+      var serviceReviewForm = document.getElementById('service-review-form');
+      var serviceReviewName = document.getElementById('service-review-name');
+      var serviceReviewEmail = document.getElementById('service-review-email');
+      var serviceReviewText = document.getElementById('service-review-text');
+      var serviceReviewRating = document.getElementById('service-review-rating');
+      var serviceReviewMessage = document.getElementById('service-review-message');
+      var serviceRatingStars = document.getElementById('service-rating-stars');
+      var SERVICE_REVIEW_PREVIEW_LIMIT = 3;
+      var showAllServiceReviews = false;
+      var currentServiceReviews = [];
+      var footerPhone1 = document.getElementById('footer-phone-1');
+      var footerPhone2 = document.getElementById('footer-phone-2');
+      var footerHours1 = document.getElementById('footer-hours-1');
+      var footerEmail1 = document.getElementById('footer-email-1');
+      var footerEmail2 = document.getElementById('footer-email-2');
+      var footerAddress1 = document.getElementById('footer-address-1');
+
+      var esc = function (value) {
+        return String(value || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      };
+      var formatPlainTextToHtml = function (text) {
+        var raw = String(text || '').replace(/\r/g, '').trim();
+        if (!raw) return '';
+        var lines = raw.split('\n');
+        var blocks = [];
+        var current = [];
+        var pushBlock = function () {
+          if (!current.length) return;
+          blocks.push(current.slice());
+          current = [];
+        };
+        lines.forEach(function (line) {
+          if (!String(line || '').trim()) {
+            pushBlock();
+            return;
+          }
+          current.push(String(line || ''));
+        });
+        pushBlock();
+
+        var isBullet = function (line) {
+          return /^\s*[-*•]\s+/.test(String(line || ''));
+        };
+        var stripBullet = function (line) {
+          return String(line || '').replace(/^\s*[-*•]\s+/, '').trim();
+        };
+        var applyInline = function (escaped) {
+          var t = String(escaped || '');
+          t = t.replace(/\*\*([^\n*][\s\S]*?)\*\*/g, '<strong>$1</strong>');
+          t = t.replace(/_([^\n_][\s\S]*?)_/g, '<em>$1</em>');
+          t = t.replace(/\[\[small\]\]([\s\S]*?)\[\[\/small\]\]/g, '<span class="t-sm">$1</span>');
+          t = t.replace(/\[\[large\]\]([\s\S]*?)\[\[\/large\]\]/g, '<span class="t-lg">$1</span>');
+          t = t.replace(/\[\[size=(\d{2})\]\]([\s\S]*?)\[\[\/size\]\]/g, function (_m, size, inner) {
+            var allowed = { '12': true, '14': true, '16': true, '18': true, '20': true, '24': true, '28': true, '32': true, '36': true };
+            var key = String(size || '');
+            if (!allowed[key]) return inner;
+            return '<span class="t-sz-' + key + '">' + inner + '</span>';
+          });
+          return t;
+        };
+        var joinTextWithBr = function (arr) {
+          return arr
+            .map(function (l) { return String(l || '').trim(); })
+            .filter(Boolean)
+            .map(function (s) { return applyInline(esc(s)); })
+            .join('<br>');
+        };
+        var parseHeading = function (line) {
+          var m = String(line || '').match(/^\s*(#{2,3})\s+(.+)\s*$/);
+          if (!m) return null;
+          var lvl = 'h2';
+          var title = applyInline(esc(m[2]));
+          return { tag: lvl, html: title };
+        };
+
+        return blocks.map(function (block) {
+          var heading = parseHeading(block[0]);
+          var rest = heading ? block.slice(1) : block.slice();
+          var out = '';
+          if (heading) out += '<' + heading.tag + '>' + heading.html + '</' + heading.tag + '>';
+          if (!rest.length) return out;
+
+          var firstBulletIdx = -1;
+          for (var i = 0; i < rest.length; i += 1) {
+            if (isBullet(rest[i])) { firstBulletIdx = i; break; }
+          }
+          var bulletCount = rest.filter(isBullet).length;
+
+          if (firstBulletIdx > 0 && rest.slice(firstBulletIdx).every(isBullet)) {
+            var head = joinTextWithBr(rest.slice(0, firstBulletIdx));
+            var listItems = rest.slice(firstBulletIdx).map(function (l) {
+              return '<li>' + applyInline(esc(stripBullet(l))) + '</li>';
+            }).join('');
+            return out + '<p>' + head + '</p><ul>' + listItems + '</ul>';
+          }
+          if (bulletCount && bulletCount >= Math.max(2, Math.ceil(rest.length * 0.6))) {
+            return out + '<ul>' + rest.map(function (l) {
+              return '<li>' + applyInline(esc(stripBullet(l))) + '</li>';
+            }).join('') + '</ul>';
+          }
+
+          return out + '<p>' + joinTextWithBr(rest) + '</p>';
+        }).join('');
+      };
+      var cut = function (value, max) {
+        var text = String(value || '').trim().replace(/\s+/g, ' ');
+        if (text.length <= max) return text;
+        return text.slice(0, max - 1) + '...';
+      };
+      var relatedAll = [];
+      var relatedNewestIds = new Set();
+      var relatedPage = 1;
+      var relatedAutoTimer = null;
+      var RELATED_PAGE_SIZE = 3;
+      var galleryImages = [];
+      var currentImageIndex = 0;
+      var newestScore = function (item) {
+        var ts = Date.parse(String(item && item.createdAt ? item.createdAt : ''));
+        if (!isNaN(ts)) return ts;
+        var id = parseInt(String(item && item.id ? item.id : '0'), 10);
+        return isNaN(id) ? 0 : id;
+      };
+      var computeRelatedNewestIds = function (items) {
+        relatedNewestIds = new Set();
+        var ranked = (Array.isArray(items) ? items.slice() : []).sort(function (a, b) {
+          return newestScore(b) - newestScore(a);
+        });
+        for (var i = 0; i < Math.min(3, ranked.length); i += 1) {
+          if (ranked[i] && ranked[i].id != null) relatedNewestIds.add(ranked[i].id);
+        }
+      };
+      var renderRelatedCards = function (items) {
+        return items.map(function (item) {
+          var link = item.detailUrl || ('/layanan/detail/?slug=' + encodeURIComponent(item.slug || ''));
+          var title = String(item.name || 'Layanan');
+          var desc = cut(item.shortDescription || 'Lihat detail layanan untuk informasi lengkap.', 120);
+          var image = String(item.image || '').trim();
+          var chip = String(item.cardHighlight || '').trim();
+          var isNew = relatedNewestIds && typeof relatedNewestIds.has === 'function' ? relatedNewestIds.has(item && item.id) : false;
+          var estimate = String(item.duration || item.price || '').trim();
+          var estimateIcon = item.duration ? 'fa-solid fa-hourglass-half' : 'fa-solid fa-wallet';
+          return '' +
+            '<div class="col-lg-4 col-md-6 col-sm-12">' +
+              '<div class="related-card">' +
+                '<a href="' + esc(link) + '" class="thumb">' +
+                  (isNew ? '<span class="related-badge"><i class="fa-solid fa-bolt"></i> Terbaru</span>' : '') +
+                  '<img src="' + esc(image || EMPTY_IMAGE_DATA_URI) + '" alt="' + esc(title) + '" loading="lazy">' +
+                '</a>' +
+                '<div class="body">' +
+                  (chip ? ('<div class="related-chip"><i class="fa-solid fa-circle-dot"></i><span>' + esc(chip) + '</span></div>') : '') +
+                  '<h4 class="related-title">' + esc(title) + '</h4>' +
+                  '<p class="related-desc">' + esc(desc) + '</p>' +
+                  (estimate ? ('<div class="related-meta"><i class="' + esc(estimateIcon) + '"></i><span>' + esc(estimate) + '</span></div>') : '') +
+                  '<a class="related-link" href="' + esc(link) + '">Lihat Detail <i class="fa-light fa-arrow-right"></i></a>' +
+                '</div>' +
+              '</div>' +
+            '</div>';
+        }).join('');
+      };
+      var formatDate = function (value) {
+        if (!value) return '';
+        var date = new Date(value);
+        if (isNaN(date.getTime())) return '';
+        return new Intl.DateTimeFormat('id-ID', {
+          day: '2-digit',
+          month: 'short',
+          year: 'numeric'
+        }).format(date);
+      };
+      var renderStars = function (ratingValue) {
+        var rating = parseInt(ratingValue, 10);
+        if (!Number.isFinite(rating) || rating < 1) return '';
+        if (rating > 5) rating = 5;
+        var html = '';
+        for (var i = 1; i <= 5; i += 1) {
+          html += '<span class="' + (i <= rating ? '' : 'off') + '">&#9733;</span>';
+        }
+        return '<div class="service-review-stars" aria-label="Rating ' + rating + ' dari 5">' + html + '</div>';
+      };
+      var renderServiceReviews = function (items) {
+        if (!serviceReviewsList) return;
+        currentServiceReviews = Array.isArray(items) ? items.slice() : [];
+        if (!items.length) {
+          serviceReviewsList.innerHTML = '<p class="review-empty">Belum ada review untuk layanan ini.</p>';
+          if (serviceReviewTabBtn) serviceReviewTabBtn.textContent = 'Review (0)';
+          if (serviceReviewFormTitle) serviceReviewFormTitle.textContent = 'Be the first to review';
+          return;
+        }
+        var visibleReviews = showAllServiceReviews ? items : items.slice(0, SERVICE_REVIEW_PREVIEW_LIMIT);
+        var hasToggle = items.length > SERVICE_REVIEW_PREVIEW_LIMIT;
+        var toggleLabel = showAllServiceReviews
+          ? 'Show less'
+          : ('Show all (' + items.length + ')');
+        serviceReviewsList.innerHTML =
+          visibleReviews.map(function (review) {
+          var name = esc(String(review.name || 'Pelanggan'));
+          var text = esc(String(review.text || ''));
+          var dateText = formatDate(review.createdAt);
+          return '' +
+            '<article class="service-review-item">' +
+              '<div class="service-review-head">' +
+                '<p class="service-review-name">' + name + '</p>' +
+                (dateText ? ('<span class="service-review-date">' + esc(dateText) + '</span>') : '') +
+              '</div>' +
+              renderStars(review.rating) +
+              '<p class="service-review-text">' + text + '</p>' +
+            '</article>';
+        }).join('') +
+        (hasToggle ? ('<div class="service-review-toggle-wrap"><button type="button" class="service-review-toggle-btn" data-toggle-service-reviews="1">' + toggleLabel + '</button></div>') : '');
+        if (serviceReviewTabBtn) serviceReviewTabBtn.textContent = 'Review (' + items.length + ')';
+        if (serviceReviewFormTitle) serviceReviewFormTitle.textContent = 'Write a review';
+      };
+      var stopRelatedAutoplay = function () {
+        if (!relatedAutoTimer) return;
+        clearInterval(relatedAutoTimer);
+        relatedAutoTimer = null;
+      };
+      var startRelatedAutoplay = function (totalPages) {
+        stopRelatedAutoplay();
+        if (totalPages <= 1) return;
+        relatedAutoTimer = setInterval(function () {
+          var next = relatedPage >= totalPages ? 1 : (relatedPage + 1);
+          renderRelatedPage(next);
+        }, 5000);
+      };
+      var renderRelatedPagination = function (totalPages) {
+        if (!relatedPagination) return;
+        if (totalPages <= 1) {
+          stopRelatedAutoplay();
+          relatedPagination.classList.add('hidden');
+          relatedPagination.innerHTML = '';
+          return;
+        }
+        var isCompact = window.matchMedia('(max-width: 767px)').matches;
+        var pageItems = [];
+        if (isCompact && totalPages > 5) {
+          if (relatedPage <= 2) {
+            pageItems = [1, 2, 'dots-right', totalPages];
+          } else if (relatedPage >= totalPages - 1) {
+            pageItems = [1, 'dots-left', totalPages - 1, totalPages];
+          } else {
+            pageItems = [1, 'dots-left', relatedPage, 'dots-right', totalPages];
+          }
+        } else if (totalPages <= 7) {
+          for (var p = 1; p <= totalPages; p += 1) pageItems.push(p);
+        } else {
+          pageItems.push(1);
+          var start = Math.max(2, relatedPage - 1);
+          var end = Math.min(totalPages - 1, relatedPage + 1);
+          if (relatedPage <= 3) {
+            start = 2;
+            end = 4;
+          } else if (relatedPage >= totalPages - 2) {
+            start = totalPages - 3;
+            end = totalPages - 1;
+          }
+          if (start > 2) pageItems.push('dots-left');
+          for (var mid = start; mid <= end; mid += 1) pageItems.push(mid);
+          if (end < totalPages - 1) pageItems.push('dots-right');
+          pageItems.push(totalPages);
+        }
+        relatedPagination.classList.remove('hidden');
+        var html = '<ul>';
+        html += '<li><button class="related-page-btn" data-page="' + (relatedPage - 1) + '" ' + (relatedPage === 1 ? 'disabled' : '') + '>Prev</button></li>';
+        for (var i = 0; i < pageItems.length; i += 1) {
+          var item = pageItems[i];
+          if (typeof item === 'number') {
+            html += '<li><button class="related-page-btn ' + (item === relatedPage ? 'active' : '') + '" data-page="' + item + '">' + String(item).padStart(2, '0') + '</button></li>';
+          } else {
+            html += '<li><span class="pagination-dots">...</span></li>';
+          }
+        }
+        html += '<li><button class="related-page-btn" data-page="' + (relatedPage + 1) + '" ' + (relatedPage === totalPages ? 'disabled' : '') + '>Next</button></li>';
+        html += '</ul>';
+        relatedPagination.innerHTML = html;
+        startRelatedAutoplay(totalPages);
+      };
+      var renderRelatedPage = function (page) {
+        if (!relatedList || !relatedAll.length) return;
+        var totalPages = Math.ceil(relatedAll.length / RELATED_PAGE_SIZE);
+        relatedPage = Math.min(Math.max(page, 1), totalPages);
+        var start = (relatedPage - 1) * RELATED_PAGE_SIZE;
+        var items = relatedAll.slice(start, start + RELATED_PAGE_SIZE);
+        relatedList.innerHTML = renderRelatedCards(items);
+        renderRelatedPagination(totalPages);
+      };
+      if (relatedPagination) {
+        relatedPagination.addEventListener('click', function (event) {
+          var btn = event.target.closest('button[data-page]');
+          if (!btn || btn.hasAttribute('disabled')) return;
+          var page = parseInt(btn.getAttribute('data-page') || '1', 10);
+          if (!isNaN(page)) {
+            renderRelatedPage(page);
+            startRelatedAutoplay(Math.ceil(relatedAll.length / RELATED_PAGE_SIZE));
+          }
+        });
+      }
+      if (relatedSection) {
+        relatedSection.addEventListener('mouseenter', stopRelatedAutoplay);
+        relatedSection.addEventListener('mouseleave', function () {
+          startRelatedAutoplay(Math.ceil(relatedAll.length / RELATED_PAGE_SIZE));
+        });
+      }
+
+      var toYoutubeEmbed = function (url) {
+        try {
+          var u = new URL(url, window.location.origin);
+          var host = u.hostname.toLowerCase();
+          if (host.includes('youtu.be')) {
+            var id = u.pathname.replace(/\//g, '');
+            return id ? 'https://www.youtube.com/embed/' + id : '';
+          }
+          if (host.includes('youtube.com')) {
+            var id = u.searchParams.get('v');
+            if (!id && u.pathname.includes('/shorts/')) id = u.pathname.split('/shorts/')[1];
+            if (!id && u.pathname.includes('/embed/')) id = u.pathname.split('/embed/')[1];
+            if (id) return 'https://www.youtube.com/embed/' + id;
+          }
+          return '';
+        } catch (e) {
+          return '';
+        }
+      };
+
+      var toGoogleDriveEmbed = function (url) {
+        try {
+          var u = new URL(url, window.location.origin);
+          if (!u.hostname.toLowerCase().includes('drive.google.com')) return '';
+          var id = '';
+          var m = u.pathname.match(/\/file\/d\/([^/]+)/);
+          if (m && m[1]) id = m[1];
+          if (!id) id = u.searchParams.get('id') || '';
+          return id ? ('https://drive.google.com/file/d/' + id + '/preview') : '';
+        } catch (e) {
+          return '';
+        }
+      };
+
+      var setVideoMedia = function (rawUrl) {
+        if (!rawUrl) return false;
+        var yt = toYoutubeEmbed(rawUrl);
+        if (yt) {
+          boxVideo.innerHTML = '<iframe src="' + esc(yt) + '" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>';
+          return true;
+        }
+        var gdrive = toGoogleDriveEmbed(rawUrl);
+        if (gdrive) {
+          boxVideo.innerHTML = '<iframe src="' + esc(gdrive) + '" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>';
+          return true;
+        }
+        var lower = rawUrl.toLowerCase();
+        if (lower.endsWith('.mp4') || lower.endsWith('.webm') || lower.endsWith('.ogg')) {
+          boxVideo.innerHTML = '<video controls preload="metadata"><source src="' + esc(rawUrl) + '"></video>';
+          return true;
+        }
+        return false;
+      };
+
+      var activateTab = function (tab) {
+        if (tab === 'video') {
+          tabVideo.classList.add('active');
+          tabImage.classList.remove('active');
+          boxVideo.classList.remove('hidden');
+          boxImage.classList.add('hidden');
+        } else {
+          tabImage.classList.add('active');
+          tabVideo.classList.remove('active');
+          boxImage.classList.remove('hidden');
+          boxVideo.classList.add('hidden');
+        }
+      };
+      var syncLightboxNav = function () {
+        var hasMultiple = galleryImages.length > 1;
+        if (lightboxPrevBtn) lightboxPrevBtn.classList.toggle('hidden', !hasMultiple);
+        if (lightboxNextBtn) lightboxNextBtn.classList.toggle('hidden', !hasMultiple);
+        if (stagePrevBtn) stagePrevBtn.classList.toggle('hidden', !hasMultiple);
+        if (stageNextBtn) stageNextBtn.classList.toggle('hidden', !hasMultiple);
+      };
+      var setActiveImage = function (index) {
+        if (!galleryImages.length) return;
+        currentImageIndex = (index + galleryImages.length) % galleryImages.length;
+        var activeImage = galleryImages[currentImageIndex];
+        if (imageEl) imageEl.src = activeImage;
+        if (lightboxImageEl) {
+          lightboxImageEl.src = activeImage;
+          lightboxImageEl.alt = (titleEl && titleEl.textContent) ? titleEl.textContent : 'Preview layanan';
+        }
+        Array.prototype.forEach.call(thumbGrid.querySelectorAll('.thumb-item'), function (el, idx) {
+          el.classList.toggle('active', idx === currentImageIndex);
+        });
+      };
+      var openLightbox = function () {
+        if (!lightboxEl || !galleryImages.length) return;
+        activateTab('image');
+        setActiveImage(currentImageIndex);
+        lightboxEl.classList.add('open');
+        lightboxEl.setAttribute('aria-hidden', 'false');
+      };
+      var closeLightbox = function () {
+        if (!lightboxEl) return;
+        lightboxEl.classList.remove('open');
+        lightboxEl.setAttribute('aria-hidden', 'true');
+      };
+
+      var normalizeUrl = function (value) {
+        var raw = String(value || '').trim();
+        if (!raw) return '';
+        if (/^https?:\/\//i.test(raw)) return raw;
+        if (/^\/\//.test(raw)) return 'https:' + raw;
+        return 'https://' + raw;
+      };
+      var buildServiceWhatsappMessage = function () {
+        var serviceLabel = selectedServiceName || 'layanan ini';
+        return [
+          'Halo, saya ingin konsultasi layanan:',
+          serviceLabel,
+          '',
+          'Mohon info estimasi biaya, timeline pengerjaan, dan jadwal survey.',
+          'Terima kasih.'
+        ].join('\n');
+      };
+      var withWhatsappMessage = function (waUrl, message) {
+        var base = normalizeUrl(waUrl);
+        if (!base || !message) return base;
+        try {
+          var parsed = new URL(base, window.location.origin);
+          parsed.searchParams.set('text', message);
+          return parsed.toString();
+        } catch (e) {
+          var separator = base.indexOf('?') === -1 ? '?' : '&';
+          return base + separator + 'text=' + encodeURIComponent(message);
+        }
+      };
+
+      var applyWhatsappButtons = function () {
+        var waUrl = normalizeUrl(siteSettings.whatsapp || '');
+        var serviceMessage = buildServiceWhatsappMessage();
+        var waTargetUrl = withWhatsappMessage(waUrl, serviceMessage);
+        waButtons.forEach(function (anchor) {
+          var text = String(anchor.textContent || '').toLowerCase();
+          if (text.indexOf('whatsapp') === -1 && !/\bwa\b/.test(text)) return;
+          if (!waTargetUrl) {
+            anchor.removeAttribute('href');
+            anchor.style.display = 'none';
+            return;
+          }
+          anchor.style.display = '';
+          anchor.href = waTargetUrl;
+          anchor.target = '_blank';
+          anchor.rel = 'noopener';
+        });
+      };
+      var setAnchorText = function (anchor, value, href) {
+        if (!anchor) return;
+        var text = String(value || '').trim();
+        if (!text) {
+          anchor.textContent = '-';
+          anchor.removeAttribute('href');
+          return;
+        }
+        anchor.textContent = text;
+        if (href) {
+          anchor.href = href;
+        } else {
+          anchor.href = '#';
+        }
+      };
+      var applyFooterSettings = function () {
+        var pick = function (camelKey, snakeKey) {
+          var camel = siteSettings && siteSettings[camelKey];
+          if (typeof camel === 'string' && camel.trim()) return camel;
+          var snake = siteSettings && siteSettings[snakeKey];
+          if (typeof snake === 'string' && snake.trim()) return snake;
+          return '';
+        };
+        var p1 = String(pick('footerPhonePrimary', 'footer_phone_primary')).trim();
+        var p2 = String(pick('footerPhoneSecondary', 'footer_phone_secondary')).trim();
+        var e1 = String(pick('footerSupportEmailPrimary', 'footer_support_email_primary')).trim();
+        var e2 = String(pick('footerSupportEmailSecondary', 'footer_support_email_secondary')).trim();
+        var officeHours1 = String(pick('footerOfficeHours1', 'footer_office_hours_1')).trim();
+        var address1 = String(pick('footerAddress1', 'footer_address_1')).trim();
+        setAnchorText(footerPhone1, p1, p1 ? ('tel:' + p1.replace(/\s+/g, '')) : '');
+        setAnchorText(footerPhone2, p2, p2 ? ('tel:' + p2.replace(/\s+/g, '')) : '');
+        setAnchorText(footerHours1, officeHours1, '');
+        setAnchorText(footerEmail1, e1, e1 ? ('mailto:' + e1) : '');
+        setAnchorText(footerEmail2, e2, e2 ? ('mailto:' + e2) : '');
+        setAnchorText(footerAddress1, address1, '');
+      };
+      var applyMenuVisibility = function () {
+        var pick = function (camelKey, snakeKey) {
+          if (!siteSettings) return undefined;
+          if (siteSettings[camelKey] !== undefined) return siteSettings[camelKey];
+          if (siteSettings[snakeKey] !== undefined) return siteSettings[snakeKey];
+          return undefined;
+        };
+        var toBoolShow = function (value, fallback) {
+          if (value === undefined || value === null || value === '') return fallback;
+          var str = String(value).trim();
+          if (str === '1') return true;
+          if (str === '0') return false;
+          return fallback;
+        };
+
+        var showLayanan = toBoolShow(pick('showMenuLayanan', 'show_menu_layanan'), true);
+        var showProduk = toBoolShow(pick('showMenuProduk', 'show_menu_produk'), true);
+        var showProyek = toBoolShow(pick('showMenuProyek', 'show_menu_proyek'), true);
+        var showArtikel = toBoolShow(pick('showMenuArtikel', 'show_menu_artikel'), true);
+        var showKontak = toBoolShow(pick('showMenuKontak', 'show_menu_kontak'), true);
+        var showTentang = toBoolShow(pick('showMenuTentang', 'show_menu_tentang'), true);
+        var toggleMenuItem = function (href, show) {
+          var selector = '.nav-area .main-nav > a[href="' + href + '"], #mobile-menu-active a.main[href="' + href + '"], .mobile-nav-links a[href="' + href + '"]';
+          document.querySelectorAll(selector).forEach(function (anchor) {
+            var item = anchor.closest('li');
+            if (item) {
+              item.style.display = show ? '' : 'none';
+            } else {
+              anchor.style.display = show ? '' : 'none';
+            }
+          });
+        };
+        toggleMenuItem('/layanan/', showLayanan);
+        toggleMenuItem('/produk/', showProduk);
+        toggleMenuItem('/proyek/', showProyek);
+        toggleMenuItem('/artikel/', showArtikel);
+        toggleMenuItem('/kontak/', showKontak);
+        toggleMenuItem('/tentang/', showTentang);
+      };
+
+      applyMenuVisibility();
+
+      fetch('/api/site-settings.php', { cache: 'no-store' })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (!d || !d.ok || !d.settings) return;
+          siteSettings = d.settings;
+          applyMenuVisibility();
+          applyWhatsappButtons();
+          applyFooterSettings();
+        })
+        .catch(function () {
+          applyMenuVisibility();
+          applyWhatsappButtons();
+          applyFooterSettings();
+        });
+
+      tabImage.addEventListener('click', function () { activateTab('image'); });
+      tabVideo.addEventListener('click', function () { activateTab('video'); });
+      if (imageEl) {
+        imageEl.addEventListener('click', openLightbox);
+      }
+      if (openFullscreenBtn) {
+        openFullscreenBtn.addEventListener('click', openLightbox);
+      }
+      if (stagePrevBtn) {
+        stagePrevBtn.addEventListener('click', function () {
+          setActiveImage(currentImageIndex - 1);
+          activateTab('image');
+        });
+      }
+      if (stageNextBtn) {
+        stageNextBtn.addEventListener('click', function () {
+          setActiveImage(currentImageIndex + 1);
+          activateTab('image');
+        });
+      }
+      if (lightboxPrevBtn) {
+        lightboxPrevBtn.addEventListener('click', function () {
+          setActiveImage(currentImageIndex - 1);
+        });
+      }
+      if (lightboxNextBtn) {
+        lightboxNextBtn.addEventListener('click', function () {
+          setActiveImage(currentImageIndex + 1);
+        });
+      }
+      if (lightboxCloseBtn) {
+        lightboxCloseBtn.addEventListener('click', closeLightbox);
+      }
+      if (lightboxEl) {
+        lightboxEl.addEventListener('click', function (event) {
+          if (event.target === lightboxEl) {
+            closeLightbox();
+          }
+        });
+      }
+      document.addEventListener('keydown', function (event) {
+        if (!lightboxEl || !lightboxEl.classList.contains('open')) return;
+        if (event.key === 'Escape') closeLightbox();
+        if (event.key === 'ArrowLeft' && galleryImages.length > 1) setActiveImage(currentImageIndex - 1);
+        if (event.key === 'ArrowRight' && galleryImages.length > 1) setActiveImage(currentImageIndex + 1);
+      });
+
+      if (serviceRatingStars && serviceReviewRating) {
+        var starButtons = serviceRatingStars.querySelectorAll('button');
+        var setStars = function (rating) {
+          starButtons.forEach(function (button) {
+            var value = parseInt(button.getAttribute('data-rating') || '0', 10);
+            var active = value <= rating;
+            button.classList.toggle('active', active);
+            button.innerHTML = active ? '&#9733;' : '&#9734;';
+          });
+        };
+        starButtons.forEach(function (button) {
+          button.addEventListener('click', function () {
+            var rating = parseInt(button.getAttribute('data-rating') || '0', 10);
+            serviceReviewRating.value = String(rating);
+            setStars(rating);
+          });
+        });
+      }
+      if (serviceReviewsList) {
+        serviceReviewsList.addEventListener('click', function (event) {
+          var button = event.target.closest('button[data-toggle-service-reviews]');
+          if (!button) return;
+          showAllServiceReviews = !showAllServiceReviews;
+          renderServiceReviews(currentServiceReviews);
+        });
+      }
+
+      if (!slug) {
+        statusEl.classList.add('service-error');
+        statusEl.textContent = 'Slug layanan tidak ditemukan.';
+        heroSub.textContent = 'URL detail layanan tidak valid.';
+        return;
+      }
+
+      fetch('/api/service-detail.php?slug=' + encodeURIComponent(slug), { cache: 'no-store' })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (!data || !data.ok || !data.service) {
+            throw new Error((data && data.message) ? data.message : 'Layanan tidak ditemukan.');
+          }
+          var svc = data.service;
+          selectedServiceName = String(svc.name || '').trim();
+          selectedServiceSlug = String(svc.slug || slug).trim();
+          document.title = svc.name + ' | Detail Layanan';
+
+          imageEl.src = String(svc.image || '').trim() || EMPTY_IMAGE_DATA_URI;
+          imageEl.alt = svc.name || 'Layanan';
+
+          titleEl.textContent = svc.name || '-';
+          shortEl.textContent = svc.shortDescription || '';
+          var rawDesc = String(svc.description || '').trim();
+          var descHtml = /<[a-z][\s\S]*>/i.test(rawDesc) ? rawDesc : formatPlainTextToHtml(rawDesc);
+          descEl.innerHTML = descHtml;
+          heroTitle.textContent = svc.name || 'Detail Layanan';
+          heroSub.textContent = svc.shortDescription || 'Informasi layanan tersedia di halaman ini.';
+          crumbService.textContent = svc.name || 'Detail';
+          applyWhatsappButtons();
+
+          var facts = [];
+          var durationText = String(svc.duration || '').trim();
+          var estimateText = String(svc.price || '').trim();
+          var estimatedWork = durationText || estimateText;
+          var estimateIcon = durationText ? 'fa-solid fa-hourglass-half' : 'fa-solid fa-wallet';
+          if (estimatedWork) {
+            facts.push({ icon: estimateIcon, label: 'Estimasi Pengerjaan', value: estimatedWork });
+          }
+          if (facts.length) {
+            factsEl.innerHTML = facts.map(function (fact) {
+              return '' +
+                '<div class="fact-item">' +
+                  '<div class="fact-label"><i class="' + esc(fact.icon) + '"></i><span>' + esc(fact.label) + '</span></div>' +
+                  '<div class="fact-value">' + esc(fact.value) + '</div>' +
+                '</div>';
+            }).join('');
+            factsEl.classList.remove('hidden');
+
+            heroTags.innerHTML = facts.slice(0, 3).map(function (fact) {
+              return '<span class="tag"><i class="' + esc(fact.icon) + '"></i>' + esc(fact.value) + '</span>';
+            }).join('');
+            heroTags.classList.remove('hidden');
+          }
+
+          var features = Array.isArray(svc.features) ? svc.features : [];
+          if (features.length) {
+            featuresEl.innerHTML = features.map(function (f) {
+              return '<li><i class="fa-solid fa-circle-check"></i><span>' + esc(f) + '</span></li>';
+            }).join('');
+            featureWrap.classList.remove('hidden');
+          }
+          showAllServiceReviews = false;
+          var serviceReviews = Array.isArray(svc.reviews) ? svc.reviews : [];
+          renderServiceReviews(serviceReviews);
+
+          var hasVideo = setVideoMedia((svc.videoUrl || '').trim());
+          if (hasVideo) {
+            tabVideo.classList.remove('hidden');
+          }
+
+          var gallery = Array.isArray(svc.galleryImages) ? svc.galleryImages.slice() : [];
+          if (!gallery.length && svc.image) gallery = [svc.image];
+          if (gallery.length) {
+            galleryImages = gallery.slice(0, 6);
+            thumbGrid.innerHTML = galleryImages.map(function (img, idx) {
+              return '<div class="thumb-item ' + (idx === 0 ? 'active' : '') + '" data-img="' + esc(img) + '"><img src="' + esc(img) + '" alt="thumb layanan"></div>';
+            }).join('');
+            syncLightboxNav();
+            setActiveImage(0);
+            thumbGrid.addEventListener('click', function (event) {
+              var item = event.target.closest('.thumb-item');
+              if (!item) return;
+              var clickedIndex = Array.prototype.indexOf.call(thumbGrid.querySelectorAll('.thumb-item'), item);
+              if (clickedIndex < 0) return;
+              setActiveImage(clickedIndex);
+              activateTab('image');
+            });
+          } else {
+            galleryImages = [];
+            thumbGrid.innerHTML = '';
+            syncLightboxNav();
+          }
+
+          statusEl.classList.add('hidden');
+          titleEl.classList.remove('hidden');
+          if (shortEl.textContent.trim() !== '') {
+            shortEl.classList.remove('hidden');
+          }
+          if (String(descEl.textContent || '').trim() !== '') {
+            descEl.classList.remove('hidden');
+          }
+
+          fetch('/api/services.php', { cache: 'no-store' })
+            .then(function (res) { return res.json(); })
+            .then(function (resData) {
+              if (!relatedSection || !relatedList) return;
+              if (!resData || !resData.ok || !Array.isArray(resData.services)) return;
+              var related = resData.services.filter(function (item) {
+                return String(item.slug || '') !== String(svc.slug || '');
+              });
+              if (!related.length) {
+                relatedList.innerHTML = '<div class="col-12"><p class="related-empty">Belum ada layanan terkait lainnya.</p></div>';
+                relatedSection.classList.remove('hidden');
+                if (relatedPagination) {
+                  relatedPagination.classList.add('hidden');
+                  relatedPagination.innerHTML = '';
+                }
+                return;
+              }
+              relatedAll = related.slice();
+              computeRelatedNewestIds(relatedAll);
+              renderRelatedPage(1);
+              relatedSection.classList.remove('hidden');
+            })
+            .catch(function () {
+              if (!relatedSection || !relatedList) return;
+              relatedList.innerHTML = '<div class="col-12"><p class="related-empty">Layanan terkait belum tersedia.</p></div>';
+              if (relatedPagination) {
+                relatedPagination.classList.add('hidden');
+                relatedPagination.innerHTML = '';
+              }
+              relatedSection.classList.remove('hidden');
+            });
+
+          if (serviceReviewForm) {
+            serviceReviewForm.addEventListener('submit', function (event) {
+              event.preventDefault();
+              if (!serviceReviewMessage) return;
+              serviceReviewMessage.textContent = 'Mengirim review...';
+              serviceReviewMessage.style.color = '#334155';
+
+              var payload = new URLSearchParams();
+              payload.append('slug', String(svc.slug || slug));
+              payload.append('name', String((serviceReviewName && serviceReviewName.value) || '').trim());
+              payload.append('email', String((serviceReviewEmail && serviceReviewEmail.value) || '').trim());
+              payload.append('text', String((serviceReviewText && serviceReviewText.value) || '').trim());
+              if (serviceReviewRating && serviceReviewRating.value) {
+                payload.append('rating', serviceReviewRating.value);
+              }
+
+              fetch('/api/service-review-submit.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: payload.toString()
+              })
+                .then(function (submitRes) { return submitRes.json(); })
+                .then(function (submitData) {
+                  if (submitData && submitData.ok) {
+                    serviceReviewMessage.textContent = submitData.message || 'Review berhasil dikirim.';
+                    serviceReviewMessage.style.color = '#166534';
+                    serviceReviewForm.reset();
+                    if (serviceReviewRating) serviceReviewRating.value = '';
+                    if (serviceRatingStars) {
+                      serviceRatingStars.querySelectorAll('button').forEach(function (button) {
+                        button.classList.remove('active');
+                        button.innerHTML = '&#9734;';
+                      });
+                    }
+                    return;
+                  }
+                  serviceReviewMessage.textContent = (submitData && submitData.message) ? submitData.message : 'Gagal mengirim review.';
+                  serviceReviewMessage.style.color = '#b91c1c';
+                })
+                .catch(function () {
+                  serviceReviewMessage.textContent = 'Gagal mengirim review. Coba lagi.';
+                  serviceReviewMessage.style.color = '#b91c1c';
+                });
+            });
+          }
+        })
+        .catch(function (err) {
+          statusEl.classList.add('service-error');
+          statusEl.textContent = err && err.message ? err.message : 'Gagal memuat detail layanan.';
+          heroSub.textContent = 'Terjadi kendala saat memuat data layanan.';
+        });
+    })();
+  </script>
+  <script src="/assets/js/plugins/jquery.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/MPS.png">
+    <title>MPS - PT. Maulana Prima Sejahtera</title>
+    <!-- fontawesome css -->
+    <link rel="stylesheet" preload href="/assets/css/plugins/fontawesome.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/aos.css">
+    <!-- swiper css-->
+    <link rel="stylesheet" preload href="/assets/css/plugins/odometer.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/swiper.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/metismenu.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/magnifying-popup.css">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" preload href="/assets/css/vendor/bootstrap.min.css">
+    <!-- custom css here -->
+    <link rel="stylesheet" preload href="/assets/css/style.css">
+<style>
+.submenu.menu-home,
+.submenu.menu-pages,
+.submenu.menu-shop,
+.submenu.menu-project,
+.submenu.menu-blog,
+.rts-mega-menu, .rts-blog-grid-area, .rts-blog-area, .blog-area, .blog-post-area, .blog-sidebar, .blog-main-wrapper { display: none !important; }
+
+.about-wrapper-area-five .about-left-wrapper .about-value-list {
+    list-style: none;
+    margin: 0 0 22px;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+}
+.about-wrapper-area-five .about-left-wrapper .about-value-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #1e293b;
+    font-size: 16px;
+    line-height: 1.65;
+    font-weight: 600;
+}
+.about-wrapper-area-five .about-left-wrapper .about-value-list li i {
+    color: #ff5e14;
+    font-size: 16px;
+    margin-top: 5px;
+}
+.about-wrapper-area-five .about-left-wrapper .about-cta-row {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.about-wrapper-area-five .about-left-wrapper .about-cta-row .btn-download-profile {
+    background: #0f172a;
+    border-color: #0f172a;
+    color: #ffffff;
+}
+.about-wrapper-area-five .about-left-wrapper .about-cta-row .btn-download-profile:hover {
+    background: #1e293b;
+    border-color: #1e293b;
+    color: #ffffff;
+}
+
+/* Mobile polish for Tentang page */
+@media (max-width: 991px) {
+    .rts-section-gap {
+        padding-top: 56px !important;
+        padding-bottom: 56px !important;
+    }
+    .title-style-two-center .title {
+        font-size: 28px;
+        line-height: 1.25;
+    }
+    .title-style-two-center .disc {
+        font-size: 14px;
+        line-height: 1.7;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .team-area-start .row.mt--70 {
+        margin-top: 28px !important;
+    }
+    .team-area-swiper-wrapper-5 {
+        padding: 0 8px;
+    }
+    .mySwiper-team-5 .swiper-slide {
+        height: auto;
+    }
+    .single-team-style-five {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 12px 24px rgba(15, 23, 42, 0.22);
+    }
+    .single-team-style-five .thumbnail img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+    }
+    .single-team-style-five .inner-content-team {
+        padding: 12px 12px 14px;
+    }
+    .single-team-style-five .inner-content-team .title {
+        font-size: 15px;
+        line-height: 1.35;
+        margin-bottom: 3px;
+    }
+    .single-team-style-five .inner-content-team .desig {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .large-video-area .row.pt--60 {
+        padding-top: 24px !important;
+    }
+    .large-video-area-inner {
+        border-radius: 14px;
+        overflow: hidden;
+    }
+    .large-video-area-inner.bg_image {
+        min-height: 260px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    /* Fix mobile overlap: theme uses negative margin on this section for desktop effect */
+    .why-choose-us-area.in-about-page {
+        margin-top: 0 !important;
+        padding-top: 56px !important;
+    }
+
+    .why-choose-us-area .reveal-item img {
+        width: 100%;
+        border-radius: 12px;
+        object-fit: cover;
+        max-height: 280px;
+    }
+    .how-we-works-wrappers {
+        margin-top: 24px;
+    }
+    .how-we-works-wrappers .title-wrapper-left {
+        margin-bottom: 22px !important;
+    }
+    .how-we-works-wrappers .title-wrapper-left .title {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+    .single-choose-us-one {
+        padding: 14px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.03);
+        margin-bottom: 12px;
+    }
+    .single-choose-us-one .info-wrapper .title {
+        font-size: 16px;
+        line-height: 1.35;
+    }
+    .single-choose-us-one .info-wrapper .disc {
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .contact-area-footer-top {
+        row-gap: 14px;
+    }
+    .contact-area-footer-top .single-contact-area-box {
+        padding: 16px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 12px;
+        min-height: 100%;
+    }
+
+    .about-wrapper-area-five {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        overflow: visible !important;
+    }
+    .about-wrapper-area-five .about-left-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box;
+        padding: 18px 16px !important;
+    }
+    .about-wrapper-area-five .about-left-wrapper .title,
+    .about-wrapper-area-five .about-left-wrapper .disc {
+        max-width: 100% !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+    .about-wrapper-area-five .about-left-wrapper .about-value-list {
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+    .about-wrapper-area-five .about-left-wrapper .about-value-list li {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    .about-wrapper-area-five .about-left-wrapper .title br {
+        display: none;
+    }
+    .about-wrapper-area-five .about-left-wrapper .rts-btn {
+        display: inline-flex;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+    .about-wrapper-area-five .right-thumbnail {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+    .about-wrapper-area-five .right-thumbnail img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+@media (max-width: 575px) {
+    .rts-banner-area .breadcrumb-area-inner .title {
+        font-size: 34px;
+        line-height: 1.1;
+    }
+    .title-style-two-center .title {
+        font-size: 24px;
+    }
+    .title-style-two-center .disc {
+        max-width: 100%;
+        font-size: 13px;
+    }
+
+    .team-area-swiper-wrapper-5 {
+        padding: 0 2px;
+    }
+    .single-team-style-five .share-btn {
+        right: 10px;
+        bottom: 66px;
+    }
+    .single-team-style-five .socail-area-wrapper-team {
+        right: 10px;
+        bottom: 108px;
+    }
+
+    .large-video-area-inner.bg_image {
+        min-height: 210px;
+    }
+    .how-we-works-wrappers .title-wrapper-left .title {
+        font-size: 24px;
+    }
+    .single-choose-us-one .icon {
+        min-width: 46px;
+    }
+    .single-choose-us-one .icon img {
+        width: 46px;
+        height: 46px;
+    }
+    .single-choose-us-one .icon span {
+        width: 22px;
+        height: 22px;
+        line-height: 22px;
+        font-size: 12px;
+        font-weight: 700;
+        top: -4px;
+        left: -4px;
+    }
+    .about-wrapper-area-five .about-left-wrapper {
+        padding: 16px 14px !important;
+    }
+    .about-wrapper-area-five .about-left-wrapper .title {
+        font-size: 30px !important;
+        line-height: 1.2 !important;
+    }
+    .about-wrapper-area-five .about-left-wrapper .disc {
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+        margin-bottom: 14px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .why-choose-us-area.in-about-page {
+        padding-top: 46px !important;
+    }
+    .why-choose-us-area.in-about-page .row.align-items-center {
+        row-gap: 18px;
+    }
+    .why-choose-us-area.in-about-page .col-xl-6.col-lg-12.pt_md--30.pt_sm--50 {
+        padding-top: 0 !important;
+    }
+    .how-we-works-wrappers .title-wrapper-left .pre {
+        font-size: 12px;
+        letter-spacing: .08em;
+    }
+    .single-choose-us-one {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        border-color: rgba(255, 255, 255, 0.16);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.04);
+    }
+    .single-choose-us-one .icon {
+        flex: 0 0 52px;
+        min-width: 52px;
+    }
+    .single-choose-us-one .icon span {
+        width: 21px;
+        height: 21px;
+        line-height: 21px;
+        font-size: 11px;
+    }
+    .single-choose-us-one .info-wrapper {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+    .single-choose-us-one .info-wrapper .title {
+        font-size: 17px;
+    }
+    .single-choose-us-one:last-child {
+        margin-bottom: 0;
+    }
+    .mySwiper-team-5 {
+        overflow: visible;
+    }
+    .team-area-start .swiper-slide {
+        padding-bottom: 4px;
+    }
+}
+</style>
+
+
+    <link rel="stylesheet" href="/assets/css/site-fixes.css">
+</head>
+
+<body><header class="header-two header--sticky">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-top-wrapper">
+                            <div class="left">
+                                <div class="call">
+                                    <i class="fa-light fa-mobile"></i>
+                                    <a href="#"></a>
+                                    <a href="#"></a>
+                                </div>
+                                <div class="call">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <a href="#"></a>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="social-header">
+                                    <span>Follow Us On:</span>
+                                    <ul>
+                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-two-main-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-two-wrapper">
+                            <a href="/" class="logo-area">
+                                <span class="brand-lockup" aria-label="PT Maulana Prima Sejahtera">
+                                    <img class="brand-mark" src="/assets/images/MPS.png" alt="MPS">
+                                    <span class="brand-text">
+                                        <span class="brand-name">Maulana Prima</span>
+                                        <span class="brand-sub">Sejahtera</span>
+                                    </span>
+                                </span>
+                            </a>
+                            <div class="nav-area">
+    <ul class="" id="main-menu"></ul>
+</div>
+<div class="header-end">
+                                <a href="#" class="rts-btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Konsultasi WhatsApp</a>
+                                <div class="nav-btn menu-btn">
+                                    <img src="/assets/images/logo/bar.svg" alt="nav-iamge">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header area start -->
+    
+
+<div id="side-bar" class="side-bar header-two">
+    <button class="close-icon-menu"><i class="far fa-times"></i></button>
+    <!-- inner menu area desktop start -->
+    <div class="inner-main-wrapper-desk">
+        <div class="thumbnail">
+            <img src="/assets/images/banner/04.jpg" alt="elevate">
+        </div>
+        <div class="inner-content">
+            <h4 class="title">Solusi Profesional untuk Ducting, Hydrant, dan Electrical.</h4>
+            <p class="disc">
+                We successfully cope with tasks of varying complexity, provide long-term guarantees and regularly
+                master new technologies.
+            </p>
+            <div class="footer">
+                <h4 class="title">Got a project in mind?</h4>
+                <a href="#" class="rts-btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Konsultasi via WhatsApp</a>
+            </div>
+        </div>
+    </div>
+    <!-- mobile menu area start -->
+        <div class="mobile-menu d-block d-xl-none">
+        <nav class="nav-main mainmenu-nav mt--30">
+            <ul class="mainmenu metismenu" id="mobile-menu-active">
+            </ul>
+        </nav>
+
+        <div class="social-wrapper-one">
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- mobile menu area end -->
+</div>
+    <!-- header area end -->
+
+
+    <!-- rts banner area strart -->
+    <div class="rts-banner-area rts-section-gap rts-breadcrumb-area  position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-area-inner">
+                        <span class="water-text">About</span>
+                        <h1 class="title">
+                            PT. Maulana Prima Sejahtera
+                        </h1>
+                        <div class="nav-area-navigation">
+                            <a href="/">Home</a>
+                            <a class="current" href="#">Tentang Kami</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts banner area end -->
+
+
+    <!-- Tentang Kami area start -->
+    <div class="about-us-area-five rts-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="about-wrapper-area-five">
+                        <div class="about-left-wrapper">
+                            <span class="pre">Tentang Perusahaan</span>
+                            <h2 class="title">
+                                Spesialis Ducting, Hydrant, dan <br>
+                                Electrical untuk Industri Modern
+                            </h2>
+                            <p class="disc">
+                                PT. Maulana Prima Sejahtera berpengalaman menangani fabrikasi dan instalasi
+                                ducting, sistem hydrant, plumbing, serta elektrikal untuk berbagai kebutuhan
+                                industri. Setiap proyek kami jalankan dengan standar teknis yang jelas, hasil rapi,
+                                dan fokus pada keamanan operasional jangka panjang.
+                            </p>
+                            <ul class="about-value-list">
+                                <li><i class="fa-solid fa-circle-check"></i>Survey lokasi dan analisa kebutuhan sistem</li>
+                                <li><i class="fa-solid fa-circle-check"></i>Desain, fabrikasi, dan instalasi sesuai standar</li>
+                                <li><i class="fa-solid fa-circle-check"></i>Testing, commissioning, dan serah terima</li>
+                            </ul>
+                            <div class="about-cta-row">
+                                <a href="/kontak/" class="rts-btn btn-primary">
+                                    Konsultasi Proyek
+                                    <img src="/assets/images/icons/arrow-up-right.svg" alt="">
+                                </a>
+                                <a href="#" id="company-profile-download-btn" class="rts-btn btn-primary btn-download-profile" target="_blank" rel="noopener" download hidden>
+                                    Unduh Company Profile
+                                    <i class="fa-solid fa-file-arrow-down"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="right-thumbnail">
+                            <img src="/assets/images/about/10.webp" alt="PT Maulana Prima Sejahtera">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tentang Kami area end -->
+    <!-- rts team area start -->
+    <div class="team-area-start rts-section-gap rts-portfolio-area-case  bg-color-gradient-2 bg_image" id="about-team-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-style-two-center">
+                        <h2 class="title">Tim Profesional Kami</h2>
+                        <p class="disc">
+                            Tim kami terdiri dari tenaga kerja berpengalaman yang menangani fabrikasi, instalasi, dan maintenance dengan standar kualitas yang konsisten.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt--70">
+                <div class="col-lg-12">
+                    <div class="team-area-swiper-wrapper-5">
+                        <div class="swiper mySwiper-team-5" dir="ltr">
+                            <template id="team-fallback-template">
+                                <div class="swiper-slide">
+                                    <div class="single-team-style-five">
+                                        <a href="team-single.html" class="thumbnail">
+                                            <img src="/assets/images/team/08.webp" alt="team">
+                                            <div class="shape-social">
+                                                <img src="/assets/images/team/01.png" alt="team">
+                                            </div>
+                                        </a>
+                                        <div class="share-btn">
+                                            <i class="fa-sharp fa-light fa-share-nodes"></i>
+                                        </div>
+                                        <div class="socail-area-wrapper-team">
+                                            <ul>
+                                                <li><a href="#"><i class="fa-brands fa-behance"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="inner-content-team">
+                                            <a href="team-single.html">
+                                                <h5 class="title">Samuel Daniel</h5>
+                                            </a>
+                                            <span class="desig">Designer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="single-team-style-five">
+                                        <a href="team-single.html" class="thumbnail">
+                                            <img src="/assets/images/team/09.webp" alt="team">
+                                            <div class="shape-social">
+                                                <img src="/assets/images/team/01.png" alt="team">
+                                            </div>
+                                        </a>
+                                        <div class="share-btn">
+                                            <i class="fa-sharp fa-light fa-share-nodes"></i>
+                                        </div>
+                                        <div class="socail-area-wrapper-team">
+                                            <ul>
+                                                <li><a href="#"><i class="fa-brands fa-behance"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="inner-content-team">
+                                            <a href="team-single.html">
+                                                <h5 class="title">Mekail Shen</h5>
+                                            </a>
+                                            <span class="desig">Designer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="single-team-style-five">
+                                        <a href="team-single.html" class="thumbnail">
+                                            <img src="/assets/images/team/10.webp" alt="team">
+                                            <div class="shape-social">
+                                                <img src="/assets/images/team/01.png" alt="team">
+                                            </div>
+                                        </a>
+                                        <div class="share-btn">
+                                            <i class="fa-sharp fa-light fa-share-nodes"></i>
+                                        </div>
+                                        <div class="socail-area-wrapper-team">
+                                            <ul>
+                                                <li><a href="#"><i class="fa-brands fa-behance"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="inner-content-team">
+                                            <a href="team-single.html">
+                                                <h5 class="title">William Daniel</h5>
+                                            </a>
+                                            <span class="desig">Developer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="single-team-style-five">
+                                        <a href="team-single.html" class="thumbnail">
+                                            <img src="/assets/images/team/11.webp" alt="team">
+                                            <div class="shape-social">
+                                                <img src="/assets/images/team/01.png" alt="team">
+                                            </div>
+                                        </a>
+                                        <div class="share-btn">
+                                            <i class="fa-sharp fa-light fa-share-nodes"></i>
+                                        </div>
+                                        <div class="socail-area-wrapper-team">
+                                            <ul>
+                                                <li><a href="#"><i class="fa-brands fa-behance"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="inner-content-team">
+                                            <a href="team-single.html">
+                                                <h5 class="title">Nicholas Arthur</h5>
+                                            </a>
+                                            <span class="desig">UI/UX Designer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="single-team-style-five">
+                                        <a href="team-single.html" class="thumbnail">
+                                            <img src="/assets/images/team/09.webp" alt="team">
+                                            <div class="shape-social">
+                                                <img src="/assets/images/team/01.png" alt="team">
+                                            </div>
+                                        </a>
+                                        <div class="share-btn">
+                                            <i class="fa-sharp fa-light fa-share-nodes"></i>
+                                        </div>
+                                        <div class="socail-area-wrapper-team">
+                                            <ul>
+                                                <li><a href="#"><i class="fa-brands fa-behance"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="inner-content-team">
+                                            <a href="team-single.html">
+                                                <h5 class="title">Edward Thomas</h5>
+                                            </a>
+                                            <span class="desig">Designer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                            <div class="swiper-wrapper" id="team-swiper-wrapper"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts team area end -->
+
+    <!-- large vbdeo area start -->
+    <!-- <div class="large-video-area rts-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-style-two-center inner">
+                        <span class="pre">Profil Perusahaan</span>
+                        <h2 class="title">Kami membantu klien mewujudkan <br>                            sistem utilitas industri yang aman dan efisien</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt--60">
+                <div class="col-lg-12">
+                    <div class="large-video-area-inner bg_image">
+                        <div class="vedio-icone">
+                            <a class="video-play-button play-video" href="#">
+                                <span></span>
+                            </a>
+                            <div class="video-overlay">
+                                <a class="video-overlay-close"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- large vbdeo area end -->
+
+
+    <!-- why choose us area start -->
+    <div class="why-choose-us-area rts-section-gap in-about-page">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-12 pr--60 pr_md--0 pr_sm--0">
+                    <div class="reveal-item overflow-hidden aos-init">
+                        <div class="reveal-animation reveal-end reveal-primary aos aos-init" data-aos="reveal-end">
+                        </div>
+                        <img src="/assets/images/service/01.webp" alt="journey-area">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-12 pt_md--30 pt_sm--50">
+                    <div class="how-we-works-wrappers">
+                        <div class="title-wrapper-left mb--50">
+                            <span class="pre">Tentang Perusahaan</span>
+                            <h2 class="title">
+                                Visi & Misi Kami<br>                                untuk Layanan Industri Andal
+                            </h2>
+                        </div>
+                        <div class="single-choose-us-one">
+                            <div class="icon">
+                                <img src="/assets/images/service/vision-target.svg" alt="Ikon visi perusahaan">
+                                <span>1</span>
+                            </div>
+                            <div class="info-wrapper">
+                                <h5 class="title">Visi</h5>
+                                <p class="disc">Menjadi mitra industri yang terpercaya dalam service & maintenance, instalasi, dan fabrikasi sistem utilitas untuk mendukung operasional pelanggan secara aman, efisien, dan berkelanjutan.</p>
+                            </div>
+                        </div>
+                        <div class="single-choose-us-one">
+                            <div class="icon">
+                                <img src="/assets/images/service/mission-quality.svg" alt="Ikon misi mutu dan keselamatan kerja">
+                                <span>2</span>
+                            </div>
+                            <div class="info-wrapper">
+                                <h5 class="title">Misi 1: Kualitas & Keselamatan</h5>
+                                <p class="disc">Melaksanakan setiap pekerjaan dengan tepat sasaran, bertanggung jawab, serta memenuhi standar mutu, K3, dan spesifikasi teknis yang disepakati bersama pelanggan.</p>
+                            </div>
+                        </div>
+                        <div class="single-choose-us-one">
+                            <div class="icon">
+                                <img src="/assets/images/service/mission-growth.svg" alt="Ikon misi inovasi dan penguatan SDM">
+                                <span>3</span>
+                            </div>
+                            <div class="info-wrapper">
+                                <h5 class="title">Misi 2: Inovasi & Penguatan SDM</h5>
+                                <p class="disc">Mengembangkan inovasi proses kerja dan kompetensi SDM melalui pembelajaran berkelanjutan guna meningkatkan kualitas layanan, keandalan hasil, dan kepuasan pelanggan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- why choose us area end -->
+
+
+
+
+    <!-- rts blog area start -->
+    <div class="rts-blog-area rts-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-style-two-center">
+                        <h2 class="title"></h2>
+                        <p class="disc">
+                            Tim kami terdiri dari tenaga kerja berpengalaman yang menangani fabrikasi, instalasi, dan maintenance dengan standar kualitas yang konsisten.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-24 mt--40">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="single-blog-three">
+                        <a href="/proyek/" class="thumbnail">
+                            <img src="/assets/images/blog/07.webp" alt="blgo-image">
+                        </a>
+                        <div class="inner-content-area">
+                            <div class="top-area">
+                                <div class="tag">
+                                    <i class="fa-regular fa-tag"></i>
+                                    <span>Solutions</span>
+                                </div>
+                                <div class="tag">
+                                    <i class="fa-solid fa-messages"></i>
+                                    <span>05 Comment</span>
+                                </div>
+                            </div>
+                            <a href="/proyek/">
+                                <h3 class="title">
+                                    This Schemata Approach Was Later
+                                    Visi & Misi
+                                </h3>
+                            </a>
+                            <div class="bottom-area">
+                                <div class="left">
+                                    <img src="/assets/images/blog/10.webp" alt="blog">
+                                    <div class="info">
+                                        <h5 class="title">Thomas Arthur</h5>
+                                        <span>Author</span>
+                                    </div>
+                                </div>
+                                <a href="/proyek/" class="rts-btn btn-primary">Read Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="single-blog-three">
+                        <a href="/proyek/" class="thumbnail">
+                            <img src="/assets/images/blog/08.webp" alt="blgo-image">
+                        </a>
+                        <div class="inner-content-area">
+                            <div class="top-area">
+                                <div class="tag">
+                                    <i class="fa-regular fa-tag"></i>
+                                    <span>Solutions</span>
+                                </div>
+                                <div class="tag">
+                                    <i class="fa-solid fa-messages"></i>
+                                    <span>05 Comment</span>
+                                </div>
+                            </div>
+                            <a href="/proyek/">
+                                <h3 class="title">
+                                    What Projects Provide the Best Return
+                                    on Investment?
+                                </h3>
+                            </a>
+                            <div class="bottom-area">
+                                <div class="left">
+                                    <img src="/assets/images/blog/11.webp" alt="blog">
+                                    <div class="info">
+                                        <h5 class="title">Oliver Edward</h5>
+                                        <span>Author</span>
+                                    </div>
+                                </div>
+                                <a href="/proyek/" class="rts-btn btn-primary">Read Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="single-blog-three">
+                        <a href="/proyek/" class="thumbnail">
+                            <img src="/assets/images/blog/09.webp" alt="blgo-image">
+                        </a>
+                        <div class="inner-content-area">
+                            <div class="top-area">
+                                <div class="tag">
+                                    <i class="fa-regular fa-tag"></i>
+                                    <span>Solutions</span>
+                                </div>
+                                <div class="tag">
+                                    <i class="fa-solid fa-messages"></i>
+                                    <span>05 Comment</span>
+                                </div>
+                            </div>
+                            <a href="/proyek/">
+                                <h3 class="title">
+                                    Max Space in Small Homes Renovation
+                                    Tips for More Storage and Style
+                                </h3>
+                            </a>
+                            <div class="bottom-area">
+                                <div class="left">
+                                    <img src="/assets/images/blog/12.webp" alt="blog">
+                                    <div class="info">
+                                        <h5 class="title">Thomas Arthur</h5>
+                                        <span>Author</span>
+                                    </div>
+                                </div>
+                                <a href="/proyek/" class="rts-btn btn-primary">Read Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts blog area end -->
+
+
+    <!-- rts footer area start -->
+<div class="rts-footer-area rts-section-gapTop bg_footer-1 bg_image">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact-area-footer-top">
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h6 class="title">Call Us Now</h6>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </div>
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <h6 class="title">Office Time</h6>
+                        <a href="#"></a>
+                    </div>
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h6 class="title">Need Support</h6>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </div>
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fa-sharp fa-solid fa-location-dot"></i>
+                        </div>
+                        <h6 class="title">Our Address</h6>
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-full">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="nav-footer-wrapper-one">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul class="footer-float-nav">
+                                    <li><a href="/tentang/">Tentang Kami</a></li>
+                                    <li><a href="/proyek/">Projects</a></li>
+                                    <li><a href="/proyek/">Updates</a></li>
+                                    <li><a href="/tentang/">Mission</a></li>
+                                    <li><a href="/tentang/">Inside</a></li>
+                                    <li><a href="/kontak/">Contact</a></li>
+                                    <li><a href="/tentang/">History</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-4">
+                <div class="footer-wrapper-left-one">
+                    <a href="/" class="logo">
+                        <span class="brand-lockup" aria-label="PT Maulana Prima Sejahtera">
+                            <img class="brand-mark" src="/assets/images/MPS.png" alt="MPS">
+                            <span class="brand-text">
+                                <span class="brand-name">Maulana Prima</span>
+                                <span class="brand-sub">Sejahtera</span>
+                            </span>
+                        </span>
+                    </a>
+                    <p class="disc">
+                        Kami berkomitmen untuk memberikan solusi konstruksi berkualitas tinggi yang disesuaikan dengan kebutuhan klien kami. Dengan fokus yang kuat pada inovasi, ketelitian, dan keahlian, kami membangun ruang yang tahan lama.
+                    </p>
+                    <div class="social-area-wrapper-one">
+                        <ul>
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="footer-wrapper-right">
+                    <div class="single-nav-area-footer use-link">
+                        <h4 class="title">Useful Links</h4>
+                        <ul>
+                            <li><a href="/tentang/"><i class="fa-regular fa-arrow-right-long"></i>Tentang Kami</a></li>
+                            <li><a href="/tentang/"><i class="fa-regular fa-arrow-right-long"></i>Our Gallery</a></li>
+                            <li><a href="/layanan/"><i class="fa-regular fa-arrow-right-long"></i>Layanan Kami</a>
+                            </li>
+                            <li><a href="/tentang/#about-team-section"><i class="fa-regular fa-arrow-right-long"></i>Our Team</a></li>
+                            <li><a href="/kontak/"><i class="fa-regular fa-arrow-right-long"></i>Hubungi Kami</a></li>
+                        </ul>
+                    </div>
+                    <div class="single-nav-area-footer use-link">
+                        <h4 class="title">Quick Services</h4>
+                        <ul>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>General
+                                    Contracting</a>
+                            </li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Project
+                                    Management</a>
+                            </li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>New
+                                    Construction</a></li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Renovations
+                                    &
+                                    Remodeling</a></li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Interior
+                                    Finishing</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="single-nav-area-footer news-letter">
+                        <h4 class="title">Newsletter</h4>
+                        <p>Aplications prodize before front end ortals visualize front end</p>
+                        <form action="#">
+                            <input type="email" placeholder="Email Address" required>
+                            <button class="btn-subscribe mt--15">Subscribe Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-full copyright-area-one">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="copyright-wrapper">
+                                <p class="mb-0">Copyright &copy;
+                                    <script>
+                                        document.write(
+                                            new Date().getFullYear()
+                                        )
+                                    </script>
+                                    Maulana Prima Sejahtera
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- rts footer area end -->
+
+
+
+
+    <!-- progress area start -->
+<!-- <div id="elevate-load">
+    <div class="loader-wrapper">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div> -->
+<!-- progress area end -->
+
+<!-- rtl btn area start --><!-- rtl btn area end -->
+
+<!-- progress area start -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+            style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+        </path>
+    </svg>
+</div>
+<!-- progress area end -->
+
+
+<!-- offcanvase search -->
+<div class="search-input-area">
+    <div class="container">
+        <div class="search-input-inner">
+            <div class="input-div">
+                <input class="search-input autocomplete" type="text" placeholder="Search by keyword or #">
+                <button><i class="far fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+    <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+</div>
+<div id="anywhere-home" class="">
+</div>
+
+<!-- scripts -->
+<script src="/assets/js/plugins/jquery.js"></script>
+<script src="/assets/js/vendor/bootstrap.min.js"></script>
+
+<script src="/assets/js/plugins/odometer.js"></script>
+<script src="/assets/js/plugins/jquery-appear.js"></script>
+
+<script src="/assets/js/plugins/metismenu.js"></script>
+<script src="/assets/js/plugins/swiper.js"></script>
+<script src="/assets/js/plugins/aos.js"></script>
+<script src="/assets/js/plugins/nice-select.js"></script>
+<script src="/assets/js/plugins/smooth-scroll.js"></script>
+<script src="/assets/js/vendor/waw.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuSiPhoDaOJ7aqtJVtQhYhLzwwJ7rQlmA"></script>
+<script src="/assets/js/vendor/marker.js"></script>
+<script src="/assets/js/vendor/map-content.js"></script>
+<script src="/assets/js/vendor/info-box.js"></script>
+<script src="https://html.themewant.com/golfy/assets/js/plugins/magnific-popup.js"></script>
+
+<script src="/assets/js/plugins/contact.form.js"></script>
+
+<script src="/assets/js/main.js"></script>
+<script>
+  (function () {
+    var wrapper = document.getElementById('team-swiper-wrapper');
+    var teamSection = document.getElementById('about-team-section');
+    if (!wrapper || !teamSection) return;
+
+    var escapeHtml = function (value) {
+      return String(value || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    };
+
+    var renderSocialList = function (member) {
+      var socials = [];
+      if (member.facebook) socials.push('<li><a href="' + escapeHtml(member.facebook) + '" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a></li>');
+      if (member.youtube) socials.push('<li><a href="' + escapeHtml(member.youtube) + '" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a></li>');
+      if (member.linkedin) socials.push('<li><a href="' + escapeHtml(member.linkedin) + '" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a></li>');
+      if (member.whatsapp) socials.push('<li><a href="' + escapeHtml(member.whatsapp) + '" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a></li>');
+      return socials.join('');
+    };
+
+    var buildSlideHtml = function (member) {
+      var socialHtml = renderSocialList(member);
+      return '' +
+        '<div class="swiper-slide">' +
+          '<div class="single-team-style-five">' +
+            '<a href="#" class="thumbnail">' +
+              '<img src="' + escapeHtml(member.image) + '" alt="' + escapeHtml(member.name) + '">' +
+              '<div class="shape-social"><img src="/assets/images/team/01.png" alt="team"></div>' +
+            '</a>' +
+            '<div class="share-btn"><i class="fa-sharp fa-light fa-share-nodes"></i></div>' +
+            '<div class="socail-area-wrapper-team"><ul>' + (socialHtml || '<li><a href="#"><i class="fa-regular fa-user"></i></a></li>') + '</ul></div>' +
+            '<div class="inner-content-team">' +
+              '<a href="#"><h5 class="title">' + escapeHtml(member.name) + '</h5></a>' +
+              '<span class="desig">' + escapeHtml(member.role) + '</span>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+    };
+
+    var setTeamSectionVisible = function (isVisible) {
+      if (!isVisible) {
+        teamSection.style.display = 'none';
+        return;
+      }
+      teamSection.style.display = '';
+    };
+
+    var loadTeamMembers = function () {
+      return fetch('/api/team-members.php', { cache: 'no-store' })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (!data || !data.ok || !Array.isArray(data.members) || !data.members.length) {
+            wrapper.innerHTML = '';
+            setTeamSectionVisible(false);
+            return;
+          }
+          var slides = data.members.map(buildSlideHtml);
+          var swiperEl = document.querySelector('.mySwiper-team-5');
+          if (swiperEl && swiperEl.swiper) {
+            swiperEl.swiper.removeAllSlides();
+            swiperEl.swiper.appendSlide(slides);
+            swiperEl.swiper.update();
+            if (typeof swiperEl.swiper.slideToLoop === 'function') {
+              swiperEl.swiper.slideToLoop(0, 0);
+            }
+            setTeamSectionVisible(true);
+            return;
+          }
+          wrapper.innerHTML = slides.join('');
+          setTeamSectionVisible(true);
+        })
+        .catch(function () {
+          wrapper.innerHTML = '';
+          setTeamSectionVisible(false);
+        });
+    };
+
+    // Hide until loaded successfully (prevents blank section on static servers).
+    setTeamSectionVisible(false);
+
+    fetch('/api/site-settings.php', { cache: 'no-store' })
+      .then(function (res) { return res.json(); })
+      .then(function (payload) {
+        var settings = payload && payload.ok && payload.settings ? payload.settings : {};
+        var raw = settings.homeShowTeamSection || '1';
+        var isVisible = !(String(raw) === '0' || raw === 0 || raw === false);
+        setTeamSectionVisible(isVisible);
+        if (!isVisible) {
+          wrapper.innerHTML = '';
+          return;
+        }
+        return loadTeamMembers();
+      })
+      .catch(function () {
+        setTeamSectionVisible(false);
+        return loadTeamMembers();
+      });
+  })();
+</script>
+<script>
+  (function () {
+    var profileBtn = document.getElementById('company-profile-download-btn');
+    if (!profileBtn) return;
+
+    var normalizeUrl = function (value) {
+      var raw = String(value || '').trim();
+      if (!raw) return '';
+      if (/^https?:\/\//i.test(raw)) return raw;
+      if (/^\/\//.test(raw)) return 'https:' + raw;
+      if (raw.charAt(0) === '/') return raw;
+      return '';
+    };
+
+    var isPdfUrl = function (value) {
+      try {
+        var parsed = new URL(value, window.location.origin);
+        return /\.pdf$/i.test(parsed.pathname || '');
+      } catch (e) {
+        return false;
+      }
+    };
+
+    fetch('/api/site-settings.php', { cache: 'no-store' })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (!data || !data.ok || !data.settings) return;
+        var pdfUrl = normalizeUrl(data.settings.companyProfilePdfUrl || '');
+        if (!pdfUrl || !isPdfUrl(pdfUrl)) return;
+        profileBtn.href = pdfUrl;
+        profileBtn.hidden = false;
+      })
+      .catch(function () {
+        // Keep hidden when settings API unavailable.
+      });
+  })();
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,107 @@
+
+.rts-single-offer{
+    padding: 40px;
+    border: 1px solid #cacaca;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    z-index: 1;
+    transition: .3s;
+    @media #{$sm-layout} {
+        padding: 15px;
+    }
+    &::after{
+        position: absolute;
+        content: '';
+        left: -10%;
+        top: -30%;
+        height: 250px;
+        width: 250px;
+        filter: blur(50px);
+        background: var(--color-primary);
+        z-index: -1;
+        opacity: 0;
+        transition: .3s;
+    }
+    a.thumbnail{
+        overflow: hidden;
+        display: block;
+        max-height: max-content;
+        margin-bottom: 30px;
+        &:hover{
+            img{
+                transform: scale(1.3);
+            }
+        }
+        img{
+            transition: 1.3s;
+            max-height: max-content;
+            width: 100%;
+        }
+    }
+    .content-wrapper{
+        .title{
+            margin-bottom: 10px;
+            transition: all .4s;
+            color: var(--color-title);
+            &:hover{
+                color: var(--color-primary);
+            }
+        }
+        .disc{
+            margin-bottom: 20px;
+        }
+        .rts-btn{
+            border: 1px solid #E9E9E9;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 21px;
+            padding: 15px 28px;
+            color: #0C0A0A;
+            &:hover{
+                background: var(--color-primary);
+                border-color: var(--color-primary);
+                color: #fff;
+            }
+            i{
+                margin-left: 5px;
+            }
+        }
+    }
+    &:hover{
+        border-color: var(--color-primary);
+        &::after{
+            opacity: .6;
+        }
+    }
+    .rts-btn{
+        transition: .3s;
+        color: #fff !important;
+        &::after{
+            transition: .3s;
+        }
+    }
+}
+.title-mid-wrapper-home-two{
+    text-align: center;
+    span.pre{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #0C0A0A;
+        font-family: var(--font-primary);
+    }
+    .title{
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 60px;
+        color: #0C0A0A;
+        @media #{$large-mobile} {
+            font-size: 30px;
+            line-height: 43px;
+            margin-top: 12px;
+        }
+    }
+}

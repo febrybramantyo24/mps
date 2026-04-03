@@ -1,0 +1,111 @@
+.quick-contact-page-1 {
+    padding: 38px 30px;
+    border-radius: 10px;
+    background: #fff;
+
+    .title {
+        font-size: 22px;
+        margin-top: 22px;
+        margin-bottom: 18px;
+        color: var(--color-title);
+    }
+}
+
+.contact-main-wrapper-left {
+    span {
+        color: var(--color-primary);
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    .title-main {
+        font-size: 44px;
+        font-weight: 700;
+        color: var(--color-title);
+        margin-top: 10px;
+        @media #{$sm-layout} {
+            font-size: 32px;
+            line-height: 1.3;
+            br{
+                display: none;
+            }
+        }
+        @media #{$large-mobile} {
+            font-size: 26px;
+            line-height: 1.3;
+        }
+    }
+
+    p.disc {
+        max-width: 90%;
+    }
+}
+
+
+.contact-form-area-wrapper {
+    padding: 60px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    @media #{$sm-layout} {
+        padding: 25px;
+    }
+    @media #{$large-mobile} {
+        padding: 15px;
+    }
+    .title {
+        font-size: 36px;
+        color: var(--color-title);
+        margin-bottom: 30px;
+        @media #{$large-mobile} {
+            font-size:26px;
+        }
+    }
+
+    input {
+        height: 50px;
+        background: #F6F6F6;
+        border-radius: 5px;
+        border: none;
+        box-shadow: none;
+        width: 100%;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        padding: 15px;
+
+        &:focus {   
+            border: 1px solid var(--color-primary);
+        }
+    }
+
+    .half-inpur-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: space-between;
+
+        .single {
+            width: 100%;
+        }
+    }
+
+    textarea {
+        height: 150px;
+        background: #F6F6F6;
+        border-radius: 5px;
+        border: none;
+        box-shadow: none;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        padding: 15px;
+
+        &:focus {
+            border: 1px solid var(--color-primary);
+        }
+    }
+
+    button {
+        border: none;
+        box-shadow: none;
+    }
+}
+

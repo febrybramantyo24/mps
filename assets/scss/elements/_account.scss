@@ -1,0 +1,45 @@
+.account-page-body{
+    background: #fff;
+    .rts-contact-page-form-area.account .mian-wrapper-form {
+        padding: 60px;
+        height: 100%;
+        border: 1px solid #f5f5f5;
+        margin: 0 15px;
+    }
+    .mian-wrapper-form {
+        padding: 120px 135px;
+        border: 1px solid #E9E9E9;
+        box-shadow: 0px 24px 39px rgba(0, 0, 0, 0.05);
+        input{
+            height: 50px;
+            border-radius: 0;
+            margin-bottom: 15px;
+            border-color: #f1f1f1;
+            &:focus{
+                border: 1px solid var(--color-primary);
+            }
+        }
+    }
+    button{
+        border: none;
+    }
+    .checkbox{
+        margin-bottom: 15px;
+        input{
+            margin-bottom: 0;
+        }
+        label{
+            font-size: 16px;
+            padding-left: 15px;
+            &::after{
+                display: none;
+            }
+            &::before{
+                display: none;
+            }
+        }
+    }
+    .rts-contact-page-form-area.account .mian-wrapper-form .forgot-password {
+        margin-top: 30px;
+    }
+}

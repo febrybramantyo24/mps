@@ -1,0 +1,190 @@
+.bg-dark-2 {
+    background: #1E1E20;
+}
+
+.title-style-three-center {
+    text-align: center;
+
+    .title {
+        font-size: 48px;
+        @media #{$mdsm-layout} {
+            font-size: 40px;
+        }
+        @media #{$sm-layout} {
+            font-size: 28px;
+        }
+    }
+
+    p.disc {
+        max-width: 55%;
+        margin: auto;
+        color: #7C7C84;
+        @media #{$md-layout} {
+            max-width: 100%;
+        }
+        @media #{$sm-layout} {
+            max-width: 100%;
+        }
+    }
+}
+
+.single-facts-three {
+    background: #141416;
+    border: 1px solid #313135;
+    border-radius: 10px;
+    padding: 32px 40px;
+
+    .icon {
+        margin-bottom: 45px;
+    }
+
+    .inner {
+        .title {
+            font-size: 40px;
+            line-height: 1;
+            margin-bottom: 0;
+        }
+
+        .bottom {
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+    }
+}
+
+.facts-right-area-3-main-wrapper {
+    position: relative;
+
+    .inner-content {
+        position: absolute;
+        left: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+        max-width: 58.5%;
+        @media #{$smlg-device} {
+            max-width: 100%;
+            left: 30px;
+        }
+        .title {
+            font-size: 24px;
+        }
+
+        p.disc {
+            font-size: 15px;
+            color: #7C7C84;
+            margin-bottom: 25px;
+
+            b {
+                color: #fff;
+            }
+        }
+
+        .call-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .icon {
+                height: 80px;
+                width: 80px;
+                background: #FFFFFF;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .inner {
+                span {
+                    font-size: 15px;
+                    color: #fff;
+                }
+
+                a {
+                    .title {
+                        font-size: 30px;
+                        color: #fff;
+                        margin-top: 5px;
+                        transition: .3s;
+                        margin-bottom: 0;
+                    }
+
+                    &:hover {
+                        .title {
+                            color: var(--color-primary);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bg-dark-5 {
+    .title-left-align-five {
+        span.pre {
+            color: var(--color-primary);
+        }
+
+        .title {
+            color: #fff;
+        }
+    }
+}
+
+.funfacts-list-wrapper-5 {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #2B2B30;
+    border-bottom: 1px solid #2B2B30;
+    @media #{$mdsm-layout} {
+        flex-wrap: wrap;
+    }
+    .single-fun-facts-area-5 {
+        flex-basis: 25%;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 60px 0;
+        border-right: 1px solid #2B2B30;
+        @media #{$mdsm-layout} {
+            flex-basis: 50%;
+            border: none;
+        }
+        @media #{$sm-layout} {
+            flex-basis: 100%;
+            border: none;
+            justify-content: center !important;
+        }
+        &:last-child {
+            border-right: none;
+            @media #{$sm-layout} {
+                justify-content: center !important;
+            }
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            background: #141416;
+            border: 1px solid #2B2B30;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .counter-wrapper {
+            .title {
+                margin-bottom: 0;
+                font-size: 44px;
+            }
+
+            .bottom {
+                font-weight: 700;
+                color: #656565;
+            }
+        }
+    }
+}

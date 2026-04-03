@@ -1,0 +1,1931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/MPS.png">
+    <title>MPS - PT. Maulana Prima Sejahtera</title>
+    <!-- fontawesome css -->
+    <link rel="stylesheet" preload href="/assets/css/plugins/fontawesome.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/aos.css">
+    <!-- swiper css-->
+    <link rel="stylesheet" preload href="/assets/css/plugins/odometer.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/swiper.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/metismenu.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/magnifying-popup.css">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" preload href="/assets/css/vendor/bootstrap.min.css">
+    <!-- custom css here -->
+    <link rel="stylesheet" preload href="/assets/css/style.css">
+<style>
+.submenu.menu-home,
+.submenu.menu-pages,
+.submenu.menu-shop,
+.submenu.menu-project,
+.submenu.menu-blog,
+.rts-mega-menu,
+.rts-blog-area,
+.blog-area,
+.blog-post-area,
+.blog-sidebar,
+.blog-main-wrapper { display: none !important; }
+
+.shop-body {
+    background:
+        radial-gradient(circle at 0% 0%, rgba(255, 94, 20, 0.12), transparent 34%),
+        radial-gradient(circle at 100% 0%, rgba(59, 130, 246, 0.11), transparent 34%),
+        linear-gradient(180deg, #f8fafd 0%, #f1f5fb 100%);
+}
+
+.shop-body .rts-banner-area.rts-breadcrumb-area {
+    padding-top: 84px;
+    padding-bottom: 70px;
+    margin-bottom: 8px;
+}
+.shop-body .breadcrumb-area-inner {
+    border: 0;
+    border-radius: 0;
+    padding: clamp(36px, 5vw, 58px) clamp(26px, 4vw, 48px);
+    background: transparent;
+    overflow: visible;
+    box-shadow: none;
+}
+.shop-body .breadcrumb-area-inner .water-text {
+    opacity: .12;
+    left: 250px;
+}
+.shop-body .breadcrumb-area-inner .title {
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.06;
+    letter-spacing: -.01em;
+    margin-bottom: 12px;
+}
+.shop-body .breadcrumb-area-inner .nav-area-navigation a {
+    color: var(--color-title);
+}
+.shop-body .breadcrumb-area-inner .nav-area-navigation a.current {
+    color: var(--color-primary);
+}
+.shop-headline {
+    margin-bottom: 18px;
+    display: grid;
+    grid-template-columns: 1.25fr .75fr;
+    gap: 16px;
+}
+.shop-headline .lead-box,
+.shop-headline .trust-box {
+    background: #fff;
+    border: 1px solid #dbe4ef;
+    border-radius: 16px;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+    padding: 16px 18px;
+}
+.shop-headline .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-weight: 800;
+    color: #ff5e14;
+    margin-bottom: 6px;
+}
+.shop-headline .lead-title {
+    margin: 0 0 8px;
+    color: #0f172a;
+    font-size: clamp(24px, 2.5vw, 34px);
+    line-height: 1.18;
+}
+.shop-headline .lead-desc,
+.shop-headline .trust-desc {
+    margin: 0;
+    color: #475569;
+    line-height: 1.75;
+}
+.shop-headline .trust-title {
+    margin: 0 0 7px;
+    font-size: 14px;
+    color: #0f172a;
+    font-weight: 800;
+}
+.shop-headline .trust-tags {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.shop-headline .trust-tags span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #dde6f0;
+    background: #f8fbff;
+    border-radius: 999px;
+    padding: 6px 10px;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 700;
+}
+.shop-headline .trust-tags i { color: #ff5e14; }
+.shop-headline .response-badge {
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border-radius: 999px;
+    border: 1px solid #cdebd6;
+    background: #f4fbf6;
+    color: #166534;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 7px 12px;
+}
+.shop-headline .response-badge i {
+    color: #16a34a;
+}
+.shop-featured {
+    margin: 0 0 16px;
+    border: 1px solid #dbe4ef;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+    padding: 14px 16px;
+}
+.shop-featured.hidden { display: none; }
+.shop-featured .featured-title {
+    margin: 0 0 10px;
+    font-size: 15px;
+    font-weight: 800;
+    color: #0f172a;
+}
+.shop-featured .featured-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.shop-featured .featured-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 999px;
+    border: 1px solid #dbe4ef;
+    background: #f8fafc;
+    padding: 7px 11px;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 700;
+}
+.shop-featured .featured-item .badge {
+    border-radius: 999px;
+    padding: 3px 8px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+.shop-featured .featured-item .badge.best {
+    background: #fff7f2;
+    color: #ea580c;
+    border: 1px solid #ffd8c9;
+}
+.shop-featured .featured-item .badge.search {
+    background: #f4fbf6;
+    color: #15803d;
+    border: 1px solid #cdebd6;
+}
+.shop-featured .featured-item a {
+    color: #0f172a;
+}
+.shop-body .rts-blog-grid-area.rts-section-gap {
+    padding-top: 26px;
+    padding-bottom: 72px;
+}
+
+/* force show product grid on shop page */
+.shop-body .rts-blog-grid-area {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.product-single-two-wrapper.shop {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
+}
+.product-single-two-wrapper.shop:hover {
+    transform: translateY(-6px);
+    border-color: #fdc6ab;
+    box-shadow: 0 20px 34px rgba(15, 23, 42, 0.14);
+}
+.product-single-two-wrapper.shop .image-area {
+    position: relative;
+    background: #e2e8f0;
+}
+.product-single-two-wrapper.shop .image-area .thumbnail {
+    display: block;
+}
+.product-single-two-wrapper.shop .image-area .category-badge {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.8);
+    color: #ffffff;
+    padding: 6px 10px;
+    font-size: 11px;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    font-weight: 700;
+    backdrop-filter: blur(3px);
+}
+.product-single-two-wrapper.shop .image-area .badge-ribbon {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 999px;
+    padding: 6px 9px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+}
+.product-single-two-wrapper.shop .image-area .badge-ribbon.best {
+    background: #fff7f2;
+    color: #ea580c;
+    border-color: #ffd8c9;
+}
+.product-single-two-wrapper.shop .image-area .badge-ribbon.search {
+    background: #f4fbf6;
+    color: #15803d;
+    border-color: #cdebd6;
+}
+.product-single-two-wrapper.shop .image-area .thumbnail img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    transition: transform .35s ease;
+}
+.product-single-two-wrapper.shop:hover .image-area .thumbnail img {
+    transform: scale(1.05);
+}
+.product-single-two-wrapper.shop .inner {
+    padding: 14px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.product-single-two-wrapper.shop .inner .title {
+    margin: 0 0 8px;
+    line-height: 1.28;
+    min-height: 56px;
+    font-size: 29px;
+    color: #0f172a;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.product-single-two-wrapper.shop .inner .pre-tag {
+    display: inline-flex;
+    margin-bottom: 7px;
+    font-weight: 800;
+    font-size: 18px;
+    color: #ff5e14;
+}
+.product-single-two-wrapper.shop .inner .price-caption {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #64748b;
+    font-weight: 700;
+}
+.product-single-two-wrapper.shop .inner .category-tag {
+    display: inline-flex;
+    margin-left: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ff5e14;
+}
+.product-single-two-wrapper.shop .inner .short-desc {
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 76px;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.product-single-two-wrapper.shop .inner .meta-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+.product-single-two-wrapper.shop .inner .usecase-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 0;
+}
+.product-single-two-wrapper.shop .inner .usecase-points span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 999px;
+    border: 1px solid #dbe4ef;
+    background: #f8fafc;
+    padding: 5px 9px;
+    font-size: 11px;
+    color: #334155;
+    font-weight: 700;
+}
+.product-single-two-wrapper.shop .inner .usecase-points i {
+    color: #0ea5e9;
+}
+.product-single-two-wrapper.shop .inner .selling-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 0;
+}
+.product-single-two-wrapper.shop .inner .selling-points span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 999px;
+    border: 1px solid #d9e3ef;
+    background: #ffffff;
+    padding: 5px 9px;
+    font-size: 11px;
+    color: #334155;
+    font-weight: 600;
+}
+.product-single-two-wrapper.shop .inner .selling-points i {
+    color: #ff5e14;
+}
+.product-single-two-wrapper.shop .inner .market-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 0;
+}
+.product-single-two-wrapper.shop .inner .market-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 999px;
+    border: 1px solid #dde6f1;
+    background: #fff;
+    color: #334155;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 10px;
+}
+.product-single-two-wrapper.shop .inner .market-links a.shop-link {
+    border-color: #ffd8c9;
+    color: #ea580c;
+    background: #fff7f2;
+}
+.product-single-two-wrapper.shop .inner .market-links a.toko-link {
+    border-color: #cdebd6;
+    color: #15803d;
+    background: #f4fbf6;
+}
+.product-single-two-wrapper.shop .inner .btn-read-more-blog {
+    width: 100%;
+    margin-top: auto;
+    min-height: 44px;
+    border-radius: 10px;
+    border: 1px solid #ff5e14;
+    background: linear-gradient(135deg, #ff6a21, #ff4f0f);
+    color: #ffffff !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    transition: all .22s ease;
+}
+.product-single-two-wrapper.shop .inner .btn-read-more-blog:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(255, 94, 20, 0.28);
+}
+.rts-blog-grid-area .row.shop-layout {
+    row-gap: 22px;
+}
+.rts-blog-grid-area .shop-product-column,
+.rts-blog-grid-area .shop-filter-column {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.rts-blog-grid-area .shop-product-column {
+    padding-right: 0;
+}
+.rts-blog-grid-area .shop-filter-column {
+    order: -1;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 14px;
+    align-items: start;
+}
+.rts-blog-grid-area .shop-filter-column .rts-single-wized {
+    margin: 0 !important;
+    background: #ffffff;
+    border: 1px solid #dbe4ee;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+    padding: 18px;
+}
+.rts-blog-grid-area .shop-filter-column .rts-single-wized.search-1 { grid-column: span 12; }
+.rts-blog-grid-area .shop-filter-column .rts-single-wized.Recent-post,
+.rts-blog-grid-area .shop-filter-column > .rts-single-wized:not(.search-1) {
+    display: none;
+}
+.shop-filter-column .wized-header,
+.shop-filter-column .text-divider {
+    margin-bottom: 12px;
+}
+.shop-filter-column .wized-header .title,
+.shop-filter-column .text-divider h5 {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 700;
+    color: #0f172a;
+}
+.shop-filter-column .filter-price,
+.shop-filter-column .wrapper {
+    margin: 0;
+}
+.shop-filter-column .price-field {
+    position: relative;
+    margin: 6px 0 12px;
+}
+.shop-filter-column .price-field input[type="range"] {
+    width: 100%;
+    accent-color: #ff5e14;
+}
+.shop-filter-column .price-wrap {
+    display: grid;
+    grid-template-columns: auto 1fr auto 1fr auto;
+    align-items: center;
+    gap: 8px;
+}
+.shop-filter-column .price-title {
+    font-size: 12px;
+    letter-spacing: .06em;
+    color: #64748b;
+    font-weight: 700;
+}
+.shop-filter-column .rts-search-wrapper {
+    display: flex;
+    gap: 8px;
+}
+.shop-filter-column .quick-filter-grid {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+}
+.shop-filter-column .quick-filter-grid select,
+.shop-filter-column .quick-filter-grid button {
+    height: 42px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+}
+.shop-filter-column .quick-filter-grid select {
+    border: 1px solid #d0dae5;
+    background: #f8fafc;
+    color: #1e293b;
+    padding: 0 10px;
+}
+.shop-filter-column .quick-filter-grid .reset-filter-btn {
+    border: 1px solid #d0dae5;
+    background: #ffffff;
+    color: #475569;
+    padding: 0 12px;
+}
+.shop-filter-column .quick-filter-grid .reset-filter-btn:hover {
+    border-color: #ff5e14;
+    color: #ff5e14;
+}
+.shop-filter-column .rts-search-wrapper input.Search,
+.shop-filter-column .price-wrap input,
+.rts-blog-grid-area .shorting .from-control {
+    height: 48px;
+    border-radius: 12px;
+}
+.shop-filter-column .price-wrap input {
+    width: 100%;
+    border: 1px solid #d0dae5;
+    background: #f8fafc;
+    color: #1e293b;
+    padding: 0 8px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.shop-filter-column .filter-btn .btn,
+#shop-search-btn {
+    min-height: 40px;
+    border-radius: 10px;
+    padding: 0 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .03em;
+}
+.shop-filter-column .rts-search-wrapper input.Search {
+    border: 1px solid #d0dae5;
+    background: #f8fafc;
+    color: #0f172a;
+    padding: 0 14px;
+}
+.shop-filter-column #shop-search-btn {
+    min-width: 48px;
+    border-radius: 12px;
+    border: 1px solid #ff5e14;
+    background: linear-gradient(135deg, #ff6a21, #ff4f0f);
+    color: #fff;
+}
+.shop-filter-column .wized-body#shop-category-list {
+    max-height: 168px;
+    overflow: auto;
+    padding-right: 2px;
+}
+.shop-filter-column .single-categories {
+    margin: 0;
+}
+.shop-filter-column .single-categories + .single-categories {
+    margin-top: 6px;
+}
+.shop-filter-column .single-categories li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 13px;
+    color: #334155;
+}
+.rts-blog-grid-area .shorting {
+    margin-bottom: 20px !important;
+    padding: 15px 16px;
+    border: 1px solid #dbe4ee;
+    border-radius: 16px;
+    background:
+      radial-gradient(circle at 100% 0, rgba(255, 94, 20, 0.08), transparent 38%),
+      #ffffff;
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.07);
+}
+.rts-blog-grid-area .shorting .woocommerce-result-count {
+    margin: 0;
+    font-weight: 600;
+    font-size: 14px;
+    color: #475569;
+}
+.rts-blog-grid-area .shorting .shop-sort-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    min-height: 44px;
+}
+.rts-blog-grid-area .shorting .shop-sort-wrap label {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    line-height: 1;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.rts-blog-grid-area .shorting .shop-sort-wrap select.from-control {
+    float: none !important;
+    margin: 0 !important;
+    border-radius: 10px;
+    border: 1px solid #d0dae5;
+    background: #f8fafc;
+    color: #0f172a;
+    min-width: 230px;
+    width: min(280px, 100%);
+    height: 44px;
+    display: block !important;
+    cursor: pointer;
+    padding: 0 12px;
+    line-height: 44px;
+    appearance: auto;
+}
+.rts-blog-grid-area .shorting .shop-sort-wrap select#shop-sort + .nice-select {
+    display: none !important;
+}
+
+.rts-elevate-pagination #shop-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.rts-elevate-pagination #shop-pagination li {
+    margin: 0;
+}
+.rts-elevate-pagination #shop-pagination li button {
+    min-width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    border: 1px solid #d4dce8;
+    background: #ffffff;
+    color: #334155;
+    font-weight: 700;
+    transition: all .2s ease;
+}
+.rts-elevate-pagination #shop-pagination li button:hover,
+.rts-elevate-pagination #shop-pagination li button.active {
+    border-color: #ff5e14;
+    background: #ff5e14;
+    color: #ffffff;
+}
+.rts-elevate-pagination #shop-pagination li button[disabled] {
+    opacity: .45;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.rts-elevate-pagination #shop-pagination li .pagination-dots {
+    min-width: 28px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-weight: 700;
+}
+@media (max-width: 767px) {
+    .rts-elevate-pagination #shop-pagination {
+        flex-wrap: nowrap;
+        justify-content: center;
+        padding-bottom: 2px;
+    }
+    .rts-elevate-pagination #shop-pagination li button {
+        min-width: 38px;
+        height: 38px;
+        font-size: 12px;
+        padding: 0 9px;
+    }
+    .rts-elevate-pagination #shop-pagination li .pagination-dots {
+        min-width: 22px;
+        height: 38px;
+    }
+}
+.shop-empty-state {
+    border: 1px dashed #cdd9e8;
+    border-radius: 14px;
+    background: #f8fafc;
+    padding: 24px;
+    text-align: center;
+}
+.shop-empty-state h5 {
+    margin: 0 0 8px;
+    color: #0f172a;
+    font-size: 20px;
+}
+.shop-empty-state p {
+    margin: 0;
+    color: #64748b;
+    line-height: 1.7;
+}
+.shop-empty-state .reset-btn {
+    margin-top: 14px;
+    min-height: 40px;
+    border-radius: 10px;
+    border: 1px solid #ff5e14;
+    background: #fff;
+    color: #ff5e14;
+    font-weight: 700;
+    padding: 0 14px;
+}
+.shop-empty-state .reset-btn:hover {
+    background: #ff5e14;
+    color: #fff;
+}
+.sticky-whatsapp-cta {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 90;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 48px;
+    padding: 0 14px;
+    border-radius: 999px;
+    border: 1px solid #22c55e;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #fff !important;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .01em;
+    box-shadow: 0 12px 24px rgba(22, 163, 74, 0.28);
+}
+.sticky-whatsapp-cta i {
+    font-size: 15px;
+}
+.sticky-whatsapp-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 28px rgba(22, 163, 74, 0.34);
+}
+
+@media (max-width: 1199px) {
+    .shop-headline {
+        grid-template-columns: 1fr;
+    }
+    .rts-blog-grid-area .shop-filter-column .rts-single-wized.search-1 { grid-column: span 12; }
+}
+@media (max-width: 767px) {
+    .rts-blog-grid-area .row.shop-layout {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .rts-blog-grid-area .shop-product-column,
+    .rts-blog-grid-area .shop-filter-column {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    .rts-blog-grid-area .shop-product-column.pr--25 {
+        padding-right: 10px !important;
+    }
+    .shop-body .rts-banner-area.rts-breadcrumb-area {
+        padding-top: 52px;
+        padding-bottom: 42px;
+    }
+    .shop-body .breadcrumb-area-inner {
+        padding: 30px 18px;
+    }
+    .shop-headline {
+        margin-bottom: 14px;
+    }
+    .shop-featured {
+        padding: 12px;
+    }
+    .shop-headline .lead-box,
+    .shop-headline .trust-box {
+        border-radius: 14px;
+        padding: 14px;
+    }
+    .product-single-two-wrapper.shop .image-area .thumbnail img { height: 210px; }
+    .product-single-two-wrapper.shop .inner .title {
+        min-height: auto;
+        font-size: 27px;
+    }
+    .product-single-two-wrapper.shop .inner .short-desc {
+        min-height: auto;
+    }
+    .rts-blog-grid-area .shop-filter-column .rts-single-wized.search-1 { grid-column: span 12; }
+    .shop-filter-column .price-wrap {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+    .shop-filter-column .price-wrap_line {
+        display: none;
+    }
+    .shop-filter-column .price-title {
+        margin-bottom: 2px;
+    }
+    .shop-filter-column .filter-btn .btn {
+        width: 100%;
+    }
+    .shop-filter-column .quick-filter-grid {
+        grid-template-columns: 1fr;
+    }
+    .rts-blog-grid-area .shorting {
+        padding: 12px;
+    }
+    .rts-blog-grid-area .shorting.row {
+        margin-left: 0;
+        margin-right: 0;
+        row-gap: 8px;
+    }
+    .rts-blog-grid-area .shorting.row > [class*="col-"] {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .rts-blog-grid-area .shorting .woocommerce-result-count {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    .rts-blog-grid-area .shorting .shop-sort-wrap {
+        justify-content: flex-start;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 6px;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .rts-blog-grid-area .shorting .shop-sort-wrap label {
+        font-size: 12px;
+        line-height: 1.2;
+    }
+    .rts-blog-grid-area .shorting .shop-sort-wrap select.from-control {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        height: 42px;
+        line-height: 42px;
+    }
+    .sticky-whatsapp-cta {
+        right: 12px;
+        bottom: 12px;
+        min-height: 44px;
+        padding: 0 12px;
+        font-size: 12px;
+    }
+    #dummy-product-list {
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: center;
+    }
+    #dummy-product-list > [class*="col-"] {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    #dummy-product-list .product-single-two-wrapper.shop {
+        width: 100%;
+        max-width: 430px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+</style>
+
+
+    <link rel="stylesheet" href="/assets/css/site-fixes.css">
+</head>
+
+<body class="shop-body"><header class="header-two header--sticky">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-top-wrapper">
+                            <div class="left">
+                                <div class="call">
+                                    <i class="fa-light fa-mobile"></i>
+                                    <a href="#"></a>
+                                    <a href="#"></a>
+                                </div>
+                                <div class="call">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <a href="#"></a>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="social-header">
+                                    <span>Follow Us On:</span>
+                                    <ul>
+                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-two-main-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-two-wrapper">
+                            <a href="/" class="logo-area">
+                                <span class="brand-lockup" aria-label="PT Maulana Prima Sejahtera">
+                                    <img class="brand-mark" src="/assets/images/MPS.png" alt="MPS">
+                                    <span class="brand-text">
+                                        <span class="brand-name">Maulana Prima</span>
+                                        <span class="brand-sub">Sejahtera</span>
+                                    </span>
+                                </span>
+                            </a>
+                            <div class="nav-area">
+    <ul class="" id="main-menu"></ul>
+</div>
+<div class="header-end">
+                                <a href="#" class="rts-btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Konsultasi WhatsApp</a>
+                                <div class="nav-btn menu-btn">
+                                    <img src="/assets/images/logo/bar.svg" alt="nav-iamge">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header area start -->
+    
+
+<div id="side-bar" class="side-bar header-two">
+    <button class="close-icon-menu"><i class="far fa-times"></i></button>
+    <!-- inner menu area desktop start -->
+    <div class="inner-main-wrapper-desk">
+        <div class="thumbnail">
+            <img src="/assets/images/banner/04.jpg" alt="elevate">
+        </div>
+        <div class="inner-content">
+            <h4 class="title">We Build Building and Great Constructive Homes.</h4>
+            <p class="disc">
+                We successfully cope with tasks of varying complexity, provide long-term guarantees and regularly
+                master new technologies.
+            </p>
+            <div class="footer">
+                <h4 class="title">Got a project in mind?</h4>
+                <a href="#" class="rts-btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Konsultasi via WhatsApp</a>
+            </div>
+        </div>
+    </div>
+    <!-- mobile menu area start -->
+        <div class="mobile-menu d-block d-xl-none">
+        <nav class="nav-main mainmenu-nav mt--30">
+            <ul class="mainmenu metismenu" id="mobile-menu-active">
+            </ul>
+        </nav>
+
+        <div class="social-wrapper-one">
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- mobile menu area end -->
+</div>
+    <!-- header area end -->
+
+    <!-- rts banner area strart -->
+    <div class="rts-banner-area rts-section-gap rts-breadcrumb-area pd-bread  position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-area-inner">
+                        <span class="water-text">Produk</span>
+                        <h1 class="title">
+                            Produk
+                        </h1>
+                        <div class="nav-area-navigation">
+                            <a href="/">Home</a>
+                            <a class="current" href="#">Produk</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts banner area end -->
+
+    <div class="rts-blog-grid-area rts-section-gap" style="display:block !important; visibility:visible !important; opacity:1 !important;">
+        <div class="container">
+            <div class="shop-headline">
+                <div class="lead-box">
+                    <span class="eyebrow"><i class="fa-solid fa-star"></i> Solusi Pilihan</span>
+                    <h2 class="lead-title">Produk Berkualitas Untuk Mendukung Proyek Anda</h2>
+                    <p class="lead-desc">Setiap produk dipilih untuk performa yang stabil, layanan cepat, dan hasil kerja yang terlihat profesional di lapangan.</p>
+                </div>
+                <div class="trust-box">
+                    <h3 class="trust-title">Kenapa Banyak Klien Memilih Produk Kami?</h3>
+                    <p class="trust-desc">Spesifikasi jelas, harga kompetitif, dan dukungan tim teknis yang siap membantu Anda memilih produk paling tepat.</p>
+                    <div class="trust-tags">
+                        <span><i class="fa-solid fa-shield-halved"></i> Garansi Kualitas</span>
+                        <span><i class="fa-solid fa-truck-fast"></i> Pengiriman Aman</span>
+                        <span><i class="fa-solid fa-headset"></i> Konsultasi Cepat</span>
+                    </div>
+                    <div class="response-badge"><i class="fa-solid fa-bolt"></i> Respon Rata-Rata &lt; 15 Menit</div>
+                </div>
+            </div>
+            <div class="shop-featured hidden" id="shop-featured">
+                <h3 class="featured-title">Produk Unggulan</h3>
+                <div class="featured-list" id="shop-featured-list"></div>
+            </div>
+            <div class="row shop-layout">
+                <div class="col-xl-9 col-lg-8 pr--25 shop-product-column">
+                    <div class="row align-items-center rs-vertical-middle shorting mb-50 md-mb-30">
+                        <div class="col-lg-6 col-12">
+                            <p class="woocommerce-result-count" id="dummy-result-count">Menampilkan 0 produk</p>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="shop-sort-wrap">
+                                <label for="shop-sort">Urutkan:</label>
+                                <select id="shop-sort" class="from-control">
+                                    <option value="latest">Terbaru</option>
+                                    <option value="price_asc">Harga Termurah</option>
+                                    <option value="price_desc">Harga Tertinggi</option>
+                                    <option value="name_asc">Nama A-Z</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-24" id="dummy-product-list"></div>
+                </div>
+                <div class="col-xl-3 col-lg-4 shop-filter-column">
+                    <div class="rts-single-wized search-1">
+                        <div class="wized-header">
+                            <h5 class="title">
+                                Cari Produk
+                            </h5>
+                        </div>
+                        <div class="wized-body">
+                            <div class="rts-search-wrapper">
+                                <input class="Search" id="shop-search-input" type="text" placeholder="Cari nama produk atau kata kunci...">
+                                <button type="button" id="shop-search-btn"><i class="fal fa-search"></i></button>
+                            </div>
+                            <div class="quick-filter-grid">
+                                <select id="shop-category-quick" aria-label="Filter kategori produk">
+                                    <option value="Semua">Semua Kategori</option>
+                                </select>
+                                <button type="button" class="reset-filter-btn" id="shop-reset-filter">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- rts single wized end -->
+                    <!-- rts single wized -->
+                    <div class="rts-single-wized Recent-post shop">
+                        <div class="wized-header">
+                            <h5 class="title">
+                                Produk Kami
+                            </h5>
+                        </div>
+                        <div class="wized-body" id="shop-recent-products"></div>
+                    </div>
+                    <!-- rts single wized end -->
+                    <!-- rts single wized -->
+                    <div class="rts-single-wized">
+                        <div class="wized-header">
+                            <h5 class="title">
+                                Popular Tags
+                            </h5>
+                        </div>
+                        <div class="wized-body">
+                            <div class="tags-wrapper">
+                                <a href="#">Services</a>
+                                <a href="#">Business</a>
+                                <a href="#">Growth</a>
+                                <a href="#">Finance</a>
+                                <a href="#">UI/UX Design</a>
+                                <a href="#">Solution</a>
+                                <a href="#">Speed</a>
+                                <a href="#">Strategy</a>
+                                <a href="#">Technology</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- rts single wized end -->
+                </div>
+            </div>
+            <div class="row mt--30">
+                <div class="col-lg-12">
+                    <div class="rts-elevate-pagination">
+                        <ul id="shop-pagination"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- rts footer area start -->
+<div class="rts-footer-area rts-section-gapTop bg_footer-1 bg_image">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact-area-footer-top">
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h6 class="title">Call Us Now</h6>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </div>
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <h6 class="title">Office Time</h6>
+                        <a href="#"></a>
+                    </div>
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h6 class="title">Need Support</h6>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </div>
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fa-sharp fa-solid fa-location-dot"></i>
+                        </div>
+                        <h6 class="title">Our Address</h6>
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-full">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="nav-footer-wrapper-one">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul class="footer-float-nav">
+                                    <li><a href="/tentang/">Tentang Kami</a></li>
+                                    <li><a href="/proyek/">Projects</a></li>
+                                    <li><a href="/proyek/">Updates</a></li>
+                                    <li><a href="/tentang/">Mission</a></li>
+                                    <li><a href="/tentang/">Inside</a></li>
+                                    <li><a href="/kontak/">Contact</a></li>
+                                    <li><a href="/tentang/">History</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-4">
+                <div class="footer-wrapper-left-one">
+                    <a href="/" class="logo">
+                        <span class="brand-lockup" aria-label="PT Maulana Prima Sejahtera">
+                            <img class="brand-mark" src="/assets/images/MPS.png" alt="MPS">
+                            <span class="brand-text">
+                                <span class="brand-name">Maulana Prima</span>
+                                <span class="brand-sub">Sejahtera</span>
+                            </span>
+                        </span>
+                    </a>
+                    <p class="disc">
+                        Kami berkomitmen untuk memberikan solusi konstruksi berkualitas tinggi yang disesuaikan dengan kebutuhan klien kami. Dengan fokus yang kuat pada inovasi, ketelitian, dan keahlian, kami membangun ruang yang tahan lama.
+                    </p>
+                    <div class="social-area-wrapper-one">
+                        <ul>
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="footer-wrapper-right">
+                    <div class="single-nav-area-footer use-link">
+                        <h4 class="title">Useful Links</h4>
+                        <ul>
+                            <li><a href="/tentang/"><i class="fa-regular fa-arrow-right-long"></i>Tentang Kami</a></li>
+                            <li><a href="/tentang/"><i class="fa-regular fa-arrow-right-long"></i>Our Gallery</a></li>
+                            <li><a href="/layanan/"><i class="fa-regular fa-arrow-right-long"></i>Layanan Kami</a>
+                            </li>
+                            <li><a href="/tentang/#about-team-section"><i class="fa-regular fa-arrow-right-long"></i>Our Team</a></li>
+                            <li><a href="/kontak/"><i class="fa-regular fa-arrow-right-long"></i>Hubungi Kami</a></li>
+                        </ul>
+                    </div>
+                    <div class="single-nav-area-footer use-link">
+                        <h4 class="title">Quick Services</h4>
+                        <ul>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>General
+                                    Contracting</a>
+                            </li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Project
+                                    Management</a>
+                            </li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>New
+                                    Construction</a></li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Renovations
+                                    &
+                                    Remodeling</a></li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Interior
+                                    Finishing</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="single-nav-area-footer news-letter">
+                        <h4 class="title">Newsletter</h4>
+                        <p>Aplications prodize before front end ortals visualize front end</p>
+                        <form action="#">
+                            <input type="email" placeholder="Email Address" required>
+                            <button class="btn-subscribe mt--15">Subscribe Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-full copyright-area-one">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="copyright-wrapper">
+                                <p class="mb-0">Copyright &copy;
+                                    <script>
+                                        document.write(
+                                            new Date().getFullYear()
+                                        )
+                                    </script>
+                                    Elever. All Rights Reserved.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- rts footer area end -->
+
+    <!-- progress area start -->
+<!-- <div id="elevate-load">
+    <div class="loader-wrapper">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div> -->
+<!-- progress area end -->
+
+<!-- progress area start -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+            style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+        </path>
+    </svg>
+</div>
+<!-- progress area end -->
+
+
+<!-- offcanvase search -->
+<div class="search-input-area">
+    <div class="container">
+        <div class="search-input-inner">
+            <div class="input-div">
+                <input class="search-input autocomplete" type="text" placeholder="Search by keyword or #">
+                <button><i class="far fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+    <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+</div>
+<div id="anywhere-home" class="">
+</div>
+
+<a class="sticky-whatsapp-cta" href="/kontak/">
+    <i class="fa-brands fa-whatsapp"></i>
+    Butuh Rekomendasi Produk?
+</a>
+
+<!-- scripts -->
+<script src="/assets/js/plugins/jquery.js"></script>
+<script src="/assets/js/vendor/bootstrap.min.js"></script>
+
+<script src="/assets/js/plugins/odometer.js"></script>
+<script src="/assets/js/plugins/jquery-appear.js"></script>
+
+<script src="/assets/js/plugins/metismenu.js"></script>
+<script src="/assets/js/plugins/swiper.js"></script>
+<script src="/assets/js/plugins/aos.js"></script>
+<script src="/assets/js/plugins/nice-select.js"></script>
+<script src="/assets/js/plugins/smooth-scroll.js"></script>
+<script src="/assets/js/vendor/waw.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuSiPhoDaOJ7aqtJVtQhYhLzwwJ7rQlmA"></script>
+<script src="/assets/js/vendor/marker.js"></script>
+<script src="/assets/js/vendor/map-content.js"></script>
+<script src="/assets/js/vendor/info-box.js"></script>
+<script src="https://html.themewant.com/golfy/assets/js/plugins/magnific-popup.js"></script>
+
+<script src="/assets/js/plugins/contact.form.js"></script>
+
+<script>
+    (async function () {
+        var productListEl = document.getElementById('dummy-product-list');
+        var resultCountEl = document.getElementById('dummy-result-count') || document.querySelector('.woocommerce-result-count');
+        var sortEl = document.getElementById('shop-sort');
+        var searchInputEl = document.getElementById('shop-search-input');
+        var searchBtnEl = document.getElementById('shop-search-btn');
+        var categoryQuickEl = document.getElementById('shop-category-quick');
+        var resetFilterEl = document.getElementById('shop-reset-filter');
+        var categoryListEl = document.getElementById('shop-category-list');
+        var recentProductsEl = document.getElementById('shop-recent-products');
+        var featuredEl = document.getElementById('shop-featured');
+        var featuredListEl = document.getElementById('shop-featured-list');
+        var paginationEl = document.getElementById('shop-pagination');
+        var lowerEl = document.getElementById('lower');
+        var upperEl = document.getElementById('upper');
+        var oneEl = document.getElementById('one');
+        var twoEl = document.getElementById('two');
+        var filterBtnEl = document.getElementById('shop-filter-btn');
+        var pageSize = 6;
+        var currentPage = 1;
+        var selectedCategory = 'Semua';
+        var appliedSearch = '';
+        var refreshNiceSelect = function (el) {
+            if (!el || typeof window.jQuery === 'undefined' || !window.jQuery.fn || !window.jQuery.fn.niceSelect) return;
+            var $el = window.jQuery(el);
+            try {
+                $el.niceSelect('update');
+            } catch (e) {
+                try { $el.niceSelect('destroy'); } catch (e2) {}
+                try { $el.niceSelect(); } catch (e3) {}
+            }
+        };
+        var getActiveCategoryValue = function () {
+            if (!categoryQuickEl) return selectedCategory || 'Semua';
+            var nativeValue = String(categoryQuickEl.value || '').trim();
+            if (nativeValue !== '') return nativeValue;
+            var ui = categoryQuickEl.nextElementSibling;
+            if (ui && ui.classList && ui.classList.contains('nice-select')) {
+                var selectedLi = ui.querySelector('li.selected');
+                if (selectedLi) {
+                    var uiValue = String(selectedLi.getAttribute('data-value') || '').trim();
+                    if (uiValue !== '') return uiValue;
+                }
+            }
+            return selectedCategory || 'Semua';
+        };
+
+        if (!productListEl) {
+            return;
+        }
+
+        var rawProducts = [];
+        try {
+            var response = await fetch('/api/products.php');
+            var data = await response.json();
+            if (data && data.ok && Array.isArray(data.products)) {
+                rawProducts = data.products;
+            }
+        } catch (err) {}
+
+        if (!rawProducts.length) {
+            productListEl.innerHTML = '' +
+              '<div class="col-12">' +
+                '<div class="shop-empty-state">' +
+                  '<h5>Produk belum tersedia</h5>' +
+                  '<p>Data produk sedang disiapkan. Silakan cek kembali beberapa saat lagi.</p>' +
+                '</div>' +
+              '</div>';
+            return;
+        }
+
+        var inferCategory = function (product) {
+            return String(product.category || '').trim();
+        };
+
+        var normalizePrice = function (value) {
+            if (typeof value === 'number') return isFinite(value) ? value : 0;
+            var digits = String(value || '').replace(/[^\d]/g, '');
+            var parsed = Number(digits || '0');
+            return isFinite(parsed) ? parsed : 0;
+        };
+
+        var products = rawProducts.map(function (product, index) {
+            var parsedUseCaseTags = Array.isArray(product.useCaseTags)
+                ? product.useCaseTags
+                : (Array.isArray(product.use_case_tags) ? product.use_case_tags : []);
+            return {
+                id: product.id || (index + 1),
+                sortIndex: index + 1,
+                slug: product.slug || product.id || ('p-' + index),
+                name: product.name || 'Produk',
+                price: normalizePrice(product.price),
+                image: product.image || '/assets/images/shop/shop-01.jpg',
+                shortDescription: product.shortDescription || '',
+                category: String(inferCategory(product) || '').trim(),
+                badgeType: String(product.badgeType || product.product_badge || '').trim(),
+                useCaseTags: parsedUseCaseTags,
+                shopeeLink: product.shopeeUrl || product.shopeeLink || product.shopee_link || product.linkShopee || product.link_shopee || '',
+                tokopediaLink: product.tokopediaUrl || product.tokopediaLink || product.tokopedia_link || product.linkTokopedia || product.link_tokopedia || ''
+            };
+        });
+        var esc = function (v) {
+            return String(v || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        };
+        var safeText = function (v, fallback) {
+            var text = String(v || '').trim();
+            return text ? text : fallback;
+        };
+        var cut = function (v, limit) {
+            var text = String(v || '').trim();
+            if (text.length <= limit) return text;
+            return text.slice(0, limit - 1) + '...';
+        };
+        var normalizeCategoryKey = function (value) {
+            return String(value || '').trim().toLowerCase();
+        };
+        var normalizeBadgeType = function (value) {
+            var raw = String(value || '').trim().toLowerCase();
+            if (raw === 'best_seller') return 'best_seller';
+            if (raw === 'most_searched') return 'most_searched';
+            return '';
+        };
+        var badgeLabel = function (badgeType) {
+            if (badgeType === 'best_seller') return 'Best Seller';
+            if (badgeType === 'most_searched') return 'Paling Dicari';
+            return '';
+        };
+        var resolveUseCases = function (product) {
+            var raw = Array.isArray(product.useCaseTags) ? product.useCaseTags : [];
+            var unique = [];
+            raw.forEach(function (item) {
+                var label = String(item || '').trim();
+                if (!label) return;
+                if (unique.indexOf(label) !== -1) return;
+                unique.push(label);
+            });
+            return unique.slice(0, 3);
+        };
+
+        var formatter = new Intl.NumberFormat('id-ID', {
+            style: 'currency',
+            currency: 'IDR',
+            maximumFractionDigits: 0
+        });
+
+        var minProductPrice = Math.min.apply(null, products.map(function (p) { return p.price; }));
+        var maxProductPrice = Math.max.apply(null, products.map(function (p) { return p.price; }));
+        if (!isFinite(minProductPrice) || minProductPrice < 0) minProductPrice = 0;
+        if (!isFinite(maxProductPrice) || maxProductPrice < minProductPrice) maxProductPrice = minProductPrice;
+        var filterMinPrice = minProductPrice;
+        var filterMaxPrice = maxProductPrice;
+
+        if (lowerEl && upperEl) {
+            lowerEl.min = String(minProductPrice);
+            lowerEl.max = String(maxProductPrice);
+            lowerEl.value = String(minProductPrice);
+            var dynamicStep = Math.max(1000, Math.round((maxProductPrice - minProductPrice) / 100));
+            lowerEl.step = String(dynamicStep);
+            upperEl.min = String(minProductPrice);
+            upperEl.max = String(maxProductPrice);
+            upperEl.value = String(maxProductPrice);
+            upperEl.step = String(dynamicStep);
+        }
+
+        var updatePriceText = function () {
+            if (oneEl) oneEl.value = formatter.format(filterMinPrice);
+            if (twoEl) twoEl.value = formatter.format(filterMaxPrice);
+        };
+        if (oneEl) oneEl.readOnly = true;
+        if (twoEl) twoEl.readOnly = true;
+        updatePriceText();
+
+        var renderProducts = function (visibleProducts) {
+            var start = (currentPage - 1) * pageSize;
+            var pageItems = visibleProducts.slice(start, start + pageSize);
+            if (!pageItems.length) {
+                productListEl.innerHTML = '' +
+                  '<div class="col-12">' +
+                    '<div class="shop-empty-state">' +
+                      '<h5>Produk tidak ditemukan</h5>' +
+                      '<p>Coba ubah kata kunci atau kategori, lalu reset filter untuk menampilkan semua produk.</p>' +
+                      '<button type="button" class="reset-btn" id="shop-reset-empty">Reset Filter</button>' +
+                    '</div>' +
+                  '</div>';
+                return;
+            }
+            var html = pageItems.map(function (product) {
+            var slug = product.slug || product.id;
+            var detailUrl = '/produk/detail/?slug=' + encodeURIComponent(slug);
+            var name = safeText(product.name, 'Produk');
+            var image = safeText(product.image, '/assets/images/shop/shop-01.jpg');
+            var short = cut(safeText(product.shortDescription, 'Lihat detail produk untuk informasi lengkap.'), 82);
+            var category = safeText(product.category, '');
+            var badge = normalizeBadgeType(product.badgeType);
+            var badgeHtml = '';
+            if (badge) {
+                var badgeClass = badge === 'best_seller' ? 'best' : 'search';
+                badgeHtml = '<span class="badge-ribbon ' + badgeClass + '"><i class="fa-solid fa-fire"></i>' + badgeLabel(badge) + '</span>';
+            }
+            var shopeeLink = safeText(product.shopeeLink, '');
+            var tokopediaLink = safeText(product.tokopediaLink, '');
+            var useCases = resolveUseCases(product);
+            var useCasesHtml = '';
+            if (useCases.length) {
+                useCasesHtml = '<div class="usecase-points">' +
+                    useCases.map(function (label) {
+                        return '<span><i class="fa-solid fa-location-dot"></i>' + esc(label) + '</span>';
+                    }).join('') +
+                '</div>';
+            }
+            var marketLinksHtml = '';
+            if (shopeeLink || tokopediaLink) {
+                marketLinksHtml = '<div class="market-links">';
+                if (shopeeLink) {
+                    marketLinksHtml += '<a class="shop-link" href="' + esc(shopeeLink) + '" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-bag-shopping"></i>Shopee</a>';
+                }
+                if (tokopediaLink) {
+                    marketLinksHtml += '<a class="toko-link" href="' + esc(tokopediaLink) + '" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-store"></i>Tokopedia</a>';
+                }
+                marketLinksHtml += '</div>';
+            }
+            return '' +
+                '<div class="col-lg-4 col-md-6 col-sm-6 col-12">' +
+                    '<div class="product-single-two-wrapper shop">' +
+                        '<div class="image-area">' +
+                            '<a href="' + detailUrl + '" class="thumbnail">' +
+                                '<img src="' + esc(image) + '" alt="' + esc(name) + '">' +
+                            '</a>' +
+                            badgeHtml +
+                            (category ? ('<span class="category-badge"><i class="fa-solid fa-layer-group"></i>' + esc(category) + '</span>') : '') +
+                        '</div>' +
+                        '<div class="inner">' +
+                            '<span class="price-caption">Mulai dari</span>' +
+                            '<span class="pre-tag">' + formatter.format(product.price) + '</span>' +
+                            '<a href="' + detailUrl + '"><h5 class="title">' + esc(name) + '</h5></a>' +
+                            '<p class="short-desc">' + esc(short) + '</p>' +
+                            '<div class="meta-stack">' +
+                                useCasesHtml +
+                                '<div class="selling-points">' +
+                                    '<span><i class="fa-solid fa-shield-halved"></i>Produk Terverifikasi</span>' +
+                                    '<span><i class="fa-solid fa-headset"></i>Konsultasi Cepat</span>' +
+                                '</div>' +
+                                marketLinksHtml +
+                            '</div>' +
+                            '<a href="' + detailUrl + '" class="btn-read-more-blog">Lihat Detail <i class="fa-regular fa-cart-shopping"></i></a>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>';
+            }).join('');
+            productListEl.innerHTML = html;
+        };
+
+        var renderPagination = function (totalItems) {
+            if (!paginationEl) return;
+            if (totalItems <= 0) {
+                paginationEl.innerHTML = '';
+                return;
+            }
+            var totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
+            if (currentPage > totalPages) currentPage = totalPages;
+            if (totalPages <= 1) {
+                paginationEl.innerHTML = '';
+                return;
+            }
+            var isCompact = window.matchMedia('(max-width: 767px)').matches;
+            var pageItems = [];
+            if (isCompact && totalPages > 5) {
+                if (currentPage <= 2) {
+                    pageItems = [1, 2, 'dots-right', totalPages];
+                } else if (currentPage >= totalPages - 1) {
+                    pageItems = [1, 'dots-left', totalPages - 1, totalPages];
+                } else {
+                    pageItems = [1, 'dots-left', currentPage, 'dots-right', totalPages];
+                }
+            } else if (totalPages <= 7) {
+                for (var p = 1; p <= totalPages; p += 1) pageItems.push(p);
+            } else {
+                pageItems.push(1);
+                var start = Math.max(2, currentPage - 1);
+                var end = Math.min(totalPages - 1, currentPage + 1);
+                if (currentPage <= 3) {
+                    start = 2;
+                    end = 4;
+                } else if (currentPage >= totalPages - 2) {
+                    start = totalPages - 3;
+                    end = totalPages - 1;
+                }
+                if (start > 2) pageItems.push('dots-left');
+                for (var mid = start; mid <= end; mid += 1) pageItems.push(mid);
+                if (end < totalPages - 1) pageItems.push('dots-right');
+                pageItems.push(totalPages);
+            }
+            var html = '';
+            html += '<li><button data-page="' + (currentPage - 1) + '" ' + (currentPage === 1 ? 'disabled' : '') + '>Prev</button></li>';
+            for (var i = 0; i < pageItems.length; i += 1) {
+                var item = pageItems[i];
+                if (typeof item === 'number') {
+                    html += '<li><button class="' + (item === currentPage ? 'active' : '') + '" data-page="' + item + '">' +
+                        String(item).padStart(2, '0') +
+                        '</button></li>';
+                } else {
+                    html += '<li><span class="pagination-dots">...</span></li>';
+                }
+            }
+            html += '<li><button data-page="' + (currentPage + 1) + '" ' + (currentPage === totalPages ? 'disabled' : '') + '>Next</button></li>';
+            paginationEl.innerHTML = html;
+        };
+
+        var renderCategories = function () {
+            var counts = {};
+            var labels = {};
+            var uncategorizedCount = 0;
+            products.forEach(function (p) {
+                var key = normalizeCategoryKey(p.category);
+                if (!key) {
+                    uncategorizedCount += 1;
+                    return;
+                }
+                counts[key] = (counts[key] || 0) + 1;
+                if (!labels[key]) labels[key] = p.category;
+            });
+            var categories = Object.keys(counts).sort();
+            if (categoryQuickEl) {
+                var options = '<option value="Semua">Semua Kategori (' + products.length + ')</option>';
+                categories.forEach(function (category) {
+                    options += '<option value="' + esc(category) + '">' + esc(labels[category] || category) + ' (' + counts[category] + ')</option>';
+                });
+                if (uncategorizedCount > 0) {
+                    options += '<option value="__uncategorized__">Tanpa Kategori (' + uncategorizedCount + ')</option>';
+                }
+                categoryQuickEl.innerHTML = options;
+                refreshNiceSelect(categoryQuickEl);
+            }
+            if (categoryListEl) {
+                var html = '<ul class="single-categories"><li><a href="#" data-category="Semua">Semua (' + products.length + ')<i class="far fa-long-arrow-right"></i></a></li></ul>';
+                categories.forEach(function (category) {
+                    html += '<ul class="single-categories"><li><a href="#" data-category="' + category + '">' + (labels[category] || category) + ' (' + counts[category] + ')<i class="far fa-long-arrow-right"></i></a></li></ul>';
+                });
+                if (uncategorizedCount > 0) {
+                    html += '<ul class="single-categories"><li><a href="#" data-category="__uncategorized__">Tanpa Kategori (' + uncategorizedCount + ')<i class="far fa-long-arrow-right"></i></a></li></ul>';
+                }
+                categoryListEl.innerHTML = html;
+            }
+        };
+
+        var renderFeatured = function () {
+            if (!featuredEl || !featuredListEl) return;
+            var featuredItems = products.filter(function (product) {
+                return normalizeBadgeType(product.badgeType) !== '';
+            }).slice(0, 6);
+            if (!featuredItems.length) {
+                featuredEl.classList.add('hidden');
+                featuredListEl.innerHTML = '';
+                return;
+            }
+            featuredEl.classList.remove('hidden');
+            featuredListEl.innerHTML = featuredItems.map(function (product) {
+                var slug = product.slug || product.id;
+                var detailUrl = '/produk/detail/?slug=' + encodeURIComponent(slug);
+                var badge = normalizeBadgeType(product.badgeType);
+                var badgeClass = badge === 'best_seller' ? 'best' : 'search';
+                return '' +
+                    '<div class="featured-item">' +
+                        '<span class="badge ' + badgeClass + '">' + badgeLabel(badge) + '</span>' +
+                        '<a href="' + detailUrl + '">' + esc(product.name) + '</a>' +
+                    '</div>';
+            }).join('');
+        };
+
+        var renderRecent = function () {
+            if (!recentProductsEl) return;
+            var latest = products.slice().sort(function (a, b) { return b.sortIndex - a.sortIndex; }).slice(0, 3);
+            recentProductsEl.innerHTML = latest.map(function (product) {
+                var detailUrl = '/produk/detail/?slug=' + encodeURIComponent(product.slug);
+                return '' +
+                  '<div class="recent-post-single">' +
+                    '<div class="thumbnail"><a href="' + detailUrl + '"><img src="' + product.image + '" alt="' + product.name + '"></a></div>' +
+                    '<div class="content-area">' +
+                      '<a class="post-title" href="' + detailUrl + '"><h6 class="title">' + product.name + '</h6></a>' +
+                      '<span class="pre-tag">' + formatter.format(product.price) + '</span>' +
+                    '</div>' +
+                  '</div>';
+            }).join('');
+        };
+
+        var applyFiltersAndRender = function () {
+            var sortValue = sortEl ? sortEl.value : 'default';
+            var activeCategory = getActiveCategoryValue();
+            selectedCategory = activeCategory;
+            var filtered = products.filter(function (product) {
+                var matchesSearch = appliedSearch === '' ||
+                    product.name.toLowerCase().indexOf(appliedSearch) !== -1 ||
+                    product.shortDescription.toLowerCase().indexOf(appliedSearch) !== -1;
+                var productCategoryKey = normalizeCategoryKey(product.category);
+                var matchesCategory = activeCategory === 'Semua' ||
+                    (activeCategory === '__uncategorized__' ? productCategoryKey === '' : productCategoryKey === activeCategory);
+                var matchesPrice = product.price >= filterMinPrice && product.price <= filterMaxPrice;
+                return matchesSearch && matchesCategory && matchesPrice;
+            });
+
+            filtered.sort(function (a, b) {
+                if (sortValue === 'price_asc') return a.price - b.price;
+                if (sortValue === 'price_desc') return b.price - a.price;
+                if (sortValue === 'name_asc') {
+                    var aName = (a.name || '').trim().toLowerCase();
+                    var bName = (b.name || '').trim().toLowerCase();
+                    return aName.localeCompare(bName, 'id', { sensitivity: 'base' });
+                }
+                if (sortValue === 'latest') return b.sortIndex - a.sortIndex;
+                return 0;
+            });
+
+            renderPagination(filtered.length);
+            renderProducts(filtered);
+            if (resultCountEl) {
+                resultCountEl.textContent = 'Menampilkan ' + filtered.length + ' dari ' + products.length + ' produk';
+            }
+        };
+
+        if (lowerEl && upperEl) {
+            var syncPriceFromSlider = function () {
+                var low = Number(lowerEl.value);
+                var up = Number(upperEl.value);
+                if (low > up) {
+                    var temp = low;
+                    low = up;
+                    up = temp;
+                }
+                filterMinPrice = low;
+                filterMaxPrice = up;
+                updatePriceText();
+            };
+            lowerEl.addEventListener('input', syncPriceFromSlider);
+            upperEl.addEventListener('input', syncPriceFromSlider);
+        }
+
+        if (filterBtnEl) {
+            filterBtnEl.addEventListener('click', function () {
+                currentPage = 1;
+                applyFiltersAndRender();
+            });
+        }
+
+        if (searchBtnEl && searchInputEl) {
+            var applySearch = function () {
+                appliedSearch = searchInputEl.value.trim().toLowerCase();
+                currentPage = 1;
+                applyFiltersAndRender();
+            };
+            searchBtnEl.addEventListener('click', applySearch);
+            searchInputEl.addEventListener('input', function () {
+                appliedSearch = searchInputEl.value.trim().toLowerCase();
+                currentPage = 1;
+                applyFiltersAndRender();
+            });
+            searchInputEl.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    applySearch();
+                }
+            });
+        }
+
+        if (sortEl) {
+            sortEl.addEventListener('change', function () {
+                currentPage = 1;
+                applyFiltersAndRender();
+            });
+            sortEl.addEventListener('input', function () {
+                currentPage = 1;
+                applyFiltersAndRender();
+            });
+        }
+
+        if (categoryListEl) {
+            categoryListEl.addEventListener('click', function (event) {
+                var target = event.target.closest('a[data-category]');
+                if (!target) return;
+                event.preventDefault();
+                selectedCategory = target.getAttribute('data-category') || 'Semua';
+                currentPage = 1;
+                applyFiltersAndRender();
+            });
+        }
+
+        if (categoryQuickEl) {
+            categoryQuickEl.addEventListener('change', function () {
+                selectedCategory = getActiveCategoryValue();
+                currentPage = 1;
+                applyFiltersAndRender();
+            });
+            categoryQuickEl.addEventListener('input', function () {
+                selectedCategory = getActiveCategoryValue();
+                currentPage = 1;
+                applyFiltersAndRender();
+            });
+            document.addEventListener('click', function (event) {
+                var option = event.target.closest('.nice-select .option');
+                if (!option) return;
+                if (!categoryQuickEl.nextElementSibling || !categoryQuickEl.nextElementSibling.contains(option)) return;
+                setTimeout(function () {
+                    selectedCategory = getActiveCategoryValue();
+                    currentPage = 1;
+                    applyFiltersAndRender();
+                }, 0);
+            });
+        }
+
+        var resetAllFilters = function () {
+            appliedSearch = '';
+            selectedCategory = 'Semua';
+            currentPage = 1;
+            if (searchInputEl) searchInputEl.value = '';
+            if (categoryQuickEl) categoryQuickEl.value = 'Semua';
+            refreshNiceSelect(categoryQuickEl);
+            applyFiltersAndRender();
+        };
+
+        if (resetFilterEl) {
+            resetFilterEl.addEventListener('click', resetAllFilters);
+        }
+
+        if (paginationEl) {
+            paginationEl.addEventListener('click', function (event) {
+                var button = event.target.closest('button[data-page]');
+                if (!button) return;
+                currentPage = Number(button.getAttribute('data-page') || '1');
+                applyFiltersAndRender();
+            });
+        }
+
+        productListEl.addEventListener('click', function (event) {
+            var resetBtn = event.target.closest('#shop-reset-empty');
+            if (!resetBtn) return;
+            resetAllFilters();
+        });
+
+        renderCategories();
+        renderFeatured();
+        renderRecent();
+        applyFiltersAndRender();
+    })();
+</script>
+<script src="/assets/js/main.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

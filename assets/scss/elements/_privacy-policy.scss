@@ -1,0 +1,48 @@
+.privacy-policy-wrapper {
+    margin-bottom: 10px;
+
+    .top .title {
+        color: var(--color-title);
+        margin-bottom: 25px;
+    }
+}
+
+.page-not-found-main {
+    text-align: center;
+
+    .title {
+        font-size: 260px;
+        margin-bottom: 5px;
+        color: var(--color-title);
+
+        @media #{$large-mobile} {
+            font-size: 200px;
+        }
+
+        @media #{$small-mobile} {
+            font-size: 150px;
+        }
+    }
+
+    .para {
+        font-size: 120px;
+        font-weight: 400;
+        color: var(--color-title);
+
+        @media #{$smlg-device} {
+            font-size: 80px;
+        }
+
+        @media #{$sm-layout} {
+            font-size: 60px;
+        }
+
+        @media #{$large-mobile} {
+            font-size: 40px;
+        }
+    }
+
+    .rts-btn {
+        margin: auto;
+    }
+}

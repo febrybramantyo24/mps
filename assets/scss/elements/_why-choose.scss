@@ -1,0 +1,204 @@
+.thumbnail-why-choose-5 {
+    border-radius: 10px;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    @media #{$large-mobile} {
+        height: 500px;
+    }
+
+    .why-choose-option-five {
+        position: absolute;
+        padding: 40px;
+        background: #1E1E20;
+        z-index: 5;
+        bottom: 20px;
+        left: 20px;
+        border-radius: 10px;
+
+        @media #{$large-mobile} {
+            padding: 15px;
+        }
+
+        .single {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            i {
+                color: var(--color-primary);
+            }
+
+            p {
+                margin: 0;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.accordion-area-five {
+    .accordion-item {
+        padding: 13px 40px;
+        margin-bottom: 20px;
+        display: block;
+        overflow: hidden;
+        border-radius: 5px;
+        box-shadow: none;
+        border: none;
+
+        @media #{$large-mobile} {
+            padding: 13px 15px;
+        }
+
+        .accordion-button {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--color-title);
+            position: relative;
+
+            @media #{$large-mobile} {
+                font-size: 18px;
+            }
+
+            &::before {
+                content: '';
+                height: 144px;
+                width: 144px;
+                background-image: url(../images/why-choose/icons/01.svg);
+                position: absolute;
+                right: 0px;
+                top: 20px;
+                width: 0px;
+                transition: .3s;
+            }
+
+            &::after {
+                display: none;
+            }
+
+            &[aria-expanded="true"] {
+                &::before {
+                    opacity: 1;
+                    width: 144px;
+                    @media #{$laptop-device} {
+                        display: none;
+                    }
+                    @media #{$smlg-device} {
+                        display: none;
+                    }
+                    @media #{$sm-layout} {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .accordion-body {
+            max-width: 75%;
+            @media #{$laptop-device} {
+                max-width: 100%;
+            }
+            @media #{$smlg-device} {
+                max-width: 100%;
+            }
+            @media #{$large-mobile} {
+                max-width: 100%;
+            }
+
+            .more {
+                display: flex;
+                margin-top: 15px;
+                font-weight: 600;
+                color: var(--color-primary);
+                align-items: center;
+                gap: 5px;
+
+                img {
+                    filter: brightness(0) saturate(100%) invert(39%) sepia(86%) saturate(3031%) hue-rotate(350deg) brightness(99%) contrast(97%);
+                }
+            }
+        }
+    }
+}
+
+.company-experties-area {
+    background-image: url(../images/why-choose/01.webp);
+}
+
+.short-why-choose-us-area {
+    padding: 80px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media #{$smlg-device} {
+        flex-direction: column;
+    }
+
+    @media #{$sm-layout} {
+        padding: 40px;
+    }
+    @media #{$large-mobile} {
+        padding: 25px;
+    }
+    &>div {
+        flex-basis: 50%;
+        width: 50%;
+
+        @media #{$smlg-device} {
+            width: 100%;
+        }
+    }
+
+    .left-area-50 {
+        flex-basis: 50%;
+        width: 50%;
+
+        @media #{$smlg-device} {
+            width: 100%;
+        }
+
+        span {
+            font-weight: 700;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .title {
+            color: var(--color-title);
+            font-size: 44px;
+
+            @media #{$sm-layout} {
+                font-size: 32px;
+            }
+            @media #{$large-mobile} {
+                font-size: 26px;
+                line-height: 1.4;
+            }
+        }
+    }
+
+    .right-area-50 {
+        flex-basis: 40%;
+        width: 60%;
+
+        @media #{$smlg-device} {
+            width: 100%;
+        }
+    }
+}

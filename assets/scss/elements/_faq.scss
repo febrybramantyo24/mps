@@ -1,0 +1,258 @@
+// faq area style
+
+.faq-main-wrapper-one {
+    .title {
+        color: var(--color-title);
+        margin-bottom: 60px;
+    }
+}
+
+.faq-inner-one {
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (max-width: 1300px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .accordion {
+        flex-basis: 55%;
+        padding: 30px 40px;
+
+        @media #{$large-mobile} {
+            padding: 15px;
+        }
+
+        .accordion-item {
+            background: #1E1E20;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            padding: 8px 30px;
+
+            @media #{$large-mobile} {
+                padding: 8px 30px 8px 8px;
+            }
+
+            &.active {
+                background: var(--color-primary);
+
+                .accordion-header button {
+                    background: var(--color-primary);
+                    border: none;
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .accordion-header {
+                background: transparent;
+
+                button {
+                    font-size: 20px;
+                    background: #1E1E20;
+                    color: #fff;
+                    border-radius: 5px;
+                    box-shadow: none;
+                    transition: 0s;
+                    font-weight: 700;
+
+                    &:focus {
+                        box-shadow: none;
+                        border: none;
+                    }
+
+                    &::after {
+                        right: -17px;
+                        height: 40px;
+                        width: 40px;
+                        background: #fff;
+                        transform: none;
+                        border-radius: 3px;
+                        content: "\f068";
+                        color: var(--color-primary);
+                        font-family: var(--font-3);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        top: 3px;
+                        font-weight: 400;
+                    }
+
+                    &[aria-expanded="true"] {
+                        &::after {
+                            content: "\f067";
+                        }
+                    }
+                }
+            }
+
+            .accordion-body {
+                color: #fff;
+                font-size: 15px;
+            }
+        }
+    }
+
+    .thumbnail-image {
+        max-width: 578px;
+        overflow: hidden;
+        border-radius: 64px 10px 10px 0;
+
+        @media screen and (max-width: 1300px) {
+            max-width: 100%;
+        }
+    }
+}
+
+.faq-inner-wrapper-one {
+    .accordion-item {
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 5px;
+        overflow: hidden;
+        display: block;
+
+        .accordion-header {
+            button {
+                font-size: 16px;
+                font-weight: 700;
+                padding: 22px 25px;
+                color: var(--color-title);
+                background: transparent;
+                box-shadow: none;
+                border-bottom: 1px solid #EDECEC;
+            }
+        }
+
+        .accordion-body {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 22px;
+            @media #{$sm-layout} {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            .left {
+                min-width: 129px;
+            }
+        }
+    }
+}
+
+.single-sidebar-wized {
+    padding: 40px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    margin-bottom: 30px;
+    @media #{$large-mobile} {
+        padding: 20px;
+    }
+    form {
+        position: relative;
+
+        button {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 55px;
+            width: 55px;
+            background: var(--color-primary);
+            border-radius: 5px;
+            border: none;
+
+            i {
+                color: #fff;
+            }
+        }
+    }
+
+    input {
+        height: 55px;
+        border-color: #EDECEC;
+        border-radius: 5px;
+    }
+
+    .category-wrapper {
+        .title {
+            color: var(--color-title);
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+
+        .signle-category {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 1px solid #E9E9E9;
+            cursor: pointer;
+            transition: .3s;
+            margin-bottom: 15px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            p {
+                margin: 0;
+                transition: .3s;
+            }
+
+            i {
+                transition: .3s;
+                color: var(--color-primary);
+            }
+
+            &:hover {
+                background: var(--color-primary);
+                transform: translateY(-5px);
+
+                * {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    &.get-contact {
+        background: #1E1E20;
+        padding: 90px 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        @media #{$large-mobile} {
+            padding: 25px 30px;
+        }
+        .title {
+            font-size: 24px;
+            margin-bottom: 35px;
+            margin-top: 35px;
+        }
+
+        .rts-btn {
+            margin-top: 20px;
+            margin: auto;
+            transition-delay: 0s;
+            transition: .3s;
+            &::after{
+                background: #E9E9E9;
+            }
+            &:hover{
+                color: var(--color-primary);
+            }
+        }
+    }
+}

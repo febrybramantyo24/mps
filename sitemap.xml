@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://example.com/</loc></url>
+  <url><loc>https://example.com/tentang/</loc></url>
+  <url><loc>https://example.com/layanan/</loc></url>
+  <url><loc>https://example.com/layanan/hydrant/</loc></url>
+  <url><loc>https://example.com/layanan/ducting/</loc></url>
+  <url><loc>https://example.com/layanan/sprinkler/</loc></url>
+  <url><loc>https://example.com/proyek/</loc></url>
+  <url><loc>https://example.com/proyek/detail/</loc></url>
+  <url><loc>https://example.com/produk/</loc></url>
+  <url><loc>https://example.com/kontak/</loc></url>
+  <url><loc>https://example.com/cart.html</loc></url>
+</urlset>

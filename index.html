@@ -1,0 +1,2496 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/MPS.png">
+    <title>MPS - PT. Maulana Prima Sejahtera</title>
+    <!-- fontawesome css -->
+    <link rel="stylesheet" preload href="/assets/css/plugins/fontawesome.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/aos.css">
+    <!-- swiper css-->
+    <link rel="stylesheet" preload href="/assets/css/plugins/odometer.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/swiper.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/metismenu.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/magnifying-popup.css">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" preload href="/assets/css/vendor/bootstrap.min.css">
+    <!-- custom css here -->
+    <link rel="stylesheet" preload href="/assets/css/style.css">
+<style>
+.submenu.menu-home,
+.submenu.menu-pages,
+.submenu.menu-shop,
+.submenu.menu-project,
+.submenu.menu-blog,
+.rts-mega-menu, .rts-blog-grid-area, .rts-blog-area, .blog-area, .blog-post-area, .blog-sidebar, .blog-main-wrapper { display: none !important; }
+
+.single-service-area-3 .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.single-service-area-3 .icon .service-topic-icon {
+    font-size: 33px;
+    line-height: 1;
+    color: #fff;
+}
+.company-experties-area .single-fun-facts-area-5 .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.company-experties-area .single-fun-facts-area-5 .icon i {
+    font-size: 34px;
+    line-height: 1;
+    color: #fff;
+}
+.company-experties-area .single-fun-facts-area-5 {
+    display: flex;
+    align-items: center;
+}
+
+/* Dynamic portfolio tidy layout */
+.construction-portfolio-area {
+    padding-top: 34px !important;
+    padding-bottom: 72px !important;
+}
+.construction-portfolio-area .container.mt--65 {
+    margin-top: 26px !important;
+}
+.construction-portfolio-area > .container:first-child .title-area-wrapper-main-two {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 20px 24px;
+    padding: 56px 24px 30px;
+    border-radius: 14px;
+    border: 1px solid #cfd8e3;
+    background: #ffffff;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+    position: relative;
+}
+.construction-portfolio-area > .container:first-child .title-area-wrapper-main-two::before {
+    content: "PORTOFOLIO PROYEK TERPILIH";
+    position: absolute;
+    left: 18px;
+    top: 16px;
+    display: inline-flex;
+    padding: 6px 11px;
+    border-radius: 999px;
+    border: 1px solid #ffd8c9;
+    background: #fff3ee;
+    color: #d65a30;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+.construction-portfolio-area > .container:first-child .title-area-wrapper-main-two .title-style-two-left {
+    flex: 1;
+}
+.construction-portfolio-area > .container:first-child .title-area-wrapper-main-two .title-style-two-left .title {
+    margin-bottom: 16px;
+    color: #0f172a;
+    line-height: 1.16;
+    font-size: clamp(30px, 3.8vw, 56px);
+    max-width: 980px;
+}
+.construction-portfolio-area > .container:first-child .title-area-wrapper-main-two .title-style-two-left .disc {
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.72;
+    max-width: 860px;
+    margin-bottom: 16px;
+}
+.construction-portfolio-area > .container:first-child .title-area-wrapper-main-two .title-style-two-left .disc::after {
+    content: none;
+}
+.construction-portfolio-area > .container:first-child .title-area-wrapper-main-two .portfolio-header-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.construction-portfolio-area > .container:first-child .title-area-wrapper-main-two .portfolio-header-highlights span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: 1px solid #dbe4ef;
+    background: #f8fafc;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.construction-portfolio-area > .container:first-child .title-area-wrapper-main-two .rts-btn.btn-primary {
+    border-radius: 10px;
+    min-width: 208px;
+    min-height: 54px;
+    text-align: center;
+    background: linear-gradient(135deg, #ff8b62 0%, #ff6c43 100%);
+    box-shadow: 0 8px 20px rgba(255, 108, 67, 0.28);
+    font-size: 16px;
+    font-weight: 700;
+}
+.construction-portfolio-area > .container:first-child .title-area-wrapper-main-two .rts-btn.btn-primary:hover {
+    transform: translateY(-1px);
+}
+.construction-portfolio-area .mySwiper-portfolio-two .swiper-slide { height: auto; }
+.construction-portfolio-area .portfolio-two-swiper-main-wrapper {
+    position: relative;
+}
+.construction-portfolio-area .portfolio-two-swiper-main-wrapper > .swiper-button-prev,
+.construction-portfolio-area .portfolio-two-swiper-main-wrapper > .swiper-button-next {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    border: 1px solid #d7e1ee;
+    background: #ffffff;
+    color: #0f172a;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+}
+.construction-portfolio-area .portfolio-two-swiper-main-wrapper > .swiper-button-prev::after,
+.construction-portfolio-area .portfolio-two-swiper-main-wrapper > .swiper-button-next::after {
+    display: none;
+}
+.construction-portfolio-area .single-construction-portfolio {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+}
+.construction-portfolio-area .single-construction-portfolio .thumbnail {
+    position: relative;
+    display: block;
+    min-height: 390px;
+    background: #e2e8f0;
+}
+.construction-portfolio-area .single-construction-portfolio .thumbnail::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.12) 0%, rgba(15, 23, 42, 0.55) 100%);
+    pointer-events: none;
+}
+.construction-portfolio-area .single-construction-portfolio .thumbnail img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+.construction-portfolio-area .single-construction-portfolio .map-area {
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(15, 23, 42, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.24);
+}
+.construction-portfolio-area .single-construction-portfolio .map-area i {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+.construction-portfolio-area .single-construction-portfolio .map-area span {
+    color: rgba(255, 255, 255, 0.96) !important;
+    font-weight: 750;
+}
+.construction-portfolio-area .single-construction-portfolio .inner-content {
+    margin-top: auto;
+    padding: 18px 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.construction-portfolio-area .single-construction-portfolio .project-card-head {
+    margin: 0;
+    min-height: auto;
+}
+.construction-portfolio-area .single-construction-portfolio .project-card-category {
+    margin: 0 0 6px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #f97316;
+}
+.construction-portfolio-area .single-construction-portfolio .project-card-title {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    word-break: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.construction-portfolio-area .single-construction-portfolio .project-card-title a {
+    color: #0f172a;
+    text-decoration: none;
+}
+.construction-portfolio-area .single-construction-portfolio .project-card-title a:hover {
+    color: #f97316;
+}
+.construction-portfolio-area .single-construction-portfolio .tag-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 4px;
+}
+.construction-portfolio-area .single-construction-portfolio .tag-wrapper .single {
+    min-height: 72px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: linear-gradient(180deg, #ffffff, #f8fafc);
+    padding: 12px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.construction-portfolio-area .single-construction-portfolio .tag-wrapper .single span {
+    font-size: 11px;
+    font-weight: 750;
+    color: #64748b;
+    letter-spacing: 0.01em;
+}
+.construction-portfolio-area .single-construction-portfolio .tag-wrapper .single p {
+    margin: 2px 0 0;
+    font-size: 14px;
+    font-weight: 900;
+    color: #0f172a;
+}
+.construction-portfolio-area .single-construction-portfolio .tag-wrapper .single p {
+    word-break: break-word;
+}
+.construction-portfolio-area .single-construction-portfolio .portfolio-actions {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+.construction-portfolio-area .single-construction-portfolio .portfolio-actions a {
+    min-height: 42px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    gap: 8px;
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease, background-color .15s ease, color .15s ease;
+}
+.construction-portfolio-area .single-construction-portfolio .portfolio-actions .btn-detail {
+    color: #0f172a;
+    background: #fff;
+}
+.construction-portfolio-area .single-construction-portfolio .portfolio-actions .btn-detail:hover {
+    border-color: rgba(255, 108, 67, 0.55);
+    color: #ff6c43;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 18px rgba(15, 23, 42, 0.08);
+}
+.construction-portfolio-area .single-construction-portfolio .portfolio-actions .btn-consult {
+    color: #ffffff;
+    border-color: #22c55e;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    box-shadow: 0 10px 18px rgba(34, 197, 94, 0.22);
+}
+.construction-portfolio-area .single-construction-portfolio .portfolio-actions .btn-consult:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 26px rgba(34, 197, 94, 0.28);
+}
+@media (max-width: 991px) {
+    .construction-portfolio-area {
+        padding-top: 22px !important;
+        padding-bottom: 58px !important;
+    }
+    .construction-portfolio-area .container.mt--65 {
+        margin-top: 20px !important;
+    }
+    .construction-portfolio-area > .container:first-child .title-area-wrapper-main-two {
+        grid-template-columns: 1fr;
+        padding: 52px 16px 20px;
+        align-items: flex-start;
+    }
+    .construction-portfolio-area > .container:first-child .title-area-wrapper-main-two::before {
+        left: 14px;
+        top: 12px;
+    }
+    .construction-portfolio-area > .container:first-child .title-area-wrapper-main-two .rts-btn.btn-primary {
+        min-width: 0;
+        width: 100%;
+    }
+    .construction-portfolio-area > .container:first-child .title-area-wrapper-main-two .title-style-two-left .title {
+        max-width: 100%;
+    }
+    .construction-portfolio-area > .container:first-child .title-area-wrapper-main-two .title-style-two-left .disc {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+    .construction-portfolio-area > .container:first-child .title-area-wrapper-main-two .portfolio-header-highlights span {
+        font-size: 11px;
+        min-height: 30px;
+    }
+    .construction-portfolio-area .single-construction-portfolio .thumbnail,
+    .construction-portfolio-area .single-construction-portfolio .thumbnail img {
+        min-height: 280px;
+        height: 280px;
+    }
+    .construction-portfolio-area .single-construction-portfolio .project-card-head {
+        min-height: 0;
+    }
+    .construction-portfolio-area .single-construction-portfolio .project-card-title {
+        font-size: 20px;
+    }
+}
+@media (max-width: 767px) {
+    .construction-portfolio-area > .container:first-child .title-area-wrapper-main-two {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        padding: 54px 14px 22px;
+        border-radius: 14px;
+    }
+    .construction-portfolio-area > .container:first-child .title-area-wrapper-main-two::before {
+        left: 14px;
+        top: 12px;
+        font-size: 9px;
+        padding: 6px 10px;
+    }
+    .construction-portfolio-area > .container:first-child .title-area-wrapper-main-two .title-style-two-left .title {
+        font-size: clamp(21px, 7.4vw, 34px);
+        line-height: 1.26;
+        margin-bottom: 14px;
+        letter-spacing: -0.01em;
+    }
+    .construction-portfolio-area > .container:first-child .title-area-wrapper-main-two .title-style-two-left .disc {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 10px;
+    }
+    .construction-portfolio-area > .container:first-child .title-area-wrapper-main-two .rts-btn.btn-primary {
+        width: 100%;
+        min-height: 50px;
+        justify-content: center;
+        font-size: 16px;
+        margin-top: 4px;
+    }
+    .construction-portfolio-area > .container:first-child .title-area-wrapper-main-two .portfolio-header-highlights {
+        gap: 6px;
+    }
+    .construction-portfolio-area > .container:first-child .title-area-wrapper-main-two .portfolio-header-highlights span {
+        font-size: 10px;
+        min-height: 28px;
+        padding: 5px 10px;
+    }
+    .construction-portfolio-area .single-construction-portfolio .portfolio-actions {
+        grid-template-columns: 1fr;
+    }
+    .construction-portfolio-area .single-construction-portfolio .project-card-title {
+        font-size: 18px;
+    }
+    .construction-portfolio-area .portfolio-two-swiper-main-wrapper {
+        padding-top: 52px;
+    }
+    .construction-portfolio-area .portfolio-two-swiper-main-wrapper > .swiper-button-prev,
+    .construction-portfolio-area .portfolio-two-swiper-main-wrapper > .swiper-button-next {
+        top: 0;
+        left: 50%;
+        right: auto;
+        margin-top: 0;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+        z-index: 8;
+    }
+    .construction-portfolio-area .portfolio-two-swiper-main-wrapper > .swiper-button-prev {
+        margin-left: -24px;
+    }
+    .construction-portfolio-area .portfolio-two-swiper-main-wrapper > .swiper-button-next {
+        margin-left: 24px;
+    }
+}
+
+/* Testimonial modern layout */
+.rts-testimonials-area-five.bg-primary {
+    background:
+      radial-gradient(circle at 10% 8%, rgba(255,255,255,.2), transparent 42%),
+      radial-gradient(circle at 85% 0%, rgba(255,255,255,.12), transparent 38%),
+      linear-gradient(135deg, #ff8f63 0%, #ff7a4d 45%, #ff6a3d 100%);
+}
+.rts-testimonials-area-five .title-between-style-five {
+    margin-bottom: 18px !important;
+    align-items: center;
+}
+.rts-testimonials-area-five .title-left-align-five .pre {
+    color: rgba(255,255,255,.82);
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.rts-testimonials-area-five .title-left-align-five .title {
+    color: #fff;
+    margin: 4px 0 0;
+    font-size: clamp(28px, 3vw, 44px);
+    line-height: 1.14;
+}
+.rts-testimonials-area-five .button-net-prev-area {
+    display: inline-flex;
+    gap: 8px;
+}
+.rts-testimonials-area-five .button-net-prev-area .swiper-button-prev,
+.rts-testimonials-area-five .button-net-prev-area .swiper-button-next {
+    position: static;
+    width: 40px;
+    height: 40px;
+    margin: 0 !important;
+    border-radius: 11px;
+    border: 1px solid rgba(255,255,255,.42);
+    color: #fff;
+    background: rgba(2, 6, 23, .18);
+}
+.rts-testimonials-area-five .button-net-prev-area .swiper-button-prev::after,
+.rts-testimonials-area-five .button-net-prev-area .swiper-button-next::after {
+    display: none;
+}
+.rts-testimonials-area-five .button-net-prev-area .swiper-button-prev:hover,
+.rts-testimonials-area-five .button-net-prev-area .swiper-button-next:hover {
+    background: rgba(255,255,255,.16);
+    border-color: rgba(255,255,255,.68);
+}
+.testimonials-wrapper-five .swiper-slide {
+    height: auto;
+}
+.testimonials-wrapper-five .swiper-wrapper {
+    align-items: stretch;
+}
+.testimonials-wrapper-five .testimonials-area-single-wrapper-5 {
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    padding: 18px 18px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    box-shadow: 0 14px 34px rgba(2, 6, 23, 0.14);
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.testimonials-wrapper-five .testimonials-area-single-wrapper-5::after {
+    content: "";
+    position: absolute;
+    right: -56px;
+    top: -56px;
+    width: 160px;
+    height: 160px;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(232, 102, 63, 0.14), rgba(232, 102, 63, 0));
+    pointer-events: none;
+}
+.testimonials-wrapper-five .thumbnail-wrapper-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+.testimonials-wrapper-five .thumbnail-wrapper-left > img {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e2e8f0;
+    background: #fff;
+}
+.testimonials-wrapper-five .thumbnail-wrapper-left .inner-thumbnail-right {
+    min-width: 0;
+}
+.testimonials-wrapper-five .thumbnail-wrapper-left .inner-thumbnail-right .title {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.25;
+    font-weight: 800;
+    color: #0f172a;
+    word-break: break-word;
+}
+.testimonials-wrapper-five .thumbnail-wrapper-left .inner-thumbnail-right span {
+    display: inline-flex;
+    margin-top: 4px;
+    padding: 4px 9px;
+    border-radius: 999px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #e8663f;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+.testimonials-wrapper-five .testimonials-area-single-wrapper-5 .quote {
+    display: none;
+}
+.testimonials-wrapper-five .testimonials-area-single-wrapper-5 .disc {
+    padding-top: 0 !important;
+    margin: 0 0 10px;
+    color: #1e293b;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.64;
+    flex: initial;
+    position: relative;
+    z-index: 1;
+}
+.testimonials-wrapper-five .testimonials-area-single-wrapper-5 .brand {
+    margin-top: auto;
+    margin-left: 0;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+.testimonials-wrapper-five .testimonials-area-single-wrapper-5 .brand img {
+    width: auto;
+    max-width: 150px;
+    max-height: 34px;
+    object-fit: contain;
+    object-position: left center;
+    filter: saturate(1.05);
+}
+
+/* Partner/customer logo-only cards */
+#partner-customer-section .single-brand-area-style {
+    min-height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+#partner-customer-section .single-brand-area-style .icon {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#partner-customer-section .single-brand-area-style .icon::before,
+#partner-customer-section .single-brand-area-style .icon::after {
+    display: none;
+}
+#partner-customer-section .single-brand-area-style .icon img {
+    width: auto;
+    max-width: 100%;
+    max-height: 76px;
+    object-fit: contain;
+}
+/* Home articles section */
+.home-articles-area {
+    padding-top: 8px;
+    padding-bottom: 80px;
+    background:
+      radial-gradient(circle at 15% 0%, rgba(255, 113, 61, 0.08), transparent 30%),
+      linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+.home-articles-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 22px;
+    padding: 22px 24px;
+    border-radius: 14px;
+    border: 1px solid #d8e3f0;
+    background: #fff;
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.07);
+}
+.home-articles-head .title-wrap .pre {
+    margin-bottom: 6px;
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 4px 11px;
+    border-radius: 999px;
+    border: 1px solid #ffd7c9;
+    background: #fff4ee;
+    color: #cf5429;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+.home-articles-head .title-wrap .title {
+    margin: 0;
+    color: #0f172a;
+    font-size: clamp(30px, 3.4vw, 48px);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+}
+.home-articles-head .title-wrap .disc {
+    margin: 10px 0 0;
+    color: #475569;
+    max-width: 760px;
+    line-height: 1.7;
+}
+.home-articles-head .rts-btn.btn-primary {
+    min-height: 52px;
+    border-radius: 12px;
+    min-width: 220px;
+    justify-content: center;
+    box-shadow: 0 10px 22px rgba(255, 94, 20, 0.24);
+}
+.home-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+.home-article-card {
+    border: 1px solid #dbe4f0;
+    border-radius: 18px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.07);
+    transition: transform .34s cubic-bezier(.22, .61, .36, 1), box-shadow .34s cubic-bezier(.22, .61, .36, 1), border-color .34s cubic-bezier(.22, .61, .36, 1);
+}
+.home-article-card:hover {
+    transform: translateY(-3px);
+    border-color: #cfdced;
+    box-shadow: 0 18px 30px rgba(15, 23, 42, 0.12);
+}
+.home-article-card .thumbnail {
+    display: block;
+    min-height: 230px;
+    background: #e2e8f0;
+    position: relative;
+    overflow: hidden;
+}
+.home-article-card .thumbnail img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    transform: scale(1);
+    transition: transform .5s cubic-bezier(.22, .61, .36, 1);
+}
+.home-article-card:hover .thumbnail img {
+    transform: scale(1.03);
+}
+.home-article-card .thumbnail::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.02) 30%, rgba(15, 23, 42, 0.32) 100%);
+}
+.home-article-card .thumbnail-meta {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+.home-article-card .thumbnail-meta .date {
+    color: #f8fafc;
+    font-size: 12px;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(15, 23, 42, 0.28);
+}
+.home-article-card .thumbnail-meta .category {
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+.home-article-card .content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+    flex: 1;
+}
+.home-article-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 700;
+}
+.home-article-meta .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ff7a45;
+}
+.home-article-meta .read-time {
+    color: #66768b;
+}
+.home-article-card .title {
+    margin: 0;
+    font-size: 29px;
+    line-height: 1.2;
+    color: #0f172a;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    letter-spacing: -0.01em;
+}
+.home-article-card .excerpt {
+    margin: 2px 0 0;
+    color: #475569;
+    line-height: 1.72;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 86px;
+}
+.home-article-card .read-more {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #ff5e14;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: .01em;
+}
+.home-article-card .read-more i {
+    transition: transform .3s cubic-bezier(.22, .61, .36, 1);
+}
+.home-article-card:hover .read-more i {
+    transform: translateX(3px);
+}
+
+/* Homepage hover smoothing */
+.rts-btn.btn-primary,
+.construction-portfolio-area .single-construction-portfolio,
+.construction-portfolio-area .single-construction-portfolio .thumbnail img,
+.construction-portfolio-area .single-construction-portfolio .project-card-title a,
+.construction-portfolio-area .single-construction-portfolio .portfolio-actions a,
+.single-service-area-3,
+.single-fun-facts-area-5,
+#partner-customer-section .single-brand-area-style {
+    transition: transform .32s cubic-bezier(.22, .61, .36, 1), box-shadow .32s cubic-bezier(.22, .61, .36, 1), border-color .32s cubic-bezier(.22, .61, .36, 1), color .25s ease, background-color .25s ease, opacity .25s ease;
+}
+.rts-btn.btn-primary:hover {
+    transform: translateY(-2px);
+}
+.construction-portfolio-area .single-construction-portfolio:hover,
+.single-service-area-3:hover,
+.single-fun-facts-area-5:hover,
+#partner-customer-section .single-brand-area-style:hover {
+    transform: translateY(-3px);
+}
+.construction-portfolio-area .single-construction-portfolio:hover .thumbnail img {
+    transform: scale(1.025);
+}
+.construction-portfolio-area .single-construction-portfolio .portfolio-actions a:hover {
+    transform: translateY(-1px);
+}
+
+/* Home modern polish */
+.demanding-service-area {
+    background:
+      radial-gradient(circle at 6% 4%, rgba(255, 113, 61, 0.08), transparent 28%),
+      linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+.demanding-service-area .single-service-area-3 {
+    border: 1px solid #d9e3ef;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.07);
+    height: 100%;
+    padding: 24px 22px 20px;
+}
+.demanding-service-area .single-service-area-3 .title {
+    color: #0f172a;
+    letter-spacing: -0.01em;
+}
+.demanding-service-area .single-service-area-3 .disc {
+    color: #475569;
+}
+.demanding-service-area .single-service-area-3 .read-more-btn {
+    color: #ff5e14;
+    font-weight: 700;
+}
+.demanding-service-area .single-service-area-3 .read-more-btn i {
+    transition: transform .26s cubic-bezier(.22, .61, .36, 1);
+}
+.demanding-service-area .single-service-area-3:hover .read-more-btn i {
+    transform: translateX(3px);
+}
+.team-area-start.bg-white-1 {
+    background:
+      radial-gradient(circle at 90% 0%, rgba(15, 23, 42, 0.05), transparent 34%),
+      linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+.team-area-start .single-team-style-five {
+    border: 1px solid #d8e2ee;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
+}
+.team-area-start .single-team-style-five .thumbnail {
+    display: block;
+    overflow: hidden;
+}
+.team-area-start .single-team-style-five .thumbnail img {
+    transition: transform .42s cubic-bezier(.22, .61, .36, 1);
+}
+.team-area-start .single-team-style-five:hover .thumbnail img {
+    transform: scale(1.03);
+}
+.team-area-start .single-team-style-five .inner-content-team {
+    padding: 14px 16px 18px;
+}
+.team-area-start .single-team-style-five .inner-content-team .title {
+    color: #0f172a;
+}
+.team-area-start .single-team-style-five .desig {
+    color: #64748b;
+    font-weight: 600;
+}
+.team-area-start .single-team-style-five .share-btn {
+    border: 1px solid #d8e2ee;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+}
+.team-area-start .single-team-style-five .socail-area-wrapper-team ul li a {
+    border-radius: 999px;
+}
+.company-experties-area .single-fun-facts-area-5 {
+    padding: 16px 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.26);
+    background: rgba(15, 23, 42, 0.22);
+    backdrop-filter: blur(2px);
+}
+#partner-customer-section .single-brand-area-style {
+    border: 1px solid #dbe4ef;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+}
+#partner-customer-section .single-brand-area-style:hover {
+    border-color: #c9d7e7;
+    box-shadow: 0 14px 24px rgba(15, 23, 42, 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rts-btn.btn-primary,
+    .construction-portfolio-area .single-construction-portfolio,
+    .construction-portfolio-area .single-construction-portfolio .thumbnail img,
+    .construction-portfolio-area .single-construction-portfolio .project-card-title a,
+    .construction-portfolio-area .single-construction-portfolio .portfolio-actions a,
+    .single-service-area-3,
+    .single-fun-facts-area-5,
+    #partner-customer-section .single-brand-area-style,
+    .single-team-style-five,
+    .single-team-style-five .thumbnail img,
+    .single-service-area-3 .read-more-btn i,
+    .home-article-card,
+    .home-article-card .thumbnail img,
+    .home-article-card .read-more i {
+        transition: none !important;
+        transform: none !important;
+        animation: none !important;
+    }
+}
+.home-articles-empty {
+    border: 1px dashed #cbd5e1;
+    border-radius: 18px;
+    padding: 34px 20px;
+    text-align: center;
+    color: #64748b;
+    font-weight: 600;
+    background: #fff;
+}
+@media (max-width: 991px) {
+    .home-articles-area {
+        padding-top: 0;
+        padding-bottom: 58px;
+    }
+    .home-articles-head {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 16px;
+        padding: 16px;
+    }
+    .home-articles-head .rts-btn.btn-primary {
+        width: 100%;
+        min-width: 0;
+    }
+    .home-articles-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 767px) {
+    .demanding-service-area .single-service-area-3 {
+        padding: 18px 16px 16px;
+    }
+    .team-area-start .single-team-style-five .inner-content-team {
+        padding: 12px 14px 16px;
+    }
+    .company-experties-area .single-fun-facts-area-5 {
+        padding: 12px 10px;
+    }
+    .home-articles-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .home-article-card .title {
+        font-size: 26px;
+    }
+    .home-article-card .excerpt {
+        min-height: 0;
+    }
+    .rts-testimonials-area-five .title-between-style-five {
+        margin-bottom: 14px !important;
+    }
+    .rts-testimonials-area-five .button-net-prev-area {
+        margin-top: 6px;
+    }
+    .testimonials-wrapper-five .testimonials-area-single-wrapper-5 {
+        min-height: 0;
+        padding: 14px;
+    }
+    .testimonials-wrapper-five .thumbnail-wrapper-left > img {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+    }
+    .testimonials-wrapper-five .thumbnail-wrapper-left .inner-thumbnail-right .title {
+        font-size: 20px;
+    }
+    .testimonials-wrapper-five .testimonials-area-single-wrapper-5 .disc {
+        font-size: 14px;
+        line-height: 1.62;
+    }
+}
+</style>
+
+
+    <link rel="stylesheet" href="/assets/css/site-fixes.css">
+</head>
+
+<body class="home">
+
+    <!-- header two area start -->
+    <header class="header-two header--sticky">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-top-wrapper">
+                            <div class="left">
+                                <div class="call">
+                                    <i class="fa-light fa-mobile"></i>
+                                    <a href="#"></a>
+                                    <a href="#"></a>
+                                </div>
+                                <div class="call">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <a href="#"></a>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="social-header">
+                                    <span>Follow Us On:</span>
+                                    <ul>
+                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-two-main-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-two-wrapper">
+                            <a href="/" class="logo-area">
+                                <span class="brand-lockup" aria-label="PT Maulana Prima Sejahtera">
+                                    <img class="brand-mark" src="/assets/images/MPS.png" alt="MPS">
+                                    <span class="brand-text">
+                                        <span class="brand-name">Maulana Prima</span>
+                                        <span class="brand-sub">Sejahtera</span>
+                                    </span>
+                                </span>
+                            </a>
+                            <div class="nav-area">
+    <ul class="" id="main-menu"></ul>
+</div>
+<div class="header-end">
+                                <a href="#" class="rts-btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Konsultasi WhatsApp</a>
+                                <div class="nav-btn menu-btn">
+                                    <img src="/assets/images/logo/bar.svg" alt="nav-iamge">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header two area end -->
+
+    <div class="banner-two-swiper-main-wrapper factory-banner">
+
+        <div class="swiper mySwiper-banner2 mySwiper-banner-factrory" dir="ltr">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <!-- banner area start -->
+                    <div class="banner-area-start bg_banner-bg-area rts-section-gap bg_image">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="banner-two-inner">
+                                        <span>Solusi Hydrant & Ducting Profesional</span>
+                                        <h1 class="title">Solusi Hydrant & Ducting Profesional</h1>
+                                        <p class="disc">
+                                            PT. Maulana Prima Sejahtera menyediakan solusi ducting, hydrant, elektrikal, serta service dan maintenance chiller untuk kebutuhan industri dan komersial.
+                                        </p>
+                                        <div class="button-wrapper">
+                                            <a href="/tentang/" class="rts-btn btn-primary">Tentang Kami</a>
+                                            <a href="/layanan/" class="rts-btn btn-white">Layanan Kami</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- banner area end -->
+                </div>
+                <div class="swiper-slide">
+                    <!-- banner area start -->
+                    <div class="banner-area-start bg_banner-bg-area two rts-section-gap bg_image">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="banner-two-inner">
+                                        <span>Solusi Hydrant & Ducting Profesional</span>
+                                        <h1 class="title">
+                                            Instalasi, Perawatan, dan Pengadaan Sistem Hydrant, Ducting, dan Sprinkler
+                                        </h1>
+                                        <p class="disc">
+                                            PT. Maulana Prima Sejahtera menyediakan solusi ducting, hydrant, elektrikal, serta service dan maintenance chiller untuk kebutuhan industri dan komersial.
+                                        </p>
+                                        <div class="button-wrapper">
+                                            <a href="/tentang/" class="rts-btn btn-primary">Tentang Kami</a>
+                                            <a href="/layanan/" class="rts-btn btn-white">Layanan Kami</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- banner area end -->
+                </div>
+                <div class="swiper-slide">
+                    <!-- banner area start -->
+                    <div class="banner-area-start bg_banner-bg-area three rts-section-gap bg_image">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="banner-two-inner">
+                                        <span>Solusi Hydrant & Ducting Profesional</span>
+                                        <h1 class="title">Hydrant, Ducting, dan Sprinkler untuk Industri & Komersial</h1>
+                                        <p class="disc">
+                                            PT. Maulana Prima Sejahtera menyediakan solusi ducting, hydrant, elektrikal, serta service dan maintenance chiller untuk kebutuhan industri dan komersial.
+                                        </p>
+                                        <div class="button-wrapper">
+                                            <a href="/tentang/" class="rts-btn btn-primary">Tentang Kami</a>
+                                            <a href="/layanan/" class="rts-btn btn-white">Layanan Kami</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- banner area end -->
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"><i class="fa-sharp-duotone fa-light fa-arrow-right"></i>
+        </div>
+        <div class="swiper-button-prev"><i class="fa-sharp-duotone fa-light fa-arrow-left"></i>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+    <!-- demanding service area start -->
+    <div class="demanding-service-area rts-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-area-wrapper-main-two">
+                        <div class="title-style-two-left">
+                            <h2 class="title">PT. Maulana Prima Sejahtera</h2>
+                            <p class="disc">
+                                Kami sudah dipercaya berbagai sektor industri, termasuk BUMN dan perusahaan swasta.
+                                Fokus utamanya adalah menjaga kualitas layanan, standar kerja, dan kepuasan pelanggan melalui tim ahli bersertifikat, 
+                                dukungan manufaktur andal, serta konsultasi teknis yang kuat.
+                            </p>
+                        </div>
+                        <a href="/kontak/" class="rts-btn btn-primary">Konsultasi Proyek<img
+                                src="/assets/images/icons/arrow-up-right.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-1730 mt--70">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="service-bg_image-3 bg_image"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-dec--130">
+            <div class="row g-24 justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                    <div class="single-service-area-3">
+                        <div class="icon">
+                            <i class="fa-solid fa-fire-extinguisher service-topic-icon" aria-hidden="true"></i>
+                        </div>
+                        <a href="/layanan/hydrant/">
+                            <h4 class="title">Instalasi Sistem Hydrant</h4>
+                        </a>
+                        <span class="number">01</span>
+                        <p class="disc">
+                            Instalasi sistem hydrant untuk kebutuhan proteksi kebakaran area industri dan komersial,
+                            mulai dari jaringan pipa, valve, hingga dukungan pengujian fungsi lapangan.
+                        </p>
+                        <a href="/layanan/hydrant/" class="read-more-btn">Lihat Detail<i
+                                class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                    <div class="single-service-area-3">
+                        <div class="icon">
+                            <i class="fa-solid fa-wind service-topic-icon" aria-hidden="true"></i>
+                        </div>
+                        <a href="/layanan/ducting/">
+                            <h4 class="title">Fabrikasi & Instalasi Ducting</h4>
+                        </a>
+                        <span class="number">02</span>
+                        <p class="disc">
+                            Fabrikasi dan instalasi ducting untuk penyaluran udara, asap, dan debu. Tersedia pilihan
+                            bentuk round duct maupun square duct sesuai kebutuhan sistem di lapangan.
+                        </p>
+                        <a href="/layanan/ducting/" class="read-more-btn">Lihat Detail<i
+                                class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                    <div class="single-service-area-3">
+                        <div class="icon">
+                            <i class="fa-solid fa-screwdriver-wrench service-topic-icon" aria-hidden="true"></i>
+                        </div>
+                        <a href="/layanan/sprinkler/">
+                            <h4 class="title">Service & Maintenance Chiller</h4>
+                        </a>
+                        <span class="number">03</span>
+                        <p class="disc">
+                            Service dan maintenance chiller untuk menjaga performa pendinginan tetap stabil,
+                            mengurangi risiko gangguan operasional, dan memperpanjang umur pakai mesin.
+                        </p>
+                        <a href="/layanan/sprinkler/" class="read-more-btn">Lihat Detail<i
+                                class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- demanding service area end -->
+
+
+    <!-- about area start -->
+    <div class="about-service-main-wrapper rts-section-gap bg_white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-5">
+                    <div class="thumbnail-main-wrapper-2">
+                        <div class="reveal-item overflow-hidden aos-init">
+                            <div class="reveal-animation reveal-end reveal-primary aos aos-init" data-aos="reveal-end">
+                            </div>
+                            <img src="/assets/images/about/02.webp" alt="journey-area">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-7 pl--60 pl_md--0 pl_sm--10 pt_md--30 pt_sm--30">
+                    <div class="about-content-area-two">
+                        <div class="title-style-two-left">
+                            <h2 class="title">Spesialis Ducting, Hydrant, dan Electrical untuk Kebutuhan Industri Modern</h2>
+                            <p class="disc">
+                                Kami berpengalaman menangani fabrikasi dan instalasi ducting, sistem hydrant, plumbing, serta elektrikal untuk berbagai jenis fasilitas industri. Setiap pekerjaan kami kerjakan dengan standar teknis yang jelas, hasil rapi, dan fokus pada keamanan operasional jangka panjang.
+                            </p>
+                            <div class="check-about-main-wrapper">
+                                <div class="single-check">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <p>Survey Lokasi dan Analisa Kebutuhan Sistem</p>
+                                </div>
+                                <div class="single-check">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <p>Desain, Fabrikasi, dan Instalasi Sesuai Standar</p>
+                                </div>
+                                <div class="single-check">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <p>Testing, Commissioning, dan Serah Terima</p>
+                                </div>
+                            </div>
+                            <a href="/tentang/" class="rts-btn btn-primary">Tentang Kami</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about area end -->
+
+
+    <div class="total-working-process-wrapper-industry bg-dark">
+        <!-- our working process area start -->
+        <div class="our-working-process-area-4 bg_image">
+            <div class="marque-wrapper one" dir="ltr">
+                <div class="marquee">
+                    <span>Industrial Solution&nbsp;</span>
+                    <span>Industrial Solution&nbsp;</span>
+                    <span>Industrial Solution&nbsp;</span>
+                    <span>Industrial Solution&nbsp;</span>
+                    <span>Industrial Solution&nbsp;</span>
+                    <span>Industrial Solution&nbsp;</span>
+                    <span>Industrial Solution&nbsp;</span>
+                    <span>Industrial Solution&nbsp;</span>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="title-center-wrapper-4">
+                            <h2 class="title">Bagaimana Alur Kerja Kami?</h2>
+                            <p class="disc">
+                                Setiap proyek kami kerjakan dengan alur yang terukur, transparan, dan fokus pada kualitas hasil akhir serta keamanan operasional.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- our working process area end -->
+
+        <div class="working-process-mt-dec-4">
+            <div class="container">
+                <div class="row bd-process">
+                    <div class="col-lg-3">
+                        <div class="single-process-wrapper-4">
+                            <span class="number">01</span>
+                            <h5 class="title">Konsultasi & Perencanaan</h5>
+                            <p class="disc">
+                                Kami melakukan survey lokasi, identifikasi kebutuhan teknis, serta menyusun ruang lingkup kerja sesuai target proyek Anda.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="single-process-wrapper-4">
+                            <span class="number">02</span>
+                            <h5 class="title">Persiapan Material & Lokasi</h5>
+                            <p class="disc">
+                                Tim menyiapkan material, jadwal kerja, dan koordinasi lapangan agar proses instalasi berjalan rapi, aman, dan efisien.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="single-process-wrapper-4">
+                            <span class="number">03</span>
+                            <h5 class="title">Instalasi Sistem</h5>
+                            <p class="disc">
+                                Pekerjaan instalasi dilaksanakan oleh teknisi berpengalaman sesuai spesifikasi teknis, standar mutu, dan prosedur K3.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="single-process-wrapper-4">
+                            <span class="number">04</span>
+                            <h5 class="title">Testing & Serah Terima</h5>
+                            <p class="disc">
+                                Kami melakukan pengujian fungsi sistem, final checking, dan serah terima lengkap agar sistem siap digunakan dengan optimal.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- small cta area start -->
+        <div class="small-cta-area rts-section-gap">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-4">
+                        <div class="cta-small-left">
+                            <i class="fa-regular fa-clock"></i>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="cta-small-right">
+                            <p>Konsultasikan Kebutuhan Proyek Anda</p>
+                            <a href="/kontak/">Hubungi Kami Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- small cta area end -->
+    </div>
+
+    <!-- rts team area start -->
+    <div class="team-area-start rts-section-gap rts-portfolio-area-case bg-white-1" id="home-team-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-between-style-five mb--35">
+                        <div class="title-left-align-five">
+                            <span class="pre">Service we provide</span>
+                            <h2 class="title">Expert Team Members</h2>
+                        </div>
+                        <div class="button-net-prev-area">
+
+                            <div class="swiper-button-prev"><i class="fa-sharp-duotone fa-light fa-arrow-left"></i>
+                            </div>
+                            <div class="swiper-button-next"><i class="fa-sharp-duotone fa-light fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="team-area-swiper-wrapper-5">
+                        <div class="swiper mySwiper-team-5" dir="ltr">
+                            <div class="swiper-wrapper" id="team-swiper-wrapper"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts team area end -->
+
+    <!-- compoany experties area start -->
+    <div class="company-experties-area rts-section-gap bg_image bg-dark-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-between-style-five mb--35">
+                        <div class="title-left-align-five">
+                            <span class="pre">Tentang Perusahaan</span>
+                            <h2 class="title">Kepercayaan Klien adalah <br>
+                                Standar Kerja Kami</h2>
+                        </div>
+                        <a href="/kontak/" class="rts-btn btn-primary">Konsultasi Gratis</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt--60">
+                <div class="col-lg-12">
+                    <div class="funfacts-list-wrapper-5">
+                        <div class="single-fun-facts-area-5">
+                            <div class="icon">
+                                <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                            </div>
+                            <div class="counter-wrapper">
+                                <h2 class="counter title"><span class="odometer" data-count="10">00</span>+
+                                </h2>
+                                <span class="bottom">Tahun Pengalaman</span>
+                            </div>
+                        </div>
+                        <div class="single-fun-facts-area-5 justify-content-center">
+                            <div class="icon">
+                                <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+                            </div>
+                            <div class="counter-wrapper">
+                                <h2 class="counter title"><span class="odometer" data-count="2">00</span>+
+                                </h2>
+                                <span class="bottom">Proyek Selesai</span>
+                            </div>
+                        </div>
+                        <div class="single-fun-facts-area-5 justify-content-center">
+                            <div class="icon">
+                                <i class="fa-solid fa-users" aria-hidden="true"></i>
+                            </div>
+                            <div class="counter-wrapper">
+                                <h2 class="counter title"><span class="odometer" data-count="20">00</span>+
+                                </h2>
+                                <span class="bottom">Klien Industri</span>
+                            </div>
+                        </div>
+                        <div
+                            class="single-fun-facts-area-5 justify-content-end justify-content-md-center justify-content-sm-center">
+                            <div class="icon">
+                                <i class="fa-solid fa-headset" aria-hidden="true"></i>
+                            </div>
+                            <div class="counter-wrapper">
+                                <h2 class="counter title"><span class="odometer" data-count="24">00</span> Jam
+                                </h2>
+                                <span class="bottom">Respon Konsultasi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- compoany experties area end -->
+
+<!-- construction portfolio area start -->
+    <div class="construction-portfolio-area rts-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-area-wrapper-main-two">
+                        <div class="title-style-two-left">
+                            <h2 class="title">Proyek Kami</h2>
+                            <p class="disc">
+                                Berikut beberapa contoh proyek yang telah kami kerjakan, mulai dari instalasi hydrant, fabrikasi ducting, hingga pekerjaan elektrikal untuk kebutuhan industri dan komersial.
+                            </p>
+                            <div class="portfolio-header-highlights">
+                                <span>2+ Proyek Selesai</span>
+                                <span>100% Transparansi Progress</span>
+                                <span>Respon Konsultasi Cepat</span>
+                            </div>
+                        </div>
+                        <a href="/proyek/" class="rts-btn btn-primary">Lihat Semua Proyek</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt--65">
+            <div class="row g-24">
+                <div class="col-lg-12">
+                    <div class="portfolio-two-swiper-main-wrapper">
+                        <div class="swiper mySwiper-portfolio-two" dir="ltr">
+                            <div class="swiper-wrapper" id="portfolio-swiper-wrapper">
+                                
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev"><i class="fas fa-chevron-right"></i>
+                        </div>
+
+                        <div class="swiper-button-next"><i class="fas fa-chevron-left"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- construction portfolio area end -->
+
+    <!-- home articles area start -->
+    <section class="home-articles-area" id="home-articles-section">
+        <div class="container">
+            <div class="home-articles-head">
+                <div class="title-wrap">
+                    <span class="pre">Insight & Update</span>
+                    <h2 class="title">Artikel Kami</h2>
+                    <p class="disc">Update seputar proyek, tips teknis, dan insight lapangan untuk membantu perencanaan pekerjaan Anda lebih tepat.</p>
+                </div>
+                <a href="/artikel/" class="rts-btn btn-primary">Lihat Semua Artikel</a>
+            </div>
+            <div class="home-articles-grid" id="home-articles-grid">
+                <div class="home-articles-empty">Memuat artikel terbaru...</div>
+            </div>
+        </div>
+    </section>
+    <!-- home articles area end -->
+
+    <!-- rts testimonials area start -->
+    <div class="rts-testimoanils-area bg_primary rts-section-gap rts-portfolio-area-case">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-between-style-five mb--35">
+                        <div class="title-left-align-five">
+                            <span class="pre">Testimonial Client</span>
+                            <h2 class="title">Trusted by Our Clients</h2>
+                        </div>
+                        <div class="button-net-prev-area">
+
+                            <div class="swiper-button-prev"><i class="fa-sharp-duotone fa-light fa-arrow-left"></i>
+                            </div>
+                            <div class="swiper-button-next"><i class="fa-sharp-duotone fa-light fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-l-12">
+                    <div class="testimonials-wrapper-five">
+                        <div class="swiper mySwiper-testimonails-5" dir="ltr">
+                            <div class="swiper-wrapper" id="testimonials-swiper-wrapper"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts testimonials area end -->
+
+
+    <!-- rts latest blgo area start -->
+    <!-- <div class="rts-latest-blog-area rts-section-gap rts-portfolio-area-case bg-white-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-between-style-five mb--35">
+                        <div class="title-left-align-five">
+                            <span class="pre">Service we provide</span>
+                            <h2 class="title"></h2>
+                        </div>
+                        <a href="/proyek/" class="rts-btn btn-primary">View All Posts
+                            <img src="/assets/images/icons/arrow-up-right.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-24">
+                <div class="col-lg-12">
+                    <div class="single-blog-card-style-5">
+                        <div class="top-area-blog">
+                            <span>Through a unique combination of engineering, and construction</span>
+                            <a href="/proyek/" class="thumbnail">
+                                <img src="/assets/images/blog/15.webp" alt="blog-image">
+                            </a>
+                        </div>
+                        <div class="inner-content-area">
+                            <div class="author-area">
+                                <img src="/assets/images/blog/18.webp" alt="">
+                                <div class="info">
+                                    <p>by</p>
+                                    <h5 class="name">Markus Smith</h5>
+                                </div>
+                            </div>
+                            <div class="title-content-area">
+                                <div class="tag-area">
+                                    <span>18 December, 2024</span>
+                                    <span class="intro">Interior Design</span>
+                                </div>
+                                <a href="/proyek/">
+                                    <h3 class="title">
+                                        construction and design disciplines and expertise, Liquid delivers excellent
+                                        design
+                                        perspective Through
+                                    </h3>
+                                </a>
+                                <a href="/proyek/" class="read-more">Read Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="single-blog-card-style-5 small-blog-five">
+                        <div class="top-area-blog">
+                            <span>Through a unique combination of engineering, and construction</span>
+                            <a href="/proyek/" class="thumbnail">
+                                <img src="/assets/images/blog/16.webp" alt="blog-image">
+                            </a>
+                        </div>
+                        <div class="inner-content-area">
+                            <div class="author-area">
+                                <img src="/assets/images/blog/18.webp" alt="">
+                                <div class="info">
+                                    <p>by</p>
+                                    <h5 class="name">Markus Smith</h5>
+                                </div>
+                            </div>
+                            <div class="title-content-area">
+                                <div class="tag-area">
+                                    <span>18 December, 2024</span>
+                                    <span class="intro">Interior Design</span>
+                                </div>
+                                <a href="/proyek/">
+                                    <h3 class="title">
+                                        Liquid delivers excellent design perspective
+                                        Through a unique combination
+                                    </h3>
+                                </a>
+                                <a href="/proyek/" class="read-more">Read Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="single-blog-card-style-5 small-blog-five">
+                        <div class="top-area-blog">
+                            <span>Through a unique combination of engineering, and construction</span>
+                            <a href="/proyek/" class="thumbnail">
+                                <img src="/assets/images/blog/17.webp" alt="blog-image">
+                            </a>
+                        </div>
+                        <div class="inner-content-area">
+                            <div class="author-area">
+                                <img src="/assets/images/blog/18.webp" alt="">
+                                <div class="info">
+                                    <p>by</p>
+                                    <h5 class="name">Markus Smith</h5>
+                                </div>
+                            </div>
+                            <div class="title-content-area">
+                                <div class="tag-area">
+                                    <span>18 December, 2024</span>
+                                    <span class="intro">Interior Design</span>
+                                </div>
+                                <a href="/proyek/">
+                                    <h3 class="title">
+                                        How to Use Lighting to Create Mood, Style, and
+                                        Function in Any Room
+                                    </h3>
+                                </a>
+                                <a href="/proyek/" class="read-more">Read Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- rts latest blgo area end -->
+
+
+    <!-- rts brand area start -->
+    <div class="rts-brand-area rts-section-gapBottom" id="partner-customer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="title-brand counter">
+                        <span class="odometer" id="partner-customer-count" data-count="0">
+                            00
+                        </span> Partner / Customer <br>
+
+                    </h3>
+                </div>
+            </div>
+            <div class="swiper mySwiper-partner-customer mt--30" dir="ltr">
+                <div class="swiper-wrapper" id="partner-customer-cards">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts brand area end -->
+
+
+
+    <!-- rts footer area start -->
+    <div class="rts-footer-area three rts-section-gapTop bg_footer-1 bg_image">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact-area-footer-top">
+                        <div class="single-contact-area-box">
+                            <div class="icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <h6 class="title">Call Us Now</h6>
+                            <a href="#">-</a>
+                            <a href="#">-</a>
+                        </div>
+                        <div class="single-contact-area-box">
+                            <div class="icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <h6 class="title">Office Time</h6>
+                            <a href="#">-</a>
+                        </div>
+                        <div class="single-contact-area-box">
+                            <div class="icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <h6 class="title">Need Support</h6>
+                            <a href="#">-</a>
+                            <a href="#">-</a>
+                        </div>
+                        <div class="single-contact-area-box">
+                            <div class="icon">
+                                <i class="fa-sharp fa-solid fa-location-dot"></i>
+                            </div>
+                            <h6 class="title">Our Address</h6>
+                            <a href="#">-</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-full">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="nav-footer-wrapper-one">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <ul class="footer-float-nav">
+                                        <li><a href="/tentang/">Tentang Kami</a></li>
+                                        <li><a href="/proyek/">Projects</a></li>
+                                        <li><a href="/tentang/">Updates</a></li>
+                                        <li><a href="/tentang/">Mission</a></li>
+                                        <li><a href="/tentang/">Inside</a></li>
+                                        <li><a href="/kontak/">Kontak</a></li>
+                                        <li><a href="/tentang/">History</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-wrapper-left-one">
+                        <a href="/" class="logo">
+                            <span class="brand-lockup" aria-label="PT Maulana Prima Sejahtera">
+                                <img class="brand-mark" src="/assets/images/MPS.png" alt="MPS">
+                                <span class="brand-text">
+                                    <span class="brand-name">Maulana Prima</span>
+                                    <span class="brand-sub">Sejahtera</span>
+                                </span>
+                            </span>
+                        </a>
+                        <p class="disc">
+                           Kami berkomitmen untuk memberikan solusi konstruksi berkualitas tinggi yang disesuaikan dengan kebutuhan klien kami. Dengan fokus yang kuat pada inovasi, ketelitian, dan keahlian, kami membangun ruang yang tahan lama.
+                        </p>
+                        <div class="social-area-wrapper-one">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="footer-wrapper-right">
+                        <div class="single-nav-area-footer use-link">
+                            <h4 class="title">Useful Links</h4>
+                            <ul>
+                                <li><a href="/tentang/"><i class="fa-regular fa-arrow-right-long"></i>Tentang Kami</a></li>
+                                <li><a href="/tentang/"><i class="fa-regular fa-arrow-right-long"></i>Our Gallery</a>
+                                </li>
+                                <li><a href="/layanan/"><i class="fa-regular fa-arrow-right-long"></i>Our
+                                        Services</a></li>
+                                <li><a href="/tentang/#about-team-section"><i class="fa-regular fa-arrow-right-long"></i>Our Team</a></li>
+                                <li><a href="/kontak/"><i class="fa-regular fa-arrow-right-long"></i>Hubungi Kami</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="single-nav-area-footer use-link">
+                            <h4 class="title">Quick Services</h4>
+                            <ul>
+                                <li><a href="/layanan/"><i class="fa-regular fa-arrow-right-long"></i>General
+                                        Contracting</a>
+                                </li>
+                                <li><a href="/layanan/"><i class="fa-regular fa-arrow-right-long"></i>Project
+                                        Management</a>
+                                </li>
+                                <li><a href="/layanan/"><i class="fa-regular fa-arrow-right-long"></i>New
+                                        Construction</a></li>
+                                <li><a href="/layanan/"><i class="fa-regular fa-arrow-right-long"></i>Renovations &
+                                        Remodeling</a></li>
+                                <li><a href="/layanan/"><i class="fa-regular fa-arrow-right-long"></i>Interior
+                                        Finishing</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="single-nav-area-footer news-letter">
+                            <h4 class="title">Newsletter</h4>
+                            <p>Aplications prodize before front end ortals visualize front end</p>
+                            <form action="#">
+                                <input type="email" placeholder="Email Address" required>
+                                <button class="btn-subscribe mt--15">Subscribe Now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-full copyright-area-one">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="copyright-wrapper">
+                                    <p class="mb-0">Copyright &copy;
+                                        <script>
+                                            document.write(
+                                                new Date().getFullYear()
+                                            )
+                                        </script>
+                                        Maulana Prima Sejahtera
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts footer area end -->
+
+    <div id="side-bar" class="side-bar header-two">
+    <button class="close-icon-menu"><i class="far fa-times"></i></button>
+    <!-- inner menu area desktop start -->
+    <div class="inner-main-wrapper-desk">
+        <div class="thumbnail">
+            <img src="/assets/images/banner/04.jpg" alt="elevate">
+        </div>
+        <div class="inner-content">
+            <h4 class="title">Solusi Profesional untuk Ducting, Hydrant, dan Electrical.</h4>
+            <p class="disc">
+                We successfully cope with tasks of varying complexity, provide long-term guarantees and regularly
+                master new technologies.
+            </p>
+            <div class="footer">
+                <h4 class="title">Got a project in mind?</h4>
+                <a href="#" class="rts-btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Konsultasi via WhatsApp</a>
+            </div>
+        </div>
+    </div>
+    <!-- mobile menu area start -->
+        <div class="mobile-menu d-block d-xl-none">
+        <nav class="nav-main mainmenu-nav mt--30">
+            <ul class="mainmenu metismenu" id="mobile-menu-active">
+            </ul>
+        </nav>
+
+        <div class="social-wrapper-one">
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- mobile menu area end -->
+</div>
+
+    <!-- progress area start -->
+<!-- <div id="elevate-load">
+    <div class="loader-wrapper">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div> -->
+<!-- progress area end -->
+
+<!-- rtl btn area start --><!-- rtl btn area end -->
+
+<!-- progress area start -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+            style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+        </path>
+    </svg>
+</div>
+<!-- progress area end -->
+
+
+<!-- offcanvase search -->
+<div class="search-input-area">
+    <div class="container">
+        <div class="search-input-inner">
+            <div class="input-div">
+                <input class="search-input autocomplete" type="text" placeholder="Search by keyword or #">
+                <button><i class="far fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+    <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+</div>
+<div id="anywhere-home" class="">
+</div>
+
+<!-- scripts -->
+<script src="/assets/js/plugins/jquery.js"></script>
+<script src="/assets/js/vendor/bootstrap.min.js"></script>
+
+<script src="/assets/js/plugins/odometer.js"></script>
+<script src="/assets/js/plugins/jquery-appear.js"></script>
+
+<script src="/assets/js/plugins/metismenu.js"></script>
+<script src="/assets/js/plugins/swiper.js"></script>
+<script src="/assets/js/plugins/aos.js"></script>
+<script src="/assets/js/plugins/nice-select.js"></script>
+<script src="/assets/js/plugins/smooth-scroll.js"></script>
+<script src="/assets/js/vendor/waw.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuSiPhoDaOJ7aqtJVtQhYhLzwwJ7rQlmA"></script>
+<script src="/assets/js/vendor/marker.js"></script>
+<script src="/assets/js/vendor/map-content.js"></script>
+<script src="/assets/js/vendor/info-box.js"></script>
+<script src="https://html.themewant.com/golfy/assets/js/plugins/magnific-popup.js"></script>
+
+<script src="/assets/js/plugins/contact.form.js"></script>
+
+<script src="/assets/js/main.js"></script>
+    <script>
+      (function () {
+        var section = document.getElementById('partner-customer-section');
+        var countEl = document.getElementById('partner-customer-count');
+        if (!section || !countEl) return;
+
+        var updatePartnerCounter = function () {
+          var cards = section.querySelectorAll('.single-brand-area-style');
+          var total = cards.length;
+
+          countEl.setAttribute('data-count', String(total));
+          if (countEl.odometer && typeof countEl.odometer.update === 'function') {
+            countEl.odometer.update(total);
+            return;
+          }
+          countEl.textContent = String(total);
+        };
+
+        window.refreshPartnerCustomerCounter = updatePartnerCounter;
+        updatePartnerCounter();
+      })();
+    </script>
+    <script>
+      (function () {
+        var cardsWrapper = document.getElementById('partner-customer-cards');
+        var swiperContainer = document.querySelector('.mySwiper-partner-customer');
+        if (!cardsWrapper) return;
+
+        var escapeHtml = function (value) {
+          return String(value || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+        };
+
+        var normalizeText = function (value) {
+          return String(value || '').trim().replace(/\s+/g, ' ');
+        };
+        var shortText = function (value, maxLen) {
+          var text = normalizeText(value);
+          if (!text) return '';
+          if (text.length <= maxLen) return text;
+          return text.slice(0, maxLen - 1) + '...';
+        };
+        var initPartnerSwiper = function () {
+          if (!swiperContainer || typeof Swiper === 'undefined') return;
+          var totalSlides = cardsWrapper.querySelectorAll('.swiper-slide').length;
+          var shouldLoop = totalSlides > 4;
+          if (swiperContainer.swiper) {
+            swiperContainer.swiper.destroy(true, true);
+          }
+          new Swiper(swiperContainer, {
+            slidesPerView: 4,
+            spaceBetween: 24,
+            loop: shouldLoop,
+            speed: 900,
+            autoplay: shouldLoop ? {
+              delay: 2200,
+              disableOnInteraction: false
+            } : false,
+            breakpoints: {
+              1200: { slidesPerView: 4 },
+              992: { slidesPerView: 3 },
+              768: { slidesPerView: 2 },
+              0: { slidesPerView: 1 }
+            }
+          });
+        };
+
+        var buildPartnerCardHtml = function (item) {
+          var company = normalizeText(item.company);
+          var logo = normalizeText(item.brandLogo);
+          if (!logo) return '';
+          return '' +
+            '<div class="swiper-slide">' +
+              '<div class="single-brand-area-style">' +
+                (logo ? ('<div class="icon"><img src="' + escapeHtml(logo) + '" alt="' + escapeHtml(company || 'Partner') + ' logo"></div>') : '') +
+              '</div>' +
+            '</div>';
+        };
+
+        initPartnerSwiper();
+
+        fetch('/api/testimonials.php', { cache: 'no-store' })
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            if (!data || !data.ok || !Array.isArray(data.testimonials)) {
+              cardsWrapper.innerHTML = '';
+              if (typeof window.refreshPartnerCustomerCounter === 'function') {
+                window.refreshPartnerCustomerCounter();
+              }
+              initPartnerSwiper();
+              return;
+            }
+            var slides = data.testimonials
+              .map(buildPartnerCardHtml)
+              .filter(function (html) { return html; });
+            cardsWrapper.innerHTML = slides.length ? slides.join('') : '';
+            if (typeof window.refreshPartnerCustomerCounter === 'function') {
+              window.refreshPartnerCustomerCounter();
+            }
+            initPartnerSwiper();
+          })
+          .catch(function () {
+            cardsWrapper.innerHTML = '';
+            if (typeof window.refreshPartnerCustomerCounter === 'function') {
+              window.refreshPartnerCustomerCounter();
+            }
+            initPartnerSwiper();
+          });
+      })();
+    </script>
+    <script>
+      (function () {
+        var wrapper = document.getElementById('team-swiper-wrapper');
+        var teamSection = document.getElementById('home-team-section');
+        var homeArticlesSection = document.getElementById('home-articles-section');
+        if (!wrapper || !teamSection) return;
+
+        var escapeHtml = function (value) {
+          return String(value || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+        };
+
+        var renderSocialList = function (member) {
+          var socials = [];
+          if (member.facebook) socials.push('<li><a href="' + escapeHtml(member.facebook) + '" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a></li>');
+          if (member.youtube) socials.push('<li><a href="' + escapeHtml(member.youtube) + '" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a></li>');
+          if (member.linkedin) socials.push('<li><a href="' + escapeHtml(member.linkedin) + '" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a></li>');
+          if (member.whatsapp) socials.push('<li><a href="' + escapeHtml(member.whatsapp) + '" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a></li>');
+          return socials.join('');
+        };
+
+        var buildSlideHtml = function (member) {
+          var socialHtml = renderSocialList(member);
+          return '' +
+            '<div class="swiper-slide">' +
+              '<div class="single-team-style-five">' +
+                '<a href="#" class="thumbnail">' +
+                  '<img src="' + escapeHtml(member.image) + '" alt="' + escapeHtml(member.name) + '">' +
+                  '<div class="shape-social">' +
+                    '<img src="/assets/images/team/01.png" alt="team">' +
+                  '</div>' +
+                '</a>' +
+                '<div class="share-btn">' +
+                  '<i class="fa-sharp fa-light fa-share-nodes"></i>' +
+                '</div>' +
+                '<div class="socail-area-wrapper-team">' +
+                  '<ul>' + (socialHtml || '<li><a href="#"><i class="fa-regular fa-user"></i></a></li>') + '</ul>' +
+                '</div>' +
+                '<div class="inner-content-team">' +
+                  '<a href="#"><h5 class="title">' + escapeHtml(member.name) + '</h5></a>' +
+                  '<span class="desig">' + escapeHtml(member.role) + '</span>' +
+                '</div>' +
+              '</div>' +
+            '</div>';
+        };
+
+        var setTeamSectionVisible = function (isVisible) {
+          if (!isVisible) {
+            teamSection.style.display = 'none';
+            return;
+          }
+          teamSection.style.display = '';
+        };
+        // Menu visibility is managed globally in assets/js/main.js (site-settings).
+        // Hide team section until we know it's enabled and has data.
+        setTeamSectionVisible(false);
+
+        fetch('/api/site-settings.php', { cache: 'no-store' })
+          .then(function (res) { return res.json(); })
+          .then(function (payload) {
+            var settings = payload && payload.ok && payload.settings ? payload.settings : {};
+            var raw = settings.homeShowTeamSection || '1';
+            var isVisible = !(String(raw) === '0' || raw === 0 || raw === false);
+            setTeamSectionVisible(isVisible);
+            return isVisible;
+          })
+          .catch(function () {
+            setTeamSectionVisible(false);
+            // Still attempt to load team members; we will only show the section if it has data.
+            return true;
+          })
+          .then(function (isVisible) {
+            if (!isVisible) {
+              wrapper.innerHTML = '';
+              return;
+            }
+            return fetch('/api/team-members.php', { cache: 'no-store' })
+              .then(function (res) { return res.json(); })
+              .then(function (data) {
+                if (!data || !data.ok || !Array.isArray(data.members) || !data.members.length) {
+                  wrapper.innerHTML = '';
+                  setTeamSectionVisible(false);
+                  return;
+                }
+                var slides = data.members.map(buildSlideHtml);
+                var swiperEl = document.querySelector('.mySwiper-team-5');
+                if (swiperEl && swiperEl.swiper) {
+                  swiperEl.swiper.removeAllSlides();
+                  swiperEl.swiper.appendSlide(slides);
+                  swiperEl.swiper.update();
+                  if (typeof swiperEl.swiper.slideToLoop === 'function') {
+                    swiperEl.swiper.slideToLoop(0, 0);
+                  }
+                  setTeamSectionVisible(true);
+                  return;
+                }
+                wrapper.innerHTML = slides.join('');
+                setTeamSectionVisible(true);
+              })
+              .catch(function () {
+                wrapper.innerHTML = '';
+                setTeamSectionVisible(false);
+              });
+          });
+      })();
+    </script>
+
+    <script>
+      (function () {
+        var wrapper = document.getElementById('portfolio-swiper-wrapper');
+        if (!wrapper) return;
+
+        var escapeHtml = function (value) {
+          return String(value || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+        };
+
+        var fallbackText = function (value, fallback) {
+          var text = String(value || '').trim();
+          return text ? text : fallback;
+        };
+
+        var buildSlideHtml = function (project) {
+          var detailUrl = project.detailUrl || ('/proyek/detail/?slug=' + encodeURIComponent(project.slug || ''));
+          var title = fallbackText(project.title, 'Project');
+          var image = fallbackText(project.image, '/assets/images/portfolio/05.webp');
+          var location = fallbackText(project.location, 'Indonesia');
+          var client = fallbackText(project.client, 'N/A');
+          var projectYear = fallbackText(project.projectYear, '-');
+          var duration = fallbackText(project.duration, '-');
+          var price = fallbackText(project.price, '-');
+          var category = fallbackText(project.category, 'Proyek');
+          var consultText = [
+            'Halo, saya ingin konsultasi proyek:',
+            title,
+            '',
+            'Mohon info estimasi biaya, timeline pengerjaan, dan jadwal survey.',
+            'Terima kasih.'
+          ].join('\n');
+          return '' +
+            '<div class="swiper-slide">' +
+              '<div class="single-construction-portfolio">' +
+                '<a href="' + escapeHtml(detailUrl) + '" class="thumbnail">' +
+                  '<img src="' + escapeHtml(image) + '" alt="' + escapeHtml(title) + '">' +
+                  '<div class="map-area">' +
+                    '<i class="fa-light fa-location-dot"></i>' +
+                    '<span>' + escapeHtml(location) + '</span>' +
+                  '</div>' +
+                '</a>' +
+                '<div class="inner-content">' +
+                  '<div class="project-card-head">' +
+                    '<p class="project-card-category">' + escapeHtml(category) + '</p>' +
+                    '<h3 class="project-card-title"><a href="' + escapeHtml(detailUrl) + '">' + escapeHtml(title) + '</a></h3>' +
+                  '</div>' +
+                  '<div class="tag-wrapper">' +
+                    '<div class="single"><span>Price:</span><p>' + escapeHtml(price) + '</p></div>' +
+                    '<div class="single"><span>Client:</span><p>' + escapeHtml(client) + '</p></div>' +
+                    '<div class="single"><span>Project Year:</span><p>' + escapeHtml(projectYear) + '</p></div>' +
+                    '<div class="single"><span>Duration:</span><p>' + escapeHtml(duration) + '</p></div>' +
+                  '</div>' +
+                  '<div class="portfolio-actions">' +
+                    '<a class="btn-detail" href="' + escapeHtml(detailUrl) + '">Lihat Detail</a>' +
+                    '<a class="btn-consult" href="#" data-wa-message="' + escapeHtml(consultText) + '">Konsultasi WA</a>' +
+                  '</div>' +
+                '</div>' +
+              '</div>' +
+            '</div>';
+        };
+
+        fetch('/api/projects.php', { cache: 'no-store' })
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            if (!data || !data.ok || !Array.isArray(data.projects)) {
+              wrapper.innerHTML = '';
+              return;
+            }
+            var slides = data.projects.length ? data.projects.slice(0, 8).map(buildSlideHtml) : [];
+            var swiperEl = document.querySelector('.mySwiper-portfolio-two');
+            if (swiperEl && swiperEl.swiper) {
+              swiperEl.swiper.removeAllSlides();
+              swiperEl.swiper.appendSlide(slides);
+              swiperEl.swiper.update();
+              if (typeof swiperEl.swiper.slideToLoop === 'function') {
+                swiperEl.swiper.slideToLoop(0, 0);
+              }
+              return;
+            }
+            wrapper.innerHTML = slides.join('');
+          })
+          .catch(function () {
+            wrapper.innerHTML = '';
+          });
+      })();
+    </script>
+
+    <script>
+      (function () {
+        var grid = document.getElementById('home-articles-grid');
+        if (!grid) return;
+
+        var escapeHtml = function (value) {
+          return String(value || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+        };
+        var stripHtml = function (value) {
+          var div = document.createElement('div');
+          div.innerHTML = String(value || '');
+          return (div.textContent || div.innerText || '').trim();
+        };
+        var shortText = function (value, maxLen) {
+          var text = String(value || '').trim().replace(/\s+/g, ' ');
+          if (!text) return '';
+          if (text.length <= maxLen) return text;
+          return text.slice(0, maxLen - 1) + '...';
+        };
+        var formatDate = function (value) {
+          if (!value) return '-';
+          var d = new Date(value);
+          if (Number.isNaN(d.getTime())) return '-';
+          return new Intl.DateTimeFormat('id-ID', {
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric'
+          }).format(d);
+        };
+        var fallbackText = function (value, fallback) {
+          var text = String(value || '').trim();
+          return text ? text : fallback;
+        };
+        var estimateReadTime = function (value) {
+          var text = stripHtml(value);
+          if (!text) return '1 menit baca';
+          var words = text.split(/\s+/).filter(Boolean).length;
+          var minutes = Math.max(1, Math.ceil(words / 180));
+          return String(minutes) + ' menit baca';
+        };
+        var buildCardHtml = function (article) {
+          var detailUrl = fallbackText(article.detailUrl, '/artikel/');
+          var title = fallbackText(article.title, 'Artikel');
+          var image = fallbackText(article.image, '/assets/images/blog/01.webp');
+          var category = fallbackText(article.category, 'Artikel');
+          var excerpt = shortText(stripHtml(article.excerpt), 140);
+          var publishedDate = formatDate(article.publishedAt);
+          var readTime = estimateReadTime(article.excerpt);
+          return '' +
+            '<article class="home-article-card">' +
+              '<a href="' + escapeHtml(detailUrl) + '" class="thumbnail">' +
+                '<img src="' + escapeHtml(image) + '" alt="' + escapeHtml(title) + '">' +
+                '<div class="thumbnail-meta">' +
+                  '<span class="date">' + escapeHtml(publishedDate) + '</span>' +
+                  '<span class="category">' + escapeHtml(category) + '</span>' +
+                '</div>' +
+              '</a>' +
+              '<div class="content">' +
+                '<div class="home-article-meta">' +
+                  '<span class="read-time">' + escapeHtml(readTime) + '</span>' +
+                  '<span class="dot"></span>' +
+                  '<span>Insight Tim MPS</span>' +
+                '</div>' +
+                '<h3 class="title">' + escapeHtml(title) + '</h3>' +
+                '<p class="excerpt">' + escapeHtml(excerpt) + '</p>' +
+                '<a class="read-more" href="' + escapeHtml(detailUrl) + '">Baca Artikel <i class="fa-sharp fa-regular fa-arrow-right"></i></a>' +
+              '</div>' +
+            '</article>';
+        };
+
+        fetch('/api/articles.php?page=1&limit=3&sort=newest&_=' + Date.now(), { cache: 'no-store' })
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            if (window.__homeShowArticlesSection === false) return;
+            if (!data || !data.ok || !Array.isArray(data.articles) || !data.articles.length) {
+              grid.innerHTML = '<div class="home-articles-empty">Artikel terbaru belum tersedia.</div>';
+              return;
+            }
+            grid.innerHTML = data.articles.slice(0, 3).map(buildCardHtml).join('');
+          })
+          .catch(function () {
+            if (window.__homeShowArticlesSection === false) return;
+            grid.innerHTML = '<div class="home-articles-empty">Gagal memuat artikel terbaru.</div>';
+          });
+      })();
+    </script>
+
+    <script>
+      (function () {
+        var wrapper = document.getElementById('testimonials-swiper-wrapper');
+        if (!wrapper) return;
+
+        var escapeHtml = function (value) {
+          return String(value || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+        };
+        var shortText = function (value, maxLen) {
+          var text = String(value || '').trim().replace(/\s+/g, ' ');
+          if (!text) return '';
+          if (text.length <= maxLen) return text;
+          return text.slice(0, maxLen - 1) + '...';
+        };
+
+        var buildSlideHtml = function (item) {
+          return '' +
+            '<div class="swiper-slide">' +
+              '<div class="testimonials-area-single-wrapper-5">' +
+                '<div class="thumbnail-wrapper-left">' +
+                  '<img src="' + escapeHtml(item.avatar) + '" alt="' + escapeHtml(item.name) + '">' +
+                  '<div class="inner-thumbnail-right">' +
+                    '<h4 class="title">' + escapeHtml(item.name) + '</h4>' +
+                    '<span>' + escapeHtml(item.company || 'CLIENT') + '</span>' +
+                  '</div>' +
+                '</div>' +
+                '<div class="quote">' +
+                  '<img src="/assets/images/testimonials/brand/03.webp" alt="quote">' +
+                '</div>' +
+                '<p class="disc">"' + escapeHtml(shortText(item.review, 260)) + '"</p>' +
+                '<div class="brand">' +
+                  '<img src="' + escapeHtml(item.brandLogo || '/assets/images/testimonials/brand/01.webp') + '" alt="brand">' +
+                '</div>' +
+              '</div>' +
+            '</div>';
+        };
+
+        fetch('/api/testimonials.php', { cache: 'no-store' })
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            if (!data || !data.ok || !Array.isArray(data.testimonials)) {
+              wrapper.innerHTML = '';
+              return;
+            }
+            var slides = data.testimonials.map(buildSlideHtml);
+            var swiperEl = document.querySelector('.mySwiper-testimonails-5');
+            if (swiperEl && swiperEl.swiper) {
+              swiperEl.swiper.removeAllSlides();
+              swiperEl.swiper.appendSlide(slides);
+              swiperEl.swiper.update();
+              if (typeof swiperEl.swiper.slideToLoop === 'function') {
+                swiperEl.swiper.slideToLoop(0, 0);
+              }
+              return;
+            }
+            wrapper.innerHTML = slides.join('');
+          })
+          .catch(function () {
+            wrapper.innerHTML = '';
+          });
+      })();
+    </script>
+
+    <script>
+        let lastScrollY = window.scrollY;
+        let marquee = document.querySelector('.marquee');
+        let position = 0; // Current position of the marquee text
+        let scrollTimeout;
+
+        // Function to update marquee position based on scroll
+        function updateMarqueeOnScroll() {
+            const currentScrollY = window.scrollY;
+
+            // Determine scroll direction
+            if (currentScrollY > lastScrollY) {
+                // Scrolling down: Move marquee left
+                position -= 4; // Adjust speed as needed
+            } else if (currentScrollY < lastScrollY) {
+                // Scrolling up: Move marquee right
+                position += 4; // Adjust speed as needed
+            }
+
+            // Update marquee position
+            marquee.style.transform = `translateX(${position}px)`;
+
+            lastScrollY = currentScrollY;
+
+            // Clear timeout and reset after scrolling stops
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => marquee.style.transform = `translateX(${position}px)`, 50);
+        }
+
+        // Listen for scroll events
+        window.addEventListener('scroll', updateMarqueeOnScroll);
+    </script>
+
+</body>
+
+</html>

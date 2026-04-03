@@ -1,0 +1,132 @@
+.nav-area {
+    @media #{$smlg-device} {
+        display: none;
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        @media #{$laptop-device} {
+            gap: 40px;
+        }
+
+        @media #{$laptop-device} {
+            gap: 10px;
+        }
+        @media screen and (max-width: 1300px) {
+            gap: 5px;
+        }
+
+        li {
+            margin: 0;
+            padding: 0;
+
+            a {
+                color: #111032;
+                font-weight: 600 !important;
+            }
+        }
+    }
+}
+
+header.header-three {
+    .nav-area ul {
+        @media #{$laptop-device} {
+            gap: 25px !important;
+        }
+    }
+}
+
+header.header-five {
+    .header-top-area {
+        @media #{$smlg-device} {
+            display: none;
+        }
+    }
+
+    .nav-area ul {
+        @media #{$laptop-device} {
+            gap: 25px !important;
+        }
+    }
+}
+
+.header-bottom-five-wrapper {
+    .logo-hide-show {
+        display: none;
+
+        @media #{$smlg-device} {
+            display: block;
+        }
+    }
+}
+
+.has-dropdown.mega-menu>a {
+    position: relative;
+}
+
+.has-dropdown::after {
+    position: absolute;
+    content: "\f078";
+    right: -22px;
+    top: 51%;
+    transform: translateY(-50%);
+    font-weight: 400;
+    color: #fff;
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.has-dropdown.mega-menu>a::after {
+    position: absolute;
+    content: "\f078";
+    right: -22px;
+    top: 53%;
+    transform: translateY(-50%);
+    font-weight: 400;
+    color: #fff;
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.nav-area ul li.main-nav {
+    padding: 21px 0;
+    cursor: pointer;
+}
+
+header .main-nav>a {
+    color: #fff !important;
+}
+
+header.header-two {
+    .nav-area ul {
+        @media #{$laptop-device} {
+            gap: 40px !important;
+        }
+    }
+}
+
+header.header-five {
+    .nav-area ul {
+        @media #{$laptop-device} {
+            gap: 40px !important;
+        }
+    }
+}
+
+.submenu {
+    &:hover {
+        li {
+            a {
+                opacity: .6;
+            }
+        }
+    }
+}

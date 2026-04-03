@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/MPS.png">
+    <title>Elever - Construction Building & Renovation HTML Template</title>
+    <!-- fontawesome css -->
+    <link rel="stylesheet" preload href="/assets/css/plugins/fontawesome.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/aos.css">
+    <!-- swiper css-->
+    <link rel="stylesheet" preload href="/assets/css/plugins/odometer.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/swiper.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/metismenu.css">
+    <link rel="stylesheet" preload href="/assets/css/plugins/magnifying-popup.css">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" preload href="/assets/css/vendor/bootstrap.min.css">
+    <!-- custom css here -->
+    <link rel="stylesheet" preload href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/site-fixes.css">
+    <style>
+        .blog-single-post-listing.details .blog-listing-content .disc a {
+            color: #ff5e14;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 600;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc a:hover {
+            color: #d9480f;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc a:visited {
+            color: #c2410c;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc h1,
+        .blog-single-post-listing.details .blog-listing-content .disc h2,
+        .blog-single-post-listing.details .blog-listing-content .disc h3,
+        .blog-single-post-listing.details .blog-listing-content .disc h4,
+        .blog-single-post-listing.details .blog-listing-content .disc p,
+        .blog-single-post-listing.details .blog-listing-content .disc li,
+        .blog-single-post-listing.details .blog-listing-content .disc blockquote {
+            color: #334155 !important;
+            background: transparent !important;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc h1 *,
+        .blog-single-post-listing.details .blog-listing-content .disc h2 *,
+        .blog-single-post-listing.details .blog-listing-content .disc h3 *,
+        .blog-single-post-listing.details .blog-listing-content .disc h4 *,
+        .blog-single-post-listing.details .blog-listing-content .disc p *,
+        .blog-single-post-listing.details .blog-listing-content .disc li *,
+        .blog-single-post-listing.details .blog-listing-content .disc blockquote * {
+            color: inherit !important;
+            background: transparent !important;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc a,
+        .blog-single-post-listing.details .blog-listing-content .disc a * {
+            color: #ff5e14 !important;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc {
+            font-size: 16px;
+            line-height: 1.75;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc * {
+            font-family: inherit !important;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc p,
+        .blog-single-post-listing.details .blog-listing-content .disc li,
+        .blog-single-post-listing.details .blog-listing-content .disc div,
+        .blog-single-post-listing.details .blog-listing-content .disc span,
+        .blog-single-post-listing.details .blog-listing-content .disc blockquote {
+            font-size: 16px !important;
+            line-height: 1.75 !important;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc p {
+            margin: 0 0 16px !important;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc div {
+            margin: 0 0 16px !important;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc p:last-child {
+            margin-bottom: 0 !important;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc div:last-child {
+            margin-bottom: 0 !important;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc h1 {
+            font-size: 40px !important;
+            line-height: 1.15 !important;
+            margin: 30px 0 14px !important;
+            font-weight: 900 !important;
+            color: #0f172a !important;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc h2 {
+            font-size: 34px !important;
+            line-height: 1.2 !important;
+            margin: 28px 0 12px !important;
+            color: #0f172a !important;
+            font-weight: 900 !important;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc h3 {
+            font-size: 26px !important;
+            line-height: 1.25 !important;
+            margin: 22px 0 10px !important;
+            color: #0f172a !important;
+            font-weight: 900 !important;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc h4 {
+            font-size: 20px !important;
+            line-height: 1.3 !important;
+            margin: 18px 0 8px !important;
+            color: #0f172a !important;
+            font-weight: 900 !important;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc ul,
+        .blog-single-post-listing.details .blog-listing-content .disc ol {
+            margin: 0 0 16px !important;
+            padding-left: 20px;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc li {
+            margin: 0 0 8px !important;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc blockquote {
+            margin: 16px 0 !important;
+            padding: 12px 14px;
+            border-left: 4px solid #ff5e14;
+            background: #fff7f2 !important;
+            border-radius: 10px;
+        }
+        .blog-single-post-listing.details .blog-listing-content .disc img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+        .blog-single-post-listing.details {
+            visibility: hidden;
+        }
+        .rts-single-wized.Recent-post .gallery-inner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .rts-single-wized.Recent-post .gallery-inner .gallery-item {
+            width: 78px;
+            height: 78px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex: 0 0 auto;
+            display: block;
+            border: 1px solid #e2e8f0;
+        }
+        .rts-single-wized.Recent-post .gallery-inner .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .rts-single-wized.is-gallery-posts {
+            display: none !important;
+        }
+        .rts-blog-list-area .rts-single-wized {
+            border: 1px solid #d9e3ef;
+            border-radius: 14px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+        .rts-blog-list-area .rts-single-wized .wized-header {
+            padding: 14px 16px 10px;
+            border-bottom: 1px solid #e4ebf3;
+            background: #fff;
+        }
+        .rts-blog-list-area .rts-single-wized .wized-header .title {
+            margin: 0;
+            color: #0f172a;
+            font-size: 24px;
+            line-height: 1.2;
+        }
+        .rts-blog-list-area .rts-single-wized .wized-body {
+            padding: 14px 16px 16px;
+        }
+        .rts-blog-list-area .rts-single-wized.Categories .single-categories {
+            margin: 0;
+        }
+        .rts-blog-list-area .rts-single-wized.Categories .single-categories li a {
+            min-height: 42px;
+            border-radius: 10px;
+            border: 1px solid #dce6f1;
+            background: #fff;
+            margin-bottom: 8px;
+            padding: 0 12px;
+            color: #334155;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: .2s ease;
+        }
+        .rts-blog-list-area .rts-single-wized.Categories .single-categories li a:hover {
+            border-color: #ff5e14;
+            color: #ff5e14;
+            transform: translateX(1px);
+        }
+        .rts-blog-list-area .rts-single-wized .recent-post-single {
+            border: 1px solid #dbe5f0;
+            border-radius: 12px;
+            padding: 10px;
+            background: #fff;
+            margin-bottom: 10px;
+        }
+        .rts-blog-list-area .rts-single-wized .recent-post-single:last-child {
+            margin-bottom: 0;
+        }
+        .rts-blog-list-area .rts-single-wized.contact .wized-body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .rts-blog-list-area .rts-single-wized.contact .wized-body .title {
+            color: #ffffff;
+        }
+        .rts-blog-list-area .rts-single-wized.contact {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-color: #1e293b;
+        }
+        .rts-blog-list-area .rts-single-wized.contact .wized-header {
+            background: transparent;
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+        .rts-blog-list-area .rts-single-wized.contact .wized-body {
+            background: transparent;
+            padding-top: 12px;
+        }
+    </style>
+</head>
+
+<body class="inner">
+<header class="header-two header--sticky">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-top-wrapper">
+                            <div class="left">
+                                <div class="call">
+                                    <i class="fa-light fa-mobile"></i>
+                                    <a href="#"></a>
+                                    <a href="#"></a>
+                                </div>
+                                <div class="call">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <a href="#"></a>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="social-header">
+                                    <span>Follow Us On:</span>
+                                    <ul>
+                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-two-main-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-two-wrapper">
+                            <a href="/" class="logo-area">
+                                <span class="brand-lockup" aria-label="PT Maulana Prima Sejahtera">
+                                    <img class="brand-mark" src="/assets/images/MPS.png" alt="MPS">
+                                    <span class="brand-text">
+                                        <span class="brand-name">Maulana Prima</span>
+                                        <span class="brand-sub">Sejahtera</span>
+                                    </span>
+                                </span>
+                            </a>
+                            <div class="nav-area">
+    <ul class="">
+        <li class="main-nav"><a href="/">Home</a></li>
+        <li class="main-nav"><a href="/layanan/">Layanan</a></li>
+        <li class="main-nav"><a href="/produk/">Produk</a></li>
+        <li class="main-nav"><a href="/proyek/">Proyek</a></li>
+        <li class="main-nav"><a href="/artikel/">Artikel</a></li>
+        <li class="main-nav"><a href="/kontak/">Kontak</a></li>
+        <li class="main-nav"><a href="/tentang/">Tentang</a></li>
+    </ul>
+</div>
+<div class="header-end">
+                                <a href="#" class="rts-btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Konsultasi WhatsApp</a>
+                                <div class="nav-btn menu-btn">
+                                    <img src="/assets/images/logo/bar.svg" alt="nav-iamge">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header area start -->
+    
+
+<div id="side-bar" class="side-bar header-two">
+    <button class="close-icon-menu"><i class="far fa-times"></i></button>
+    <!-- inner menu area desktop start -->
+    <div class="inner-main-wrapper-desk">
+        <div class="thumbnail">
+            <img src="/assets/images/banner/04.jpg" alt="elevate">
+        </div>
+        <div class="inner-content">
+            <h4 class="title">Solusi Profesional untuk Ducting, Hydrant, dan Electrical.</h4>
+            <p class="disc">
+                We successfully cope with tasks of varying complexity, provide long-term guarantees and regularly
+                master new technologies.
+            </p>
+            <div class="footer">
+                <h4 class="title">Got a project in mind?</h4>
+                <a href="#" class="rts-btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Konsultasi via WhatsApp</a>
+            </div>
+        </div>
+    </div>
+    <!-- mobile menu area start -->
+        <div class="mobile-menu d-block d-xl-none">
+        <nav class="nav-main mainmenu-nav mt--30">
+            <ul class="mainmenu metismenu" id="mobile-menu-active">
+                <li><a href="/" class="main">Home</a></li>
+                <li><a href="/layanan/" class="main">Layanan</a></li>
+                <li><a href="/produk/" class="main">Produk</a></li>
+                <li><a href="/proyek/" class="main">Proyek</a></li>
+                <li><a href="/artikel/" class="main">Artikel</a></li>
+                <li><a href="/kontak/" class="main">Kontak</a></li>
+                <li><a href="/tentang/" class="main">Tentang</a></li>
+            </ul>
+        </nav>
+
+        <div class="social-wrapper-one">
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- mobile menu area end -->
+</div>
+    <!-- header area end -->
+
+
+    <!-- rts banner area strart -->
+    <div class="rts-banner-area rts-section-gap rts-breadcrumb-area  position-relative details-bd">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-area-inner">
+                        <span class="water-text">Details</span>
+                        <h1 class="title">
+                            Dedicated to Building Dreams,
+                            Crafting Quality...
+                        </h1>
+                        <div class="nav-area-navigation">
+                            <a href="/">Home</a>
+                            <i class="fa-sharp fa-solid fa-slash-forward"></i>
+                            <a href="/artikel/">Artikel</a>
+                            <i class="fa-sharp fa-solid fa-slash-forward"></i>
+                            <a class="current" href="#" aria-current="page">Artikel Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts banner area end -->
+
+    <div class="rts-blog-list-area rts-section-gap">
+        <div class="container">
+            <div class="row g-5">
+                <!-- rts blo post area -->
+                <div class="col-xl-8 col-md-12 col-sm-12 col-12">
+                    <!-- single post -->
+                    <div class="blog-single-post-listing details mb--0">
+                        <div class="thumbnail">
+                            <img src="/assets/images/blog/28.webp" alt="Business-Artikel">
+                        </div>
+                        <div class="blog-listing-content">
+                            <div class="user-info">
+                                <!-- single info -->
+                                <div class="single">
+                                    <i class="far fa-user-circle"></i>
+                                    <span>by David Smith</span>
+                                </div>
+                                <!-- single infoe end -->
+                                <!-- single info -->
+                                <div class="single">
+                                    <i class="far fa-clock"></i>
+                                    <span>by David Smith</span>
+                                </div>
+                                <!-- single infoe end -->
+                                <!-- single info -->
+                                <div class="single">
+                                    <i class="far fa-tags"></i>
+                                    <span>by David Smith</span>
+                                </div>
+                                <!-- single infoe end -->
+                            </div>
+                            <h3 class="title animated fadeIn">Profitable business makes your profit</h3>
+                            <p class="disc para-1">
+                                Collaboratively pontificate bleeding edge resources with inexpensive methodologies
+                                globally initiate multidisciplinary compatible architectures pidiously repurpose leading
+                                edge growth strategies with just in time web readiness communicate timely meta services
+                            </p>
+                            <p class="disc">
+                                Onubia semper vel donec torquent fusce mauris felis aptent lacinia nisl, lectus
+                                himenaeos euismod molestie iaculis interdum in laoreet condimentum dictum, quisque quam
+                                risus sollicitudin gravida ut odio per a et. Gravida maecenas lobortis suscipit mus
+                                sociosqu convallis, mollis vestibulum donec aliquam risus sapien ridiculus, nulla
+                                sollicitudin eget in venenatis. Tortor montes platea iaculis posuere per mauris, eros
+                                porta blandit curabitur ullamcorper varius
+                            </p>
+                            <!-- quote area start -->
+                            <div class="rts-quote-area text-center">
+                                <h5 class="title">ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œPlacerat pretium tristique mattis tellus accuan metus dictumst
+                                    vivamus odio nulla fusce auctor into suscipit habitasse class congue potenti
+                                    iaculisÃƒÂ¢Ã¢â€šÂ¬Ã‚Â</h5>
+                                <a href="#" class="name">Daniel X. Horrar</a>
+                                <span>Author</span>
+                            </div>
+                            <!-- quote area end -->
+
+                            <p class="disc">
+                                Ultrices iaculis commodo parturient euismod pulvinar donec cum eget a, accumsan viverra
+                                cras praesent cubilia dignissim ad rhoncus. Gravida maecenas lobortis suscipit mus
+                                sociosqu convallis, mollis vestibulum donec aliquam risus sapien ridiculus, nulla
+                                sollicitudin eget in venenatis. Tortor montes platea iaculis posuere per mauris, eros
+                                porta blandit curabitur ullamcorper varius, nostra ante risus egestas suscipit. Quisque
+                                interdum nec parturient facilisis nunc ac quam, ad est cubilia mauris himenaeos nascetur
+                                vestibulum.
+                            </p>
+
+                            <div class="row g-5">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="thumbnail details">
+                                        <img src="/assets/images/blog/details/01.webp" alt="finbiz_buseness">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="thumbnail details">
+                                        <img src="/assets/images/blog/details/02.webp" alt="finbiz_buseness">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h4 class="title mt--40 mt_sm--20">Ultimate Business Strategy Solution</h4>
+                            <p class="disc mb--25">
+                                Gravida maecenas lobortis suscipit mus sociosqu convallis, mollis vestibulum donec
+                                aliquam risus sapien ridiculus, nulla sollicitudin eget in venenatis. Tortor montes
+                                platea iaculis posuere per mauris, eros porta blandit curabitur ullamcorper varius
+                                nostra ante risus egestas.
+                            </p>
+                            <div class="row align-items-center">
+                                <div class="col-lg-5">
+                                    <div class="thumbnail details mb_sm--15"><img
+                                            src="/assets/images/blog/details/03.webp" alt="finbiz_buseness">
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="check-area-details">
+                                        <!-- single check -->
+                                        <div class="single-check">
+                                            <i class="far fa-check-circle"></i>
+                                            <span>How will activities traditional manufacturing</span>
+                                        </div>
+                                        <!-- single check End -->
+                                        <!-- single check -->
+                                        <div class="single-check">
+                                            <i class="far fa-check-circle"></i>
+                                            <span>All these digital and projects aim to enhance</span>
+                                        </div>
+                                        <!-- single check End -->
+                                        <!-- single check -->
+                                        <div class="single-check">
+                                            <i class="far fa-check-circle"></i>
+                                            <span>I monitor my software that takes screenshots</span>
+                                        </div>
+                                        <!-- single check End -->
+                                        <!-- single check -->
+                                        <div class="single-check">
+                                            <i class="far fa-check-circle"></i>
+                                            <span>Laoreet dolore niacin sodium glutimate
+                                            </span>
+                                        </div>
+                                        <!-- single check End -->
+                                        <!-- single check -->
+                                        <div class="single-check">
+                                            <i class="far fa-check-circle"></i>
+                                            <span>Minim veniam sodium glutimate nostrud</span>
+                                        </div>
+                                        <!-- single check End -->
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="disc mt--30">
+                                Cubilia hendrerit luctus sem aptent curae gravida maecenas eleifend nunc nec vitae morbi
+                                sodales fusce tristique aenean habitasse mattis sociis feugiat conubia mus auctor
+                                praesent urna tincidunt taciti dui lobortis nullam. Mattis placerat feugiat ridiculus
+                                sed a per curae fermentum aenean facilisi, vitae urna imperdiet ac mauris non inceptos
+                                luctus hac odio.
+                            </p>
+                            <div class="row  align-items-center">
+                                <div class="col-lg-6 col-md-12">
+                                    <!-- tags details -->
+                                    <div class="details-tag">
+                                        <h6>Tags:</h6>
+                                        <button>Services</button>
+                                        <button>Business</button>
+                                        <button>Growth</button>
+                                    </div>
+                                    <!-- tags details End -->
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="details-share">
+                                        <h6>Share:</h6>
+                                        <button><i class="fab fa-facebook-f"></i></button>
+                                        <button><i class="fab fa-twitter"></i></button>
+                                        <button><i class="fab fa-instagram"></i></button>
+                                        <button><i class="fab fa-linkedin-in"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="author-area">
+                                <div class="thumbnail details mb_sm--15">
+                                    <img src="/assets/images/blog/details/author/avatar.webp" alt="finbiz_buseness">
+                                </div>
+                                <div class="author-details team">
+                                    <span>Brand Designer</span>
+                                    <h5>Angelina H. Dekato</h5>
+                                    <p class="disc">
+                                        Nullam varius luctus pharetra ultrices volpat facilisis donec tortor, nibhkisys
+                                        habitant curabitur at nunc nisl magna ac rhoncus vehicula sociis tortor nist
+                                        hendrerit molestie integer.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="replay-area-details">
+                                <h4 class="title">Leave a Reply</h4>
+                                <form action="#">
+                                    <div class="row g-4">
+                                        <div class="col-lg-6">
+                                            <input type="text" placeholder="Your Name">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="text" placeholder="Your Name">
+                                        </div>
+                                        <div class="col-12">
+                                            <input type="text" placeholder="Select Topic">
+                                            <textarea></textarea>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <a class="rts-btn btn-primary" href="#">Submit Message</a>
+                        </div>
+                    </div>
+                    <!-- single post End-->
+                </div>
+                <!-- rts-blog post end area -->
+                <!--rts blog wizered area -->
+                <div class="col-xl-4 col-md-12 col-sm-12 col-12">
+                    <!-- single wizered start -->
+                    <div class="rts-single-wized Categories">
+                        <div class="wized-header">
+                            <h5 class="title">
+                                Categories
+                            </h5>
+                        </div>
+                        <div class="wized-body">
+                            <!-- single categoris -->
+                            <ul class="single-categories">
+                                <li><a href="#">Business Solution <i class="far fa-long-arrow-right"></i></a></li>
+                            </ul>
+                            <!-- single categoris End -->
+                            <!-- single categoris -->
+                            <ul class="single-categories">
+                                <li><a href="#">Strategy Growth<i class="far fa-long-arrow-right"></i></a></li>
+                            </ul>
+                            <!-- single categoris End -->
+                            <!-- single categoris -->
+                            <ul class="single-categories">
+                                <li><a href="#">Finance Solution<i class="far fa-long-arrow-right"></i></a></li>
+                            </ul>
+                            <!-- single categoris End -->
+                            <!-- single categoris -->
+                            <ul class="single-categories">
+                                <li><a href="#">Investment Policy<i class="far fa-long-arrow-right"></i></a></li>
+                            </ul>
+                            <!-- single categoris End -->
+                            <!-- single categoris -->
+                            <ul class="single-categories">
+                                <li><a href="#">Tax Managment<i class="far fa-long-arrow-right"></i></a></li>
+                            </ul>
+                            <!-- single categoris End -->
+                        </div>
+                    </div>
+                    <!-- single wizered End -->
+                    <!-- single wizered start -->
+                    <div class="rts-single-wized Recent-post is-gallery-posts">
+                        <div class="wized-header">
+                            <h5 class="title">
+                                Recent Posts
+                            </h5>
+                        </div>
+                        <div class="wized-body">
+                            <!-- recent-post -->
+                            <div class="recent-post-single">
+                                <div class="thumbnail">
+                                    <a href="#"><img src="/assets/images/blog/details/recent-post/01.webp"
+                                            alt="Artikel_post"></a>
+                                </div>
+                                <div class="content-area">
+                                    <div class="user">
+                                        <i class="fal fa-clock"></i>
+                                        <span>15 Jan, 2023</span>
+                                    </div>
+                                    <a class="post-title" href="#">
+                                        <h6 class="title">Redefining Standards & Raising
+                                            Bars in the Construction...</h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- recent-post End -->
+                            <!-- recent-post -->
+                            <div class="recent-post-single">
+                                <div class="thumbnail">
+                                    <a href="#"><img src="/assets/images/blog/details/recent-post/02.webp"
+                                            alt="Artikel_post"></a>
+                                </div>
+                                <div class="content-area">
+                                    <div class="user">
+                                        <i class="fal fa-clock"></i>
+                                        <span>15 Jan, 2023</span>
+                                    </div>
+                                    <a class="post-title" href="#">
+                                        <h6 class="title">We would love to share a similar experience</h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- recent-post End -->
+                            <!-- recent-post -->
+                            <div class="recent-post-single">
+                                <div class="thumbnail">
+                                    <a href="#"><img src="/assets/images/blog/details/recent-post/03.webp"
+                                            alt="Artikel_post"></a>
+                                </div>
+                                <div class="content-area">
+                                    <div class="user">
+                                        <i class="fal fa-clock"></i>
+                                        <span>15 Jan, 2023</span>
+                                    </div>
+                                    <a class="post-title" href="#">
+                                        <h6 class="title">We would love to share a similar experience</h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- recent-post End -->
+                        </div>
+                    </div>
+                    <!-- single wizered End -->
+                    <!-- single wizered start -->
+                    <div class="rts-single-wized">
+                        <div class="wized-header">
+                            <h5 class="title">
+                                Popular Tags
+                            </h5>
+                        </div>
+                        <div class="wized-body">
+                            <div class="tags-wrapper">
+                                <a href="#">Services</a>
+                                <a href="#">Business</a>
+                                <a href="#">Growth</a>
+                                <a href="#">Finance</a>
+                                <a href="#">UI/UX Design</a>
+                                <a href="#">Solution</a>
+                                <a href="#">Speed</a>
+                                <a href="#">Strategy</a>
+                                <a href="#">Technology</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single wizered End -->
+                    <!-- single wizered start -->
+                    <div class="rts-single-wized contact">
+                        <div class="wized-header">
+                            <a href="/" class="logo" style="display:inline-flex;align-items:center;gap:10px;color:inherit;text-decoration:none;">
+                                <span class="brand-lockup" aria-label="PT Maulana Prima Sejahtera">
+                                    <img class="brand-mark" src="/assets/images/MPS.png" alt="MPS">
+                                    <span class="brand-text">
+                                        <span class="brand-name">Maulana Prima</span>
+                                        <span class="brand-sub">Sejahtera</span>
+                                    </span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="wized-body">
+                            <h5 class="title">Need Help? We Are Here
+                                To Help You</h5>
+                            <a class="rts-btn btn-primary" href="/kontak/">Contact Us</a>
+                        </div>
+                    </div>
+                    <!-- single wizered End -->
+                </div>
+                <!-- rts- blog wizered end area -->
+            </div>
+        </div>
+    </div>
+<!-- rts footer area start -->
+<div class="rts-footer-area rts-section-gapTop bg_footer-1 bg_image">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact-area-footer-top">
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h6 class="title">Call Us Now</h6>
+                        <a id="footer-phone-1" href="#">-</a>
+                        <a id="footer-phone-2" href="#">-</a>
+                    </div>
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <h6 class="title">Office Time</h6>
+                        <a id="footer-hours-1" href="#">-</a>
+                    </div>
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h6 class="title">Need Support</h6>
+                        <a id="footer-email-1" href="#">-</a>
+                        <a id="footer-email-2" href="#">-</a>
+                    </div>
+                    <div class="single-contact-area-box">
+                        <div class="icon">
+                            <i class="fa-sharp fa-solid fa-location-dot"></i>
+                        </div>
+                        <h6 class="title">Our Address</h6>
+                        <a id="footer-address-1" href="#">-</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-full">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="nav-footer-wrapper-one">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul class="footer-float-nav">
+                                    <li><a href="/tentang/">Tentang Kami</a></li>
+                                    <li><a href="/proyek/">Projects</a></li>
+                                    <li><a href="/proyek/">Updates</a></li>
+                                    <li><a href="/tentang/">Mission</a></li>
+                                    <li><a href="/tentang/">Inside</a></li>
+                                    <li><a href="/kontak/">Contact</a></li>
+                                    <li><a href="/tentang/">History</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-4">
+                <div class="footer-wrapper-left-one">
+                    <a href="/" class="logo">
+                        <span class="brand-lockup" aria-label="PT Maulana Prima Sejahtera">
+                            <img class="brand-mark" src="/assets/images/MPS.png" alt="MPS">
+                            <span class="brand-text">
+                                <span class="brand-name">Maulana Prima</span>
+                                <span class="brand-sub">Sejahtera</span>
+                            </span>
+                        </span>
+                    </a>
+                    <!-- <p class="disc">
+                        weÃƒÂ¯Ã‚Â¿Ã‚Â½re committed to elevating the construction experience for our clients. With a passion for
+                        innovation and quality craftsmanship,
+                    </p> -->
+                    <p class="disc">
+                        Kami berkomitmen untuk memberikan solusi konstruksi berkualitas tinggi yang disesuaikan dengan kebutuhan klien kami. Dengan fokus pada inovasi, ketelitian, dan keahlian, kami membangun ruang yang tahan lama.
+                    </p>
+                    <div class="social-area-wrapper-one">
+                        <ul>
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="footer-wrapper-right">
+                    <div class="single-nav-area-footer use-link">
+                        <h4 class="title">Useful Links</h4>
+                        <ul>
+                            <li><a href="/tentang/"><i class="fa-regular fa-arrow-right-long"></i>Tentang Kami</a></li>
+                            <li><a href="/tentang/"><i class="fa-regular fa-arrow-right-long"></i>Our Gallery</a></li>
+                            <li><a href="/layanan/"><i class="fa-regular fa-arrow-right-long"></i>Layanan Kami</a></li>
+                            <li><a href="/tentang/#about-team-section"><i class="fa-regular fa-arrow-right-long"></i>Our Team</a></li>
+                            <li><a href="/kontak/"><i class="fa-regular fa-arrow-right-long"></i>Hubungi Kami</a></li>
+                        </ul>
+                    </div>
+                    <div class="single-nav-area-footer use-link">
+                        <h4 class="title">Quick Services</h4>
+                        <ul>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>General Contracting</a></li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Project Management</a></li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>New Construction</a></li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Renovations &amp; Remodeling</a></li>
+                            <li><a href="/layanan/hydrant/"><i class="fa-regular fa-arrow-right-long"></i>Interior Finishing</a></li>
+                        </ul>
+                    </div>
+                    <div class="single-nav-area-footer news-letter">
+                        <h4 class="title">Newsletter</h4>
+                        <p>Update seputar proyek, tips teknis, dan insight lapangan dari tim kami.</p>
+                        <form action="#">
+                            <input type="email" placeholder="Email Address" required>
+                            <button class="btn-subscribe mt--15">Subscribe Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-full copyright-area-one">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="copyright-wrapper">
+                                <p class="mb-0">Copyright &copy;
+                                    <script>
+                                        document.write(
+                                            new Date().getFullYear()
+                                        )
+                                    </script>
+                                    Maulana Prima Sejahtera
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- rts footer area end -->
+
+
+    <!-- progress area start -->
+<!-- <div id="elevate-load">
+    <div class="loader-wrapper">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div> -->
+<!-- progress area end -->
+
+<!-- rtl btn area start -->
+<!-- <div class="rtl-ltr-switcher-btn">
+    <span class="rtl show">View RTL</span>
+    <span class="ltr">View LTR</span>
+</div> -->
+<!-- rtl btn area end -->
+
+<!-- progress area start -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+            style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+        </path>
+    </svg>
+</div>
+<!-- progress area end -->
+
+
+<!-- offcanvase search -->
+<div class="search-input-area">
+    <div class="container">
+        <div class="search-input-inner">
+            <div class="input-div">
+                <input class="search-input autocomplete" type="text" placeholder="Search by keyword or #">
+                <button><i class="far fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+    <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+</div>
+<div id="anywhere-home" class="">
+</div>
+
+<!-- scripts -->
+<script src="/assets/js/plugins/jquery.js"></script>
+<script src="/assets/js/vendor/bootstrap.min.js"></script>
+
+<script src="/assets/js/plugins/odometer.js"></script>
+<script src="/assets/js/plugins/jquery-appear.js"></script>
+
+<script src="/assets/js/plugins/metismenu.js"></script>
+<script src="/assets/js/plugins/swiper.js"></script>
+<script src="/assets/js/plugins/aos.js"></script>
+<script src="/assets/js/plugins/nice-select.js"></script>
+<script src="/assets/js/plugins/smooth-scroll.js"></script>
+<script src="/assets/js/vendor/waw.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuSiPhoDaOJ7aqtJVtQhYhLzwwJ7rQlmA"></script>
+<script src="/assets/js/vendor/marker.js"></script>
+<script src="/assets/js/vendor/map-content.js"></script>
+<script src="/assets/js/vendor/info-box.js"></script>
+<script src="https://html.themewant.com/golfy/assets/js/plugins/magnific-popup.js"></script>
+
+<script src="/assets/js/plugins/contact.form.js"></script>
+
+<script>
+    (function () {
+        const escapeHtml = function (text) {
+            return String(text || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        };
+        const stripHtml = function (html) {
+            const div = document.createElement('div');
+            div.innerHTML = String(html || '');
+            return (div.textContent || div.innerText || '').trim();
+        };
+
+        const cleanupArticleHtml = function (html) {
+            const root = document.createElement('div');
+            root.innerHTML = String(html || '');
+
+            const isMeaningful = function (el) {
+                if (!el) return false;
+                if (el.querySelector && el.querySelector('img, video, iframe')) return true;
+                const text = (el.textContent || '').replace(/\u00a0/g, ' ').trim();
+                return text !== '';
+            };
+
+            const removableSelector = 'p, div, span, blockquote, li';
+            const nodes = Array.from(root.querySelectorAll(removableSelector));
+            nodes.forEach(function (el) {
+                if (!isMeaningful(el)) {
+                    el.remove();
+                }
+            });
+
+            // Collapse long <br> runs to at most 2.
+            const brNodes = Array.from(root.querySelectorAll('br'));
+            brNodes.forEach(function (br) {
+                let run = 0;
+                let cur = br;
+                while (cur && cur.nodeType === 1 && cur.tagName && cur.tagName.toLowerCase() === 'br') {
+                    run += 1;
+                    const next = cur.nextSibling;
+                    if (run > 2) {
+                        cur.remove();
+                    }
+                    cur = next;
+                }
+            });
+
+            return root.innerHTML.trim();
+        };
+
+        const formatDate = function (value) {
+            if (!value) return '-';
+            const date = new Date(value);
+            if (Number.isNaN(date.getTime())) return '-';
+            return new Intl.DateTimeFormat('id-ID', {
+                day: '2-digit',
+                month: 'long',
+                year: 'numeric'
+            }).format(date);
+        };
+
+        const query = new URLSearchParams(window.location.search);
+        const slug = query.get('slug') || '';
+        const listing = document.querySelector('.blog-single-post-listing.details');
+        if (!listing) return;
+        listing.innerHTML = '<div class="blog-listing-content"><div class="alert alert-light border mb-0">Memuat artikel...</div></div>';
+        listing.style.visibility = 'visible';
+
+        if (!slug) {
+            listing.innerHTML = '<div class="blog-listing-content"><div class="alert alert-warning mb-0">Slug artikel tidak ditemukan.</div></div>';
+            return;
+        }
+
+        fetch('/api/article-detail.php?slug=' + encodeURIComponent(slug), { headers: { 'Accept': 'application/json' } })
+            .then(function (res) { return res.json(); })
+            .then(function (json) {
+                if (!json || !json.ok || !json.article) {
+                    throw new Error((json && json.message) ? json.message : 'Artikel tidak ditemukan');
+                }
+
+                const article = json.article;
+                document.title = (article.title || 'Artikel') + ' - MPS';
+
+                const waterText = document.querySelector('.breadcrumb-area-inner .water-text');
+                const crumbTitle = document.querySelector('.breadcrumb-area-inner .title');
+                const crumbCurrent = document.querySelector('.breadcrumb-area-inner .nav-area-navigation .current');
+                if (waterText) waterText.textContent = 'Artikel';
+                if (crumbTitle) crumbTitle.textContent = article.title || 'Artikel Detail';
+                if (crumbCurrent) crumbCurrent.textContent = article.title || 'Artikel Detail';
+
+                const thumbWrap = listing.querySelector('.thumbnail');
+                if (thumbWrap) {
+                    thumbWrap.style.display = 'none';
+                }
+
+                const content = listing.querySelector('.blog-listing-content');
+                if (!content) return;
+
+                const rawContent = String(article.contentHtml || '').trim();
+                const excerptText = stripHtml(article.excerpt || '');
+                let contentHtml = '<p>' + escapeHtml(excerptText) + '</p>';
+                if (rawContent !== '') {
+                    if (/<[a-z][\s\S]*>/i.test(rawContent)) {
+                        contentHtml = rawContent;
+                    } else {
+                        contentHtml = '<p>' + escapeHtml(rawContent).replace(/\n{2,}/g, '</p><p>').replace(/\n/g, '<br>') + '</p>';
+                    }
+                }
+                contentHtml = cleanupArticleHtml(contentHtml);
+
+                content.innerHTML = '' +
+                    '<div class="user-info">' +
+                    '  <div class="single"><i class="far fa-user-circle"></i><span>' + escapeHtml(article.author || 'Admin') + '</span></div>' +
+                    '  <div class="single"><i class="far fa-clock"></i><span>' + escapeHtml(formatDate(article.publishedAt)) + '</span></div>' +
+                    '  <div class="single"><i class="far fa-tags"></i><span>' + escapeHtml(article.category || 'Artikel') + '</span></div>' +
+                    '</div>' +
+                    '<h3 class="title animated fadeIn">' + escapeHtml(article.title) + '</h3>' +
+                    '<p class="disc para-1">' + escapeHtml(excerptText) + '</p>' +
+                    '<div class="disc">' + contentHtml + '</div>' +
+                    '<div class="row align-items-center mt--20">' +
+                    '  <div class="col-lg-12 col-md-12">' +
+                    '    <div class="details-tag">' +
+                    '      <h6>Kategori:</h6>' +
+                    '      <button>' + escapeHtml(article.category || 'Artikel') + '</button>' +
+                    '    </div>' +
+                    '  </div>' +
+                    '</div>';
+
+                const wizedBlocks = document.querySelectorAll('.rts-single-wized.Recent-post');
+                const recentBlock = wizedBlocks.length ? wizedBlocks[0] : null;
+                if (recentBlock && Array.isArray(json.recentArticles)) {
+                    const recentBody = recentBlock.querySelector('.wized-body');
+                    if (recentBody) {
+                        if (json.recentArticles.length === 0) {
+                            recentBody.innerHTML = '<p class="mb-0">Belum ada artikel lain.</p>';
+                        } else {
+                            recentBody.innerHTML = json.recentArticles.map(function (item) {
+                                return '' +
+                                    '<div class="recent-post-single">' +
+                                    '  <div class="thumbnail">' +
+                                    '    <a href="' + escapeHtml(item.detailUrl) + '"><img src="' + escapeHtml(item.image) + '" alt="' + escapeHtml(item.title) + '"></a>' +
+                                    '  </div>' +
+                                    '  <div class="content-area">' +
+                                    '    <div class="user"><i class="fal fa-clock"></i><span>' + escapeHtml(formatDate(item.publishedAt)) + '</span></div>' +
+                                    '    <a class="post-title" href="' + escapeHtml(item.detailUrl) + '">' +
+                                    '      <h6 class="title">' + escapeHtml(item.title) + '</h6>' +
+                                    '    </a>' +
+                                    '  </div>' +
+                                    '</div>';
+                            }).join('');
+                        }
+                    }
+                }
+
+                const allWized = Array.from(document.querySelectorAll('.rts-single-wized'));
+                const findWizedByTitle = function (needle) {
+                    return allWized.find(function (wized) {
+                        const titleEl = wized.querySelector('.wized-header .title');
+                        const text = (titleEl ? titleEl.textContent : '').trim().toLowerCase();
+                        return text === needle.toLowerCase();
+                    }) || null;
+                };
+
+                const categoriesWized = findWizedByTitle('Categories');
+                if (categoriesWized && json.sidebar && Array.isArray(json.sidebar.categories)) {
+                    const body = categoriesWized.querySelector('.wized-body');
+                    if (body) {
+                        if (json.sidebar.categories.length === 0) {
+                            body.innerHTML = '<p class="mb-0">Belum ada kategori.</p>';
+                        } else {
+                            body.innerHTML = json.sidebar.categories.map(function (cat) {
+                                return '' +
+                                    '<ul class="single-categories">' +
+                                    '  <li><a href="' + escapeHtml(cat.url) + '">' + escapeHtml(cat.name) + ' (' + escapeHtml(String(cat.total)) + ') <i class="far fa-long-arrow-right"></i></a></li>' +
+                                    '</ul>';
+                            }).join('');
+                        }
+                    }
+                }
+
+                const tagsWized = findWizedByTitle('Popular Tags');
+                if (tagsWized && json.sidebar && Array.isArray(json.sidebar.popularTags)) {
+                    const body = tagsWized.querySelector('.wized-body');
+                    if (body) {
+                        if (json.sidebar.popularTags.length === 0) {
+                            body.innerHTML = '<p class="mb-0">Belum ada tag populer.</p>';
+                        } else {
+                            body.innerHTML = '<div class="tags-wrapper">' + json.sidebar.popularTags.map(function (tag) {
+                                return '<a href="' + escapeHtml(tag.url) + '">' + escapeHtml(tag.name) + '</a>';
+                            }).join('') + '</div>';
+                        }
+                    }
+                }
+            })
+            .catch(function (err) {
+                listing.innerHTML = '<div class="blog-listing-content"><div class="alert alert-warning mb-0">Gagal memuat detail artikel. ' + escapeHtml(err && err.message ? err.message : '') + '</div></div>';
+            });
+    })();
+ </script>
+ <script src="/assets/js/plugins/jquery.js"></script>
+ <script src="/assets/js/main.js"></script>
+ <script>
+     // Desktop: push sidebar widgets to start below the title block (hero)
+     // so the right column aligns visually with the left content.
+     (function () {
+         function applyAsideOffset() {
+             if (!window.matchMedia || !window.matchMedia('(min-width: 1200px)').matches) return;
+             var hero = document.querySelector('.mps-article-hero');
+             var aside = document.querySelector('.mps-aside');
+             if (!hero || !aside) return;
+             var h = hero.getBoundingClientRect().height || 0;
+             var offset = Math.max(0, Math.round(h + 8));
+             document.documentElement.style.setProperty('--mps-article-aside-offset', offset + 'px');
+         }
+
+         if (document.readyState === 'loading') {
+             document.addEventListener('DOMContentLoaded', applyAsideOffset, { once: true });
+         } else {
+             applyAsideOffset();
+         }
+         window.addEventListener('resize', applyAsideOffset);
+         if (document.fonts && document.fonts.ready) {
+             document.fonts.ready.then(applyAsideOffset).catch(function () {});
+         }
+     })();
+ </script>
+</body>
+
+</html>
+
+
+
+
+
+
