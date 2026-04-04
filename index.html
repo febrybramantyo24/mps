@@ -1439,7 +1439,7 @@
                                 <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
                             </div>
                             <div class="counter-wrapper">
-                                <h2 class="counter title"><span class="odometer" data-count="10">00</span>+
+                                <h2 class="counter title"><span class="odometer" id="home-counter-years" data-count="10">00</span>+
                                 </h2>
                                 <span class="bottom">Tahun Pengalaman</span>
                             </div>
@@ -1449,7 +1449,7 @@
                                 <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
                             </div>
                             <div class="counter-wrapper">
-                                <h2 class="counter title"><span class="odometer" data-count="2">00</span>+
+                                <h2 class="counter title"><span class="odometer" id="home-counter-projects" data-count="2">00</span>+
                                 </h2>
                                 <span class="bottom">Proyek Selesai</span>
                             </div>
@@ -1459,7 +1459,7 @@
                                 <i class="fa-solid fa-users" aria-hidden="true"></i>
                             </div>
                             <div class="counter-wrapper">
-                                <h2 class="counter title"><span class="odometer" data-count="20">00</span>+
+                                <h2 class="counter title"><span class="odometer" id="home-counter-clients" data-count="20">00</span>+
                                 </h2>
                                 <span class="bottom">Klien Industri</span>
                             </div>
@@ -1470,7 +1470,7 @@
                                 <i class="fa-solid fa-headset" aria-hidden="true"></i>
                             </div>
                             <div class="counter-wrapper">
-                                <h2 class="counter title"><span class="odometer" data-count="24">00</span> Jam
+                                <h2 class="counter title"><span class="odometer" id="home-counter-response" data-count="24">00</span> Jam
                                 </h2>
                                 <span class="bottom">Respon Konsultasi</span>
                             </div>
@@ -2152,6 +2152,23 @@
           }
           teamSection.style.display = '';
         };
+        var updateHomeCounters = function (settings) {
+          var applyCounter = function (el, raw) {
+            if (!el) return;
+            var value = parseInt(String(raw || '').replace(/[^\d-]/g, ''), 10);
+            if (!Number.isFinite(value)) return;
+            el.setAttribute('data-count', String(value));
+            if (el.odometer && typeof el.odometer.update === 'function') {
+              el.odometer.update(value);
+              return;
+            }
+            el.textContent = String(value);
+          };
+          applyCounter(document.getElementById('home-counter-years'), settings.homeCounterYears);
+          applyCounter(document.getElementById('home-counter-projects'), settings.homeCounterProjects);
+          applyCounter(document.getElementById('home-counter-clients'), settings.homeCounterClients);
+          applyCounter(document.getElementById('home-counter-response'), settings.homeCounterResponseHours);
+        };
         // Menu visibility is managed globally in assets/js/main.js (site-settings).
         // Hide team section until we know it's enabled and has data.
         setTeamSectionVisible(false);
@@ -2160,6 +2177,7 @@
           .then(function (res) { return res.json(); })
           .then(function (payload) {
             var settings = payload && payload.ok && payload.settings ? payload.settings : {};
+            updateHomeCounters(settings);
             var raw = settings.homeShowTeamSection || '1';
             var isVisible = !(String(raw) === '0' || raw === 0 || raw === false);
             setTeamSectionVisible(isVisible);

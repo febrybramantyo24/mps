@@ -144,7 +144,7 @@ if ($slug !== '') {
         // Related projects pool (prefer same category, fallback to others)
         $cat = trim((string)($project['category'] ?? ''));
         $poolStmt = $conn->prepare(
-            "SELECT slug, title, image, client_name, location_name, project_year, duration_text, price_text, category, short_description
+            "SELECT slug, title, image, client_name, location_name, project_year, duration_text, price_text, category, short_description, description
              FROM projects
              WHERE is_active = 1 AND slug <> ?
              ORDER BY sort_order ASC, id DESC"
@@ -166,6 +166,7 @@ if ($slug !== '') {
                 'price' => (string)($r['price_text'] ?? ''),
                 'category' => (string)($r['category'] ?? ''),
                 'shortDescription' => (string)($r['short_description'] ?? ''),
+                'description' => (string)($r['description'] ?? ''),
                 'url' => '/proyek/detail/?slug=' . rawurlencode((string)($r['slug'] ?? '')),
             ];
             if ($cat !== '' && strcasecmp($item['category'], $cat) === 0) {
@@ -192,6 +193,13 @@ $duration = $project ? (string)($project['duration_text'] ?? '') : '';
 $price = $project ? (string)($project['price_text'] ?? '') : '';
 $videoUrl = $project ? (string)($project['video_url'] ?? '') : '';
 $features = $project ? (json_decode((string)($project['features_json'] ?? '[]'), true) ?: []) : [];
+
+$detailHtml = '';
+if (trim($desc) !== '') {
+    $detailHtml = strip_scripts($desc);
+} elseif ($shortText !== '') {
+    $detailHtml = nl2br(esc($shortText), false);
+}
 
 $heroImage = $project ? (string)($project['image'] ?? '') : '';
 if (!$galleryImages && $heroImage !== '') {
@@ -661,7 +669,7 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
         </div>
       </div>
       <h1 class="hero-title"><?= esc($title) ?></h1>
-      <div class="hero-sub"><?= $shortHtml ?></div>
+      <!-- Description removed from hero to reduce duplicate content -->
     </div>
   </section>
 
@@ -715,9 +723,9 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
                 <div class="meta-box"><div class="k">Price</div><div class="v"><?= esc($price !== '' ? $price : '-') ?></div></div>
               </div>
 
-              <?php if (trim($desc) !== ''): ?>
+              <?php if ($detailHtml !== ''): ?>
               <div class="desc">
-                <?= strip_scripts($desc) ?>
+                <?= $detailHtml ?>
               </div>
               <?php endif; ?>
 
@@ -776,7 +784,17 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
                       </a>
                       <div class="rp-body">
                         <h3 class="rp-title"><?= esc($rp['title']) ?></h3>
-                        <p class="rp-desc"><?= short_preview_text($rp['shortDescription'] !== '' ? $rp['shortDescription'] : 'Lihat detail proyek untuk informasi lengkap.', 110) ?></p>
+                        <?php
+                          $rpDescSource = '';
+                          if (trim((string)($rp['shortDescription'] ?? '')) !== '') {
+                              $rpDescSource = (string)($rp['shortDescription'] ?? '');
+                          } elseif (trim((string)($rp['description'] ?? '')) !== '') {
+                              $rpDescSource = (string)($rp['description'] ?? '');
+                          } else {
+                              $rpDescSource = 'Lihat detail proyek untuk informasi lengkap.';
+                          }
+                        ?>
+                        <p class="rp-desc"><?= short_preview_text($rpDescSource, 110) ?></p>
                         <div class="rp-meta">
                           <div class="item">
                             <span><i class="fa-regular fa-user"></i>Client</span>
@@ -1049,6 +1067,11 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
           loop: true,
           speed: 900,
           centeredSlides: false,
+          autoplay: {
+            delay: 4500,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
           navigation: {
             nextEl: nextEl,
             prevEl: prevEl,

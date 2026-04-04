@@ -1158,7 +1158,7 @@
               </div>
               <span class="water-text">Layanan</span>
               <h1 id="hero-title" class="title hero-title">Detail Layanan</h1>
-              <p id="hero-sub" class="hero-sub">Memuat informasi layanan...</p>
+              <!-- Description removed from hero to reduce duplicate content -->
               <div id="hero-tags" class="hero-tags hidden"></div>
             </div>
           </div>
@@ -1222,23 +1222,6 @@
     </div>
   </section>
 
-  <section id="related-services-section" class="related-services hidden">
-    <div class="container">
-      <div class="related-head">
-        <div>
-          <span class="related-kicker"><i class="fa-solid fa-star"></i> Layanan Pelengkap</span>
-          <h2 class="title">Related Layanan</h2>
-          <p class="sub">Pilih layanan terkait untuk mempercepat implementasi, menjaga standar kualitas, dan memastikan hasil proyek lebih konsisten.</p>
-        </div>
-      </div>
-      <div class="row g-24" id="related-services-list">
-        <div class="col-12">
-          <p class="related-empty">Memuat layanan terkait...</p>
-        </div>
-      </div>
-      <div id="related-services-pagination" class="related-pagination hidden"></div>
-    </div>
-  </section>
   <section id="service-reviews-section" class="service-reviews">
     <div class="container">
       <div class="review-shell">
@@ -1276,6 +1259,23 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+  <section id="related-services-section" class="related-services hidden">
+    <div class="container">
+      <div class="related-head">
+        <div>
+          <span class="related-kicker"><i class="fa-solid fa-star"></i> Layanan Pelengkap</span>
+          <h2 class="title">Related Layanan</h2>
+          <p class="sub">Pilih layanan terkait untuk mempercepat implementasi, menjaga standar kualitas, dan memastikan hasil proyek lebih konsisten.</p>
+        </div>
+      </div>
+      <div class="row g-24" id="related-services-list">
+        <div class="col-12">
+          <p class="related-empty">Memuat layanan terkait...</p>
+        </div>
+      </div>
+      <div id="related-services-pagination" class="related-pagination hidden"></div>
     </div>
   </section>
 
@@ -2183,9 +2183,17 @@
           imageEl.alt = svc.name || 'Layanan';
 
           titleEl.textContent = svc.name || '-';
-          if (shortEl) shortEl.innerHTML = escWithBreaks(svc.shortDescription || '');
-          var rawDesc = String(svc.description || '').trim();
-          var descHtml = /<[a-z][\s\S]*>/i.test(rawDesc) ? rawDesc : formatPlainTextToHtml(rawDesc);
+          var shortRaw = String(svc.shortDescription || '').trim();
+          var detailRaw = String(svc.description || '').trim();
+          if (!detailRaw && shortRaw) {
+            detailRaw = shortRaw;
+          }
+          var shortPreview = shortRaw;
+          if (shortRaw && !String(svc.description || '').trim()) {
+            shortPreview = cutWithBreaks(shortRaw, 220);
+          }
+          if (shortEl) shortEl.innerHTML = escWithBreaks(shortPreview || '');
+          var descHtml = detailRaw ? (/<[a-z][\s\S]*>/i.test(detailRaw) ? detailRaw : formatPlainTextToHtml(detailRaw)) : '';
           descEl.innerHTML = descHtml;
           heroTitle.textContent = svc.name || 'Detail Layanan';
           if (heroSub) heroSub.innerHTML = escWithBreaks(svc.shortDescription || 'Informasi layanan tersedia di halaman ini.');

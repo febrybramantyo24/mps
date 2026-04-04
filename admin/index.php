@@ -981,6 +981,10 @@ $conn->query(
     ('contact_section_description', ''),
     ('contact_card_call_title', ''),
     ('contact_card_office_title', ''),
+    ('home_counter_years', '10'),
+    ('home_counter_projects', '2'),
+    ('home_counter_clients', '20'),
+    ('home_counter_response_hours', '24'),
     ('company_profile_pdf_url', ''),
     ('map_embed_url', ''),
     ('map_lat', ''),
@@ -2059,6 +2063,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $contactSectionDescription = trim((string) ($_POST['contact_section_description'] ?? ''));
             $contactCardCallTitle = trim((string) ($_POST['contact_card_call_title'] ?? ''));
             $contactCardOfficeTitle = trim((string) ($_POST['contact_card_office_title'] ?? ''));
+            $homeCounterYears = trim((string) ($_POST['home_counter_years'] ?? ''));
+            $homeCounterProjects = trim((string) ($_POST['home_counter_projects'] ?? ''));
+            $homeCounterClients = trim((string) ($_POST['home_counter_clients'] ?? ''));
+            $homeCounterResponseHours = trim((string) ($_POST['home_counter_response_hours'] ?? ''));
             $companyProfilePdfUrl = trim((string) ($_POST['company_profile_pdf_url'] ?? ''));
             $removeCompanyProfilePdf = ((string) ($_POST['remove_company_profile_pdf'] ?? '0')) === '1';
             $mapEmbedUrl = normalize_map_embed_input((string) ($_POST['map_embed_url'] ?? ''));
@@ -2132,6 +2140,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             save_site_setting($conn, 'contact_section_description', $contactSectionDescription);
             save_site_setting($conn, 'contact_card_call_title', $contactCardCallTitle);
             save_site_setting($conn, 'contact_card_office_title', $contactCardOfficeTitle);
+            save_site_setting($conn, 'home_counter_years', $homeCounterYears);
+            save_site_setting($conn, 'home_counter_projects', $homeCounterProjects);
+            save_site_setting($conn, 'home_counter_clients', $homeCounterClients);
+            save_site_setting($conn, 'home_counter_response_hours', $homeCounterResponseHours);
             save_site_setting($conn, 'company_profile_pdf_url', $companyProfilePdfUrl);
             save_site_setting($conn, 'map_embed_url', $mapEmbedUrl);
             save_site_setting($conn, 'map_lat', $mapLat);
@@ -2305,6 +2317,10 @@ $siteSettingsRows = $conn->query(
         'contact_section_description',
         'contact_card_call_title',
         'contact_card_office_title',
+        'home_counter_years',
+        'home_counter_projects',
+        'home_counter_clients',
+        'home_counter_response_hours',
         'company_profile_pdf_url',
         'map_embed_url',
         'map_lat',
@@ -2343,6 +2359,10 @@ $siteSettings = [
     'contact_section_description' => '',
     'contact_card_call_title' => '',
     'contact_card_office_title' => '',
+    'home_counter_years' => '10',
+    'home_counter_projects' => '2',
+    'home_counter_clients' => '20',
+    'home_counter_response_hours' => '24',
     'company_profile_pdf_url' => '',
     'map_embed_url' => '',
     'map_lat' => '',
@@ -4204,9 +4224,9 @@ $teamPager = paginate_rows($teamMembers, 8, 'team_pg');
                   </div>
                 <?php endif; ?>
                 <label>Deskripsi Singkat</label>
-                <div id="service-short-desc-surface" class="editor-surface" contenteditable="true" spellcheck="false" style="min-height:130px;" data-max="200" data-counter="service-short-desc-counter"></div>
-                <textarea name="short_description" id="service-short-desc-hidden" style="display:none;" required minlength="10"><?= e((string) ($editService['short_description'] ?? '')) ?></textarea>
-                <div class="field-help">Disimpan sebagai teks biasa (tanpa HTML). Cocok untuk ringkasan layanan. <strong><span id="service-short-desc-counter">0/200</span></strong></div>
+                <div id="service-short-desc-surface" class="editor-surface" contenteditable="true" spellcheck="false" style="min-height:130px;"></div>
+                <textarea name="short_description" id="service-short-desc-hidden" style="display:none;"><?= e((string) ($editService['short_description'] ?? '')) ?></textarea>
+                <div class="field-help">Disimpan sebagai teks biasa (tanpa HTML). Cocok untuk ringkasan layanan.</div>
                 <label>Deskripsi Detail Layanan</label>
                 <div class="editor-toolbar" id="service-desc-toolbar">
                   <div class="editor-group">
@@ -4434,9 +4454,9 @@ $teamPager = paginate_rows($teamMembers, 8, 'team_pg');
                   </div>
                 <?php endif; ?>
                 <label>Deskripsi Singkat</label>
-                <div id="project-short-desc-surface" class="editor-surface" contenteditable="true" spellcheck="false" style="min-height:130px;" data-max="200" data-counter="project-short-desc-counter"></div>
+                <div id="project-short-desc-surface" class="editor-surface" contenteditable="true" spellcheck="false" style="min-height:130px;"></div>
                 <textarea name="short_description" id="project-short-desc-hidden" style="display:none;"><?= e((string) ($editProject['short_description'] ?? '')) ?></textarea>
-                <div class="field-help">Disimpan sebagai teks biasa (tanpa HTML). Cocok untuk ringkasan yang rapi dan mudah dibaca. <strong><span id="project-short-desc-counter">0/200</span></strong></div>
+                <div class="field-help">Disimpan sebagai teks biasa (tanpa HTML). Cocok untuk ringkasan yang rapi dan mudah dibaca.</div>
                 <label>Deskripsi Detail Proyek</label>
                 <div class="editor-toolbar" id="project-desc-toolbar">
                   <div class="editor-group">
@@ -5196,7 +5216,27 @@ $teamPager = paginate_rows($teamMembers, 8, 'team_pg');
                       <input type="checkbox" name="show_menu_tentang" value="1" <?= ((string) ($siteSettings['show_menu_tentang'] ?? '1') !== '0') ? 'checked' : '' ?>>
                       <span>Tampilkan menu <strong>Tentang</strong></span>
                     </label>
-                    <div class="field-help">Berlaku untuk menu header desktop dan mobile di halaman utama/detail.</div>
+                  <div class="field-help">Berlaku untuk menu header desktop dan mobile di halaman utama/detail.</div>
+                  </div>
+                </div>
+                <h2 class="section-title">Statistik Homepage</h2>
+                <p class="muted">Atur angka yang tampil di blok "Tahun Pengalaman", "Proyek Selesai", "Klien Industri", dan "Respon Konsultasi".</p>
+                <div class="form-grid">
+                  <div>
+                    <label>Tahun Pengalaman</label>
+                    <input name="home_counter_years" value="<?= e((string) ($siteSettings['home_counter_years'] ?? '')) ?>" placeholder="10">
+                  </div>
+                  <div>
+                    <label>Proyek Selesai</label>
+                    <input name="home_counter_projects" value="<?= e((string) ($siteSettings['home_counter_projects'] ?? '')) ?>" placeholder="2">
+                  </div>
+                  <div>
+                    <label>Klien Industri</label>
+                    <input name="home_counter_clients" value="<?= e((string) ($siteSettings['home_counter_clients'] ?? '')) ?>" placeholder="20">
+                  </div>
+                  <div>
+                    <label>Respon Konsultasi (Jam)</label>
+                    <input name="home_counter_response_hours" value="<?= e((string) ($siteSettings['home_counter_response_hours'] ?? '')) ?>" placeholder="24">
                   </div>
                 </div>
                 <h2 class="section-title">Footer Contact Info</h2>
