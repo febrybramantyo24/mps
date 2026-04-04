@@ -32,7 +32,7 @@ function meta_excerpt(string $text, int $limit = 155): string
     $plain = trim(preg_replace('/\s+/', ' ', strip_tags($text)) ?? '');
     if ($plain === '') return '';
     if (mb_strlen($plain) <= $limit) return $plain;
-    return rtrim(mb_substr($plain, 0, $limit - 1)) . '…';
+    return rtrim(mb_substr($plain, 0, $limit - 1)) . '...';
 }
 
 function strip_scripts(string $html): string
@@ -45,7 +45,22 @@ function snippet(string $text, int $limit = 150): string
     $plain = trim(preg_replace('/\s+/', ' ', strip_tags($text)) ?? '');
     if ($plain === '') return '';
     if (mb_strlen($plain) <= $limit) return $plain;
-    return rtrim(mb_substr($plain, 0, $limit - 1)) . '…';
+    return rtrim(mb_substr($plain, 0, $limit - 1)) . '...';
+}
+
+function short_preview_text(string $text, int $limit = 110): string
+{
+    $raw = trim((string)$text);
+    if ($raw === '') return '';
+    $raw = str_replace(["\r\n", "\r", "\n"], ' ', $raw);
+    $plain = strip_tags($raw);
+    $plain = preg_replace('/\s+/', ' ', $plain) ?? '';
+    $plain = trim($plain);
+    if ($plain === '') return '';
+    if (mb_strlen($plain) > $limit) {
+        $plain = rtrim(mb_substr($plain, 0, $limit - 1)) . '...';
+    }
+    return esc($plain);
 }
 
 $slug = trim((string)($_GET['slug'] ?? ''));
@@ -164,22 +179,10 @@ if ($slug !== '') {
 }
 
 $title = $project ? (string)$project['title'] : 'Proyek Tidak Ditemukan';
-  $short = $project ? (string)$project['short_description'] : 'Slug proyek tidak ditemukan atau proyek sudah tidak aktif.';
-  // Normalize short description: remove empty lines so line breaks feel tight.
-  $shortLines = preg_split("/\\R/", (string)$short);
-  $shortClean = [];
-  foreach ($shortLines as $line) {
-    $trimmed = trim($line);
-    if ($trimmed === '') {
-      continue;
-    }
-    $shortClean[] = $trimmed;
-  }
-  if (count($shortClean) > 0) {
-    $shortHtml = '<p>' . implode('</p><p>', array_map('esc', $shortClean)) . '</p>';
-  } else {
-    $shortHtml = '<p>-</p>';
-  }
+$short = $project ? (string)$project['short_description'] : 'Slug proyek tidak ditemukan atau proyek sudah tidak aktif.';
+// Keep admin line breaks 1:1 on frontend (no extra normalization).
+$shortText = trim(str_replace(["\r\n", "\r"], "\n", $short));
+$shortHtml = $shortText !== '' ? nl2br(esc($shortText), false) : '-';
 $desc = $project ? (string)($project['description'] ?? '') : '';
 $category = $project ? (string)($project['category'] ?? '') : '';
 $client = $project ? (string)($project['client_name'] ?? '') : '';
@@ -480,6 +483,10 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
       font-size: 12.5px;
       line-height: 1.6;
       min-height: 36px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
     .related-projects-modern .rp-meta {
       display: grid;
@@ -565,6 +572,23 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
     }
     @media (max-width: 991px) {
       .related-projects-modern .related-head { align-items: flex-start; }
+    }
+    @media (max-width: 767px) {
+      .related-projects-modern .rp-thumb::after {
+        background: linear-gradient(
+          180deg,
+          rgba(2, 6, 23, 0.06) 0%,
+          rgba(2, 6, 23, 0.28) 55%,
+          rgba(2, 6, 23, 0.42) 100%
+        );
+      }
+      .related-projects-modern .rp-thumb img {
+        filter: none;
+      }
+      .related-projects-modern .rp-body {
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(148, 163, 184, 0.25);
+      }
     }
     @media (max-width: 991px) { .hero { padding-top: 34px; } .meta-row { grid-template-columns: 1fr 1fr; } .gallery-left { border-right:0; border-bottom: 1px solid var(--line); } .content .title { font-size: 28px; } }
   </style>
@@ -752,7 +776,7 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
                       </a>
                       <div class="rp-body">
                         <h3 class="rp-title"><?= esc($rp['title']) ?></h3>
-                        <p class="rp-desc"><?= esc(snippet($rp['shortDescription'] !== '' ? $rp['shortDescription'] : 'Lihat detail proyek untuk informasi lengkap.', 110)) ?></p>
+                        <p class="rp-desc"><?= short_preview_text($rp['shortDescription'] !== '' ? $rp['shortDescription'] : 'Lihat detail proyek untuk informasi lengkap.', 110) ?></p>
                         <div class="rp-meta">
                           <div class="item">
                             <span><i class="fa-regular fa-user"></i>Client</span>

@@ -4204,9 +4204,9 @@ $teamPager = paginate_rows($teamMembers, 8, 'team_pg');
                   </div>
                 <?php endif; ?>
                 <label>Deskripsi Singkat</label>
-                <div id="service-short-desc-surface" class="editor-surface" contenteditable="true" spellcheck="false" style="min-height:130px;"></div>
+                <div id="service-short-desc-surface" class="editor-surface" contenteditable="true" spellcheck="false" style="min-height:130px;" data-max="200" data-counter="service-short-desc-counter"></div>
                 <textarea name="short_description" id="service-short-desc-hidden" style="display:none;" required minlength="10"><?= e((string) ($editService['short_description'] ?? '')) ?></textarea>
-                <div class="field-help">Disimpan sebagai teks biasa (tanpa HTML). Cocok untuk ringkasan layanan.</div>
+                <div class="field-help">Disimpan sebagai teks biasa (tanpa HTML). Cocok untuk ringkasan layanan. <strong><span id="service-short-desc-counter">0/200</span></strong></div>
                 <label>Deskripsi Detail Layanan</label>
                 <div class="editor-toolbar" id="service-desc-toolbar">
                   <div class="editor-group">
@@ -4434,9 +4434,9 @@ $teamPager = paginate_rows($teamMembers, 8, 'team_pg');
                   </div>
                 <?php endif; ?>
                 <label>Deskripsi Singkat</label>
-                <div id="project-short-desc-surface" class="editor-surface" contenteditable="true" spellcheck="false" style="min-height:130px;"></div>
+                <div id="project-short-desc-surface" class="editor-surface" contenteditable="true" spellcheck="false" style="min-height:130px;" data-max="200" data-counter="project-short-desc-counter"></div>
                 <textarea name="short_description" id="project-short-desc-hidden" style="display:none;"><?= e((string) ($editProject['short_description'] ?? '')) ?></textarea>
-                <div class="field-help">Disimpan sebagai teks biasa (tanpa HTML). Cocok untuk ringkasan yang rapi dan mudah dibaca.</div>
+                <div class="field-help">Disimpan sebagai teks biasa (tanpa HTML). Cocok untuk ringkasan yang rapi dan mudah dibaca. <strong><span id="project-short-desc-counter">0/200</span></strong></div>
                 <label>Deskripsi Detail Proyek</label>
                 <div class="editor-toolbar" id="project-desc-toolbar">
                   <div class="editor-group">
@@ -6186,7 +6186,20 @@ $teamPager = paginate_rows($teamMembers, 8, 'team_pg');
     };
     var syncHiddenFromSurfacePlain = function (surfaceEl, hiddenEl) {
       if (!surfaceEl || !hiddenEl) return;
-      var text = String(surfaceEl.innerText || surfaceEl.textContent || '').replace(/\r\n/g, '\n');
+      var html = String(surfaceEl.innerHTML || '');
+      if (!html) {
+        hiddenEl.value = '';
+        return;
+      }
+      // Convert common block tags to newlines so line breaks survive across browsers.
+      var withBreaks = html
+        .replace(/<br\s*\/?>/gi, '\n')
+        .replace(/<\/(div|p|li|h[1-6])>/gi, '\n')
+        .replace(/<\/(ul|ol)>/gi, '\n');
+      var tmp = document.createElement('div');
+      tmp.innerHTML = withBreaks;
+      var text = String(tmp.textContent || '').replace(/\r\n/g, '\n');
+      text = text.replace(/\n{3,}/g, '\n\n');
       hiddenEl.value = text.trim();
     };
 
@@ -6255,13 +6268,34 @@ $teamPager = paginate_rows($teamMembers, 8, 'team_pg');
       surface.innerHTML = legacyTextToHtml(hidden.value || '');
       if (String(surface.innerHTML || '').trim() === '') surface.innerHTML = '<p></p>';
 
+      var maxLen = parseInt(surface.getAttribute('data-max') || '0', 10);
+      if (!Number.isFinite(maxLen) || maxLen < 1) maxLen = 0;
+      var counterId = surface.getAttribute('data-counter') || '';
+      var counterEl = counterId ? document.getElementById(counterId) : null;
+      var syncCounter = function (value) {
+        if (!counterEl) return;
+        var count = String(value || '').length;
+        counterEl.textContent = count + '/' + (maxLen || 0);
+      };
+      var enforceMax = function () {
+        var text = String(surface.innerText || surface.textContent || '').replace(/\r\n/g, '\n');
+        if (maxLen && text.length > maxLen) {
+          text = text.slice(0, maxLen);
+          surface.textContent = text;
+        }
+        syncCounter(text.trim());
+      };
+      enforceMax();
+
       surface.addEventListener('input', function () {
+        if (maxLen) enforceMax();
         syncHiddenFromSurfacePlain(surface, hidden);
       });
 
       var form = surface.closest('form');
       if (form) {
         form.addEventListener('submit', function () {
+          if (maxLen) enforceMax();
           syncHiddenFromSurfacePlain(surface, hidden);
         });
       }

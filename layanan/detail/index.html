@@ -1644,6 +1644,13 @@
         if (text.length <= max) return text;
         return text.slice(0, max - 1) + '...';
       };
+      var cutWithBreaks = function (value, max) {
+        var raw = String(value || '').replace(/\r/g, '');
+        raw = raw.replace(/[ \t]+/g, ' ').trim();
+        if (!raw) return '';
+        if (raw.length > max) raw = raw.slice(0, max - 1) + '...';
+        return escWithBreaks(raw);
+      };
       var relatedAll = [];
       var relatedNewestIds = new Set();
       var relatedPage = 1;
@@ -1670,7 +1677,7 @@
         return items.map(function (item) {
           var link = item.detailUrl || ('/layanan/detail/?slug=' + encodeURIComponent(item.slug || ''));
           var title = String(item.name || 'Layanan');
-          var desc = cut(item.shortDescription || 'Lihat detail layanan untuk informasi lengkap.', 120);
+          var desc = cutWithBreaks(item.shortDescription || 'Lihat detail layanan untuk informasi lengkap.', 120);
           var image = String(item.image || '').trim();
           var chip = String(item.cardHighlight || '').trim();
           var isNew = relatedNewestIds && typeof relatedNewestIds.has === 'function' ? relatedNewestIds.has(item && item.id) : false;
@@ -1686,7 +1693,7 @@
                 '<div class="body">' +
                   (chip ? ('<div class="related-chip"><i class="fa-solid fa-circle-dot"></i><span>' + esc(chip) + '</span></div>') : '') +
                   '<h4 class="related-title">' + esc(title) + '</h4>' +
-                  '<p class="related-desc">' + esc(desc) + '</p>' +
+                  '<p class="related-desc">' + desc + '</p>' +
                   (estimate ? ('<div class="related-meta"><i class="' + esc(estimateIcon) + '"></i><span>' + esc(estimate) + '</span></div>') : '') +
                   '<a class="related-link" href="' + esc(link) + '">Lihat Detail <i class="fa-light fa-arrow-right"></i></a>' +
                 '</div>' +
