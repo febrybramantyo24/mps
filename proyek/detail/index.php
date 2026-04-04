@@ -164,7 +164,22 @@ if ($slug !== '') {
 }
 
 $title = $project ? (string)$project['title'] : 'Proyek Tidak Ditemukan';
-$short = $project ? (string)$project['short_description'] : 'Slug proyek tidak ditemukan atau proyek sudah tidak aktif.';
+  $short = $project ? (string)$project['short_description'] : 'Slug proyek tidak ditemukan atau proyek sudah tidak aktif.';
+  // Normalize short description: remove empty lines so line breaks feel tight.
+  $shortLines = preg_split("/\\R/", (string)$short);
+  $shortClean = [];
+  foreach ($shortLines as $line) {
+    $trimmed = trim($line);
+    if ($trimmed === '') {
+      continue;
+    }
+    $shortClean[] = $trimmed;
+  }
+  if (count($shortClean) > 0) {
+    $shortHtml = '<p>' . implode('</p><p>', array_map('esc', $shortClean)) . '</p>';
+  } else {
+    $shortHtml = '<p>-</p>';
+  }
 $desc = $project ? (string)($project['description'] ?? '') : '';
 $category = $project ? (string)($project['category'] ?? '') : '';
 $client = $project ? (string)($project['client_name'] ?? '') : '';
@@ -222,8 +237,9 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
     .hero-breadcrumb .sep { opacity: .65; padding: 0 6px; }
     .hero-breadcrumb .current { color:#ffb290; font-weight: 800; }
     .hero-title { margin:0 0 12px; color:#fff; font-size: clamp(34px, 4.5vw, 54px); line-height:1.08; max-width: 760px; font-weight: 900; }
-    .hero-sub { margin:0; color:#dbe7ff; max-width: 860px; font-size: clamp(15px, 1.1vw, 18px); line-height: 1.65; }
-    .hero-sub br { display:block; content:""; margin-bottom: 6px; }
+    .hero-sub { margin:0; color:#dbe7ff; max-width: 860px; font-size: clamp(15px, 1.1vw, 18px); line-height: 1.55; }
+    .hero-sub p { margin: 0 0 8px; }
+    .hero-sub p:last-child { margin-bottom: 0; }
     .wrap { padding-bottom: 56px; }
     .card-shell { background: var(--card); border:1px solid var(--line); border-radius: 18px; box-shadow: 0 18px 40px rgba(15,23,42,.06); overflow:hidden; }
     .gallery-left { padding: 20px; border-right: 1px solid var(--line); background: linear-gradient(180deg,#f8fafc,#fff); height:100%; }
@@ -235,8 +251,9 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
     .thumb-item.active { outline: 2px solid #ff5e14; border-color:#ff5e14; }
     .content { padding: 24px 24px 28px; }
     .content .title { margin:0 0 8px; font-size: 35px; line-height:1.15; color:#0f172a !important; font-weight: 900; }
-    .short { color:#475569; margin-bottom: 10px; line-height: 1.65; }
-    .short br { display:block; content:""; margin-bottom: 6px; }
+    .short { color:#475569; margin-bottom: 10px; line-height: 1.55; }
+    .short p { margin: 0 0 8px; }
+    .short p:last-child { margin-bottom: 0; }
     .meta-row { display:grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap:8px; margin: 12px 0; }
     .meta-box { border:1px solid var(--line); border-radius:10px; padding:10px; background:#fbfdff; }
     .meta-box .k { font-size: 11px; text-transform: uppercase; letter-spacing: .4px; color:#64748b; margin-bottom:2px; font-weight:800; }
@@ -620,7 +637,7 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
         </div>
       </div>
       <h1 class="hero-title"><?= esc($title) ?></h1>
-      <p class="hero-sub"><?= nl2br(esc($short !== '' ? $short : '-'), false) ?></p>
+      <div class="hero-sub"><?= $shortHtml ?></div>
     </div>
   </section>
 
@@ -664,7 +681,7 @@ $ogImage = ($heroImage !== '' ? abs_url($heroImage) : abs_url('/assets/images/MP
                 <div style="font-weight:900;color:#ff5e14;text-transform:uppercase;letter-spacing:.08em;font-size:11px;"><?= esc($category) ?></div>
               <?php endif; ?>
               <h2 class="title"><?= esc($title) ?></h2>
-              <p class="short"><?= nl2br(esc($short !== '' ? $short : '-'), false) ?></p>
+              <div class="short"><?= $shortHtml ?></div>
 
               <div class="meta-row">
                 <div class="meta-box"><div class="k">Client</div><div class="v"><?= esc($client !== '' ? $client : '-') ?></div></div>

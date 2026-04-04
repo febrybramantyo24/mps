@@ -4434,22 +4434,6 @@ $teamPager = paginate_rows($teamMembers, 8, 'team_pg');
                   </div>
                 <?php endif; ?>
                 <label>Deskripsi Singkat</label>
-                <div class="editor-toolbar" id="project-short-desc-toolbar">
-                  <div class="editor-group">
-                    <button type="button" class="editor-btn label" data-block="p">Normal</button>
-                    <button type="button" class="editor-btn" data-block="h2">H2</button>
-                  </div>
-                  <div class="editor-group">
-                    <button type="button" class="editor-btn" data-cmd="bold"><b>B</b></button>
-                    <button type="button" class="editor-btn" data-cmd="italic"><i>I</i></button>
-                    <button type="button" class="editor-btn" data-cmd="underline"><u>U</u></button>
-                    <button type="button" class="editor-btn" data-cmd="insertUnorderedList">Bullets</button>
-                    <button type="button" class="editor-btn" data-cmd="insertOrderedList">Number</button>
-                  </div>
-                  <div class="editor-group">
-                    <button type="button" class="editor-btn" data-cmd="removeFormat">Clear</button>
-                  </div>
-                </div>
                 <div id="project-short-desc-surface" class="editor-surface" contenteditable="true" spellcheck="false" style="min-height:130px;"></div>
                 <textarea name="short_description" id="project-short-desc-hidden" style="display:none;"><?= e((string) ($editProject['short_description'] ?? '')) ?></textarea>
                 <div class="field-help">Disimpan sebagai teks biasa (tanpa HTML). Cocok untuk ringkasan yang rapi dan mudah dibaca.</div>

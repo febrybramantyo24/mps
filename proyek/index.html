@@ -965,18 +965,21 @@ body {
     var countText = document.getElementById('projects-count-text');
     if (!list) return;
 
-    var esc = function (v) {
-      return String(v || '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-    };
-    var safeText = function (v, fallback) {
-      var text = String(v || '').trim();
-      return text ? text : fallback;
-    };
+      var esc = function (v) {
+        return String(v || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      };
+      var escWithBreaks = function (value) {
+        return esc(String(value || '')).replace(/\r?\n/g, '<br>');
+      };
+      var safeText = function (v, fallback) {
+        var text = String(v || '').trim();
+        return text ? text : fallback;
+      };
     var cut = function (v, limit) {
       var text = String(v || '').trim();
       if (text.length <= limit) return text;
@@ -1065,7 +1068,7 @@ body {
             '<div class="inner">' +
               (category ? '<span class="category">' + esc(category) + '</span>' : '') +
               '<a href="' + esc(link) + '"><h5 class="title">' + esc(title) + '</h5></a>' +
-              '<p class="short">' + esc(short) + '</p>' +
+              '<p class="short">' + escWithBreaks(short) + '</p>' +
               '<div class="meta">' +
                 '<div class="box">' +
                   '<span class="top"><i class="fa-solid fa-building"></i><span class="k">Client</span></span>' +
@@ -1331,7 +1334,6 @@ body {
 </body>
 
 </html>
-
 
 
 
